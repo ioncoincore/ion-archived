@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1015.9 660.9" style="enable-background:new 0 0 1015.9 660.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'FuturaLT';}
+	.st1{font-size:826.703px;}
+	.st2{display:none;fill:none;stroke:#000000;stroke-width:72;stroke-miterlimit:10;}
+	.st3{opacity:0.75;fill:#26A9E0;enable-background:new    ;}
+	.st4{fill:#111111;fill-opacity:0;}
+</style>
+<g>
+	<text transform="matrix(1 0 0 1 -30.8676 632.0834)" class="st0 st1">i</text>
+	<text transform="matrix(1 0 0 1 611.4713 632.0863)" class="st0 st1">n</text>
+</g>
+<g>
+	<circle class="st2" cx="393.5" cy="439.2" r="186.6"/>
+	<circle class="st3" cx="393.5" cy="439.2" r="57.5"/>
+	<circle cx="207" cy="446.5" r="43.8"/>
+	<circle cx="484.8" cy="601.3" r="43.8"/>
+	<circle cx="484.8" cy="277.2" r="43.8"/>
+	<circle class="st4" cx="304.3" cy="277.2" r="43.8"/>
+	<circle class="st4" cx="304.3" cy="601.3" r="43.8"/>
+	<circle class="st4" cx="580.1" cy="446.5" r="43.8"/>
+	<path d="M393.2,238C282,238,192,328,192,439.1s90,201.2,201.2,201.2s201.2-90,201.2-201.2S504.2,238,393.2,238z M393.6,610.9
+		c-94.7,0-171.5-76.8-171.5-171.5s76.8-171.5,171.5-171.5s171.5,76.8,171.5,171.5S488.3,610.9,393.6,610.9z"/>
+</g>
+</svg>

@@ -1,0 +1,26 @@
+# /etc/conf.d/iond: config file for /etc/init.d/iond
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/ion/ioncoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/iond"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/iond.pid"
+
+# Where to write iond data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/iond"
+
+# User and group to own iond process
+#BITCOIND_USER="ion"
+#BITCOIND_GROUP="ion"
+
+# Path to iond executable
+#BITCOIND_BIN="/usr/bin/iond"
+
+# Nice value to run iond under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
