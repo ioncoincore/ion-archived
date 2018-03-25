@@ -140,7 +140,7 @@ public:
         nMidasStartHeight = 176500;                   // MIDAS startheight, first big attack
         nMidasStartTime = 1497541280;                 // Time when MIDAS started and old algorithm stopped
         nDGWStartHeight = 550000;                     // Startheight of DGW
-        nDGWStartTime = 1521851264;                   // GMT: Saturday, March 24, 2018 12:27:45 AM - Exact time when DGW algorithm starts and old MIDAS stops
+        nDGWStartTime = 1521851265;                   // GMT: Saturday, March 24, 2018 12:27:45 AM - Exact time when DGW algorithm starts and old MIDAS stops
         nZerocoinStartHeight = 550001;                // Zerocoin start height, starts together with DGW
         nZerocoinStartTime = 1521851265;              // GMT: Saturday, March 24, 2018 12:27:45 AM, 
         nBlockEnforceSerialRange = 550137;            // Enforce serial range starting this block
