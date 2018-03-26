@@ -11,7 +11,8 @@ Majority of ion contributors decided to move on from CEVAP's branch to a new one
   
 For now this new repository is empty and we will move our content in following days. 
 
-[Ioncoincore](https://github.com/ioncoincore/ion/releases).
+  - Project where you can look up the progress of this action: [Move from CEVAP branch](https://github.com/orgs/ioncoincore/projects/1)
+  - Download [ioncoincore latest release](https://github.com/ioncoincore/ion/releases)
 
 ### Client: Sagittarius
 
