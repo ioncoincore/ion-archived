@@ -18,72 +18,14 @@ apps:
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
     aliases: [iond]
-  daemon:
-    command: iond --reindex
-    plugs: [network, network-bind]
-    environment:
-      XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond-reindex]
-  daemon:
-    command: iond --resync
-    plugs: [network, network-bind]
-    environment:
-      XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond-resync]
-  daemon:
-    command: iond --testnet
-    plugs: [network, network-bind]
-    environment:
-      XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond-testnet]
-  daemon:
-    command: iond --testnet --reindex
-    plugs: [network, network-bind]
-    environment:
-      XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond-reindex-testnet]
-  daemon:
-    command: iond --testnet --resync
-    plugs: [network, network-bind]
-    environment:
-      XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond-resync-testnet]
   qt:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7]
     aliases: [ion-qt]
     desktop: ion.desktop.desktop
-  qt:
-    command: desktop-launch ion-qt
-    plugs: [network, network-bind, unity7]
-    aliases: [ion-qt-reindex]
-    desktop: ion-reindex.desktop.desktop
-  qt:
-    command: desktop-launch ion-qt
-    plugs: [network, network-bind, unity7]
-    aliases: [ion-qt-resync]
-    desktop: ion-resync.desktop.desktop
-  qt:
-    command: desktop-launch ion-qt
-    plugs: [network, network-bind, unity7]
-    aliases: [ion-qt-testnet]
-    desktop: ion-testnet.desktop.desktop
-  qt:
-    command: desktop-launch ion-qt
-    plugs: [network, network-bind, unity7]
-    aliases: [ion-qt-reindex-testnet]
-    desktop: ion-testnet-reindex.desktop.desktop
-  qt:
-    command: desktop-launch ion-qt
-    plugs: [network, network-bind, unity7]
-    aliases: [ion-qt-resync-testnet]
-    desktop: ion-testnet-resync.desktop.desktop
   cli:
     command: ion-cli
     aliases: [ion-cli]
-  cli:
-    command: ion-cli --testnet
-    aliases: [ion-cli-testnet]
 
 parts:
   ion:
