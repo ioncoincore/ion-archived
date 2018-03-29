@@ -30,7 +30,7 @@ EXCLUDE = [
     'src/univalue/test/object.cpp',
     'src/univalue/lib/univalue_escapes.h',
     # auto generated:
-    'src/qt/bitcoinstrings.cpp',
+    'src/qt/ioncoinstrings.cpp',
     'src/chainparamsseeds.h',
     # other external copyrights:
     'src/tinyformat.h',
