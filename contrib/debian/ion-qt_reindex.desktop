@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Ion-Qt
+Name=Ion-Qt (Reindex)
 Comment=Ion P2P gaming related cryptocurrency
 Comment[fr]=Ion, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=Ion, eşten eşe kriptografik sanal para birimi
-Exec=ion-qt %u
+Exec=ion-qt --reindex %u
 Terminal=false
 Type=Application
 Icon=ion128
