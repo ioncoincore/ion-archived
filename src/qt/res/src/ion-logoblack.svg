@@ -1,22 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1155.4 1064.2" style="enable-background:new 0 0 1155.4 1064.2;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1155.4 1155.4001"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ion-logoblack.svg"
+   width="1155.4"
+   height="1155.4"
+   inkscape:export-filename="/home/tor/go/src/github.com/temp/ion_actuall/share/launchpad/ionlogo-black_192x192.png"
+   inkscape:export-xdpi="14.955859"
+   inkscape:export-ydpi="14.955859"><metadata
+     id="metadata29"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+     id="defs27" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview25"
+     showgrid="false"
+     inkscape:zoom="0.22176284"
+     inkscape:cx="-761.56856"
+     inkscape:cy="532.09998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" /><style
+     type="text/css"
+     id="style3">
 	.st0{display:none;fill:none;stroke:#000000;stroke-width:72;stroke-miterlimit:10;}
 	.st1{opacity:0.75;fill:#26A9E0;}
 	.st2{opacity:0;fill:#111111;}
-</style>
-<g>
-	<circle class="st0" cx="579.3" cy="531.3" r="452.7"/>
-	<circle class="st1" cx="579.3" cy="531.3" r="139.5"/>
-	<circle cx="126.6" cy="548.9" r="106.3"/>
-	<circle cx="800.7" cy="924.5" r="106.3"/>
-	<circle cx="800.7" cy="138.2" r="106.3"/>
-	<circle class="st2" cx="362.7" cy="138.2" r="106.3"/>
-	<circle class="st2" cx="362.7" cy="924.5" r="106.3"/>
-	<circle class="st2" cx="1031.9" cy="548.9" r="106.3"/>
-	<path d="M578.4,43C308.8,43,90.3,261.5,90.3,531.1s218.5,488.1,488.1,488.1c269.6,0,488.1-218.5,488.1-488.1S847.9,43,578.4,43z
-		 M579.4,947.8c-229.9,0-416.2-186.3-416.2-416.2s186.3-416.2,416.2-416.2s416.2,186.3,416.2,416.2S809.2,947.8,579.4,947.8z"/>
-</g>
-</svg>
+</style><g
+     id="g5"
+     transform="translate(28.000001,43.200066)"><circle
+       class="st0"
+       cx="579.29999"
+       cy="531.29999"
+       r="452.70001"
+       id="circle7"
+       style="display:none;fill:none;stroke:#000000;stroke-width:72;stroke-miterlimit:10" /><circle
+       class="st1"
+       cx="579.29999"
+       cy="531.29999"
+       r="139.5"
+       id="circle9"
+       style="opacity:0.75;fill:#26a9e0" /><circle
+       cx="126.6"
+       cy="548.90002"
+       r="106.3"
+       id="circle11" /><circle
+       cx="800.70001"
+       cy="924.5"
+       r="106.3"
+       id="circle13" /><circle
+       cx="800.70001"
+       cy="138.2"
+       r="106.3"
+       id="circle15" /><circle
+       class="st2"
+       cx="362.70001"
+       cy="138.2"
+       r="106.3"
+       id="circle17"
+       style="opacity:0;fill:#111111" /><circle
+       class="st2"
+       cx="362.70001"
+       cy="924.5"
+       r="106.3"
+       id="circle19"
+       style="opacity:0;fill:#111111" /><circle
+       class="st2"
+       cx="1031.9"
+       cy="548.90002"
+       r="106.3"
+       id="circle21"
+       style="opacity:0;fill:#111111" /><path
+       d="M 578.4,43 C 308.8,43 90.3,261.5 90.3,531.1 c 0,269.6 218.5,488.1 488.1,488.1 269.6,0 488.1,-218.5 488.1,-488.1 C 1066.5,261.5 847.9,43 578.4,43 Z m 1,904.8 c -229.9,0 -416.2,-186.3 -416.2,-416.2 0,-229.9 186.3,-416.2 416.2,-416.2 229.9,0 416.2,186.3 416.2,416.2 0,229.9 -186.4,416.2 -416.2,416.2 z"
+       id="path23"
+       inkscape:connector-curvature="0" /></g></svg>
