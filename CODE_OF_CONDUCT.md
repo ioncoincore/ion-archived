@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
@@ -44,3 +47,17 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage], versi
 
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQGcBAEBAgAGBQJavleMAAoJEElGSzK6ZoO6I9ML/1tgOP9UFn7Z7seQ4AndonKh
+QEm12PmpGQL0ZRKBKzh0yOP+2D/XzPkeVhv9ypt7kIYiLs4AnOUprxCc5BXVcNPv
+xAVwbnuAN4PHNwTMP2QdUgfodFkKs6NA0ASTk0ueY4s/GxW0Y6D8nNJbC9B0kDAu
+2gn4Jo5VBfxFHvIQCvAZ9jY4qKgQVsL/kNVCN88CWswfNOSy1d9BDIk4Djj0cCEi
+2+nmSs+fGcKcuENAuQb0w3ToRnqONWddcUA3laAKxzhlJXUsPhjdxszzMz4kclXH
+1y/PAYIbH8Pn2ua+QuBIeXYOk4qU21fRtOm9BbiRDtYGd7/GXrwTBwaHL9tFqsI5
+oRJDiaGA1rha5dhCtMOjodYXy73LKTBQtkcAc4cISsoPNHnjurPfa4HLKSv3fmcX
+FUX6i4ttOQxT9K2Mnm8zreDgHyYUQpSwtDMS8K7wTeqDBR1XNOjcmSi6hynbdfr/
+CRwRsUYLO8ptmI/Lf1KOLfkEfr7VerEgLUBACWyaqA==
+=e9Vz
+-----END PGP SIGNATURE-----
