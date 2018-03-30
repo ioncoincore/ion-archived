@@ -3063,10 +3063,23 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 /** cevap: Ion accepts PoS during PoW phase, PoW Ends with block 1000, PoS starts with 455, testnet 74 
  *
  */ 
-    if (pindex->nHeight <= 73 && block.IsProofOfStake() && Params().NetworkID() == CBaseChainParams::TESTNET || pindex->nHeight <= 454 && block.IsProofOfStake())
-        return state.DoS(100, error("ConnectBlock() : PoS period not active"),
-            REJECT_INVALID, "PoS-early");
- 
+/** cevap: Ion accepts PoS during PoW phase, PoW Ends with block 1000, PoS starts with 455, testnet 74 
+ *
+ */ 
+/** cevap: fix "warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]"
+ *  Orig:     if (pindex->nHeight <= 73 && block.IsProofOfStake() && Params().NetworkID() == CBaseChainParams::TESTNET || pindex->nHeight <= 454 && block.IsProofOfStake())
+ */
+    if (block.IsProofOfStake()) {
+
+        if (pindex->nHeight <= 73 && Params().NetworkID() == CBaseChainParams::TESTNET)
+            return state.DoS(100, error("ConnectBlock() : PoS period not active"),
+                REJECT_INVALID, "PoS-early");
+
+        if (pindex->nHeight <= 454)
+            return state.DoS(100, error("ConnectBlock() : PoS period not active"),
+                REJECT_INVALID, "PoS-early");
+    }
+
     if (pindex->nHeight > Params().LAST_POW_BLOCK() && block.IsProofOfWork())
         return state.DoS(100, error("ConnectBlock() : PoW period ended"),
             REJECT_INVALID, "PoW-ended");
