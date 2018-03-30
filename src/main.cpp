@@ -3071,19 +3071,11 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
  */
     if (block.IsProofOfStake()) {
 
-        if (Params().NetworkID() == CBaseChainParams::TESTNET)){
+        if (pindex->nHeight <= 73 && Params().NetworkID() == CBaseChainParams::TESTNET)
+            return state.DoS(100, error("ConnectBlock() : PoS period not active"),
+                REJECT_INVALID, "PoS-early");
 
-            if (pindex->nHeight <= 73)
-                return state.DoS(100, error("ConnectBlock() : PoS period not active"),
-                    REJECT_INVALID, "PoS-early");
-
-            if (pindex->nHeight != 75 && Params().NetworkID() == CBaseChainParams::TESTNET)
-                return state.DoS(100, error("ConnectBlock() : PoS period not active"),
-                    REJECT_INVALID, "PoS-early");
-
-        }
-
-        if (pindex->nHeight <= 454 && Params().NetworkID() != CBaseChainParams::TESTNET && Params().NetworkID() != CBaseChainParams::REGTEST)
+        if (pindex->nHeight <= 454)
             return state.DoS(100, error("ConnectBlock() : PoS period not active"),
                 REJECT_INVALID, "PoS-early");
     }
