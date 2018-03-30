@@ -211,16 +211,16 @@
         <translation>BIP 38 crypter</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Entrez une adresse ION que vous voulez crypter en utilisant BIP 38. Entrez une phrase secrète dans le champ du milieu. Cliquez sur crypter pour calculer la clé de cryptage privée.</translation>
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Entrez une adresse Ion que vous voulez crypter en utilisant BIP 38. Entrez une phrase secrète dans le champ du milieu. Cliquez sur crypter pour calculer la clé de cryptage privée.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresse :</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>L'adresse ION avec laquelle signer le message</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>L'adresse Ion avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -251,7 +251,7 @@
         <translation>Copier la signature actuelle dans le presse-papier</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Signer le message pour prouver que vous possédez cette adresse ION</translation>
     </message>
     <message>
@@ -271,12 +271,12 @@
         <translation>BIP 38 Décrypter</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>L'adresse ION avec laquelle le message a été signé</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>L'adresse Ion avec laquelle le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse ION renseignée</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse Ion renseignée</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -534,7 +534,7 @@
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
+        <source>Send coins to a Ion address</source>
         <translation>Envoyer des pièces à une adresse ION</translation>
     </message>
     <message>
@@ -550,12 +550,12 @@
         <translation>Modifier les options de configuration pour ION</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
-        <translation>Signer les messages avec votre adresse ION pour prouver qu'elles sont bien à vous.</translation>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <translation>Signer les messages avec votre adresse Ion pour prouver qu'elles sont bien à vous.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Vérifier les messages afin de s'assurer qu'ils sont signés avec l'adresse ION spécifié</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Vérifier les messages afin de s'assurer qu'ils sont signés avec l'adresse Ion spécifié</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -854,8 +854,8 @@ Adresse : %4
         <translation>Modifier l'adresse d'envoi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ION address.</source>
-        <translation>L'adresse entrée "%1" n'est pas une adresse ION valide</translation>
+        <source>The entered address "%1" is not a valid Ion address.</source>
+        <translation>L'adresse entrée "%1" n'est pas une adresse Ion valide</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1050,20 +1050,20 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Utiliser 16 masternodes différentes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
-        <translation>Cette option est la plus rapide, et coutera ~0.025 ION pour anonymiser 10000 ION</translation>
+        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
+        <translation>Cette option est la plus rapide, et coutera ~0.025 Ion pour anonymiser 10000 ION</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</source>
-        <translation>Cette option est moyennement rapide, et coutera 0.05 ION pour anonymiser 10000 ION</translation>
+        <source>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</source>
+        <translation>Cette option est moyennement rapide, et coutera 0.05 Ion pour anonymiser 10000 ION</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Il s'agit de l'option la plus lente est la plus sécurisé. Utiliser l'anonymat maximum coutera</translation>
     </message>
     <message>
-        <source>0.1 ION per 10000 ION you anonymize.</source>
-        <translation>0.1 ION par 10000 ION vous anonymisez.</translation>
+        <source>0.1 Ion per 10000 Ion you anonymize.</source>
+        <translation>0.1 Ion par 10000 Ion vous anonymisez.</translation>
     </message>
     </context>
 <context>
@@ -1524,8 +1524,8 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Payer à :</translation>
     </message>
     <message>
-        <source>The ION address to send the payment to</source>
-        <translation>L'adresse ION à laquelle envoyer le paiement</translation>
+        <source>The Ion address to send the payment to</source>
+        <translation>L'adresse Ion à laquelle envoyer le paiement</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1570,8 +1570,8 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Signer le message</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>L'adresse ION avec laquelle signer le message</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>L'adresse Ion avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1598,16 +1598,16 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Copier la signature actuelle dans le presse-papier</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Signer le message pour prouver que vous possédez cette adresse ION</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>L'adresse ION avec laquelle le message a été signé</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>L'adresse Ion avec laquelle le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse ION renseignée</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse Ion renseignée</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>

@@ -62,12 +62,12 @@
         <translation>Vastaanottavat osoitteet</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat sinun ION osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat sinun Ion osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Nämä ovat sinun ION osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Nämä ovat sinun Ion osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -235,8 +235,8 @@
         <translation>&amp;BIP 38 Salaus</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Syötä ION osoite, jonnka tahtoisit salata käyttäen BIP 38.
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Syötä Ion osoite, jonnka tahtoisit salata käyttäen BIP 38.
 Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityisavaimen.</translation>
     </message>
     <message>
@@ -244,7 +244,7 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Osoite:</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>ION osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
@@ -276,8 +276,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän ION osoitteen</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Ion osoitteen</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -300,12 +300,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Syötä BIP 38 salattu yksityisavain. Syötä salausavain laatikkoon. Paina Avaa Salaus tuottaaksesi yksityisavaimen. Kun avain on dekryptattu, painamalla "Import osoite" lisää tämän yksityisavaimen lompakkoon.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>ION osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla ION osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Ion osoitteella.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -595,8 +595,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>ION Ydin</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
-        <translation>Lähetä kolikkoja ION osoitteeseen</translation>
+        <source>Send coins to a Ion address</source>
+        <translation>Lähetä kolikkoja Ion osoitteeseen</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
@@ -616,19 +616,19 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>Näytä tietoja ION Ytimestä</translation>
+        <translation>Näytä tietoja Ion Ytimestä</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
         <translation>Muokkaa konfiguraatio vaihtoehtoja ION:lle</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
         <translation>Allekirjoita viestejä todistaaksesi, että omistat ne.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä ION osoiteella.</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä Ion osoiteella.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -671,8 +671,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
-        <translation>Näytä ION Ydin apuviesti saadaksesi lista mahdollisista ION komentolinja komennoista.</translation>
+        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
+        <translation>Näytä Ion Ydin apuviesti saadaksesi lista mahdollisista Ion komentolinja komennoista.</translation>
     </message>
     <message>
         <source>Ion Core client</source>
@@ -954,7 +954,7 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
     </message>
     <message>
         <source>Welcome to Ion Core.</source>
-        <translation>Tervetuloa ION Ytimeen.</translation>
+        <translation>Tervetuloa Ion Ytimeen.</translation>
     </message>
     <message>
         <source>Ion Core</source>
@@ -1147,19 +1147,19 @@ Please check the address and try again.</source>
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
+        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
         <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 ION anonymoidaksesi 10000 ION</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 ION anonymoidaksesi 10000 ION</translation>
+        <source>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</source>
+        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Ion anonymoidaksesi 10000 ION</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
     </message>
     <message>
-        <source>0.1 ION per 10000 ION you anonymize.</source>
+        <source>0.1 Ion per 10000 Ion you anonymize.</source>
         <translation>0.1 per 10000 ION, jotka anonymisoit.</translation>
     </message>
     <message>
@@ -1209,12 +1209,12 @@ Please check the address and try again.</source>
         <translation>Ekspertti</translation>
     </message>
     <message>
-        <source>Automatically start ION after logging in to the system.</source>
-        <translation>Automaattisesti käynnistä ION kun kirjaudut sisään.</translation>
+        <source>Automatically start Ion after logging in to the system.</source>
+        <translation>Automaattisesti käynnistä Ion kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>&amp;Start ION on system login</source>
-        <translation>&amp;Aloita ION järjestelmän kirjautumisessa</translation>
+        <source>&amp;Start Ion on system login</source>
+        <translation>&amp;Aloita Ion järjestelmän kirjautumisessa</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1237,8 +1237,8 @@ Please check the address and try again.</source>
         <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
     </message>
     <message>
-        <source>Connect to the ION network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä ION verkkoon SOCKS5 proxyn kautta</translation>
+        <source>Connect to the Ion network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä Ion verkkoon SOCKS5 proxyn kautta</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1542,8 +1542,8 @@ Please check the address and try again.</source>
         <translation>Lohko ketju</translation>
     </message>
     <message>
-        <source>Open the ION debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa ION debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
+        <source>Open the Ion debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa Ion debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -1654,8 +1654,8 @@ Please check the address and try again.</source>
         <translation>Ulos:</translation>
     </message>
     <message>
-        <source>Welcome to the ION RPC console.</source>
-        <translation>Tervetuloa ION RPC konsoliin.</translation>
+        <source>Welcome to the Ion RPC console.</source>
+        <translation>Tervetuloa Ion RPC konsoliin.</translation>
     </message>
     <message>
         <source>never</source>
@@ -1697,12 +1697,12 @@ Please check the address and try again.</source>
         <translation>Vaihtoehtoinen nimike uudelle vastaanottavalle osoitteelle</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
-        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana ION verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
+        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana Ion verkolle.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
-        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana ION  verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
+        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana Ion  verkolle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -1982,8 +1982,8 @@ Please check the address and try again.</source>
         <translation>käyttää</translation>
     </message>
     <message>
-        <source>Warning: Invalid ION address</source>
-        <translation>Varoitus: Virheellinen ION osoite</translation>
+        <source>Warning: Invalid Ion address</source>
+        <translation>Varoitus: Virheellinen Ion osoite</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2029,7 +2029,7 @@ Please check the address and try again.</source>
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The ION address to send the payment to</source>
+        <source>The Ion address to send the payment to</source>
         <translation>ION osoite johon maksu lähetetään</translation>
     </message>
     <message>
@@ -2091,7 +2091,7 @@ Please check the address and try again.</source>
         <translation>Voit allekirjoittaa viestejä osoitteillasi todistaaksesi, että omistat ne. Ole varovainen ettet allekirjoita mitään kummallista, sillä kalasteluyritykset saattavat yrittää huijata sinut luovuttamaan tietoja. Allekirjoita vain täysin yksityiskohtaisia sanomia, jotka hyväksyt.</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>ION osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
@@ -2123,16 +2123,16 @@ Please check the address and try again.</source>
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän ION osoitteen</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Ion osoitteen</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>ION osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla ION osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Ion osoitteella.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>

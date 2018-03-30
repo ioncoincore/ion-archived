@@ -259,7 +259,7 @@
                           <cursorShape>WhatsThisCursor</cursorShape>
                          </property>
                          <property name="toolTip">
-                          <string>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</string>
+                          <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</string>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">QLabel { color: red; }</string>
@@ -677,7 +677,7 @@
                        <item row="4" column="0">
                         <widget class="QLabel" name="labelLockedBalanceText">
                          <property name="toolTip">
-                          <string>Locked ION or Masternode collaterals. These are excluded from xION minting.</string>
+                          <string>Locked Ion or Masternode collaterals. These are excluded from xION minting.</string>
                          </property>
                          <property name="text">
                           <string>Locked:</string>
@@ -696,7 +696,7 @@
                           <cursorShape>IBeamCursor</cursorShape>
                          </property>
                          <property name="toolTip">
-                          <string>Locked ION or Masternode collaterals. These are excluded from xION minting.</string>
+                          <string>Locked Ion or Masternode collaterals. These are excluded from xION minting.</string>
                          </property>
                          <property name="text">
                           <string notr="true">0.000 000 00 ION</string>
@@ -740,7 +740,7 @@
                           <string>Total:</string>
                          </property>
                          <property name="toolTip">
-                          <string>Your current ION balance, unconfirmed and immature transactions included</string>
+                          <string>Your current Ion balance, unconfirmed and immature transactions included</string>
                          </property>
                         </widget>
                        </item>
@@ -756,7 +756,7 @@
                           <cursorShape>IBeamCursor</cursorShape>
                          </property>
                          <property name="toolTip">
-                          <string>Your current ION balance, unconfirmed and immature transactions included</string>
+                          <string>Your current Ion balance, unconfirmed and immature transactions included</string>
                          </property>
                          <property name="text">
                           <string notr="true">0.000 000 00 ION</string>
@@ -1111,7 +1111,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                        <cursorShape>WhatsThisCursor</cursorShape>
                       </property>
                       <property name="toolTip">
-                       <string>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</string>
+                       <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</string>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLabel { color: red; }</string>

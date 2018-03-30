@@ -13,7 +13,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 20000 ION input and register on the network
+// Bootup the Masternode, look for a 20000 Ion input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

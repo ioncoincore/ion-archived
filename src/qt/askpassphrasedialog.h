@@ -37,7 +37,7 @@ public:
         Encrypt,        /** Encrypt unencrypted wallet */
         ToggleLock,     /** Toggle wallet lock state */
         ChangePass,     /** Change passphrase */
-        Send_ION,       /** Send ION */
+        Send_ION,       /** Send Ion */
         Send_xION,      /** Send xION */
         Mint_xION,      /** Mint xION */
         BIP_38,         /** BIP38 menu */

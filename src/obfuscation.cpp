@@ -38,7 +38,7 @@ map<uint256, CObfuscationBroadcastTx> mapObfuscationBroadcastTxes;
 // Keep track of the active Masternode
 CActiveMasternode activeMasternode;
 
-/* *** BEGIN OBFUSCATION MAGIC - ION **********
+/* *** BEGIN OBFUSCATION MAGIC - Ion **********
     Copyright (c) 2014-2015, Dash Developers
         eduffield - evan@dashpay.io
         udjinm6   - udjinm6@dashpay.io
@@ -778,9 +778,9 @@ void CObfuscationPool::ChargeRandomFees()
 
                 Being that Obfuscation has "no fees" we need to have some kind of cost associated
                 with using it to stop abuse. Otherwise it could serve as an attack vector and
-                allow endless transaction that would bloat ION and make it unusable. To
+                allow endless transaction that would bloat Ion and make it unusable. To
                 stop these kinds of attacks 1 in 10 successful transactions are charged. This
-                adds up to a cost of 0.001 ION per transaction on average.
+                adds up to a cost of 0.001 Ion per transaction on average.
             */
             if (r <= 10) {
                 LogPrintf("CObfuscationPool::ChargeRandomFees -- charging random fees. %u\n", i);

@@ -58,12 +58,12 @@
         <translation>Mottagar adresser</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Det här är dina ION adresser för att sända betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Det här är dina Ion adresser för att sända betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Det här är dina ION adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Det här är dina Ion adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -223,8 +223,8 @@
         <translation>BIP 38 Kryptering</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Ange en ION adress som du vill kryptera med BIP 38.
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Ange en Ion adress som du vill kryptera med BIP 38.
 Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den krypterade privata nyckeln.</translation>
     </message>
     <message>
@@ -232,7 +232,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Adress:</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>ION adressen för signera meddelandet med</translation>
     </message>
     <message>
@@ -264,8 +264,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna ION adress</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna Ion adress</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -288,12 +288,12 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Ange BIP 38 krypterade privata nyckeln. Ange lösenfrasen i med mittersta boxen. Tryck på krypetra nyckel för att beräkna den privata nyckeln. Efter att nyckeln är avkrypterad, Tryck på 'Importera Adress' kommer att lägga till denna privata nyckel till plånboken.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>ION adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ION adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Ion adressen.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -587,8 +587,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>ION Kärna</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
-        <translation>Skicka mynt till en ION adress</translation>
+        <source>Send coins to a Ion address</source>
+        <translation>Skicka mynt till en Ion adress</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
@@ -604,23 +604,23 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
     </message>
     <message>
         <source>&amp;About Ion Core</source>
-        <translation>Om ION Kärnan</translation>
+        <translation>Om Ion Kärnan</translation>
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>Visa information om ION Kärnan</translation>
+        <translation>Visa information om Ion Kärnan</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
         <translation>Ändra konfigurationsval för ION</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
-        <translation>Signera meddelanden med din ION adress för att visa att du äger dem</translation>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <translation>Signera meddelanden med din Ion adress för att visa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ION adressen.</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Ion adressen.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -1157,7 +1157,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>ION adressen för signera meddelandet med</translation>
     </message>
     <message>
@@ -1181,16 +1181,16 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna ION adress</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna Ion adress</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>ION adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ION adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Ion adressen.</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>

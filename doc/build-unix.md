@@ -1,6 +1,6 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build ION in Unix.
+Some notes on how to build Ion in Unix.
 
 Note
 ---------------------
@@ -168,7 +168,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your ION installation more secure by making certain attacks impossible to
+To help make your Ion installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 

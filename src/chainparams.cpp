@@ -184,7 +184,7 @@ public:
         vSeeds.push_back(CDNSSeedData("1", "main.seeder.baseserv.com"));      // Ion's official seed 1
         vSeeds.push_back(CDNSSeedData("2", "main.seeder.uksafedns.net"));      // Ion's official seed 2
 
-        // ION addresses start with 'i'
+        // Ion addresses start with 'i'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 103);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 88);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 153);
@@ -298,7 +298,7 @@ public:
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("1", "testnet.seeder.baseserv.com")); // Ion's official testseed 1
         vSeeds.push_back(CDNSSeedData("2", "testnet.seeder.uksafedns.net")); // Ion's official testseed 2
-        // Testnet ION addresses start with 'g'
+        // Testnet Ion addresses start with 'g'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 97);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239); 

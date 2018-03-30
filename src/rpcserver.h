@@ -127,7 +127,7 @@ public:
 };
 
 /**
- * ION RPC command dispatcher.
+ * Ion RPC command dispatcher.
  */
 class CRPCTable
 {

@@ -62,12 +62,12 @@
         <translation>Indirizzi di ricexione</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono gli indirizzi ION per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricexione prima di inviare valuta.</translation>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono gli indirizzi Ion per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricexione prima di inviare valuta.</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono gli indirizzi ION per la ricexione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transaxione.</translation>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono gli indirizzi Ion per la ricexione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transaxione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>ION will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your IONs from being stolen by malware infecting your computer.</source>
-        <translation>ION verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi ION dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <translation>ION verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi Ion dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>&amp;BIP 38 Criptato</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Inserisci un indirizzo ION che desideri crittografare utilizzando BIP 38. Inserisci una passphrase nella casella centrale. Premi Cripta per calcolare la chiave privata crittografata.</translation>
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Inserisci un indirizzo Ion che desideri crittografare utilizzando BIP 38. Inserisci una passphrase nella casella centrale. Premi Cripta per calcolare la chiave privata crittografata.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Indirizzo:</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>L'indirizzo ION per firmare il messaggio con</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>L'indirizzo Ion per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,7 +279,7 @@
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo ION</translation>
     </message>
     <message>
@@ -303,12 +303,12 @@
         <translation>Immettere la chiave privata codificata BIP 38. Inserire la passphrase nella casella centrale. Fare clic su Decripta Chiave per calcolare la chiave privata. Dopo che la chiave viene decrittata, cliccando su "Importa indirizzo" verrà aggiunta questa chiave privata al portafoglio.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>L'indirizzo ION con cui è stato firmato il messaggio</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>L'indirizzo Ion con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo ION specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Ion specificato </translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -594,7 +594,7 @@
         <translation>Ion Core</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
+        <source>Send coins to a Ion address</source>
         <translation>Invia monete all' indirizzo ION</translation>
     </message>
     <message>
@@ -622,12 +622,12 @@
         <translation>Modifica le opxioni di configuraxione per ION</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
-        <translation>Firma i messaggi con i tuoi indirizzi ION per dimostrare di essere il proprietario </translation>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <translation>Firma i messaggi con i tuoi indirizzi Ion per dimostrare di essere il proprietario </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi ION specifici</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi Ion specifici</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
@@ -646,7 +646,7 @@
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
         <translation>Mostra il messaggio di aiuto Ion Core per ottenere un elenco con le possibili opxioni di riga di comando ION</translation>
     </message>
     <message>
@@ -1144,8 +1144,8 @@ MultiSend: %1</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>L'indirizzo ION per firmare il messaggio con</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>L'indirizzo Ion per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1168,16 +1168,16 @@ MultiSend: %1</translation>
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo ION</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>L'indirizzo ION con cui è stato firmato il messaggio</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>L'indirizzo Ion con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo ION specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Ion specificato </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>

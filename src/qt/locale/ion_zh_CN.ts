@@ -62,11 +62,11 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这是用于发送ION的地址。在发送ION之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这是用于接收ION的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
@@ -239,7 +239,7 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation>输入您要使用BIP 38加密的ION地址。在中间框中输入密码。按加密计算加密私钥。</translation>
     </message>
     <message>
@@ -247,7 +247,7 @@
         <translation>地址：</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>该ION地址签名的消息</translation>
     </message>
     <message>
@@ -279,7 +279,7 @@
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>签署消息以证明您拥有此ION地址</translation>
     </message>
     <message>
@@ -303,11 +303,11 @@
         <translation>输入BIP 38加密私钥。 在中间框中输入密码。 单击解密密钥计算私钥。 密钥解密后，单击“导入地址”将将该私钥添加到钱包中。</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>由ION地址签名的消息</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
         <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
     </message>
     <message>
@@ -602,7 +602,7 @@
         <translation>ION 核心</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
+        <source>Send coins to a Ion address</source>
         <translation>发送数字货币到ION地址</translation>
     </message>
     <message>
@@ -630,11 +630,11 @@
         <translation>修改ION的配置选项</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
         <translation>使用您的ION地址验证消息，以证明您拥有他们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
         <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
     </message>
     <message>
@@ -678,7 +678,7 @@
         <translation>区块浏览窗口</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
         <translation>显示Ion Core帮助信息以获取可能的ION命令行选项的列表</translation>
     </message>
     <message>
@@ -898,7 +898,7 @@ Address: %4
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the ION client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Ion client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动打开路由器上的ION钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
@@ -906,7 +906,7 @@ Address: %4
         <translation>&amp;使用SOCKS5代理（默认代理）</translation>
     </message>
     <message>
-        <source>&amp;Start ION on system login</source>
+        <source>&amp;Start Ion on system login</source>
         <translation>&amp;开机启动ION</translation>
     </message>
     <message>
@@ -1045,7 +1045,7 @@ Address: %4
         <translation>您目前的支出余额</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
         <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与ION网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
@@ -1066,7 +1066,7 @@ Address: %4
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
         <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与ION网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
@@ -1154,11 +1154,11 @@ Address: %4
         <translation>&amp;消息：</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过ION网络发送。</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过ION网络发送。</translation>
     </message>
     <message>
@@ -1294,7 +1294,7 @@ Address: %4
         <translation>消息:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ION network.</source>
+        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ion network.</source>
         <translation>附加到ION：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过ION网络发送。</translation>
     </message>
     <message>
@@ -1320,7 +1320,7 @@ Address: %4
         <translation>您可以使用地址签名消息，以证明您拥有他们。 小心不要签名任何您不了解的，因为网络钓鱼攻击可能会试图欺骗您，以让您签名。 只能签署您熟悉并且了解和同意的。</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
+        <source>The Ion address to sign the message with</source>
         <translation>该ION地址签名的消息</translation>
     </message>
     <message>
@@ -1348,15 +1348,15 @@ Address: %4
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>签署消息以证明您拥有此ION地址</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
+        <source>The Ion address the message was signed with</source>
         <translation>由ION地址签名的消息</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
         <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
     </message>
     <message>

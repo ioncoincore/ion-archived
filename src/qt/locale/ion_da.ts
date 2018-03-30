@@ -62,11 +62,11 @@
         <translation>Modtageradresse</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Dine adresser til at sende betalinger med. Kontroller altid både beløb og modtageradresse før afsendelse.</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Dette er dine modtager adresser. Det anbefales at anvende en ny adresse til hver transaktion</translation>
     </message>
     <message>
@@ -239,16 +239,16 @@
         <translation>BIP 38 kryptografering</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Indtast den ION adresse De ønsker at kryptografere ved hjælp af BIP 38. Indtast et kodeord i den midterste boks. Klik på krypter for at generere den kryptograferede private nøgle.</translation>
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Indtast den Ion adresse De ønsker at kryptografere ved hjælp af BIP 38. Indtast et kodeord i den midterste boks. Klik på krypter for at generere den kryptograferede private nøgle.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>Den ION adresse, der skal bruges til at underskrive beskeden med.</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>Den Ion adresse, der skal bruges til at underskrive beskeden med.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Kopier den aktuelle underskrift til udklipsholderen.</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Underskriv beskeden for at bevise, at De ejer denne ION adresse.</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Underskriv beskeden for at bevise, at De ejer denne Ion adresse.</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>Indtast den krypterede BIP 38 nøgle. Indtast kodeordet i den midterste boks. Klik på dekryptér for at generere den private nøgle. Når nøglen er dekrypteret vil klip på "importér adresse" overføre den private nøgle til tegnebogen.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>Beskeden er underskrevet med denne ION adresse</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>Beskeden er underskrevet med denne Ion adresse</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige ION adresse.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Ion adresse.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -602,12 +602,12 @@
         <translation>ION kerne</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
-        <translation>Send mønter til en ION adresse</translation>
+        <source>Send coins to a Ion address</source>
+        <translation>Send mønter til en Ion adresse</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
-        <translation>Anmod om betaling (genrerer QR kode og ION URL)</translation>
+        <translation>Anmod om betaling (genrerer QR kode og Ion URL)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -619,23 +619,23 @@
     </message>
     <message>
         <source>&amp;About Ion Core</source>
-        <translation>&amp;Om ION kerne</translation>
+        <translation>&amp;Om Ion kerne</translation>
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>Vis information om ION kerne</translation>
+        <translation>Vis information om Ion kerne</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
         <translation>Ret konfigurationsindstillinger for ION</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
-        <translation>Underskriv beskeder med Deres ION adresser for at bekræfte at De ejer dem.</translation>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <translation>Underskriv beskeder med Deres Ion adresser for at bekræfte at De ejer dem.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Verificer besked for at sikre, at den er underskrevet med den opgivne ION adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Verificer besked for at sikre, at den er underskrevet med den opgivne Ion adresse</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -667,7 +667,7 @@
     </message>
     <message>
         <source>Open a ION: URI or payment request</source>
-        <translation>Åbn en ION URl eller betalingsanmodning</translation>
+        <translation>Åbn en Ion URl eller betalingsanmodning</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -678,8 +678,8 @@
         <translation>Blockexplorer vindue</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
-        <translation>Vis hjelpetekster fra ION kernen for at få en liste med mulige ION kommandolinie-startparametre</translation>
+        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
+        <translation>Vis hjelpetekster fra Ion kernen for at få en liste med mulige Ion kommandolinie-startparametre</translation>
     </message>
     <message>
         <source>Ion Core client</source>
@@ -1102,8 +1102,8 @@ Adresse: %4
         <translation>Ret afsenderadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ION address.</source>
-        <translation>Den indtastede adresse %1 er ikke en gyldig ION adresse</translation>
+        <source>The entered address "%1" is not a valid Ion address.</source>
+        <translation>Den indtastede adresse %1 er ikke en gyldig Ion adresse</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1157,7 +1157,7 @@ Adresse: %4
     </message>
     <message>
         <source>About Ion Core</source>
-        <translation>om ION kerne</translation>
+        <translation>om Ion kerne</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1204,15 +1204,15 @@ Adresse: %4
     </message>
     <message>
         <source>Welcome to Ion Core.</source>
-        <translation>Velkommen til ION kerne</translation>
+        <translation>Velkommen til Ion kerne</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Ion Core will store its data.</source>
-        <translation>Da det er første gang programmet startes, kan De vælge hvor ION kernen skal lagre sine data</translation>
+        <translation>Da det er første gang programmet startes, kan De vælge hvor Ion kernen skal lagre sine data</translation>
     </message>
     <message>
-        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>ION kernen vil nu hente og gemme en kopi af ION blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
+        <source>Ion Core will download and store a copy of the Ion block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ION kernen vil nu hente og gemme en kopi af Ion blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1365,12 +1365,12 @@ Adresse: %4
         <translation>Indtast modtageradresse</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ION addresses after it matures.
-To Add: enter percentage to give and ION address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Ion addresses after it matures.
+To Add: enter percentage to give and Ion address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre ION adressater når den er tilstrækkelig stor. 
-For at tilføje: Indtast procentsatsen De ønsker at overføre samt den ION adresse som skal modtage via Multisendsystemet. 
+        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre Ion adressater når den er tilstrækkelig stor. 
+For at tilføje: Indtast procentsatsen De ønsker at overføre samt den Ion adresse som skal modtage via Multisendsystemet. 
 For at fjerne: Indtast adressen som skal slettes og klik på slet. 
 Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
     </message>
@@ -1520,20 +1520,20 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Brug 16 separate masternoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
-        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 ION for at anonymiser 10000 ION</translation>
+        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
+        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 Ion for at anonymiser 10000 ION</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</source>
-        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 ION for at anonymiser 10000 ION</translation>
+        <source>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</source>
+        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 Ion for at anonymiser 10000 ION</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Denne mulighed er den langsomste og det mest sikre valg. Valg af maksimal tilsløring vil koste</translation>
     </message>
     <message>
-        <source>0.1 ION per 10000 ION you anonymize.</source>
-        <translation>0.1 pr 10000 ION for at tilsløre.</translation>
+        <source>0.1 Ion per 10000 Ion you anonymize.</source>
+        <translation>0.1 pr 10000 Ion for at tilsløre.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1541,15 +1541,15 @@ Kontroller adressen og prøv igen.</translation>
     </message>
     <message>
         <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
+        <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
     </message>
     <message>
         <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
+        <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
     </message>
     <message>
         <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
+        <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
     </message>
 </context>
 <context>
@@ -1610,8 +1610,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Hvis De slår "brug af ubekræftede penge tilbage" vil penge tilbage &lt;br/&gt; ikke kunne benyttes før transaktionen er bekræftet mindst en gang. &lt;br/&gt;Dette har også indflydelse på opgørelsen af saldoen.</translation>
     </message>
     <message>
-        <source>Automatically open the ION client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åbn ION klientporten på ruteren automatisk. Virker kun hvis UPnP er slået til i ruteren. </translation>
+        <source>Automatically open the Ion client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åbn Ion klientporten på ruteren automatisk. Virker kun hvis UPnP er slået til i ruteren. </translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1630,12 +1630,12 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically start ION after logging in to the system.</source>
-        <translation>Start ION automatisk, når der logges på systemet</translation>
+        <source>Automatically start Ion after logging in to the system.</source>
+        <translation>Start Ion automatisk, når der logges på systemet</translation>
     </message>
     <message>
-        <source>&amp;Start ION on system login</source>
-        <translation>&amp;start ION når der logges på systemet</translation>
+        <source>&amp;Start Ion on system login</source>
+        <translation>&amp;start Ion når der logges på systemet</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1663,7 +1663,7 @@ Kontroller adressen og prøv igen.</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting ION.</source>
-        <translation>Vælg sprog her. Ændringerne træder i kraft næste gang ION klienten startes</translation>
+        <translation>Vælg sprog her. Ændringerne træder i kraft næste gang Ion klienten startes</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1676,8 +1676,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>MAP port ved hjælp af UPnP</translation>
     </message>
     <message>
-        <source>Connect to the ION network through a SOCKS5 proxy.</source>
-        <translation>Tilslut ION netværket gennem en SOCKS5 PROXY</translation>
+        <source>Connect to the Ion network through a SOCKS5 proxy.</source>
+        <translation>Tilslut Ion netværket gennem en SOCKS5 PROXY</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1827,8 +1827,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Indskyder- eller masternodebelønning er stadig under behandling</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med ION netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med Ion netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1895,10 +1895,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     </message>
     <message>
         <source>Cannot start ion: click-to-pay handler</source>
-        <translation>Kan ikke starte ION "klik for at betale" systemet</translation>
+        <translation>Kan ikke starte Ion "klik for at betale" systemet</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid ION address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Ion address or malformed URI parameters.</source>
         <translation>URl kan ikke fortolkes! Det kan skyldes en ugyldig adresse, eller forkerte URl parametre.</translation>
     </message>
     <message>
@@ -1980,8 +1980,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med ION netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med Ion netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
     </message>
     <message>
         <source>0</source>
@@ -2099,8 +2099,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Beløb</translation>
     </message>
     <message>
-        <source>Enter a ION address (e.g. %1)</source>
-        <translation>Indtast en ION adresse (F.eks. %1)</translation>
+        <source>Enter a Ion address (e.g. %1)</source>
+        <translation>Indtast en Ion adresse (F.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2233,8 +2233,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the ION debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Åbn ION debug logfilen fra den aktuelle datamappe. Det kan godt tage lidt tid hvis filen er meget stor.</translation>
+        <source>Open the Ion debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Åbn Ion debug logfilen fra den aktuelle datamappe. Det kan godt tage lidt tid hvis filen er meget stor.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2401,8 +2401,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Ud:</translation>
     </message>
     <message>
-        <source>Welcome to the ION RPC console.</source>
-        <translation>Velkommen til ION RPC konsollet</translation>
+        <source>Welcome to the Ion RPC console.</source>
+        <translation>Velkommen til Ion RPC konsollet</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2472,12 +2472,12 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Valgfri opmærkning som tilknyttes den nye modtageradresse.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
-        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på ION netværket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
+        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på Ion netværket.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
-        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. &lt;br&gt;Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på ION netværket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
+        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. &lt;br&gt;Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på Ion netværket.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2753,7 +2753,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uIONs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uION i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uIONs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ION transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Ion transactions than the network can process.</source>
         <translation>Betaling af mindste transaktionsgebyr vil være fint så længe der er færre transaktioner end der er plads til i blokkene. &lt;br /&gt; Men opmærksomheden henledes på, at det kan resultere i en transaktion der aldrig bliver bekræftet i det øjeblik der er større behov for transaktioner end netværket har plads til. </translation>
     </message>
     <message>
@@ -2857,8 +2857,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Anonyme saldi</translation>
     </message>
     <message>
-        <source>Warning: Invalid ION address</source>
-        <translation>Advarsel! Ugyldig ION adresse</translation>
+        <source>Warning: Invalid Ion address</source>
+        <translation>Advarsel! Ugyldig Ion adresse</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
@@ -2956,7 +2956,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Betal &amp;Til</translation>
     </message>
     <message>
-        <source>The ION address to send the payment to</source>
+        <source>The Ion address to send the payment to</source>
         <translation>ION adressen, som betalingen skal sendes til</translation>
     </message>
     <message>
@@ -2996,7 +2996,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Besked</translation>
     </message>
     <message>
-        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ION network.</source>
+        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ion network.</source>
         <translation>En besked, der var vedhæftet til ION: URl wil blive gemt sammen med transaktionen som reference. Note: Beskeden bliver medsendt transaktionen over netværket.</translation>
     </message>
     <message>
@@ -3046,8 +3046,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>De kan underskrive beskeder med Deres adresser or at bevise ejerskab. Vær forsigtig med at underskrive noget De er usikker på såsom forsøg op at narre Dem til at oplyse Deres identitet. Skriv kun under på noget De kan stå inde for, og som De er enig i. </translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>Den ION adresse, der skal bruges til at underskrive beskeden med.</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>Den Ion adresse, der skal bruges til at underskrive beskeden med.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3078,16 +3078,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Kopier den aktuelle underskrift til udklipsholderen.</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
-        <translation>Underskriv beskeden for at bevise, at De ejer denne ION adresse.</translation>
+        <source>Sign the message to prove you own this Ion address</source>
+        <translation>Underskriv beskeden for at bevise, at De ejer denne Ion adresse.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>Beskeden er underskrevet med denne ION adresse</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>Beskeden er underskrevet med denne Ion adresse</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige ION adresse.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Ion adresse.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3818,8 +3818,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Slet alle tegnebogens transaktioner og genskab kun fra blokkæden ved at tilføje -rescan i forbindes med opstart.</translation>
     </message>
     <message>
-        <source>Disable all ION specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Slå alle ION funktioner fra (Masternoder, Tilsløring, SwiftTX, Budgetting)(0-1,default:%u)</translation>
+        <source>Disable all Ion specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Slå alle Ion funktioner fra (Masternoder, Tilsløring, SwiftTX, Budgetting)(0-1,default:%u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3988,7 +3988,7 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     </message>
     <message>
         <source>Unable to bind to %s on this computer. Ion Core is probably already running.</source>
-        <translation>Det var ikke muligt at forbinde %s på denne computer. ION kører sandsynligvis allerede.</translation>
+        <translation>Det var ikke muligt at forbinde %s på denne computer. Ion kører sandsynligvis allerede.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>

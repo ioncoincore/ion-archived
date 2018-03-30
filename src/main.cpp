@@ -2129,7 +2129,7 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight >= 2 && nHeight <= 125146) {
         return 23 * COIN;
     /** cevap
-     * info: DGW startheight, we will let make 0 reward + 0.01 ION fee for 1 day (1440 blocks)
+     * info: DGW startheight, we will let make 0 reward + 0.01 Ion fee for 1 day (1440 blocks)
      * Current block: 541267
      */
     } else if (nHeight > 125146 && nHeight <= Params().DGWStartHeight()) {
@@ -3054,7 +3054,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         return true;
     }
 
-/** FornaxA: ION accepts PoS during PoW phase 
+/** FornaxA: Ion accepts PoS during PoW phase 
  *
  *   if (pindex->nHeight <= Params().LAST_POW_BLOCK() && block.IsProofOfStake())
  *       return state.DoS(100, error("ConnectBlock() : PoS period not active"),
@@ -3403,7 +3403,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert ION to xION
+    // If turned on AutoZeromint will automatically convert Ion to xION
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 

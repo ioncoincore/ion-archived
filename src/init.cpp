@@ -373,7 +373,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #endif
     strUsage += HelpMessageOpt("-reindex", _("Rebuild block chain index from current blk000??.dat files") + " " + _("on startup"));
     strUsage += HelpMessageOpt("-reindexaccumulators", _("Reindex the accumulator database") + " " + _("on startup"));
-    strUsage += HelpMessageOpt("-reindexmoneysupply", _("Reindex the ION and xION money supply statistics") + " " + _("on startup"));
+    strUsage += HelpMessageOpt("-reindexmoneysupply", _("Reindex the Ion and xION money supply statistics") + " " + _("on startup"));
     strUsage += HelpMessageOpt("-resync", _("Delete blockchain folders and resync from scratch") + " " + _("on startup"));
 #if !defined(WIN32)
     strUsage += HelpMessageOpt("-sysperms", _("Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)"));
@@ -501,7 +501,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", _("Shrink debug.log file on client startup (default: 1 when no -debug)"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
-    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all ION specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all Ion specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)"), 0));
 
 #ifdef ENABLE_WALLET
     strUsage += HelpMessageGroup(_("Staking options:"));
@@ -527,7 +527,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"), 0));
     strUsage += HelpMessageOpt("-backupxion=<n>", strprintf(_("Enable automatic wallet backups triggered after each xION minting (0-1, default: %u)"), 1));
 
-//    strUsage += "  -anonymizeionamount=<n>     " + strprintf(_("Keep N ION anonymized (default: %u)"), 0) + "\n";
+//    strUsage += "  -anonymizeionamount=<n>     " + strprintf(_("Keep N Ion anonymized (default: %u)"), 0) + "\n";
 //    strUsage += "  -liquidityprovider=<n>       " + strprintf(_("Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)"), 0) + "\n";
 
     strUsage += HelpMessageGroup(_("SwiftX options:"));
@@ -640,7 +640,7 @@ void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 
     // hardcoded $DATADIR/bootstrap.dat
     filesystem::path pathBootstrap = GetDataDir() / "bootstrap.dat";
-    // import old ION block file $DATADIR/blk0001.dat
+    // import old Ion block file $DATADIR/blk0001.dat
     filesystem::path pathBlk0001 = GetDataDir() / "blk0001.dat";
     if (filesystem::exists(pathBootstrap)) {
         FILE* file = fopen(pathBootstrap.string().c_str(), "rb");
@@ -685,7 +685,7 @@ void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 }
 
 /** Sanity checks
- *  Ensure that ION is running in a usable environment with all
+ *  Ensure that Ion is running in a usable environment with all
  *  necessary library support.
  */
 bool InitSanityCheck(void)
@@ -995,7 +995,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (strWalletFile != boost::filesystem::basename(strWalletFile) + boost::filesystem::extension(strWalletFile))
         return InitError(strprintf(_("Wallet %s resides outside data directory %s"), strWalletFile, strDataDir));
 #endif
-    // Make sure only a single ION process is using the data directory.
+    // Make sure only a single Ion process is using the data directory.
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -1814,7 +1814,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
-    LogPrintf("Anonymize ION Amount %d\n", nAnonymizeIONAmount);
+    LogPrintf("Anonymize Ion Amount %d\n", nAnonymizeIONAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     /* Denominations

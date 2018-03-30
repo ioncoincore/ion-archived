@@ -64,7 +64,7 @@ We reached several goals. Instead of pursuing these goals using the old code bas
 ### Our sources: 
 We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's specific features into the PivX codebase.
 
-By doing so, we connect to an enthusiastic and active community - leaving behind old ION code that inherits from less actively developed and maintaned code. Our main sources are now derived from:
+By doing so, we connect to an enthusiastic and active community - leaving behind old Ion code that inherits from less actively developed and maintaned code. Our main sources are now derived from:
 
   1. [PIVX](https://github.com/PIVX-Project/PIVX)
   1. [DASH](https://github.com/dashpay/dash)
@@ -83,7 +83,7 @@ More information at [ionomy.com](https://www.ionomy.com) Visit our ANN thread at
 <tr><td>Premine</td><td>16,400,000 ION*</td></tr>
 </table>
 
-*16,629,951 ION Premine was burned in block [1](https://chainz.cryptoid.info/ion/block.dws?000000ed2f68cd6c7935831cc1d473da7c6decdb87e8b5dba0afff0b00002690.htm)
+*16,629,951 Ion Premine was burned in block [1](https://chainz.cryptoid.info/ion/block.dws?000000ed2f68cd6c7935831cc1d473da7c6decdb87e8b5dba0afff0b00002690.htm)
 
 ### Reward Distribution
 

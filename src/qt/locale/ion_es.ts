@@ -62,12 +62,12 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones ION para realizar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar monedas.</translation>
+        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones Ion para realizar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar monedas.</translation>
     </message>
     <message>
-        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones ION para recibir pagos. Es recomendable usar una nueva dirección de recepción para cada transacción.</translation>
+        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones Ion para recibir pagos. Es recomendable usar una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -239,16 +239,16 @@
         <translation>&amp;Cifrado BIP 38</translation>
     </message>
     <message>
-        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Introduzca la dirección ION que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
+        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Introduzca la dirección Ion que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Dirección:</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>La dirección ION con la que desee firmar el mensaje</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>La dirección Ion con la que desee firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,7 +279,7 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección ION</translation>
     </message>
     <message>
@@ -303,12 +303,12 @@
         <translation>Introduzca la clave cifrada privada BIP 38. Introduzca la contraseña en el campo central. Haga clic en descifrar clave para generar la clave privada. Después de que la clave sea descifrada, pulsando en 'Importar dirección' añadirá esta clave privada al monedero.</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>La dirección ION con la que se firmó el mensaje</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>La dirección Ion con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección ION especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección Ion especificada</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -606,7 +606,7 @@
         <translation>Núcleo ION</translation>
     </message>
     <message>
-        <source>Send coins to a ION address</source>
+        <source>Send coins to a Ion address</source>
         <translation>Enviar coins a una dirección ION</translation>
     </message>
     <message>
@@ -642,12 +642,12 @@
         <translation>Modificar las opciones de configuración de ION</translation>
     </message>
     <message>
-        <source>Sign messages with your ION addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones ION para demostrar que le pertenecen</translation>
+        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones Ion para demostrar que le pertenecen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified ION addresses</source>
-        <translation>Verificar mensajes para asegurar que están firmados con la dirección ION especificada</translation>
+        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <translation>Verificar mensajes para asegurar que están firmados con la dirección Ion especificada</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -690,7 +690,7 @@
         <translation>Ventana del explorador de bloques</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
         <translation>Mostrar la ayuda de Ion Core para obtener una lista de posibles opciones en línea de comandos</translation>
     </message>
     <message>
@@ -1122,8 +1122,8 @@ MultiEnvío: %1</translation>
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid ION address.</source>
-        <translation>La dirección introducida "%1" no es una dirección ION válida.</translation>
+        <source>The entered address "%1" is not a valid Ion address.</source>
+        <translation>La dirección introducida "%1" no es una dirección Ion válida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1231,7 +1231,7 @@ MultiEnvío: %1</translation>
         <translation>Al ser la primera vez que se inicia el programa, usted puede elegir dónde guardará Ion Core sus datos.</translation>
     </message>
     <message>
-        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>Ion Core will download and store a copy of the Ion block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>Ion Core descargará y guardará una copia de la cadena de bloques ION. Por lo menos %1GB de datos serán guardados en esta carpeta, y crecerá con el tiempo. El monedero también se guardará en esta carpeta.</translation>
     </message>
     <message>
@@ -1385,12 +1385,12 @@ MultiEnvío: %1</translation>
         <translation>Introduzca Dirección a la cual Enviar</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ION addresses after it matures.
-To Add: enter percentage to give and ION address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Ion addresses after it matures.
+To Add: enter percentage to give and Ion address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiEnvío le permite enviar automáticamente hasta el 100% de recompensa de participación o de nodo maestro a una lista de otras direcciones ION después de su maduración.
-Para Añadir: introduzca porcentaje a enviar y las direcciones ION a añadir al vector MultiEnvío.
+        <translation>MultiEnvío le permite enviar automáticamente hasta el 100% de recompensa de participación o de nodo maestro a una lista de otras direcciones Ion después de su maduración.
+Para Añadir: introduzca porcentaje a enviar y las direcciones Ion a añadir al vector MultiEnvío.
 Para Eliminar: Introduzca la dirección a eliminar y pulse la tecla delete.
 MultiEnvío no se activará a menos que haga usted click en Activar</translation>
     </message>
@@ -1540,20 +1540,20 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Use 16 nodos maestros diferentes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
-        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 ION para anonimizar 10000 ION</translation>
+        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
+        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 Ion para anonimizar 10000 ION</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</source>
-        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 ION para anonimizar 10000 ION.</translation>
+        <source>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</source>
+        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 Ion para anonimizar 10000 ION.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Esta es la opción más lenta pero más segura. Usar el máximo anonimato costará</translation>
     </message>
     <message>
-        <source>0.1 ION per 10000 ION you anonymize.</source>
-        <translation>0.1 ION por 10000 ION que anonimizas.</translation>
+        <source>0.1 Ion per 10000 Ion you anonymize.</source>
+        <translation>0.1 Ion por 10000 Ion que anonimizas.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1630,8 +1630,8 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Si deselecciona el gasto de cambio no confirmado, las entradas de una transacción&lt;br/&gt;no podrán ser usadas hasta que esa transacción tenga al menos una confirmación.&lt;br/&gt;Esto también afecta a cómo se calcula su balance actual.</translation>
     </message>
     <message>
-        <source>Automatically open the ION client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente ION en el enrutador. Ésto sólo funciona si su enrutador soporta UPnP y esta función está activada.</translation>
+        <source>Automatically open the Ion client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente Ion en el enrutador. Ésto sólo funciona si su enrutador soporta UPnP y esta función está activada.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1650,12 +1650,12 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically start ION after logging in to the system.</source>
-        <translation>Arrancar ION automáticamente después de identificarse en Windows.</translation>
+        <source>Automatically start Ion after logging in to the system.</source>
+        <translation>Arrancar Ion automáticamente después de identificarse en Windows.</translation>
     </message>
     <message>
-        <source>&amp;Start ION on system login</source>
-        <translation>&amp;Arrancar ION al inicio del sistema</translation>
+        <source>&amp;Start Ion on system login</source>
+        <translation>&amp;Arrancar Ion al inicio del sistema</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1696,7 +1696,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Mapear un puerto utilizando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming ION which get automatically converted to xION via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming Ion which get automatically converted to xION via Zerocoin Protocol (min: 10%)</source>
         <translation>Porcentaje de IONs entrantes que serán automáticamente convertidos a xION a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
@@ -1704,12 +1704,12 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Porcentaje de xION autogenerados</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough ION for this denomination is available</source>
-        <translation>Retrasar la conversión automática a Zerocoin hasta que hayan suficientes ION disponibles para esta denominación</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough Ion for this denomination is available</source>
+        <translation>Retrasar la conversión automática a Zerocoin hasta que hayan suficientes Ion disponibles para esta denominación</translation>
     </message>
     <message>
-        <source>Connect to the ION network through a SOCKS5 proxy.</source>
-        <translation>Conectar a la red ION mediante un proxy SOCKS5.</translation>
+        <source>Connect to the Ion network through a SOCKS5 proxy.</source>
+        <translation>Conectar a la red Ion mediante un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1867,8 +1867,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Recompensa de participación o de nodo maestro que aún no ha madurado</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red ION después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Ion después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1938,8 +1938,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>No se puede iniciar ion: módulo click-to-pay</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid ION address or malformed URI parameters.</source>
-        <translation>¡El identificador de la dirección no puede ser analizado! Esto puede ser causado por una dirección ION inválida o parámetros del identificador malformados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Ion address or malformed URI parameters.</source>
+        <translation>¡El identificador de la dirección no puede ser analizado! Esto puede ser causado por una dirección Ion inválida o parámetros del identificador malformados.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2020,8 +2020,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red ION después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Ion después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>0</source>
@@ -2139,8 +2139,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a ION address (e.g. %1)</source>
-        <translation>Introduzca una dirección ION (p.e. %1)</translation>
+        <source>Enter a Ion address (e.g. %1)</source>
+        <translation>Introduzca una dirección Ion (p.e. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2273,8 +2273,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Cadena de bloques</translation>
     </message>
     <message>
-        <source>Open the ION debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Abrir el fichero de depuración ION en el directorio actual de datos. Esto puede llevar unos segundos para ficheros de depuración grandes.</translation>
+        <source>Open the Ion debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Abrir el fichero de depuración Ion en el directorio actual de datos. Esto puede llevar unos segundos para ficheros de depuración grandes.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2441,7 +2441,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Fuera:</translation>
     </message>
     <message>
-        <source>Welcome to the ION RPC console.</source>
+        <source>Welcome to the Ion RPC console.</source>
         <translation>Bienvenido a la consola RPC de ION.</translation>
     </message>
     <message>
@@ -2512,11 +2512,11 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Una etiqueta opcional a asociar con la nueva dirección de recepción.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
         <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red ION.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
         <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. &lt;br&gt;Nota: El mensaje no se envía junto al pago por la red ION.</translation>
     </message>
     <message>
@@ -2793,8 +2793,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Si la comisión personalizada se fija en 1000 uIONs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uIONs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uIONs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ION transactions than the network can process.</source>
-        <translation>Pagar sólo la comisión mínima está bien mientras haya menos volumen de transacciones que espacio en los bloques.&lt;br/&gt;Pero tenga en cuenta que esto podría acabar en una transacción que nunca se confirme si hay más demanda de transacciones ION de las que la red puede procesar.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Ion transactions than the network can process.</source>
+        <translation>Pagar sólo la comisión mínima está bien mientras haya menos volumen de transacciones que espacio en los bloques.&lt;br/&gt;Pero tenga en cuenta que esto podría acabar en una transacción que nunca se confirme si hay más demanda de transacciones Ion de las que la red puede procesar.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -2897,8 +2897,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>fondos anónimos</translation>
     </message>
     <message>
-        <source>Warning: Invalid ION address</source>
-        <translation>Advertencia: Direcciones ION inválidas</translation>
+        <source>Warning: Invalid Ion address</source>
+        <translation>Advertencia: Direcciones Ion inválidas</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
@@ -2996,8 +2996,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Pagar &amp;A:</translation>
     </message>
     <message>
-        <source>The ION address to send the payment to</source>
-        <translation>La dirección ION a la cual enviar el pago</translation>
+        <source>The Ion address to send the payment to</source>
+        <translation>La dirección Ion a la cual enviar el pago</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3036,7 +3036,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ION network.</source>
+        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ion network.</source>
         <translation>Un mensaje adjunto al ION: En recurso web especificado será guardado junto a la transacción para su referencia. Nota: Este mensaje no se enviará por la red ION.</translation>
     </message>
     <message>
@@ -3064,7 +3064,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <name>ShutdownWindow</name>
     <message>
         <source>Ion Core is shutting down...</source>
-        <translation>El programa ION se está cerrando...</translation>
+        <translation>El programa Ion se está cerrando...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3086,8 +3086,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Usted puede firmar mensajes con su dirección para probar que son auténticos. Tenga cuidado con firmar algo corto o vago como "hola", pues los ataques de phising pueden engañarle para que firme su identidad para ellos. Sólo firme textos detallados con los que esté de acuerdo.</translation>
     </message>
     <message>
-        <source>The ION address to sign the message with</source>
-        <translation>La dirección ION con la que desee firmar el mensaje</translation>
+        <source>The Ion address to sign the message with</source>
+        <translation>La dirección Ion con la que desee firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3118,16 +3118,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this ION address</source>
+        <source>Sign the message to prove you own this Ion address</source>
         <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección ION</translation>
     </message>
     <message>
-        <source>The ION address the message was signed with</source>
-        <translation>La dirección ION con la que se firmó el mensaje</translation>
+        <source>The Ion address the message was signed with</source>
+        <translation>La dirección Ion con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified ION address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección ION especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección Ion especificada</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3858,8 +3858,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
-        <source>Disable all ION specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica ION (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Disable all Ion specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica Ion (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>

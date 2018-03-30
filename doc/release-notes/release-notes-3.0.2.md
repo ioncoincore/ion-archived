@@ -133,7 +133,7 @@ Due to the aforementioned issue with xION spending, users may find that their at
 
 RPC Changes
 ---------------------
-The `bip38decrypt` command has had it's parameter order changed to be more consistent with it's counterpart. The command now expects the ION address as it's first parameter and the passphrase as it's second parameter.
+The `bip38decrypt` command has had it's parameter order changed to be more consistent with it's counterpart. The command now expects the Ion address as it's first parameter and the passphrase as it's second parameter.
 
 Bip38 Compatibility With 3rd Party Tools
 ---------------------

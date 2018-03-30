@@ -44,7 +44,7 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** ION unit definitions. Encapsulates parsing and formatting
+/** Ion unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
 class BitcoinUnits : public QAbstractListModel
@@ -54,7 +54,7 @@ class BitcoinUnits : public QAbstractListModel
 public:
     explicit BitcoinUnits(QObject* parent);
 
-    /** ION units.
+    /** Ion units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit {

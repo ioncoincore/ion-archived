@@ -10,7 +10,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between ion-cli and iond)
- * of a given instance of the ION system.
+ * of a given instance of the Ion system.
  */
 class CBaseChainParams
 {

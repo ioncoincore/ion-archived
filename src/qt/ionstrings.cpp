@@ -50,7 +50,7 @@ QT_TRANSLATE_NOOP("ion-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("ion-core", ""
-"Disable all ION specific functionality (Masternodes, Zerocoin, SwiftX, "
+"Disable all Ion specific functionality (Masternodes, Zerocoin, SwiftX, "
 "Budgeting) (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("ion-core", ""
 "Distributed under the MIT software license, see the accompanying file "
