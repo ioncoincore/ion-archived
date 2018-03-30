@@ -654,6 +654,7 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFromLoadWallet)
         if (fInsertedNew) {
             wtx.nTimeReceived = GetAdjustedTime();
             wtx.nOrderPos = IncOrderPosNext();
+            wtxOrdered.insert(std::make_pair(wtx.nOrderPos, TxPair(&wtx, nullptr)));
             wtx.nTimeSmart = ComputeTimeSmart(wtx);
             AddToSpends(hash);
         }
