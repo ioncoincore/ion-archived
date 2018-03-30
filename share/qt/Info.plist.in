@@ -29,10 +29,10 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>ION-Qt</string>
+  <string>Ion-Qt</string>
   
   <key>CFBundleName</key>
-  <string>ION-Qt</string>
+  <string>Ion-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
