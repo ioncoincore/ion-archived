@@ -15,7 +15,7 @@ static const struct {
     const char* titleAddText;
     const char* splashImage;
 } network_styles[] = {
-    {"main", QAPP_APP_NAME_DEFAULT, ":/icons/bitcoin", "", ":/images/splash"},
+    {"main", QAPP_APP_NAME_DEFAULT, ":/icons/ion", "", ":/images/splash"},
     {"test", QAPP_APP_NAME_TESTNET, ":/icons/ion_testnet", QT_TRANSLATE_NOOP("SplashScreen", "[testnet]"), ":/images/splash_testnet"},
     {"regtest", QAPP_APP_NAME_TESTNET, ":/icons/ion_regtest", "[regtest]", ":/images/splash_regtest"},
     {"unittest", QAPP_APP_NAME_TESTNET, ":/icons/ion_unittest", "[unittest]", ":/images/splash_unittest"}};
