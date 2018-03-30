@@ -16,16 +16,16 @@
    width="480"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="splash.svg"
-   inkscape:export-filename="/home/tor/go/src/github.com/temp/ion_actuall/src/qt/res/images/splash_unittest.png"
-   inkscape:export-xdpi="94.875"
-   inkscape:export-ydpi="94.875">
+   sodipodi:docname="splash_regtest.svg"
+   inkscape:export-filename="/home/tor/go/src/github.com/temp/ion_actuall/src/qt/res/images/splash_regtest.png"
+   inkscape:export-xdpi="94.909088"
+   inkscape:export-ydpi="94.909088">
   <defs
      id="defs7">
     <filter
        inkscape:menu-tooltip="Two types of lighting emboss effect"
        inkscape:menu="Bumps"
-       inkscape:label="Basic Two Lights Bump"
+       inkscape:label="Invert"
        style="color-interpolation-filters:sRGB;"
        id="filter3833"
        x="-0.3"
@@ -169,25 +169,41 @@
            elevation="20" />
       </feDiffuseLighting>
       <feComposite
-         id="feComposite3822"
          in2="result10"
+         id="feComposite3822"
          result="result11"
          operator="arithmetic"
          k2="0.5"
          k3="0.5" />
       <feComposite
-         id="feComposite3824"
          in2="fbSourceGraphic"
+         id="feComposite3824"
          in="result11"
          result="result9"
          operator="arithmetic"
          k2="1"
          k3="1" />
       <feComposite
-         id="feComposite3826"
          in2="fbSourceGraphic"
+         id="feComposite3826"
          operator="in"
-         in="result9" />
+         in="result9"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4398" />
+      <feColorMatrix
+         id="feColorMatrix4400"
+         type="hueRotate"
+         values="180"
+         result="color1"
+         in="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix4402"
+         values="1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="color2" />
     </filter>
   </defs>
   <sodipodi:namedview

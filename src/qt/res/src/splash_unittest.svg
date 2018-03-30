@@ -16,7 +16,7 @@
    width="480"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="splash.svg"
+   sodipodi:docname="splash_unittest.svg"
    inkscape:export-filename="/home/tor/go/src/github.com/temp/ion_actuall/src/qt/res/images/splash_unittest.png"
    inkscape:export-xdpi="94.875"
    inkscape:export-ydpi="94.875">
@@ -25,7 +25,7 @@
     <filter
        inkscape:menu-tooltip="Two types of lighting emboss effect"
        inkscape:menu="Bumps"
-       inkscape:label="Basic Two Lights Bump"
+       inkscape:label="Invert"
        style="color-interpolation-filters:sRGB;"
        id="filter3833"
        x="-0.3"
@@ -187,7 +187,23 @@
          id="feComposite3826"
          in2="fbSourceGraphic"
          operator="in"
-         in="result9" />
+         in="result9"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4254" />
+      <feColorMatrix
+         id="feColorMatrix4256"
+         type="hueRotate"
+         values="180"
+         result="color1"
+         in="fbSourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix4258"
+         values="0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="color2" />
     </filter>
   </defs>
   <sodipodi:namedview
