@@ -205,6 +205,10 @@ RES_ICONS = \
   qt/res/icons/ion.png \
   qt/res/icons/ion_testnet.ico \
   qt/res/icons/ion_testnet.png \
+  qt/res/icons/ion_regtest.ico \
+  qt/res/icons/ion_regtest.png \
+  qt/res/icons/ion_unittest.ico \
+  qt/res/icons/ion_unittest.png \
   qt/res/icons/browse.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
