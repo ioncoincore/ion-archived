@@ -22,7 +22,7 @@ apps:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7]
     aliases: [ion-qt]
-    desktop: ion.desktop.desktop
+    desktop: ion.desktop.desktop,ion-reindex.desktop.desktop,ion-testnet-reindex.desktop.desktop,ion-resync.desktop.desktop,ion-testnet-resync.desktop.desktop,ion-testnet.desktop.desktop,iond-reindex.desktop.desktop,iond-testnet-reindex.desktop.desktop,iond-resync.desktop.desktop,iond-testnet-resync.desktop.desktop
   cli:
     command: ion-cli
     aliases: [ion-cli]
