@@ -1,5 +1,5 @@
 Contents
-===========
+========
 This directory contains tools for developers working on this repository.
 
 check-doc.py
@@ -7,6 +7,20 @@ check-doc.py
 
 Check if all command line args are documented. The return value indicates the
 number of undocumented args.
+
+gen-manpages.sh
+===============
+
+A small script to automatically create manpages in ../../doc/man by running the release binaries with the -help option.
+This requires help2man which can be found at: https://www.gnu.org/software/help2man/
+
+With in-tree builds this tool can be run from any directory within the
+repostitory. To use this tool with out-of-tree builds set `BUILDDIR`. For
+example:
+
+```bash
+BUILDDIR=$PWD/build contrib/devtools/gen-manpages.sh
+```
 
 github-merge.py
 ===============
