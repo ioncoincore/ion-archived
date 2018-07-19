@@ -34,6 +34,7 @@
 #include "masternodelist.h"
 #include "ui_interface.h"
 #include "util.h"
+#include "proposallist.h"
 
 #include <iostream>
 
@@ -99,6 +100,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
                                                                             openAction(0),
                                                                             showHelpMessageAction(0),
                                                                             multiSendAction(0),
+                                                                            proposalAction(0),
                                                                             trayIcon(0),
                                                                             trayIconMenu(0),
                                                                             notificator(0),
@@ -383,6 +385,17 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
 #endif // ENABLE_WALLET
 
+    proposalAction = new QAction(QIcon(":/icons/proposal"), tr("&Proposals"), this);
+    proposalAction->setStatusTip(tr("Browse proposals"));
+    proposalAction->setToolTip(proposalAction->statusTip());
+    proposalAction->setCheckable(true);
+#ifdef Q_OS_MAC
+        proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
+#else
+        proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+#endif
+    tabGroup->addAction(proposalAction);
+
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setStatusTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
@@ -456,6 +469,9 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     showHelpMessageAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
     showHelpMessageAction->setStatusTip(tr("Show the Ion Core help message to get a list with possible ION command-line options"));
+
+    connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -566,6 +582,7 @@ void BitcoinGUI::createToolBars()
         if (settings.value("fShowMasternodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
         }
+        toolbar->addAction(proposalAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         toolbar->setOrientation(Qt::Vertical);
         toolbar->setIconSize(QSize(40,40));
@@ -670,6 +687,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeAction->setEnabled(enabled);
     }
+    proposalAction->setEnabled(enabled);
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
@@ -827,6 +845,12 @@ void BitcoinGUI::gotoSendCoinsPage(QString addr)
 {
     sendCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
+}
+
+void BitcoinGUI::gotoProposalPage()
+{
+    proposalAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoProposalPage();
 }
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)

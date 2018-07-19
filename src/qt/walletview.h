@@ -4,12 +4,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_WALLETVIEW_H
-#define BITCOIN_QT_WALLETVIEW_H
+#ifndef ION_QT_WALLETVIEW_H
+#define ION_QT_WALLETVIEW_H
 
 #include "amount.h"
 #include "askpassphrasedialog.h"
 #include "masternodelist.h"
+#include "proposallist.h"
 
 #include <QStackedWidget>
 #include <ui_interface.h>
@@ -71,8 +72,10 @@ private:
     SendCoinsDialog* sendCoinsPage;
     BlockExplorer* explorerWindow;
     MasternodeList* masternodeListPage;
+    QWidget* proposalListPage;
 
     TransactionView* transactionView;
+    ProposalList* proposalList;
 
     QProgressDialog* progressDialog;
     QLabel* transactionSum;
@@ -88,6 +91,8 @@ public slots:
     void gotoBlockExplorerPage();
     /** Switch to privacy page */
     void gotoPrivacyPage();
+    /** Switch to proposal page */
+    void gotoProposalPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
@@ -105,7 +110,6 @@ public slots:
     void gotoBip38Tool();
 
     /** Show incoming transaction notification for new transactions.
-
         The new items are those between start and end inclusive, under the given parent item.
     */
     void processNewTransaction(const QModelIndex& parent, int start, int /*end*/);
@@ -147,4 +151,4 @@ signals:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address);
 };
 
-#endif // BITCOIN_QT_WALLETVIEW_H
+#endif // ION_QT_WALLETVIEW_H
