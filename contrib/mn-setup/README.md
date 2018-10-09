@@ -195,5 +195,5 @@ Click "File Save"
 
 *You should see ***status 4***
 
-If you do, congratulations! You have now setup a masternode. If you do not, please contact support and they will assist you.  
+If you do, congratulations! You have now setup a masternode. If you do not, please contact support and they will assist you.
 ***
