@@ -1,18 +1,7 @@
 Ion Core integration/staging repository
-=====================================
+=======================================
 
-[![Build Status](https://travis-ci.org/cevap/ion.svg?branch=master)](https://travis-ci.org/cevap/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion) [![GitHub issues](https://img.shields.io/github/issues/cevap/ion.svg)](https://github.com/cevap/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/cevap/ion.svg)](https://github.com/cevap/ion/network) [![GitHub stars](https://img.shields.io/github/stars/cevap/ion.svg)](https://github.com/cevap/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/cevap/ion.svg)](https://github.com/cevap/ion) [![Twitter](https://img.shields.io/twitter/url/https/github.com/cevap/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion)
-
-### Important information
-
-Majority of ion contributors decided to move on from CEVAP's branch to a new one which is believed to fit better to marketing and maybe some other purposes. There will be no further CEVAP releases for ion, project is moved to new community runned repository: https://github.com/ioncoincore/ . Version [v3.0.4](https://github.com/cevap/ion/releases/tag/3.0.4) is the last one which is hosted/published on CEVAP. New repository will be updated in following days and next version will be published only there: 
-
-  https://github.com/ioncoincore/ion/releases
-  
-For now this new repository is empty and we will move our content in following days. 
-
-  - Project where you can look up the progress of this action: [Move from CEVAP branch](https://github.com/orgs/ioncoincore/projects/1)
-  - Download [ioncoincore latest release](https://github.com/ioncoincore/ion/releases)
+[![Build Status](https://travis-ci.com/ioncoincore/ion.svg?branch=master)](https://travis-ci.com/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/ioncoincore%2Fion.svg)](https://badge.fury.io/gh/ioncoincore%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion) [![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fioncoincore%2Fion)
 
 ### Client: Sagittarius
 
@@ -47,7 +36,8 @@ There were several considerations for selecting the current code base.
  - New wallet design and layout
  - New tools and scripts
  - New artworks
- - For more, reade release notes directly on our [repository](https://github.com/cevap/ion).
+ - For more, reade release notes directly on our [repository](https://github.com/ioncoincore/ion).
+
 ### Stop ongoing attack
 
 There were several issues which enabled several methods of attack. The current release deals with the attack properly.
@@ -67,8 +57,8 @@ We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's
 By doing so, we connect to an enthusiastic and active community - leaving behind old Ion code that inherits from less actively developed and maintaned code. Our main sources are now derived from:
 
   1. [PIVX](https://github.com/PIVX-Project/PIVX)
-  1. [DASH](https://github.com/dashpay/dash)
-  1. [Bitcoin](https://github.com/bitcoin/bitcoin)
+  2. [DASH](https://github.com/dashpay/dash)
+  3. [Bitcoin](https://github.com/bitcoin/bitcoin)
 
 
 More information at [ionomy.com](https://www.ionomy.com) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.7200)
