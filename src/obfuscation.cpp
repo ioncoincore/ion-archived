@@ -954,8 +954,8 @@ bool CObfuscationPool::IsCollateralValid(const CTransaction& txCollateral)
     if (txCollateral.vout.size() < 1) return false;
     if (txCollateral.nLockTime != 0) return false;
 
-    int64_t nValueIn = 0;
-    int64_t nValueOut = 0;
+    CAmount nValueIn = 0;
+    CAmount nValueOut = 0;
     bool missingTx = false;
 
     BOOST_FOREACH (const CTxOut o, txCollateral.vout) {
@@ -1670,8 +1670,8 @@ bool CObfuscationPool::PrepareObfuscationDenominate()
 
 bool CObfuscationPool::SendRandomPaymentToSelf()
 {
-    int64_t nBalance = pwalletMain->GetBalance();
-    int64_t nPayment = (nBalance * 0.35) + (rand() % nBalance);
+    CAmount nBalance = pwalletMain->GetBalance();
+    CAmount nPayment = (nBalance * 0.35) + (rand() % nBalance);
 
     if (nPayment > nBalance) nPayment = nBalance - (0.1 * COIN);
 
@@ -1857,7 +1857,7 @@ bool CObfuscationPool::IsCompatibleWithEntries(std::vector<CTxOut>& vout)
     return true;
 }
 
-bool CObfuscationPool::IsCompatibleWithSession(int64_t nDenom, CTransaction txCollateral, int& errorID)
+bool CObfuscationPool::IsCompatibleWithSession(CAmount nDenom, CTransaction txCollateral, int& errorID)
 {
     if (nDenom == 0) return false;
 
@@ -1961,16 +1961,16 @@ int CObfuscationPool::GetDenominations(const std::vector<CTxDSOut>& vout)
 // return a bitshifted integer representing the denominations in this list
 int CObfuscationPool::GetDenominations(const std::vector<CTxOut>& vout, bool fSingleRandomDenom)
 {
-    std::vector<pair<int64_t, int> > denomUsed;
+    std::vector<pair<CAmount, int> > denomUsed;
 
     // make a list of denominations, with zero uses
-    BOOST_FOREACH (int64_t d, obfuScationDenominations)
+    BOOST_FOREACH (CAmount d, obfuScationDenominations)
         denomUsed.push_back(make_pair(d, 0));
 
     // look for denominations and update uses to 1
     BOOST_FOREACH (CTxOut out, vout) {
         bool found = false;
-        BOOST_FOREACH (PAIRTYPE(int64_t, int) & s, denomUsed) {
+        BOOST_FOREACH (PAIRTYPE(CAmount, int) & s, denomUsed) {
             if (out.nValue == s.first) {
                 s.second = 1;
                 found = true;
@@ -1983,7 +1983,7 @@ int CObfuscationPool::GetDenominations(const std::vector<CTxOut>& vout, bool fSi
     int c = 0;
     // if the denomination is used, shift the bit on.
     // then move to the next
-    BOOST_FOREACH (PAIRTYPE(int64_t, int) & s, denomUsed) {
+    BOOST_FOREACH (PAIRTYPE(CAmount, int) & s, denomUsed) {
         int bit = (fSingleRandomDenom ? rand() % 2 : 1) * s.second;
         denom |= bit << c++;
         if (fSingleRandomDenom && bit) break; // use just one random denomination
@@ -2247,7 +2247,7 @@ void CObfuscationPool::RelayFinalTransaction(const int sessionID, const CTransac
     }
 }
 
-void CObfuscationPool::RelayIn(const std::vector<CTxDSIn>& vin, const int64_t& nAmount, const CTransaction& txCollateral, const std::vector<CTxDSOut>& vout)
+void CObfuscationPool::RelayIn(const std::vector<CTxDSIn>& vin, const CAmount& nAmount, const CTransaction& txCollateral, const std::vector<CTxDSOut>& vout)
 {
     if (!pSubmittedToMasternode) return;
 

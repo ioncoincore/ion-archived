@@ -2117,9 +2117,9 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
-int64_t GetBlockValue(int nHeight)
+CAmount GetBlockValue(int nHeight)
 {
-    int64_t nSubsidy = 0;
+    CAmount nSubsidy = 0;
 
     if (nHeight == 0) {
         // Genesis block
@@ -2156,9 +2156,9 @@ int64_t GetBlockValue(int nHeight)
 }
 
 
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
+CAmount GetMasternodePayment(int nHeight, CAmount blockValue, int nMasternodeCount)
 {
-    int64_t ret = 0;
+    CAmount ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200)

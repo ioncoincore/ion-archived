@@ -127,7 +127,7 @@ int nLiquidityProvider = 0;
 int64_t enforceMasternodePaymentsTime = 4085657524;
 bool fSucessfullyLoaded = false;
 /** All denominations used by obfuscation */
-std::vector<int64_t> obfuScationDenominations;
+std::vector<CAmount> obfuScationDenominations;
 string strBudgetMode = "";
 
 map<string, string> mapArgs;
