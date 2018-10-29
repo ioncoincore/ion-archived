@@ -42,7 +42,7 @@ parts:
       - autoconf
       - automake
       - pkg-config
-      - libssl1.0-dev
+      - libssl-dev
       - libevent-dev
       - bsdmainutils
       - libgmp-dev
