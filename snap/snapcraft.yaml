@@ -69,6 +69,7 @@ parts:
     stage-packages: [ca-certificates]
     after:
       - berkeleydb
+      - desktop-qt5
       - patches
   berkeleydb:
     source: http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
