@@ -1,6 +1,4 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,12 +14,18 @@ QT_TS = \
   qt/locale/ion_de.ts \
   qt/locale/ion_en.ts \
   qt/locale/ion_en_US.ts \
+  qt/locale/ion_eo.ts \
   qt/locale/ion_es.ts \
+  qt/locale/ion_es_ES.ts \
   qt/locale/ion_fi.ts \
   qt/locale/ion_fr_FR.ts \
+  qt/locale/ion_hi_IN.ts \
+  qt/locale/ion_hr.ts \
+  qt/locale/ion_hr_HR.ts \
   qt/locale/ion_it.ts \
   qt/locale/ion_ja.ts \
   qt/locale/ion_ko_KR.ts \
+  qt/locale/ion_lt_LT.ts \
   qt/locale/ion_nl.ts \
   qt/locale/ion_pl.ts \
   qt/locale/ion_pt.ts \
@@ -32,6 +36,7 @@ QT_TS = \
   qt/locale/ion_sv.ts \
   qt/locale/ion_tr.ts \
   qt/locale/ion_uk.ts \
+  qt/locale/ion_vi.ts \
   qt/locale/ion_zh_CN.ts \
   qt/locale/ion_zh_TW.ts
 
@@ -205,10 +210,6 @@ RES_ICONS = \
   qt/res/icons/ion.png \
   qt/res/icons/ion_testnet.ico \
   qt/res/icons/ion_testnet.png \
-  qt/res/icons/ion_regtest.ico \
-  qt/res/icons/ion_regtest.png \
-  qt/res/icons/ion_unittest.ico \
-  qt/res/icons/ion_unittest.png \
   qt/res/icons/browse.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -236,6 +237,7 @@ RES_ICONS = \
   qt/res/icons/lock_closed.png \
   qt/res/icons/lock_open.png \
   qt/res/icons/masternodes.png \
+  qt/res/icons/onion.png \
   qt/res/icons/overview.png \
   qt/res/icons/qrcode.png \
   qt/res/icons/quit.png \
@@ -335,8 +337,6 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/splash_regtest.png \
-  qt/res/images/splash_unittest.png \
   qt/res/images/ion_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
@@ -404,7 +404,7 @@ endif
 if ENABLE_ZMQ
 qt_ion_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_ion_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_ion_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_ion_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)

@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
 // Copyright (c) 2016-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,15 +16,14 @@
 
 #include "obfuscation.h"
 #include "protocol.h"
-#include <boost/lexical_cast.hpp>
 
 using namespace std;
 using namespace boost;
 
 /*
- *  Don't ever reuse these IDs for other sporks
- *  - This would result in old clients getting confused about which spork is for what
- */
+    Don't ever reuse these IDs for other sporks
+    - This would result in old clients getting confused about which spork is for what
+*/
 #define SPORK_START 10001
 #define SPORK_END 10009
 
@@ -38,15 +37,15 @@ using namespace boost;
 #define SPORK_8_NEW_PROTOCOL_ENFORCEMENT 10008
 #define SPORK_9_ZEROCOIN_MAINTENANCE_MODE 10009
 
-#define SPORK_1_SWIFTTX_DEFAULT 978307200                           //GMT: Monday, January 1, 2001 12:00:00 AM
-#define SPORK_2_SWIFTTX_BLOCK_FILTERING_DEFAULT 1424217600          //GMT: Wednesday, February 18, 2015 12:00:00 AM
-#define SPORK_3_SWIFTTX_MAX_VALUE_DEFAULT 1000                      //1000 ION
-#define SPORK_4_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT 1521851265   //GMT: Saturday, March 24, 2018 12:27:45 AM
-#define SPORK_5_MASTERNODE_BUDGET_ENFORCEMENT_DEFAULT 4070908800    //OFF, GMT: Thursday, January 1, 2099 12:00:00 AM
-#define SPORK_6_MASTERNODE_ENABLE_SUPERBLOCKS_DEFAULT 4070908800    //OFF, GMT: Thursday, January 1, 2099 12:00:00 AM
-#define SPORK_7_MASTERNODE_PAY_UPDATED_NODES_DEFAULT 1521851265     //GMT: Saturday, March 24, 2018 12:27:45 AM
-#define SPORK_8_NEW_PROTOCOL_ENFORCEMENT_DEFAULT 1521851265         //GMT: Saturday, March 24, 2018 12:27:45 AM
-#define SPORK_9_ZEROCOIN_MAINTENANCE_MODE_DEFAULT 4070908800        //OFF, GMT: Thursday, January 1, 2099 12:00:00 AM
+#define SPORK_1_SWIFTTX_DEFAULT 978307200                         //2001-1-1
+#define SPORK_2_SWIFTTX_BLOCK_FILTERING_DEFAULT 1424217600        //2015-2-18
+#define SPORK_3_SWIFTTX_MAX_VALUE_DEFAULT 1000                            //1000 ION
+#define SPORK_4_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT 1521851265 //OFF
+#define SPORK_5_MASTERNODE_BUDGET_ENFORCEMENT_DEFAULT 4070908800  //OFF
+#define SPORK_6_MASTERNODE_ENABLE_SUPERBLOCKS_DEFAULT 4070908800  //OFF
+#define SPORK_7_MASTERNODE_PAY_UPDATED_NODES_DEFAULT 1521851265   //GMT: Saturday, March 24, 2018 12:27:45 AM (OFF 4070908800)
+#define SPORK_8_NEW_PROTOCOL_ENFORCEMENT_DEFAULT 1521851265       //GMT: Saturday, March 24, 2018 12:27:45 AM (OFF 4070908800)
+#define SPORK_9_ZEROCOIN_MAINTENANCE_MODE_DEFAULT 4070908800      //OFF
 
 class CSporkMessage;
 class CSporkManager;
@@ -108,7 +107,7 @@ public:
     int GetSporkIDByName(std::string strName);
     bool UpdateSpork(int nSporkID, int64_t nValue);
     bool SetPrivKey(std::string strPrivKey);
-    bool CheckSignature(CSporkMessage& spork);
+    bool CheckSignature(CSporkMessage& spork, bool fCheckSigner = false);
     bool Sign(CSporkMessage& spork);
     void Relay(CSporkMessage& msg);
 };

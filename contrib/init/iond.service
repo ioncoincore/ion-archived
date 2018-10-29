@@ -1,5 +1,5 @@
 [Unit]
-Description=Ion's distributed currency daemon
+Description=ION's distributed currency daemon
 After=network.target
 
 [Service]
@@ -10,9 +10,9 @@ Type=forking
 PIDFile=/var/lib/iond/iond.pid
 
 ExecStart=/usr/bin/iond -daemon -pid=/var/lib/iond/iond.pid \
-          -conf=/etc/ion/ioncoin.conf -datadir=/var/lib/iond
+          -conf=/etc/ioncoin/ioncoin.conf -datadir=/var/lib/iond
 
-ExecStop=-/usr/bin/ion-cli -conf=/etc/ion/ioncoin.conf \
+ExecStop=-/usr/bin/ion-cli -conf=/etc/ioncoin/ioncoin.conf \
          -datadir=/var/lib/iond stop
 
 Restart=always

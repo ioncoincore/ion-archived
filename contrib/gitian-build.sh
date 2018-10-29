@@ -1,6 +1,4 @@
 # Copyright (c) 2016 The Bitcoin Core developers
-# Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,8 +21,8 @@ url=https://github.com/cevap/ion
 proc=2
 mem=2000
 lxc=true
-osslTarUrl=https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz
-osslPatchUrl=https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch
+osslTarUrl=http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
+osslPatchUrl=https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
 scriptName=$(basename -- "$0")
 signProg="gpg --detach-sign"
 commitFiles=true
@@ -37,23 +35,23 @@ Run this script from the directory containing the ion, gitian-builder, gitian.si
 
 Arguments:
 signer          GPG signer to sign each build assert file
-version		Version number, commit, or branch to build. If building a commit or branch, the -c option must be specified
+version        Version number, commit, or branch to build. If building a commit or branch, the -c option must be specified
 
 Options:
--c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/cevap/ion
--v|--verify 	Verify the gitian build
--b|--build	Do a gitian build
--s|--sign	Make signed binaries for Windows and Mac OSX
--B|--buildsign	Build both signed and unsigned binaries
--o|--os		Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx, a for aarch64
--j		Number of processes to use. Default 2
--m		Memory to allocate in MiB. Default 2000
+-c|--commit    Indicate that the version argument is for a commit or branch
+-u|--url    Specify the URL of the repository. Default is https://github.com/cevap/ion
+-v|--verify     Verify the gitian build
+-b|--build    Do a gitian build
+-s|--sign    Make signed binaries for Windows and Mac OSX
+-B|--buildsign    Build both signed and unsigned binaries
+-o|--os        Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx, a for aarch64
+-j        Number of processes to use. Default 2
+-m        Memory to allocate in MiB. Default 2000
 --kvm           Use KVM instead of LXC
 --setup         Setup the gitian building environment. Uses KVM. If you want to use lxc, use the --lxc option. Only works on Debian-based systems (Ubuntu, Debian)
 --detach-sign   Create the assert file for detached signing. Will not commit anything.
 --no-commit     Do not commit anything to git
--h|--help	Print this help message
+-h|--help    Print this help message
 EOF
 
 # Get options and arguments
@@ -61,104 +59,104 @@ while :; do
     case $1 in
         # Verify
         -v|--verify)
-	    verify=true
+        verify=true
             ;;
         # Build
         -b|--build)
-	    build=true
+        build=true
             ;;
         # Sign binaries
         -s|--sign)
-	    sign=true
+        sign=true
             ;;
         # Build then Sign
         -B|--buildsign)
-	    sign=true
-	    build=true
+        sign=true
+        build=true
             ;;
         # PGP Signer
         -S|--signer)
-	    if [ -n "$2" ]
-	    then
-		SIGNER=$2
-		shift
-	    else
-		echo 'Error: "--signer" requires a non-empty argument.'
-		exit 1
-	    fi
+        if [ -n "$2" ]
+        then
+        SIGNER=$2
+        shift
+        else
+        echo 'Error: "--signer" requires a non-empty argument.'
+        exit 1
+        fi
            ;;
         # Operating Systems
         -o|--os)
-	    if [ -n "$2" ]
-	    then
-		linux=false
-		windows=false
-		osx=false
-		aarch64=false
-		if [[ "$2" = *"l"* ]]
-		then
-		    linux=true
-		fi
-		if [[ "$2" = *"w"* ]]
-		then
-		    windows=true
-		fi
-		if [[ "$2" = *"x"* ]]
-		then
-		    osx=true
-		fi
-		if [[ "$2" = *"a"* ]]
-		then
-		    aarch64=true
-		fi
-		shift
-	    else
-		echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), x (for Mac OSX), or a (for aarch64)\n'
-		exit 1
-	    fi
-	    ;;
-	# Help message
-	-h|--help)
-	    echo "$usage"
-	    exit 0
-	    ;;
-	# Commit or branch
-	-c|--commit)
-	    commit=true
-	    ;;
-	# Number of Processes
-	-j)
-	    if [ -n "$2" ]
-	    then
-		proc=$2
-		shift
-	    else
-		echo 'Error: "-j" requires an argument'
-		exit 1
-	    fi
-	    ;;
-	# Memory to allocate
-	-m)
-	    if [ -n "$2" ]
-	    then
-		mem=$2
-		shift
-	    else
-		echo 'Error: "-m" requires an argument'
-		exit 1
-	    fi
-	    ;;
-	# URL
-	-u)
-	    if [ -n "$2" ]
-	    then
-		url=$2
-		shift
-	    else
-		echo 'Error: "-u" requires an argument'
-		exit 1
-	    fi
-	    ;;
+        if [ -n "$2" ]
+        then
+        linux=false
+        windows=false
+        osx=false
+        aarch64=false
+        if [[ "$2" = *"l"* ]]
+        then
+            linux=true
+        fi
+        if [[ "$2" = *"w"* ]]
+        then
+            windows=true
+        fi
+        if [[ "$2" = *"x"* ]]
+        then
+            osx=true
+        fi
+        if [[ "$2" = *"a"* ]]
+        then
+            aarch64=true
+        fi
+        shift
+        else
+        echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), x (for Mac OSX), or a (for aarch64)\n'
+        exit 1
+        fi
+        ;;
+    # Help message
+    -h|--help)
+        echo "$usage"
+        exit 0
+        ;;
+    # Commit or branch
+    -c|--commit)
+        commit=true
+        ;;
+    # Number of Processes
+    -j)
+        if [ -n "$2" ]
+        then
+        proc=$2
+        shift
+        else
+        echo 'Error: "-j" requires an argument'
+        exit 1
+        fi
+        ;;
+    # Memory to allocate
+    -m)
+        if [ -n "$2" ]
+        then
+        mem=$2
+        shift
+        else
+        echo 'Error: "-m" requires an argument'
+        exit 1
+        fi
+        ;;
+    # URL
+    -u)
+        if [ -n "$2" ]
+        then
+        url=$2
+        shift
+        else
+        echo 'Error: "-u" requires an argument'
+        exit 1
+        fi
+        ;;
         # kvm
         --kvm)
             lxc=false
@@ -176,7 +174,7 @@ while :; do
         --setup)
             setup=true
             ;;
-	*)               # Default case: If no more options then break out of the loop.
+    *)               # Default case: If no more options then break out of the loop.
              break
     esac
     shift
@@ -231,7 +229,7 @@ fi
 # Add a "v" if no -c
 if [[ $commit = false ]]
 then
-	COMMIT="v${VERSION}"
+    COMMIT="v${VERSION}"
 fi
 echo ${COMMIT}
 
@@ -262,153 +260,154 @@ popd
 # Build
 if [[ $build = true ]]
 then
-	# Make output folder
-	mkdir -p ./ion-binaries/${VERSION}
+    # Make output folder
+    mkdir -p ./ion-binaries/${VERSION}
 
-	# Build Dependencies
-	echo ""
-	echo "Building Dependencies"
-	echo ""
-	pushd ./gitian-builder
-	mkdir -p inputs
-	wget -N -P inputs $osslPatchUrl
-	wget -N -P inputs $osslTarUrl
-	make -C ../ion/depends download SOURCES_PATH=`pwd`/cache/common
+    # Build Dependencies
+    echo ""
+    echo "Building Dependencies"
+    echo ""
+    pushd ./gitian-builder
+    mkdir -p inputs
+    wget -N -P inputs $osslPatchUrl
+    wget -N -P inputs $osslTarUrl
+    make -C ../ion/depends download SOURCES_PATH=`pwd`/cache/common
 
-	# Linux
-	if [[ $linux = true ]]
-	then
-            echo ""
-	    echo "Compiling ${VERSION} Linux"
-	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/${VERSION}
-	fi
-	# Windows
-	if [[ $windows = true ]]
-	then
-	    echo ""
-	    echo "Compiling ${VERSION} Windows"
-	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/ion-*-win-unsigned.tar.gz inputs/ion-win-unsigned.tar.gz
-	    mv build/out/ion-*.zip build/out/ion-*.exe ../ion-binaries/${VERSION}
-	fi
-	# Mac OSX
-	if [[ $osx = true ]]
-	then
-	    echo ""
-	    echo "Compiling ${VERSION} Mac OSX"
-	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/ion-*-osx-unsigned.tar.gz inputs/ion-osx-unsigned.tar.gz
-	    mv build/out/ion-*.tar.gz build/out/ion-*.dmg ../ion-binaries/${VERSION}
-	fi
-	# AArch64
-	if [[ $aarch64 = true ]]
-	then
-	    echo ""
-	    echo "Compiling ${VERSION} AArch64"
-	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
-	    mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/${VERSION}
-	popd
+    # Linux
+    if [[ $linux = true ]]
+    then
+        echo ""
+        echo "Compiling ${VERSION} Linux"
+        echo ""
+        ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-linux.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-linux.yml
+        mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/${VERSION}
+    fi
+    # Windows
+    if [[ $windows = true ]]
+    then
+        echo ""
+        echo "Compiling ${VERSION} Windows"
+        echo ""
+        ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-win.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-win.yml
+        mv build/out/ion-*-win-unsigned.tar.gz inputs/ion-win-unsigned.tar.gz
+        mv build/out/ion-*.zip build/out/ion-*.exe ../ion-binaries/${VERSION}
+    fi
+    # Mac OSX
+    if [[ $osx = true ]]
+    then
+        echo ""
+        echo "Compiling ${VERSION} Mac OSX"
+        echo ""
+        ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-osx.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-osx.yml
+        mv build/out/ion-*-osx-unsigned.tar.gz inputs/ion-osx-unsigned.tar.gz
+        mv build/out/ion-*.tar.gz build/out/ion-*.dmg ../ion-binaries/${VERSION}
+    fi
+    # AArch64
+    if [[ $aarch64 = true ]]
+    then
+        echo ""
+        echo "Compiling ${VERSION} AArch64"
+        echo ""
+        ./bin/gbuild -j ${proc} -m ${mem} --commit ion=${COMMIT} --url ion=${url} ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
+        mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/${VERSION}
+    fi
+    popd
 
-        if [[ $commitFiles = true ]]
-        then
-	    # Commit to gitian.sigs repo
-            echo ""
-            echo "Committing ${VERSION} Unsigned Sigs"
-            echo ""
-            pushd gitian.sigs
-            git add ${VERSION}-linux/${SIGNER}
-            git add ${VERSION}-aarch64/${SIGNER}
-            git add ${VERSION}-win-unsigned/${SIGNER}
-            git add ${VERSION}-osx-unsigned/${SIGNER}
-            git commit -a -m "Add ${VERSION} unsigned sigs for ${SIGNER}"
-            popd
-        fi
+    if [[ $commitFiles = true ]]
+    then
+        # Commit to gitian.sigs repo
+        echo ""
+        echo "Committing ${VERSION} Unsigned Sigs"
+        echo ""
+        pushd gitian.sigs
+        git add ${VERSION}-linux/${SIGNER}
+        git add ${VERSION}-aarch64/${SIGNER}
+        git add ${VERSION}-win-unsigned/${SIGNER}
+        git add ${VERSION}-osx-unsigned/${SIGNER}
+        git commit -a -m "Add ${VERSION} unsigned sigs for ${SIGNER}"
+        popd
+    fi
 fi
 
 # Verify the build
 if [[ $verify = true ]]
 then
-	# Linux
-	pushd ./gitian-builder
-	echo ""
-	echo "Verifying v${VERSION} Linux"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../ion/contrib/gitian-descriptors/gitian-linux.yml
-	# Windows
-	echo ""
-	echo "Verifying v${VERSION} Windows"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../ion/contrib/gitian-descriptors/gitian-win.yml
-	# Mac OSX
-	echo ""
-	echo "Verifying v${VERSION} Mac OSX"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../ion/contrib/gitian-descriptors/gitian-osx.yml
-	# AArch64
-	echo ""
-	echo "Verifying v${VERSION} AArch64"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
-	# Signed Windows
-	echo ""
-	echo "Verifying v${VERSION} Signed Windows"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
-	# Signed Mac OSX
-	echo ""
-	echo "Verifying v${VERSION} Signed Mac OSX"
-	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
-	popd
+    # Linux
+    pushd ./gitian-builder
+    echo ""
+    echo "Verifying v${VERSION} Linux"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../ion/contrib/gitian-descriptors/gitian-linux.yml
+    # Windows
+    echo ""
+    echo "Verifying v${VERSION} Windows"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../ion/contrib/gitian-descriptors/gitian-win.yml
+    # Mac OSX
+    echo ""
+    echo "Verifying v${VERSION} Mac OSX"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../ion/contrib/gitian-descriptors/gitian-osx.yml
+    # AArch64
+    echo ""
+    echo "Verifying v${VERSION} AArch64"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../ion/contrib/gitian-descriptors/gitian-aarch64.yml
+    # Signed Windows
+    echo ""
+    echo "Verifying v${VERSION} Signed Windows"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
+    # Signed Mac OSX
+    echo ""
+    echo "Verifying v${VERSION} Signed Mac OSX"
+    echo ""
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
+    popd
 fi
 
 # Sign binaries
 if [[ $sign = true ]]
 then
 
-        pushd ./gitian-builder
-	# Sign Windows
-	if [[ $windows = true ]]
-	then
-	    echo ""
-	    echo "Signing ${VERSION} Windows"
-	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../ion/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/ion-*win64-setup.exe ../ion-binaries/${VERSION}
-	    mv build/out/ion-*win32-setup.exe ../ion-binaries/${VERSION}
-	fi
-	# Sign Mac OSX
-	if [[ $osx = true ]]
-	then
-	    echo ""
-	    echo "Signing ${VERSION} Mac OSX"
-	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/ion-osx-signed.dmg ../ion-binaries/${VERSION}/ion-${VERSION}-osx.dmg
-	fi
-	popd
+    pushd ./gitian-builder
+    # Sign Windows
+    if [[ $windows = true ]]
+    then
+        echo ""
+        echo "Signing ${VERSION} Windows"
+        echo ""
+        ./bin/gbuild -i --commit signature=${COMMIT} ../ion/contrib/gitian-descriptors/gitian-win-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-win-signer.yml
+        mv build/out/ion-*win64-setup.exe ../ion-binaries/${VERSION}
+        mv build/out/ion-*win32-setup.exe ../ion-binaries/${VERSION}
+    fi
+    # Sign Mac OSX
+    if [[ $osx = true ]]
+    then
+        echo ""
+        echo "Signing ${VERSION} Mac OSX"
+        echo ""
+        ./bin/gbuild -i --commit signature=${COMMIT} ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../ion/contrib/gitian-descriptors/gitian-osx-signer.yml
+        mv build/out/ion-osx-signed.dmg ../ion-binaries/${VERSION}/ion-${VERSION}-osx.dmg
+    fi
+    popd
 
-        if [[ $commitFiles = true ]]
-        then
-            # Commit Sigs
-            pushd gitian.sigs
-            echo ""
-            echo "Committing ${VERSION} Signed Sigs"
-            echo ""
-            git add ${VERSION}-win-signed/${SIGNER}
-            git add ${VERSION}-osx-signed/${SIGNER}
-            git commit -a -m "Add ${VERSION} signed binary sigs for ${SIGNER}"
-            popd
-        fi
+    if [[ $commitFiles = true ]]
+    then
+        # Commit Sigs
+        pushd gitian.sigs
+        echo ""
+        echo "Committing ${VERSION} Signed Sigs"
+        echo ""
+        git add ${VERSION}-win-signed/${SIGNER}
+        git add ${VERSION}-osx-signed/${SIGNER}
+        git commit -a -m "Add ${VERSION} signed binary sigs for ${SIGNER}"
+        popd
+    fi
 fi

@@ -1,5 +1,7 @@
-// Copyright (c) 2015-2018 The Bitcoin Core developers
+// Copyright (c) 2015-2016 The Bitcoin Core developers
 // Copyright (c) 2017 The Zcash developers
+// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -252,7 +254,7 @@ bool TorControlConnection::Command(const std::string &cmd, const ReplyHandlerCB&
 /* Split reply line in the form 'AUTH METHODS=...' into a type
  * 'AUTH' and arguments 'METHODS=...'.
  * Grammar is implicitly defined in https://spec.torproject.org/control-spec by
- * the server reply formats for PROTOCOLINFO (S3.21) and AUTHCHALLENGE (S3.24).
+ * the server reply formats for PROTOCOLINFO (S3.11) and AUTHCHALLENGE (S3.14).
  */
 static std::pair<std::string,std::string> SplitTorReplyLine(const std::string &s)
 {
@@ -270,8 +272,8 @@ static std::pair<std::string,std::string> SplitTorReplyLine(const std::string &s
 /** Parse reply arguments in the form 'METHODS=COOKIE,SAFECOOKIE COOKIEFILE=".../control_auth_cookie"'.
  * Returns a map of keys to values, or an empty map if there was an error.
  * Grammar is implicitly defined in https://spec.torproject.org/control-spec by
- * the server reply formats for PROTOCOLINFO (S3.21), AUTHCHALLENGE (S3.24),
- * and ADD_ONION (S3.27). See also sections 2.1 and 2.3.
+ * the server reply formats for PROTOCOLINFO (S3.11), AUTHCHALLENGE (S3.14),
+ * and ADD_ONION (S3.17). See also sections 2.1 and 2.3.
  */
 static std::map<std::string,std::string> ParseTorReplyMapping(const std::string &s)
 {

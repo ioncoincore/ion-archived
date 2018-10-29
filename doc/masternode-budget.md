@@ -148,9 +148,9 @@ The following new RPC commands are supported:
 - mnbudget "command"... ( "passphrase" )
  * prepare            - Prepare proposal for network by signing and creating tx
  * submit             - Submit proposal for network
- * vote-many          - Vote on a Ion initiative
- * vote-alias         - Vote on a Ion initiative
- * vote               - Vote on a Ion initiative/budget
+ * vote-many          - Vote on a ION initiative
+ * vote-alias         - Vote on a ION initiative
+ * vote               - Vote on a ION initiative/budget
  * getvotes           - Show current masternode budgets
  * getinfo            - Show current masternode budgets
  * show               - Show all budgets

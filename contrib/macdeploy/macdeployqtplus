@@ -16,8 +16,6 @@ from __future__ import division, print_function, unicode_literals
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
 
 import subprocess, sys, re, os, shutil, stat, os.path, time
 from string import Template

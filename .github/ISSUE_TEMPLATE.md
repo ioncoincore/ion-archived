@@ -1,7 +1,7 @@
 <!--- Remove this description and sections that do not apply -->
 
 This issue tracker is only for technical issues related to Ion Core.
-General Ion questions and/or support requests and are best directed to the [ION Discord](https://discord.ionomy.com).
+General ION questions and/or support requests and are best directed to the [ION Discord](https://discord.ioncore.xyz).
 
 ### Describe the issue
 

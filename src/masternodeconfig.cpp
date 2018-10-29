@@ -1,16 +1,14 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-// clang-format off
 #include "netbase.h"
 #include "masternodeconfig.h"
 #include "util.h"
 #include "ui_interface.h"
 #include <base58.h>
-// clang-format on
 
 CMasternodeConfig masternodeConfig;
 
@@ -66,27 +64,27 @@ bool CMasternodeConfig::read(std::string& strErr)
         SplitHostPort(ip, port, hostname);
         if(port == 0 || hostname == "") {
             strErr = _("Failed to parse host:port string") + "\n"+
-            strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"";
+                     strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"";
             streamConfig.close();
             return false;
         }
-        int mainnetDefaultPort = Params(CBaseChainParams::MAIN).GetDefaultPort();
+
         if (Params().NetworkID() == CBaseChainParams::MAIN) {
-            if (port != mainnetDefaultPort) {
+            if (port != 12700) {
                 strErr = _("Invalid port detected in masternode.conf") + "\n" +
-                         strprintf(_("Port: %d"), port) + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                         strprintf(_("(must be %d for mainnet)"), mainnetDefaultPort);
+                         _("(must be 12700 for mainnet)");
                 streamConfig.close();
                 return false;
             }
-        } else if (port == mainnetDefaultPort) {
+        } else if (port == 12700) {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                     strprintf(_("(%d could be used only on mainnet)"), mainnetDefaultPort);
+                     _("(12700 could be used only on mainnet)");
             streamConfig.close();
             return false;
         }
+
 
         add(alias, ip, privKey, txHash, outputIndex);
     }

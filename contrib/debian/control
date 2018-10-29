@@ -1,8 +1,8 @@
 Source: ion
 Section: utils
 Priority: optional
-Maintainer: developer (dev@i2pmail.org) <dev@i2pmail.org>
-Uploaders: ckti.ion <test@test.com>
+Maintainer: Jonas Smedegaard <dr@jones.dk> ***TODO***
+Uploaders: Micah Anderson <micah@debian.org> ***TODO***
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -12,7 +12,7 @@ Build-Depends: debhelper,
  libdb4.8++-dev,
  libssl-dev,
  pkg-config,
- libminiupnpc-dev,
+ libminiupnpc8-dev,
  libboost-filesystem-dev (>> 1.35) | libboost-filesystem1.35-dev,
  libboost-program-options-dev (>> 1.35) | libboost-program-options1.35-dev,
  libboost-thread-dev (>> 1.35) | libboost-thread1.35-dev,
@@ -22,7 +22,7 @@ Build-Depends: debhelper,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
-Homepage: https://www.ionomy.com
+Homepage: http://www.ioncore.xyz
 Vcs-Git: git://github.com/cevap/ion.git
 Vcs-Browser: http://github.com/cevap/ion
 
@@ -30,12 +30,11 @@ Package: iond
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Ion is a free open source peer-to-peer electronic cash system that
- is completely decentralized and it is related to gaming, without the
- need for a central server or trusted parties.  Users hold the crypto
- keys to their own money and transact directly with each other, with 
- the help of a P2P network to check for double-spending.
- Latest version supports zerocoin protocol.
+ ION is a free open source peer-to-peer electronic cash system that
+ is completely decentralized, without the need for a central server or
+ trusted parties.  Users hold the crypto keys to their own money and
+ transact directly with each other, with the help of a P2P network to
+ check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
  requires 1+ GB of space, slowly growing.
@@ -47,7 +46,7 @@ Package: ion-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Ion is a free open source peer-to-peer electronic cash system that
+ ION is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -56,4 +55,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 1+ GB of space, slowly growing.
  .
- This package provides Ion-Qt, a GUI for Ion based on Qt.
+ This package provides Ion-Qt, a GUI for ION based on Qt.

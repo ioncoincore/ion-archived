@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -106,7 +106,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// Ion only features
+// ION only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
@@ -121,7 +121,7 @@ int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
-int nAnonymizeIONAmount = 1000;
+int nAnonymizeIonAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -144,7 +144,7 @@ volatile bool fReopenDebugLog = false;
 
 /** Init OpenSSL library multithreading support */
 static CCriticalSection** ppmutexOpenSSL;
-void locking_callback(int mode, int i, const char* file, int line)
+void locking_callback(int mode, int i, const char* file, int line) NO_THREAD_SAFETY_ANALYSIS
 {
     if (mode & CRYPTO_LOCK) {
         ENTER_CRITICAL_SECTION(*ppmutexOpenSSL[i]);
@@ -252,7 +252,6 @@ bool LogAcceptCategory(const char* category)
 
         // if not debugging everything and not debugging specific category, LogPrint does nothing.
         if (setCategories.count(string("")) == 0 &&
-            setCategories.count(string("all")) == 0 &&
             setCategories.count(string(category)) == 0)
             return false;
     }
@@ -426,13 +425,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\ioncoin
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\ioncoin
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\ION
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\ION
 // Mac: ~/Library/Application Support/ioncoin
-// Unix: ~/.ioncoin
+// Unix: ~/.ion
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "ioncoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "ION";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -444,10 +443,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "ioncoin";
+    return pathRet / "ION";
 #else
     // Unix
-    return pathRet / ".ioncoin";
+    return pathRet / ".ion";
 #endif
 #endif
 }

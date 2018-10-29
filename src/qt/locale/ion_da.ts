@@ -62,11 +62,11 @@
         <translation>Modtageradresse</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Dine adresser til at sende betalinger med. Kontroller altid både beløb og modtageradresse før afsendelse.</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Dette er dine modtager adresser. Det anbefales at anvende en ny adresse til hver transaktion</translation>
     </message>
     <message>
@@ -136,8 +136,8 @@
         <translation>Slår ligegyldige afsendelser fra, når operativsystemets konto er kompromitteret. Denne funktion giver ikke ægte sikkerhed</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>Kun til staking og anononymisering</translation>
+        <source>For anonymization, automint, and staking only</source>
+        <translation>Til anonymisering, automint og staking alene</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -229,6 +229,17 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    <message>
+        <source>IP/Netmask</source>
+        <translation>IP / Netmaske</translation>
+    </message>
+    <message>
+        <source>Banned Until</source>
+        <translation>Forbudt indtil</translation>
+    </message>
+</context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -239,16 +250,16 @@
         <translation>BIP 38 kryptografering</translation>
     </message>
     <message>
-        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Indtast den Ion adresse De ønsker at kryptografere ved hjælp af BIP 38. Indtast et kodeord i den midterste boks. Klik på krypter for at generere den kryptograferede private nøgle.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>Den Ion adresse, der skal bruges til at underskrive beskeden med.</translation>
+        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Indtast en ION-adresse, som du gerne vil kryptere ved hjælp af BIP 38. Indtast en adgangskode i mellemkassen. Tryk på krypteringen for at beregne den krypterede private nøgle.</translation>
+    </message>
+    <message>
+        <source>The ION address to encrypt</source>
+        <translation>ION-adressen for at kryptere</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +290,24 @@
         <translation>Kopier den aktuelle underskrift til udklipsholderen.</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>Underskriv beskeden for at bevise, at De ejer denne Ion adresse.</translation>
+        <source>Encrypt the private key for this ION address</source>
+        <translation>Krypter den private nøgle for denne ION-adresse</translation>
+    </message>
+    <message>
+        <source>Reset all fields</source>
+        <translation>Nulstil alle felter</translation>
+    </message>
+    <message>
+        <source>The encrypted private key</source>
+        <translation>Den krypterede private nøgle</translation>
+    </message>
+    <message>
+        <source>Decrypt the entered key using the passphrase</source>
+        <translation>Dekrypter den indtastede nøgle ved hjælp af adgangskoden</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
         <translation>Krypter og underskriv</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Nulstil alle underskriftsfelter</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -303,20 +322,8 @@
         <translation>Indtast den krypterede BIP 38 nøgle. Indtast kodeordet i den midterste boks. Klik på dekryptér for at generere den private nøgle. Når nøglen er dekrypteret vil klip på "importér adresse" overføre den private nøgle til tegnebogen.</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>Beskeden er underskrevet med denne Ion adresse</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Ion adresse.</translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>Dekrypteringsnøgle</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Nulstil alle verificeringsfelter for beskeder.</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -424,6 +431,10 @@
     <message>
         <source>Browse transaction history</source>
         <translation>Vis transaktionshistorik</translation>
+    </message>
+    <message>
+        <source>Privacy Actions for xION</source>
+        <translation>Beskyttelse af personlige oplysninger for xION</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -566,6 +577,30 @@
         <translation>Vis listen over brugte modtageradresser og tekst</translation>
     </message>
     <message>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp; Oprettelse af multisignatur ...</translation>
+    </message>
+    <message>
+        <source>Create a new multisignature address and add it to this wallet</source>
+        <translation>Opret en ny multisignaturadresse og tilføj den til denne tegnebog</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp; Multisignatur udgifter ...</translation>
+    </message>
+    <message>
+        <source>Spend from a multisignature address</source>
+        <translation>Tilbring fra en multisignaturadresse</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp; Signaturer til multisignatur ...</translation>
+    </message>
+    <message>
+        <source>Sign with a multisignature address</source>
+        <translation>Log med en multisignaturadresse</translation>
+    </message>
+    <message>
         <source>Open &amp;URI...</source>
         <translation>Åbn &amp;URL</translation>
     </message>
@@ -573,9 +608,21 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandolinieparametre</translation>
     </message>
+    <message numerus="yes">
+        <source>Processed %n blocks of transaction history.</source>
+        <translation><numerusform>Behandlet %n blok af transaktionshistorik.</numerusform><numerusform>Behandlet %n blokke af transaktionshistorik.</numerusform></translation>
+    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synkroniserer yderligere data %p%</translation>
+    </message>
+    <message>
+        <source>%1 behind. Scanning block %2</source>
+        <translation>%1 bag. Scanning blok %2</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>Tegnebogen er&lt;b&gt;krypteret&lt;/b&gt; og aktuelt &lt;b&gt;unlocked&lt;/b&gt; for anonymisering og staking alene</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -602,12 +649,16 @@
         <translation>ION kerne</translation>
     </message>
     <message>
-        <source>Send coins to a Ion address</source>
-        <translation>Send mønter til en Ion adresse</translation>
+        <source>Send coins to a ION address</source>
+        <translation>Send mønter til en ION adresse</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
-        <translation>Anmod om betaling (genrerer QR kode og Ion URL)</translation>
+        <translation>Anmod om betaling (genrerer QR kode og ION URL)</translation>
+    </message>
+    <message>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Privatliv</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -619,23 +670,23 @@
     </message>
     <message>
         <source>&amp;About Ion Core</source>
-        <translation>&amp;Om Ion kerne</translation>
+        <translation>&amp;Om ION kerne</translation>
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>Vis information om Ion kerne</translation>
+        <translation>Vis information om ION kerne</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
         <translation>Ret konfigurationsindstillinger for ION</translation>
     </message>
     <message>
-        <source>Sign messages with your Ion addresses to prove you own them</source>
-        <translation>Underskriv beskeder med Deres Ion adresser for at bekræfte at De ejer dem.</translation>
+        <source>Sign messages with your ION addresses to prove you own them</source>
+        <translation>Underskriv beskeder med Deres ION adresser for at bekræfte at De ejer dem.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
-        <translation>Verificer besked for at sikre, at den er underskrevet med den opgivne Ion adresse</translation>
+        <source>Verify messages to ensure they were signed with specified ION addresses</source>
+        <translation>Verificer besked for at sikre, at den er underskrevet med den opgivne ION adresse</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -667,7 +718,7 @@
     </message>
     <message>
         <source>Open a ION: URI or payment request</source>
-        <translation>Åbn en Ion URl eller betalingsanmodning</translation>
+        <translation>Åbn en ION URl eller betalingsanmodning</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -678,12 +729,16 @@
         <translation>Blockexplorer vindue</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
-        <translation>Vis hjelpetekster fra Ion kernen for at få en liste med mulige Ion kommandolinie-startparametre</translation>
+        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <translation>Vis hjelpetekster fra ION kernen for at få en liste med mulige ION kommandolinie-startparametre</translation>
     </message>
     <message>
         <source>Ion Core client</source>
         <translation>ION kerneklient</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n active connection(s) to ION network</source>
+        <translation><numerusform>%n aktiv forbindelse til ION-netværk</numerusform><numerusform>%n aktiv forbindelse(s) til ION netværk</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -705,13 +760,25 @@
         <source>Up to date</source>
         <translation>Opdateret!</translation>
     </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n timer</numerusform><numerusform>%n timer</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n dage</numerusform><numerusform>%n dage</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n uger</numerusform><numerusform>%n uger</numerusform></translation>
+    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 og %2</translation>
     </message>
-    <message>
-        <source>%1 behind</source>
-        <translation>%1 bagud</translation>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n år</numerusform><numerusform>%n år</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -782,12 +849,16 @@ Adresse: %4
 "Multisend": %1</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Tegnebogen &lt;b&gt;er krypteret&lt;/b&gt;men i øjeblikket&lt;b&gt;låst op&lt;/b&gt;</translation>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>AutoMint er i øjeblikket aktiveret og indstillet til</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Tegnebogen &lt;b&gt;er krypteret,&lt;/b&gt;er i øjeblikket&lt;b&gt;låst op,&lt;/b&gt;men kun for anonymisering og indskydning.</translation>
+        <source>AutoMint is disabled</source>
+        <translation>AutoMint er deaktiveret</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
+        <translation>Tegnebogen &lt;b&gt;er krypteret&lt;/b&gt;men i øjeblikket&lt;b&gt;låst op&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
@@ -799,6 +870,14 @@ Adresse: %4
     <message>
         <source>Blockchain Explorer</source>
         <translation>Blockcain eksplorer</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Tilbage</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Frem</translation>
     </message>
     <message>
         <source>Address / Block / Transaction</source>
@@ -820,8 +899,8 @@ Adresse: %4
 <context>
     <name>ClientModel</name>
     <message>
-        <source>Total: %1 (OBF compatible: %2 / Enabled: %3)</source>
-        <translation>I alt: %1 (OBF kompatible: %2 / Aktiverede: %3)</translation>
+        <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
+        <translation>I alt: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Ukendt: %5)</translation>
     </message>
     <message>
         <source>Network Alert</source>
@@ -897,6 +976,10 @@ Adresse: %4
     <message>
         <source>Received with address</source>
         <translation>Modtaget med adresse</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Date</source>
@@ -987,10 +1070,6 @@ Adresse: %4
         <translation>middelhøj</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>kan variere +/- %1 duff(s) pr. input</translation>
-    </message>
-    <message>
         <source>medium</source>
         <translation>Middel</translation>
     </message>
@@ -1051,6 +1130,10 @@ Adresse: %4
         <translation>Denne tekstmarkør bliver rød, hvis en modtageradresse modtager et beløb mindre end %1.</translation>
     </message>
     <message>
+        <source>Can vary +/- %1 uion per input.</source>
+        <translation>Kan variere +/- %1 oion pr input.</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(ingen opmærknig)</translation>
     </message>
@@ -1102,8 +1185,8 @@ Adresse: %4
         <translation>Ret afsenderadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ion address.</source>
-        <translation>Den indtastede adresse %1 er ikke en gyldig Ion adresse</translation>
+        <source>The entered address "%1" is not a valid ION address.</source>
+        <translation>Den indtastede adresse %1 er ikke en gyldig ION adresse</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1157,7 +1240,7 @@ Adresse: %4
     </message>
     <message>
         <source>About Ion Core</source>
-        <translation>om Ion kerne</translation>
+        <translation>om ION kerne</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1204,15 +1287,15 @@ Adresse: %4
     </message>
     <message>
         <source>Welcome to Ion Core.</source>
-        <translation>Velkommen til Ion kerne</translation>
+        <translation>Velkommen til ION kerne</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Ion Core will store its data.</source>
-        <translation>Da det er første gang programmet startes, kan De vælge hvor Ion kernen skal lagre sine data</translation>
+        <translation>Da det er første gang programmet startes, kan De vælge hvor ION kernen skal lagre sine data</translation>
     </message>
     <message>
-        <source>Ion Core will download and store a copy of the Ion block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>ION kernen vil nu hente og gemme en kopi af Ion blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
+        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ION kernen vil nu hente og gemme en kopi af ION blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1250,8 +1333,8 @@ Adresse: %4
         <translation>Formular</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Mine masternoder</translation>
+        <source>MASTERNODES</source>
+        <translation>MASTERNODES</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
@@ -1365,12 +1448,12 @@ Adresse: %4
         <translation>Indtast modtageradresse</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Ion addresses after it matures.
-To Add: enter percentage to give and Ion address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ION addresses after it matures.
+To Add: enter percentage to give and ION address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre Ion adressater når den er tilstrækkelig stor. 
-For at tilføje: Indtast procentsatsen De ønsker at overføre samt den Ion adresse som skal modtage via Multisendsystemet. 
+        <translation>Multisend tillader at De automatisk kan sende op til 100% af Deres belønninger fra såvel indskud som masternodebelønninger til en liste over andre ION adressater når den er tilstrækkelig stor. 
+For at tilføje: Indtast procentsatsen De ønsker at overføre samt den ION adresse som skal modtage via Multisendsystemet. 
 For at fjerne: Indtast adressen som skal slettes og klik på slet. 
 Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
     </message>
@@ -1415,6 +1498,14 @@ Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
         <translation>Adresse</translation>
     </message>
     <message>
+        <source>Label:</source>
+        <translation>etiket</translation>
+    </message>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Indtast et mærke til denne adresse for at tilføje den til adressebogen.</translation>
+    </message>
+    <message>
         <source>Delete Address From MultiSend Vector</source>
         <translation>Slet adresse fra Multisendgruppen</translation>
     </message>
@@ -1447,6 +1538,10 @@ Multisend vil ikke fungere med mindre systemet er aktiveret.</translation>
         <translation>Send til Masternodebelønning</translation>
     </message>
     <message>
+        <source>(no label)</source>
+        <translation>(ingen opmærknig)</translation>
+    </message>
+    <message>
         <source>The entered address:
 </source>
         <translation>Den indtastede adresse:
@@ -1469,6 +1564,12 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Indtast en procentsats 1-100 </translation>
     </message>
     <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.
+</source>
+        <translation>Gemt MultiSend til hukommelse, men fejlede gemme egenskaber til databasen.
+</translation>
+    </message>
+    <message>
         <source>MultiSend Vector
 </source>
         <translation>Multisendgruppe
@@ -1483,6 +1584,177 @@ Kontroller adressen og prøv igen.</translation>
 </source>
         <translation>Kunne ikke finde adresse
 </translation>
+    </message>
+</context>
+<context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Multisignature Address Interactions</source>
+        <translation>Multisignatur adresseinteraktioner</translation>
+    </message>
+    <message>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Create MultiSignature &amp;Address</translation>
+    </message>
+    <message>
+        <source>How many people must sign to verify a transaction</source>
+        <translation>Hvor mange mennesker skal underskrive for at bekræfte en transaktion</translation>
+    </message>
+    <message>
+        <source>Enter the minimum number of signatures required to sign transactions</source>
+        <translation>Indtast det mindste antal signaturer, der kræves for at underskrive transaktioner</translation>
+    </message>
+    <message>
+        <source>Address Label:</source>
+        <translation>Adresselabel:</translation>
+    </message>
+    <message>
+        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
+        <translation>Tilføj en anden adresse, der kunne underskrive for at bekræfte en transaktion fra multisig-adressen.</translation>
+    </message>
+    <message>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp; Tilføj adresse / nøgle</translation>
+    </message>
+    <message>
+        <source>Local addresses or public keys that can sign:</source>
+        <translation>Lokale adresser eller offentlige nøgler, der kan underskrive:</translation>
+    </message>
+    <message>
+        <source>Create a new multisig address</source>
+        <translation>Opret en ny multisig-adresse</translation>
+    </message>
+    <message>
+        <source>C&amp;reate</source>
+        <translation>C&amp;reate</translation>
+    </message>
+    <message>
+        <source>Status:</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Use below to quickly import an address by its redeem. Don't forget to add a label before clicking import!
+Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
+Please be patient after clicking import.</source>
+        <translation>Brug nedenfor for hurtigt at importere en adresse ved hjælp af indløsningen. Glem ikke at tilføje en etiket før du klikker på import!
+Husk, at tegnebogen omskriver blockchain for at finde transaktioner, der indeholder den nye adresse
+Vær tålmodig efter at du har klikket på import.</translation>
+    </message>
+    <message>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp; Importindløsning</translation>
+    </message>
+    <message>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp; Opret MultiSignature Tx</translation>
+    </message>
+    <message>
+        <source>Inputs:</source>
+        <translation>Inputs:</translation>
+    </message>
+    <message>
+        <source>Coin Control</source>
+        <translation>Møntkontrol</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Mængde valgt:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Beløb</translation>
+    </message>
+    <message>
+        <source>Add an input to fund the outputs</source>
+        <translation>Tilføj et input for at finansiere udgangene</translation>
+    </message>
+    <message>
+        <source>Add a Raw Input</source>
+        <translation>Tilføj en rå indgang</translation>
+    </message>
+    <message>
+        <source>Address / Amount:</source>
+        <translation>Adresse / Beløb:</translation>
+    </message>
+    <message>
+        <source>Add destinations to send ION to</source>
+        <translation>Tilføj destinationer for at sende ION til</translation>
+    </message>
+    <message>
+        <source>Add &amp;Destination</source>
+        <translation>Tilføj og destination</translation>
+    </message>
+    <message>
+        <source>Create a transaction object using the given inputs to the given outputs</source>
+        <translation>Opret en transaktionsobjekt ved hjælp af de givne indgange til de givne udgange</translation>
+    </message>
+    <message>
+        <source>Cr&amp;eate</source>
+        <translation>Cr&amp;eate</translation>
+    </message>
+    <message>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Tegn MultiSignature Tx</translation>
+    </message>
+    <message>
+        <source>Transaction Hex:</source>
+        <translation>Transaktion Hex:</translation>
+    </message>
+    <message>
+        <source>Sign the transaction from this wallet or from provided private keys</source>
+        <translation>Signer transaktionen fra denne tegnebog eller fra private knapper</translation>
+    </message>
+    <message>
+        <source>S&amp;ign</source>
+        <translation>S&amp;ign</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED indtil transaktionen er blevet undertegnet nok gange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Co&amp;mmit</source>
+        <translation>Co&amp;mmit</translation>
+    </message>
+    <message>
+        <source>Add private keys to sign the transaction with</source>
+        <translation>Tilføj private nøgler for at underskrive transaktionen med</translation>
+    </message>
+    <message>
+        <source>Add Private &amp;Key</source>
+        <translation>Tilføj privat nøgle</translation>
+    </message>
+    <message>
+        <source>Sign with only private keys (Not Recommened)</source>
+        <translation>Log med kun private nøgler (ikke anbefalet)</translation>
+    </message>
+    <message>
+        <source>Invalid Tx Hash.</source>
+        <translation>Ugyldig Tx Hash.</translation>
+    </message>
+    <message>
+        <source>Vout position must be positive.</source>
+        <translation>Vout position skal være positiv.</translation>
+    </message>
+    <message>
+        <source>Maximum possible addresses reached. (15)</source>
+        <translation>Maksimale mulige adresser nået. (15)</translation>
+    </message>
+    <message>
+        <source>Vout Position: </source>
+        <translation>Vout Position:</translation>
+    </message>
+    <message>
+        <source>Amount: </source>
+        <translation>Beløb:</translation>
+    </message>
+    <message>
+        <source>Maximum (15)</source>
+        <translation>Maksimum (15)</translation>
     </message>
 </context>
 <context>
@@ -1520,36 +1792,36 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Brug 16 separate masternoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
-        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 Ion for at anonymiser 10000 ION</translation>
+        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
+        <translation>Dette valg er det hurtigste og vil koste i omegnen af 0.025 ION for at anonymiser 10000 ION</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</source>
-        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 Ion for at anonymiser 10000 ION</translation>
+        <source>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</source>
+        <translation>Dette valg er relativt hurtigt og vil koste i omegnen af 0.05 ION for at anonymiser 10000 ION</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Denne mulighed er den langsomste og det mest sikre valg. Valg af maksimal tilsløring vil koste</translation>
     </message>
     <message>
-        <source>0.1 Ion per 10000 Ion you anonymize.</source>
-        <translation>0.1 pr 10000 Ion for at tilsløre.</translation>
+        <source>0.1 ION per 10000 ION you anonymize.</source>
+        <translation>0.1 pr 10000 ION for at tilsløre.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Tilsløringskonfiguration</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ION's configuration screen.</source>
+        <translation>Tilsløring blev sat til grundlæggende (%1 og 2 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ION's configuration screen.</source>
+        <translation>Tilsløring blev sat til høj (%1 og 8 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Ion's configuration screen.</source>
-        <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne Ion konfigurationsbillede.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ION's configuration screen.</source>
+        <translation>Tilsløring blev sat til maksimum (%1 og 16 gennemløb) De kan ændre dette hvornår De vil ved at åbne ION konfigurationsbillede.</translation>
     </message>
 </context>
 <context>
@@ -1610,8 +1882,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Hvis De slår "brug af ubekræftede penge tilbage" vil penge tilbage &lt;br/&gt; ikke kunne benyttes før transaktionen er bekræftet mindst en gang. &lt;br/&gt;Dette har også indflydelse på opgørelsen af saldoen.</translation>
     </message>
     <message>
-        <source>Automatically open the Ion client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åbn Ion klientporten på ruteren automatisk. Virker kun hvis UPnP er slået til i ruteren. </translation>
+        <source>Automatically open the ION client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åbn ION klientporten på ruteren automatisk. Virker kun hvis UPnP er slået til i ruteren. </translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1630,12 +1902,12 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically start Ion after logging in to the system.</source>
-        <translation>Start Ion automatisk, når der logges på systemet</translation>
+        <source>Automatically start ION after logging in to the system.</source>
+        <translation>Start ION automatisk, når der logges på systemet</translation>
     </message>
     <message>
-        <source>&amp;Start Ion on system login</source>
-        <translation>&amp;start Ion når der logges på systemet</translation>
+        <source>&amp;Start ION on system login</source>
+        <translation>&amp;start ION når der logges på systemet</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1663,21 +1935,49 @@ Kontroller adressen og prøv igen.</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting ION.</source>
-        <translation>Vælg sprog her. Ændringerne træder i kraft næste gang Ion klienten startes</translation>
+        <translation>Vælg sprog her. Ændringerne træder i kraft næste gang ION klienten startes</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/cevap-translations</source>
+https://www.transifex.com/ion-project/ion-project-translations</source>
         <translation>Det valgte sprog mangler, eller oversættelsen er mangelfuld. Hjælp ved at bidrage med oversættelser her:
-https://www.transifex.com/cevap/cevap-translations</translation>
+https://www.transifex.com/ion-project/ion-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>MAP port ved hjælp af UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Ion network through a SOCKS5 proxy.</source>
-        <translation>Tilslut Ion netværket gennem en SOCKS5 PROXY</translation>
+        <source>Enable automatic minting of ION units to xION</source>
+        <translation>Aktivér automatisk mintning af ION-enheder til xION</translation>
+    </message>
+    <message>
+        <source>Enable xION Automint</source>
+        <translation>Aktivér xION Automint</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming ION which get automatically converted to xION via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentdelen af indkommende ION, som automatisk konverteres til xION via Zerocoin Protocol (min: 10%)</translation>
+    </message>
+    <message>
+        <source>Percentage of autominted xION</source>
+        <translation>Procentdel af automatiseret xION</translation>
+    </message>
+    <message>
+        <source>Wait with automatic conversion to Zerocoin until enough ION for this denomination is available</source>
+        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok ION til denne betegnelse er tilgængelig</translation>
+    </message>
+    <message>
+        <source>Preferred Automint xION Denomination</source>
+        <translation>Foretrukket Automint xION Denomination</translation>
+    </message>
+    <message>
+        <source>Stake split threshold:</source>
+        <translation>Indtastningsgrænse for indsats:</translation>
+    </message>
+    <message>
+        <source>Connect to the ION network through a SOCKS5 proxy.</source>
+        <translation>Tilslut ION netværket gennem en SOCKS5 PROXY</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1740,6 +2040,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Decimaler</translation>
     </message>
     <message>
+        <source>Hide empty balances</source>
+        <translation>Skjul tomme saldi</translation>
+    </message>
+    <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Tredjeparts URLs (F.eks. en block eksplorer) som fremkommer i transaktionsvisningen som kontekstmenuer. %s i URL bliver erstattet af transaktionens hashværdi. Flere URL separeres med vertikabar I.</translation>
     </message>
@@ -1766,6 +2070,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Annuller</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Nogen</translation>
     </message>
     <message>
         <source>default</source>
@@ -1795,6 +2103,14 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <source>The supplied proxy address is invalid.</source>
         <translation>Den oplyste proxyadresse er ugyldig.</translation>
     </message>
+    <message>
+        <source>The supplied proxy port is invalid.</source>
+        <translation>Den medfølgende proxyport er ugyldig.</translation>
+    </message>
+    <message>
+        <source>The supplied proxy settings are invalid.</source>
+        <translation>De medfølgende proxyindstillinger er ugyldige.</translation>
+    </message>
 </context>
 <context>
     <name>OverviewPage</name>
@@ -1809,6 +2125,14 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Your current spendable balance</source>
         <translation>Deres nuværende og brugbare indestående.</translation>
+    </message>
+    <message>
+        <source>Total Balance, including all unavailable coins.</source>
+        <translation>Samlet saldo, inklusive alle utilgængelige mønter.</translation>
+    </message>
+    <message>
+        <source>ION Balance</source>
+        <translation>ION Balance</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1827,8 +2151,44 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Indskyder- eller masternodebelønning er stadig under behandling</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med Ion netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Nuværende låst balance i kun-adresser</translation>
+    </message>
+    <message>
+        <source>Your current ION balance, unconfirmed and immature transactions included</source>
+        <translation>Din nuværende ION-saldo, ubekræftede og umodne transaktioner inkluderet</translation>
+    </message>
+    <message>
+        <source>xION Balance</source>
+        <translation>xION-saldo</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These xION are spendable.</source>
+        <translation>Ældre: mere end 20 bekræftelser og mere end 1 minutter med samme betegnelse, efter at den blev minted
+Disse xION kan bruges.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Ubekræftet: mindre end 20 bekræftelser
+Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
+    </message>
+    <message>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med ION netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+    </message>
+    <message>
+        <source>OVERVIEW</source>
+        <translation>OVERSIGT</translation>
+    </message>
+    <message>
+        <source>Combined Balance (including unconfirmed and immature coins)</source>
+        <translation>Kombinerede saldi (inklusiv ubekræftede og umodne mønter)</translation>
+    </message>
+    <message>
+        <source>Combined Balance</source>
+        <translation>Kombineret saldo</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1841,10 +2201,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Total:</source>
         <translation>I alt:</translation>
-    </message>
-    <message>
-        <source>Your current total balance</source>
-        <translation>Nuværende saldo</translation>
     </message>
     <message>
         <source>Current total balance in watch-only addresses</source>
@@ -1863,12 +2219,49 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Brugbare:</translation>
     </message>
     <message>
+        <source>Locked ION or Masternode collaterals. These are excluded from xION minting.</source>
+        <translation>Låste ION eller Masternode collaterals. Disse er udelukket fra xION-mintning.</translation>
+    </message>
+    <message>
+        <source>Locked:</source>
+        <translation>Låst:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed:</source>
+        <translation>Ubekræftet:</translation>
+    </message>
+    <message>
+        <source>Your current xION balance, unconfirmed and immature xION included.</source>
+        <translation>Din nuværende xION-saldo, ubekræftede og umodne xION inkluderet.</translation>
+    </message>
+    <message>
         <source>Recent transactions</source>
         <translation>Nylige transaktioner</translation>
     </message>
     <message>
         <source>out of sync</source>
         <translation>Ude af synk</translation>
+    </message>
+    <message>
+        <source>Current percentage of xION.
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+</source>
+        <translation>Nuværende procentdel af xION
+Hvis AutoMint er aktiveret, vil denne procentdel sætte sig omkring den konfigurerede AutoMint-procent (default = 10%)</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>AutoMint er i øjeblikket aktiveret og indstillet til</translation>
+    </message>
+    <message>
+        <source>To disable AutoMint add 'enablezeromint=0' in ioncoin.conf.</source>
+        <translation>To disable AutoMint add 'enablezeromint=0' in ioncoin.conf.</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently disabled.
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in ioncoin.conf</source>
+        <translation>AutoMint er for øjeblikket deaktiveret
+For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' i ioncoin.conf</translation>
     </message>
 </context>
 <context>
@@ -1895,10 +2288,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     </message>
     <message>
         <source>Cannot start ion: click-to-pay handler</source>
-        <translation>Kan ikke starte Ion "klik for at betale" systemet</translation>
+        <translation>Kan ikke starte ION "klik for at betale" systemet</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Ion address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid ION address or malformed URI parameters.</source>
         <translation>URl kan ikke fortolkes! Det kan skyldes en ugyldig adresse, eller forkerte URl parametre.</translation>
     </message>
     <message>
@@ -1980,16 +2373,48 @@ https://www.transifex.com/cevap/cevap-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med Ion netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+        <source>Zerocoin Actions:</source>
+        <translation>Zerocoin Aktioner:</translation>
+    </message>
+    <message>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste informationer kan være uddaterede. Deres tegnebog synkronisere automatism med ION netværket så snart en forbindelse er etalbleret, men denne proces er ikke færdiggjort endnu. </translation>
+    </message>
+    <message>
+        <source>Mint Zerocoin</source>
+        <translation>Mint Zerocoin</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
+        <source>xION</source>
+        <translation>xION</translation>
+    </message>
+    <message>
+        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
+        <translation>Til rådighed for mintning er mønter, som er bekræftet og ikke låst eller Masternode collaterals.</translation>
+    </message>
+    <message>
+        <source>Available for Minting:</source>
+        <translation>Til rådighed til Minting:</translation>
+    </message>
+    <message>
+        <source>0.000 000 00 ION</source>
+        <translation>0.000 000 00 ION</translation>
+    </message>
+    <message>
+        <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
+        <translation>Nulstil Zerocoin Wallet DB. Sletter transaktioner, der ikke gjorde det i blokkæden.</translation>
+    </message>
+    <message>
         <source>Reset</source>
         <translation>Nulstil</translation>
+    </message>
+    <message>
+        <source>Coin Control...</source>
+        <translation>Møntkontrol...</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -2000,8 +2425,84 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Beløb</translation>
     </message>
     <message>
+        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
+        <translation>Omskrive den komplette blokchain for Zerocoin-minter og deres metadata.</translation>
+    </message>
+    <message>
+        <source>ReScan</source>
+        <translation>ReScan</translation>
+    </message>
+    <message>
+        <source>Status and/or Mesages from the last Mint Action.</source>
+        <translation>Status og / eller Beskeder fra sidste minuts handling.</translation>
+    </message>
+    <message>
+        <source>PRIVACY</source>
+        <translation>PRIVATLIV</translation>
+    </message>
+    <message>
+        <source>Enter an amount of Ion to convert to xION</source>
+        <translation>Indtast en mængde Ion for at konvertere til xIon</translation>
+    </message>
+    <message>
+        <source>xION Control</source>
+        <translation>xION Control</translation>
+    </message>
+    <message>
+        <source>xION Selected:</source>
+        <translation>xION Selected:</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Mængde valgt:</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
+        <translation>Tilbring Zerocoin. Uden 'Betal til:' adresse skaber betalinger til dig selv.</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin</source>
+        <translation>Tilbring Zerocoin</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) xION for spending</source>
+        <translation>Tilgængelig (moden og brugt) xION for udgifter</translation>
+    </message>
+    <message>
+        <source>Available Balance:</source>
+        <translation>Disponibel saldo:</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) xION for spending
+
+xION are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Tilgængelig (moden og brugt) xION for spending
+
+xION er modne, når de har mere end 20 bekræftelser OG mere end 2 minutter med samme betegnelse, efter at de blev præsenteret</translation>
+    </message>
+    <message>
+        <source>0 xION</source>
+        <translation>0 xION</translation>
+    </message>
+    <message>
+        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
+        <translation>Sikkerhedsniveau for Zerocoin Transaktioner. Mere er bedre, men har brug for mere tid og ressourcer.</translation>
+    </message>
+    <message>
+        <source>Security Level:</source>
+        <translation>Sikkerhedsniveau:</translation>
+    </message>
+    <message>
+        <source>Security Level 1 - 100 (default: 42)</source>
+        <translation>Sikkerhedsniveau 1 - 100 (standard: 42)</translation>
+    </message>
+    <message>
         <source>Pay &amp;To:</source>
         <translation>Betal &amp;Til</translation>
+    </message>
+    <message>
+        <source>The ION address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>ION-adressen for at sende betalingen til. Opretter lokal betaling til dig selv, når du er tom.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2032,8 +2533,175 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>A&amp;mount</translation>
     </message>
     <message>
+        <source>Convert Change to Zerocoin (might cost additional fees)</source>
+        <translation>Konverter Skift til Zerocoin (kan koste ekstra gebyrer)</translation>
+    </message>
+    <message>
+        <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
+        <translation>Hvis det er markeret, forsøger tegnebogen at minimere den tilbagevendende ændring i stedet for at minimere antallet af brugte betegnelser.</translation>
+    </message>
+    <message>
+        <source>Minimize Change</source>
+        <translation>Minimer ændring</translation>
+    </message>
+    <message>
+        <source>Information about the available Zerocoin funds.</source>
+        <translation>Oplysninger om de tilgængelige Zerocoin-midler.</translation>
+    </message>
+    <message>
+        <source>Zerocoin Stats:</source>
+        <translation>Zerocoin Stats:</translation>
+    </message>
+    <message>
+        <source>Total Balance including unconfirmed and immature xION</source>
+        <translation>Samlet saldo inklusive ubekræftede og umodne xION</translation>
+    </message>
+    <message>
+        <source>Total Zerocoin  Balance:</source>
+        <translation>Samlet Zerocoin Balance:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1:</source>
+        <translation>Betegnelser med værdi 1:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1:</source>
+        <translation>DENOM. med værdi 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Ubekræftet: mindre end 20 bekræftelser
+Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at den blev mønnet</translation>
+    </message>
+    <message>
+        <source>Show the current status of automatic xION minting.
+
+To change the status (restart required):
+- enable: add 'enablezeromint=1' to ioncoin.conf
+- disable: add 'enablezeromint=0' to ioncoin.conf
+
+To change the percentage (no restart required):
+- menu Settings-&gt;Options-&gt;Percentage of autominted xION
+
+</source>
+        <translation>Vis den aktuelle status for automatisk xION minting.øj
+
+For at ændre status (genstart kræves):.
+- aktiver: tilføj 'enablezeromint = 1' til ioncoin.conf
+- deaktiver: tilføj 'enablezeromint = 0' til ioncoin.conf
+
+For at ændre procentdelen (ingen genstart kræves):.
+- menu Indstillinger-&gt; Indstillinger-&gt; Procentdel af automatiseret xION
+</translation>
+    </message>
+    <message>
+        <source>AutoMint Status</source>
+        <translation>AutoMint-status</translation>
+    </message>
+    <message>
+        <source>Global Supply:</source>
+        <translation>Global Supply:</translation>
+    </message>
+    <message>
+        <source>Denom. 1:</source>
+        <translation>DENOM. 1:</translation>
+    </message>
+    <message>
+        <source>Denom. 5:</source>
+        <translation>Denom. 5:</translation>
+    </message>
+    <message>
+        <source>Denom. 10:</source>
+        <translation>Denom. 10:</translation>
+    </message>
+    <message>
+        <source>Denom. 50:</source>
+        <translation>Denom. 50:</translation>
+    </message>
+    <message>
+        <source>Denom. 100:</source>
+        <translation>Denom. 100:</translation>
+    </message>
+    <message>
+        <source>Denom. 500:</source>
+        <translation>Denom. 500:</translation>
+    </message>
+    <message>
+        <source>Denom. 1000:</source>
+        <translation>Denom. 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. 5000:</source>
+        <translation>Denom. 5000:</translation>
+    </message>
+    <message>
+        <source>0 x</source>
+        <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5:</source>
+        <translation>Betegnelser med værdi 5:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5:</source>
+        <translation>DENOM. med værdi 5:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 10:</source>
+        <translation>Betegnelser med værdi 10:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 10:</source>
+        <translation>DENOM. med værdi 10:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 50:</source>
+        <translation>Betegnelser med værdi 50:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 50:</source>
+        <translation>DENOM. med værdi 50:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 100:</source>
+        <translation>Betegnelser med værdi 100:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 100:</source>
+        <translation>DENOM. med værdi 100:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 500:</source>
+        <translation>Betegnelser med værdi 500:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 500:</source>
+        <translation>DENOM. med værdi 500:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1000:</source>
+        <translation>Betegnelser med værdi 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1000:</source>
+        <translation>DENOM. med værdi 1000:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5000:</source>
+        <translation>Betegnelser med værdi 5000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5000:</source>
+        <translation>DENOM. med værdi 5000:</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Prioritet:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstmærke</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -2056,6 +2724,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Saldo for lille!</translation>
     </message>
     <message>
+        <source>Coins automatically selected</source>
+        <translation>Mønter vælges automatisk</translation>
+    </message>
+    <message>
         <source>medium</source>
         <translation>Middel</translation>
     </message>
@@ -2072,12 +2744,20 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Brugerdefineret tilbagebetalingsadresse</translation>
     </message>
     <message>
+        <source>Amount After Fee:</source>
+        <translation>Beløb efter gebyr:</translation>
+    </message>
+    <message>
         <source>Change:</source>
         <translation>Penge tilbage:</translation>
     </message>
     <message>
         <source>out of sync</source>
         <translation>Ude af synk</translation>
+    </message>
+    <message>
+        <source>Mint Status: Okay</source>
+        <translation>Mint Status: Okay</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -2088,10 +2768,261 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Kopiér beløb</translation>
     </message>
     <message>
+        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Starter ResetMintZerocoin: Genskanning af komplet blockchain, dette vil tage op til 30 minutter afhængigt af din hardware.
+Vær tålmodig...</translation>
+    </message>
+    <message>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
+Please be patient...</source>
+        <translation>Tilbringe Zerocoin
+Computationally dyrt, kan have brug for flere minutter afhængigt af det valgte sikkerhedsniveau og din hardware.
+Vær tålmodig..</translation>
+    </message>
+    <message>
+        <source>) needed.
+Maximum allowed: </source>
+        <translation>) havde brug for.
+Maksimum tilladt:</translation>
+    </message>
+    <message>
+        <source>xION Spend #: </source>
+        <translation>xION Spend #: </translation>
+    </message>
+    <message>
+        <source>xION Mint</source>
+        <translation>xION Mint</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;aktiveret&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;invalid&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source> Configured target percentage: &lt;b&gt;</source>
+        <translation>Konfigureret målprocent:&lt;b&gt;</translation>
+    </message>
+    <message>
+        <source>xION is currently disabled due to maintenance.</source>
+        <translation>xION er i øjeblikket deaktiveret på grund af vedligeholdelse.</translation>
+    </message>
+    <message>
+        <source>xION is currently undergoing maintenance.</source>
+        <translation>xION er i øjeblikket under opretholdelse.</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi&lt;b&gt;1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt; 5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt; 10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt; 50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt; 100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi  &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt; 1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>DENOM. med værdi &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>AutoMint Status:</source>
+        <translation>AutoMint-status:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
+        <translation>Fejl: Din tegnebog er låst. Indtast venligst lommebrevets kodeord først.</translation>
+    </message>
+    <message>
+        <source>Message: Enter an amount &gt; 0.</source>
+        <translation>Meddelelse: Indtast et beløb&gt; 0.</translation>
+    </message>
+    <message>
+        <source>Minting </source>
+        <translation>Minting</translation>
+    </message>
+    <message>
+        <source>Successfully minted </source>
+        <translation>Mynt succesfuldt</translation>
+    </message>
+    <message>
+        <source> xION in </source>
+        <translation> xION i</translation>
+    </message>
+    <message>
+        <source> sec. Used denominations:
+</source>
+        <translation>sek. Brugte betegnelser:.
+</translation>
+    </message>
+    <message>
+        <source>Duration: </source>
+        <translation>Varighed:</translation>
+    </message>
+    <message>
+        <source> sec.
+</source>
+        <translation> sec.
+</translation>
+    </message>
+    <message>
+        <source>Starting ResetSpentZerocoin: </source>
+        <translation>Starter ResetSpentZerocoin:</translation>
+    </message>
+    <message>
+        <source>No 'Pay To' address provided, creating local payment</source>
+        <translation>Ingen 'Betal til' adresse, der er oprettet, skaber lokal betaling</translation>
+    </message>
+    <message>
+        <source>Invalid Ion Address</source>
+        <translation> Ugyldig ION adresse</translation>
+    </message>
+    <message>
+        <source>Invalid Send Amount</source>
+        <translation>Ugyldig Send beløb</translation>
+    </message>
+    <message>
+        <source>Confirm additional Fees</source>
+        <translation>Bekræft yderligere gebyrer</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Er De sikker på at De vil sende? &lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source> to address </source>
+        <translation>at adressere</translation>
+    </message>
+    <message>
+        <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
+        <translation>til en nyligt genereret (ubrugt og derfor anonym) lokal adresse &lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>with Security Level </source>
+        <translation>med sikkerhedsniveau</translation>
+    </message>
+    <message>
         <source>Confirm send coins</source>
         <translation>Bekræft at De vil sende mønter</translation>
     </message>
-    </context>
+    <message>
+        <source>Version 1 xION require a security level of 100 to successfully spend.</source>
+        <translation>Version 1 xION kræver et sikkerhedsniveau på 100 til succes.</translation>
+    </message>
+    <message>
+        <source>Failed to spend xION</source>
+        <translation>Kunne ikke bruge xION</translation>
+    </message>
+    <message>
+        <source>Failed to fetch mint associated with serial hash</source>
+        <translation>Kunne ikke hente mynte i forbindelse med seriel hash</translation>
+    </message>
+    <message>
+        <source>Too much inputs (</source>
+        <translation>For mange input (</translation>
+    </message>
+    <message>
+        <source>
+Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <translation>
+Enten mint højere nomineringer (så færre input er nødvendige) eller reducere det beløb, der skal bruges.</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin failed with status = </source>
+        <translation>Brug Zerocoin mislykkedes med status =</translation>
+    </message>
+    <message numerus="yes">
+        <source>PrivacyDialog</source>
+        <comment>Enter an amount of ION to convert to xION</comment>
+        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
+    </message>
+    <message>
+        <source>denomination: </source>
+        <translation>pålydende:</translation>
+    </message>
+    <message>
+        <source>serial: </source>
+        <translation>seriel:</translation>
+    </message>
+    <message>
+        <source>Spend is 1 of : </source>
+        <translation>Tilbring er 1 af:</translation>
+    </message>
+    <message>
+        <source>value out: </source>
+        <translation>værdi ud:</translation>
+    </message>
+    <message>
+        <source>address: </source>
+        <translation>adresse:</translation>
+    </message>
+    <message>
+        <source>Sending successful, return code: </source>
+        <translation>Afsendelse af succes, returkode:</translation>
+    </message>
+    <message>
+        <source>txid: </source>
+        <translation>txid: </translation>
+    </message>
+    <message>
+        <source>fee: </source>
+        <translation>Gebyr:</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -2099,8 +3030,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Beløb</translation>
     </message>
     <message>
-        <source>Enter a Ion address (e.g. %1)</source>
-        <translation>Indtast en Ion adresse (F.eks. %1)</translation>
+        <source>Enter a ION address (e.g. %1)</source>
+        <translation>Indtast en ION adresse (F.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2121,6 +3052,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>NETWORK</source>
         <translation>NETVÆRK</translation>
+    </message>
+    <message>
+        <source>BLOOM</source>
+        <translation>BLOOM</translation>
     </message>
     <message>
         <source>UNKNOWN</source>
@@ -2233,8 +3168,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Ion debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Åbn Ion debug logfilen fra den aktuelle datamappe. Det kan godt tage lidt tid hvis filen er meget stor.</translation>
+        <source>Open the ION debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Åbn ION debug logfilen fra den aktuelle datamappe. Det kan godt tage lidt tid hvis filen er meget stor.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2273,8 +3208,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>&amp;Peers</translation>
     </message>
     <message>
+        <source>Banned peers</source>
+        <translation>Forbudte jævnaldrende</translation>
+    </message>
+    <message>
         <source>Select a peer to view detailed information.</source>
         <translation>Vælg en peer for at få vist deltaljerede informationer</translation>
+    </message>
+    <message>
+        <source>Whitelisted</source>
+        <translation>whitelisten</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -2291,14 +3234,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Services</source>
         <translation>Tjenester</translation>
-    </message>
-    <message>
-        <source>Starting Height</source>
-        <translation>Starthøjde</translation>
-    </message>
-    <message>
-        <source>Sync Height</source>
-        <translation>Synkroniseringshøjde</translation>
     </message>
     <message>
         <source>Ban Score</source>
@@ -2333,8 +3268,48 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>&amp;Tegnebog Reparer</translation>
     </message>
     <message>
+        <source>Delete local Blockchain Folders</source>
+        <translation>Slet lokale blokchainmapper</translation>
+    </message>
+    <message>
         <source>Wallet In Use:</source>
         <translation>Tegnebog i brug</translation>
+    </message>
+    <message>
+        <source>Starting Block</source>
+        <translation>Startblok</translation>
+    </message>
+    <message>
+        <source>Synced Headers</source>
+        <translation>Synkroniserede overskrifter</translation>
+    </message>
+    <message>
+        <source>Synced Blocks</source>
+        <translation>Synced Blocks</translation>
+    </message>
+    <message>
+        <source>The duration of a currently outstanding ping.</source>
+        <translation>Varigheden af en aktuelt fremragende ping.</translation>
+    </message>
+    <message>
+        <source>Ping Wait</source>
+        <translation>Ping Vent</translation>
+    </message>
+    <message>
+        <source>Time Offset</source>
+        <translation>Tidsforskydning</translation>
+    </message>
+    <message>
+        <source>Custom Backup Path:</source>
+        <translation>Brugerdefineret Backup-sti:</translation>
+    </message>
+    <message>
+        <source>Custom xION Backup Path:</source>
+        <translation>Brugerdefineret xION Backup-sti:</translation>
+    </message>
+    <message>
+        <source>Custom Backups Threshold:</source>
+        <translation>Brugerdefineret sikkerhedskopieringstærskel:</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
@@ -2377,6 +3352,14 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Genopbyg blokkædens indeks fra de aktuelle blk000??.dat filer</translation>
     </message>
     <message>
+        <source>-resync:</source>
+        <translation>-resync:</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
+        <translation>Sletter alle lokale blockchain-mapper, så tegnebogen synkroniseres fra bunden.</translation>
+    </message>
+    <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
         <translation>Nedenstående knapper vil genstarte tegnebogen med kommandolinieparametre fr at reparere den, korrigere fejl og mangler i block-chain filerne, herunder også undersøge for manglende eller fejlagtige transaktioner</translation>
     </message>
@@ -2401,8 +3384,56 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Ud:</translation>
     </message>
     <message>
-        <source>Welcome to the Ion RPC console.</source>
-        <translation>Velkommen til Ion RPC konsollet</translation>
+        <source>Welcome to the ION RPC console.</source>
+        <translation>Velkommen til ION RPC konsollet</translation>
+    </message>
+    <message>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp; Afbryd knudepunkt</translation>
+    </message>
+    <message>
+        <source>Ban Node for</source>
+        <translation>Ban Node for</translation>
+    </message>
+    <message>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;hour</translation>
+    </message>
+    <message>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;day</translation>
+    </message>
+    <message>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;week</translation>
+    </message>
+    <message>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;year</translation>
+    </message>
+    <message>
+        <source>&amp;Unban Node</source>
+        <translation>&amp; Unban Node</translation>
+    </message>
+    <message>
+        <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dette vil slette dine lokale blockchain-mapper, og tegnebogen vil synkronisere den komplette blokke fra bunden.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dette har brug for en del tid og overfører mange data.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dine transaktioner og penge vil blive synlige igen, når downloadet er gennemført.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Do you want to continue?.&lt;br /&gt;</source>
+        <translation>Vil du fortsætte?.&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Confirm resync Blockchain</source>
+        <translation>Bekræft resync Blockchain</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2429,6 +3460,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>%1 GB</translation>
     </message>
     <message>
+        <source>(node id: %1)</source>
+        <translation>(node id: %1)</translation>
+    </message>
+    <message>
         <source>via %1</source>
         <translation>Via %1</translation>
     </message>
@@ -2445,12 +3480,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Udgående</translation>
     </message>
     <message>
-        <source>Unknown</source>
-        <translation>Ukendt</translation>
+        <source>Yes</source>
+        <translation>Ja</translation>
     </message>
     <message>
-        <source>Fetching...</source>
-        <translation>Henter</translation>
+        <source>No</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ukendt</translation>
     </message>
 </context>
 <context>
@@ -2472,12 +3511,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Valgfri opmærkning som tilknyttes den nye modtageradresse.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
-        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på Ion netværket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
+        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på ION netværket.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
-        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. &lt;br&gt;Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på Ion netværket.</translation>
+        <source>RECEIVE</source>
+        <translation>MODTAGE</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
+        <translation>Valgfri besked som vedhæftes betalingsanmodnigen, og som bliver vist når anmodningen åbnes. &lt;br&gt;Note: Beskeden fremsendes ikke sammen med betalingen, når denne sendes ud på ION netværket.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2633,6 +3676,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Send mønter</translation>
     </message>
     <message>
+        <source>SEND</source>
+        <translation>SENDE</translation>
+    </message>
+    <message>
         <source>Coin Control Features</source>
         <translation>Møntkontrol, features</translation>
     </message>
@@ -2741,8 +3788,20 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>(Smartgebyr endnu ikke initialiseret. Det tager som regel nogle få blokke...)</translation>
     </message>
     <message>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
+    </message>
+    <message>
         <source>Confirmation time:</source>
         <translation>Bekræftelsestid</translation>
+    </message>
+    <message>
+        <source>Open Coin Control...</source>
+        <translation>Åben møntkontrol ...</translation>
+    </message>
+    <message>
+        <source>Coins automatically selected</source>
+        <translation>Mønter vælges automatisk</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 uIONs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uIONs in fee,&lt;br /&gt;while "at least" pays 1000 uIONs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2753,7 +3812,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uIONs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uION i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uIONs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Ion transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ION transactions than the network can process.</source>
         <translation>Betaling af mindste transaktionsgebyr vil være fint så længe der er færre transaktioner end der er plads til i blokkene. &lt;br /&gt; Men opmærksomheden henledes på, at det kan resultere i en transaktion der aldrig bliver bekræftet i det øjeblik der er større behov for transaktioner end netværket har plads til. </translation>
     </message>
     <message>
@@ -2801,8 +3860,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Tilføj &amp;Modtager</translation>
     </message>
     <message>
-        <source>SwiftTX</source>
-        <translation>SwiftTX</translation>
+        <source>Anonymized ION</source>
+        <translation>Tilsløret ION</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2849,24 +3908,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Split blok værktøjet virker ikke med flere adresser. Prøv igen</translation>
     </message>
     <message>
-        <source>using</source>
-        <translation>Anvender</translation>
-    </message>
-    <message>
-        <source>anonymous funds</source>
-        <translation>Anonyme saldi</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid Ion address</source>
-        <translation>Advarsel! Ugyldig Ion adresse</translation>
-    </message>
-    <message>
-        <source>any available funds (not recommended)</source>
-        <translation>Alle tilgængelige saldi (anbefales ikke)</translation>
-    </message>
-    <message>
-        <source>and SwiftTX</source>
-        <translation>og SwiftTX</translation>
+        <source>Warning: Invalid ION address</source>
+        <translation>Advarsel! Ugyldig ION adresse</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2892,9 +3935,17 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Et gebyr %1 gange højere end %2 pr. kilobyte er vanvittigt højt.</translation>
     </message>
+    <message numerus="yes">
+        <source>Estimated to begin confirmation within %n block(s).</source>
+        <translation><numerusform>Forventer bekræftelse indenfor %n blokke</numerusform><numerusform>Forventer bekræftelse indenfor %n blokke</numerusform></translation>
+    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>Modtageradressen er ikke gyldig. Kontroller igen</translation>
+    </message>
+    <message>
+        <source>using SwiftX</source>
+        <translation>ved hjælp af SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -2933,6 +3984,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Fejl! Tegnebogen blev kun låst op for at anonymisere mønterne. </translation>
     </message>
     <message>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation>Fejl: Tegnebogen blev låst op for at anonymisere mønter. Lås op afbrudt.</translation>
+    </message>
+    <message>
         <source>Pay only the minimum fee of %1</source>
         <translation>Betal kun minimums transaktionsgebyret på %1</translation>
     </message>
@@ -2956,7 +4011,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Betal &amp;Til</translation>
     </message>
     <message>
-        <source>The Ion address to send the payment to</source>
+        <source>The ION address to send the payment to</source>
         <translation>ION adressen, som betalingen skal sendes til</translation>
     </message>
     <message>
@@ -2996,7 +4051,7 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Besked</translation>
     </message>
     <message>
-        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ion network.</source>
+        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ION network.</source>
         <translation>En besked, der var vedhæftet til ION: URl wil blive gemt sammen med transaktionen som reference. Note: Beskeden bliver medsendt transaktionen over netværket.</translation>
     </message>
     <message>
@@ -3046,8 +4101,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>De kan underskrive beskeder med Deres adresser or at bevise ejerskab. Vær forsigtig med at underskrive noget De er usikker på såsom forsøg op at narre Dem til at oplyse Deres identitet. Skriv kun under på noget De kan stå inde for, og som De er enig i. </translation>
     </message>
     <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>Den Ion adresse, der skal bruges til at underskrive beskeden med.</translation>
+        <source>The ION address to sign the message with</source>
+        <translation>Den ION adresse, der skal bruges til at underskrive beskeden med.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3078,16 +4133,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Kopier den aktuelle underskrift til udklipsholderen.</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>Underskriv beskeden for at bevise, at De ejer denne Ion adresse.</translation>
+        <source>Sign the message to prove you own this ION address</source>
+        <translation>Underskriv beskeden for at bevise, at De ejer denne ION adresse.</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>Beskeden er underskrevet med denne Ion adresse</translation>
+        <source>The ION address the message was signed with</source>
+        <translation>Beskeden er underskrevet med denne ION adresse</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Ion adresse.</translation>
+        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige ION adresse.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3206,6 +4261,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
 </context>
 <context>
     <name>TransactionDesc</name>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Åbn for %n flere blokke</numerusform><numerusform>Åbn for %n flere blokke</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Åbn frem til %1</translation>
@@ -3213,18 +4272,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>conflicted</source>
         <translation>Konflikt!</translation>
-    </message>
-    <message>
-        <source>%1/offline (verified via swifttx)</source>
-        <translation>%1/offline (verified via svifttx)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via swifttx)</source>
-        <translation>%1/bekræftet (verified via svifttx)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via swifttx)</source>
-        <translation>%1/bekræftelser (verified via svifttx)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3239,23 +4286,35 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>%1/bekræftelser</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/offline (verified via svifttx)</translation>
+    </message>
+    <message>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1/bekræftet (verified via svifttx)</translation>
+    </message>
+    <message>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1/bekræftelser (verified via svifttx)</translation>
+    </message>
+    <message>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
         <translation>%1/offline (SwifTX verificering i gang - %2 af %3 signaturer)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
         <translation>%1/bekræftet(SwifTX verificering i gang - %2 af %3 signaturer)</translation>
     </message>
     <message>
-        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
         <translation>%1/bekræftelser (SwifTX verificering i gang - %2 af %3 signaturer)</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftTX verification failed)</source>
+        <source>%1/offline (SwiftX verification failed)</source>
         <translation>%1/offline (SwifTX verificering mislykkedes)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftTX verification failed)</source>
+        <source>%1/confirmed (SwiftX verification failed)</source>
         <translation>%1/bekræftet (SwifTX verificering mislykkedes)</translation>
     </message>
     <message>
@@ -3265,6 +4324,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, er ikke udsendt endnu</translation>
+    </message>
+    <message numerus="yes">
+        <source>, broadcast through %n node(s)</source>
+        <translation><numerusform>, sendt gennem %n noder</numerusform><numerusform>, sendt gennem %n noder</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -3305,6 +4368,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
+    </message>
+    <message numerus="yes">
+        <source>matures in %n more block(s)</source>
+        <translation><numerusform>Modnes efter %n blokke</numerusform><numerusform>Modnes efter %n blokke</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -3404,6 +4471,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Åbn for %n flere blokke</numerusform><numerusform>Åbn for %n flere blokke</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Åbn frem til %1</translation>
@@ -3453,6 +4524,14 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
+        <source>ION Stake</source>
+        <translation>ION Stake</translation>
+    </message>
+    <message>
+        <source>xION Stake</source>
+        <translation>xION Stake</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Tilslør designerede</translation>
     </message>
@@ -3469,6 +4548,34 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
+        <source>Converted ION to xION</source>
+        <translation>Konverteret ION til xION</translation>
+    </message>
+    <message>
+        <source>Spent xION</source>
+        <translation>Brugt xIon</translation>
+    </message>
+    <message>
+        <source>Received ION from xION</source>
+        <translation>Modtaget Ion fra xIon</translation>
+    </message>
+    <message>
+        <source>Minted Change as xION from xION Spend</source>
+        <translation>Minted Change som xION fra xION Spend</translation>
+    </message>
+    <message>
+        <source>Converted xION to ION</source>
+        <translation>Konverteret ION til xION</translation>
+    </message>
+    <message>
+        <source>Anonymous (xION Transaction)</source>
+        <translation>Anonym (xION Transaction)</translation>
+    </message>
+    <message>
+        <source>Anonymous (xION Stake)</source>
+        <translation>Anonym (xION Stake)</translation>
+    </message>
+    <message>
         <source>Sent to</source>
         <translation>Sendt til</translation>
     </message>
@@ -3479,10 +4586,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Payment to yourself</source>
         <translation>Betaling til Dem selv</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Mintet</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -3568,26 +4671,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Sendt til</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>skjult</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>Tilslørede samlede tilføjelser</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Opret tilsløret designering</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Tilslør designerede</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Samlet tilsløret betaling</translation>
-    </message>
-    <message>
         <source>To yourself</source>
         <translation>Til Dem selv</translation>
     </message>
@@ -3602,6 +4685,18 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Masternode Reward</source>
         <translation>Masternodebelønning</translation>
+    </message>
+    <message>
+        <source>Zerocoin Mint</source>
+        <translation>Zerocoin Mint</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend</source>
+        <translation>Zerocoin Tilbring</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend to Self</source>
+        <translation>Zerocoin bruger sig selv</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3688,6 +4783,14 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Eksporteret!</translation>
     </message>
     <message>
+        <source>Received ION from xION</source>
+        <translation>Modtaget Ion fra xIon</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend, Change in xION</source>
+        <translation>Zerocoin Spend, Ændring i xION</translation>
+    </message>
+    <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>Transaktionshistorikken blev gemt i %1</translation>
     </message>
@@ -3721,12 +4824,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Send mønter</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 ION.</source>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ION.</source>
         <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1ION.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
+    <message>
+        <source>HISTORY</source>
+        <translation>HISTORIE</translation>
+    </message>
     <message>
         <source>&amp;Export</source>
         <translation>E&amp;ksporter</translation>
@@ -3747,30 +4854,34 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <source>Wallet Data (*.dat)</source>
         <translation>Datafil til tegnebog (*.dat)</translation>
     </message>
-    <message>
-        <source>Backup Failed</source>
-        <translation>Sikkerhedskopiering mislykkedes.</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the wallet data to %1.</source>
-        <translation>Der opstod en fejl i forsøget på at gemme tegnebogens data til %1</translation>
-    </message>
-    <message>
-        <source>Backup Successful</source>
-        <translation>Sikkerhedskopiering fuldført</translation>
-    </message>
-    <message>
-        <source>The wallet data was successfully saved to %1.</source>
-        <translation>Tegnebogens data blev gemt i %1</translation>
-    </message>
 </context>
 <context>
-    <name>XIONControlDialog</name>
+    <name>XIonControlDialog</name>
+    <message>
+        <source>Select xION to Spend</source>
+        <translation>Vælg xION for at bruge</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Antal</translation>
+    </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
-    </context>
+    <message>
+        <source>xION</source>
+        <translation>xION</translation>
+    </message>
+    <message>
+        <source>Select/Deselect All</source>
+        <translation>Vælg / Fravælg alle</translation>
+    </message>
+    <message>
+        <source>Is Spendable</source>
+        <translation>Kan tilbringes</translation>
+    </message>
+</context>
 <context>
     <name>ion-core</name>
     <message>
@@ -3780,10 +4891,6 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Tillad JSON-RPC forbindelser fra bestemte kilder. Gyldig &lt;ip&gt; er enkeltadresse (1.2.3.4), a Network/netmask (1.2.3.4/255.255.255.0) eller et netværk/CCIDR (1.2.3.4/24). Der kan indsættes flere linier.</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
-        <translation>Der opstod en fejl under opsætningen af RPC adressen %s port %u for monitering: %s</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
@@ -3798,8 +4905,12 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Forbind til den opgivne adresse og lyt efter JSON-.RPC forbindelser. Brug [host]:port notation for IPv6. Der kan indsættes flere linier (standard: Forbind til alle interfaces)</translation>
     </message>
     <message>
+        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
+        <translation>Beregnet akkumulator kontrolpunkt er ikke det, der er registreret af blok indeks</translation>
+    </message>
+    <message>
         <source>Cannot obtain a lock on data directory %s. Ion Core is probably already running.</source>
-        <translation>Kan ikke låse datamappen %s. Ion Core kører sandsynligvis allerede.</translation>
+        <translation>Kan ikke låse datamappen %s. ION core kører sandsynligvis allerede.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -3818,8 +4929,8 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Slet alle tegnebogens transaktioner og genskab kun fra blokkæden ved at tilføje -rescan i forbindes med opstart.</translation>
     </message>
     <message>
-        <source>Disable all Ion specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Slå alle Ion funktioner fra (Masternoder, Tilsløring, SwiftTX, Budgetting)(0-1,default:%u)</translation>
+        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
+        <translation>Slet alle zerocoin-udgifter og minter, der er blevet sendt til blockchain-databasen og geninddrive dem (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3827,12 +4938,20 @@ https://www.transifex.com/cevap/cevap-translations</translation>
 &lt;http://www.opensource.org/licenses/mit-license.php&gt;. </translation>
     </message>
     <message>
-        <source>Enable spork administration functionality with the appropriate private key.</source>
-        <translation>Slå spork administrationsfunktionen til med den rette private nøgle</translation>
+        <source>Enable automatic wallet backups triggered after each xION minting (0-1, default: %u)</source>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver xIon-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Aktiver swifttx, vis bekræftelser for låste transaktioner (bool, default: %s)</translation>
+        <source>Enable or disable staking functionality for ION inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for ION-indgange (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for xION inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for xION-indgange (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable spork administration functionality with the appropriate private key.</source>
+        <translation>Slå spork administrationsfunktionen til med den rette private nøgle</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
@@ -3841,6 +4960,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Fejl! Der opstod en fejl i under lytning efter indkommende forbindelser (Listen returnerede fejl %s)</translation>
+    </message>
+    <message>
+        <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
+        <translation>Fejl: Transaktionen er større end den maksimalt tilladte transaktionsstørrelse!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -3875,16 +4998,16 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Der er fundet ubekræftede designerede outputs. Vent indtil de bekræftes for at fortsætte.</translation>
     </message>
     <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
-        <translation>Hvor grundig er blokkens verificeringer af -checkblocks er (0-4, default %u)</translation>
-    </message>
-    <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Hvis der ikke fastsættes et betalingsTxgebyr, skal der inkluderes tilstrækkelige midler til gebyret så transaktionens bekræftelsesproces vil begynde indenfor n blokke (default: %u)</translation>
     </message>
     <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>Denne indstilling -genproclimit kontrollerer hvor mange blokke der bliver genereret med det samme.</translation>
+    </message>
+    <message>
+        <source>Insufficient or insufficient confirmed funds, you might need to wait a few minutes and try again.</source>
+        <translation>Utilstrækkelige eller utilstrækkelige bekræftede penge, skal du muligvis vente et par minutter og prøve igen.</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
@@ -3927,6 +5050,10 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Forespørg peer adresser via DNS opslag, hvis antallet af adresser er laft (default: 1 med mindre -connect)</translation>
     </message>
     <message>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <translation>Randomize credentials for hver proxy-forbindelse. Dette gør det muligt for Tor-strøm isolering (standard: %u)</translation>
+    </message>
+    <message>
         <source>Require high priority for relaying free or low-fee transactions (default:%u)</source>
         <translation>anmod om høj prioritet for videresendelse af gratis transaktioner eller transaktioner med lavt gebyr (default: %u)</translation>
     </message>
@@ -3955,40 +5082,12 @@ https://www.transifex.com/cevap/cevap-translations</translation>
         <translation>Understøt filtrering af blokke og transaktioner med bloom filters (default: %u)</translation>
     </message>
     <message>
-        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftTX kræver mindst 6 bekræftelser. Vent nogle minutter og prøv igen.</translation>
-    </message>
-    <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation>Dette produkt anvender software udviklet i OpenSSL projektet til brug i OpenSSL værktøjssættet &lt;https://www.openssl.org/&gt; og kryptosoftware skrevet afEric Young og UPnP software skrevet af Thomas Bernard.</translation>
     </message>
     <message>
-        <source>To use iond, or the -server option to ion-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=ionrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "ION Alert" admin@foo.com
-</source>
-        <translation>For at bruge iond eller -server muligheden sammen med ion-qt skal der angives et rpc kodeord i konfigurationsfilen:
-%s
-De anbefales at benytte følgende tilfældige kodeord
-Rpcuser=ionrpc
-rpcpasswrd=%s
-(Det er ikke nødvendigt at huske dette kodeord)
-Brugernavn og kodeord MÅ IKKE VÆRE ENS!
-Hvis filen ikke eksisterer, opret den med sikkerhedsindstillingen - ejer kun læserettigheder tilladelsen.
-Det anbefales tillige at vælge alertnotify til for at blive orienteret om eventuelle problemer.
-For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.dk
-</translation>
-    </message>
-    <message>
         <source>Unable to bind to %s on this computer. Ion Core is probably already running.</source>
-        <translation>Det var ikke muligt at forbinde %s på denne computer. Ion kører sandsynligvis allerede.</translation>
+        <translation>Det var ikke muligt at forbinde %s på denne computer. ION kører sandsynligvis allerede.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
@@ -4016,7 +5115,7 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Ion Core will not work properly.</source>
-        <translation>Advarsel! Kontroller at computerens dato og tid er korrekt indstillet. Hvis tiden ikke er rigtig, vil Ion Core ikke fungere ordentligt.</translation>
+        <translation>Advarsel! Kontroller at computerens dato og tid er korrekt indstillet. Hvis tiden ikke er rigtig, vil ION core ikke fungere ordentligt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4075,10 +5174,6 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Accepter public REST anmodninger (default: %u)</translation>
     </message>
     <message>
-        <source>Acceptable ciphers (default: %s)</source>
-        <translation>Acceptabel krypto (default: %s)</translation>
-    </message>
-    <message>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Tilføj en node at forbinde til, og forsøg at holde forbindelsen åben.</translation>
     </message>
@@ -4099,8 +5194,16 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Forsøger at genskabe de private nøgler fra en beskadiget wallet.dat fil</translation>
     </message>
     <message>
+        <source>Automatically create Tor hidden service (default: %d)</source>
+        <translation>Opret automatisk Tor-skjult tjeneste (standard: %d)</translation>
+    </message>
+    <message>
         <source>Block creation options:</source>
         <translation>Bloker optioner for oprettelse:</translation>
+    </message>
+    <message>
+        <source>Calculating missing accumulators...</source>
+        <translation>Beregning af manglende akkumulatorer ...</translation>
     </message>
     <message>
         <source>Can't denominate: no compatible inputs left.</source>
@@ -4167,16 +5270,8 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) %i The Ion Core Developers</source>
-        <translation>Copyright (C) %i The Ion Core Developers</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Blokdatabasen er beskadiget</translation>
-    </message>
-    <message>
-        <source>Could not parse -rpcbind value %s as network address</source>
-        <translation>Kunne ikke fortolke -rpcbind værdien %s som netværksadresse</translation>
     </message>
     <message>
         <source>Could not parse masternode.conf</source>
@@ -4185,6 +5280,14 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Debugging/Testing options:</source>
         <translation>Debug/testoptioner:</translation>
+    </message>
+    <message>
+        <source>Delete blockchain folders and resync from scratch</source>
+        <translation>Slet blockchain mapper og resync fra bunden</translation>
+    </message>
+    <message>
+        <source>Disable OS notifications for incoming transactions (default: %u)</source>
+        <translation>Deaktiver OS-underretninger for indgående transaktioner (standard: %u)</translation>
     </message>
     <message>
         <source>Disable safemode, override a real safe mode event (default: %u)</source>
@@ -4205,6 +5308,18 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Done loading</source>
         <translation>Indlæst!</translation>
+    </message>
+    <message>
+        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
+        <translation>Aktivér automatisk Zerocoin-mintning (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Aktivér publicering af hash-transaktion (låst via SwiftX) i &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Aktivér publicere rå transaktion (låst via SwiftX) i &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -4240,7 +5355,7 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Ion Core</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Tegnebogen kræver en nyere version af Ion Core</translation>
+        <translation>Fejl ved indlæsning af wallet.dat: Tegnebogen kræver en nyere version af ION core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4281,6 +5396,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Error: You already have pending entries in the Obfuscation pool</source>
         <translation>Fejl! De har allerede ventende transaktioner i tilsløringsgruppen</translation>
+    </message>
+    <message>
+        <source>Failed to calculate accumulator checkpoint</source>
+        <translation>Kunne ikke beregne akkumulatorkontrolpunktet</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
@@ -4352,23 +5471,23 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     </message>
     <message>
         <source>Initialization sanity check failed. Ion Core is shutting down.</source>
-        <translation>Initiering af sanitetskontrollen fejlede. Ion Core lukker ned. </translation>
+        <translation>Initiering af sanitetskontrollen fejlede. ION core lukker ned. </translation>
     </message>
     <message>
         <source>Input is not valid.</source>
         <translation>Ugyldigt input</translation>
     </message>
     <message>
+        <source>Insufficient funds</source>
+        <translation>Utilstrækkelige midler</translation>
+    </message>
+    <message>
         <source>Insufficient funds.</source>
         <translation>Utilstrækkelige midler</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Ugyldig -onion adresse: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Ugyldig -proxy adresse: '%s'</translation>
+        <source>Invalid -onion address or hostname: '%s'</source>
+        <translation>Ugyldig -onionadresse eller værtsnavn: ' %s'</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
@@ -4395,6 +5514,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Ugyldigt beløb til -reservebalance=&lt;beløb&gt;:</translation>
     </message>
     <message>
+        <source>Invalid amount</source>
+        <translation>Ugyldigt beløb</translation>
+    </message>
+    <message>
         <source>Invalid masternodeprivkey. Please see documenation.</source>
         <translation> Ugyldig masternodeprivkey. Se dokumentationen</translation>
     </message>
@@ -4415,8 +5538,96 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Ugyldigt script fundet.</translation>
     </message>
     <message>
+        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
+        <translation>Procentdel af automatisk mintede Zerocoin (10-100, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Reindex the ION and xION money supply statistics</source>
+        <translation>Reindex ION og xION pengemængde statistikker</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin database...</source>
+        <translation>Reindexing zerocoin database ...</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin failed</source>
+        <translation>Reindexerende zerocoin mislykkedes</translation>
+    </message>
+    <message>
+        <source>Selected coins value is less than payment target</source>
+        <translation>Valgt mønter værdi er mindre end betalingsmål</translation>
+    </message>
+    <message>
+        <source>SwiftX options:</source>
+        <translation>SwiftTX optioner:</translation>
+    </message>
+    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>Denne release er en testrelease. Anvendelse på eget ansvar - bør ikke anvendes til staking eller handelsapplikationer!</translation>
+    </message>
+    <message>
+        <source> mints deleted
+</source>
+        <translation>minter slettet
+</translation>
+    </message>
+    <message>
+        <source> mints updated, </source>
+        <translation>mints opdateret,</translation>
+    </message>
+    <message>
+        <source> unconfirmed transactions removed
+</source>
+        <translation>ubekræftede transaktioner fjernet
+</translation>
+    </message>
+    <message>
+        <source>Disable all ION specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Slå alle ION funktioner fra (Masternoder, Tilsløring, SwiftTX, Budgetting)(0-1,default:%u)</translation>
+    </message>
+    <message>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Aktiver swifttx, vis bekræftelser for låste transaktioner (bool, default: %s)</translation>
+    </message>
+    <message>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>Transaktionen blev afvist! Dette kan ske, hvis nogle af mønterne i tegnebogen allerede er brugt. For eksempel hvis De har brugt en kopi af Wallet.dat filen, og mønterne har været brugt, men ikke markerede som brugte i den. </translation>
+    </message>
+    <message>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation>Fejl: Denne transaktion kræver et transaktionsgebyr på mindst %s på grund af dets mængde, kompleksitet eller brug af nyligt modtagne penge!</translation>
+    </message>
+    <message>
+        <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
+        <translation>Fejl: Ikke understøttet argument -checklevel fundet. Checklevel skal være niveau 4.</translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes and its size is over (%s in cmd is replaced by block hash, %d with the block size)</source>
+        <translation>Udfør kommando, når den bedste blok ændres, og dens størrelse er overstået (%s i cmd erstattes af blok hash, %d med blokstørrelsen)</translation>
+    </message>
+    <message>
+        <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
+        <translation>Kunne ikke finde møntsæt blandt holdte mønter med mindre end maksimalt antal udgifter</translation>
+    </message>
+    <message>
+        <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
+        <translation>I sjældne tilfælde overstiger en udgift med 7 mønter vores maksimale tilladte transaktionsstørrelse. Prøv igen med 6 eller færre mønter</translation>
+    </message>
+    <message>
+        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
+        <translation>Foretrukken Betegnelse for automatisk mintede Zerocoin (1/5/10/50/100/500/1000/5000), 0 uden præference. standard: %u)</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any automatic xION backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Angiv brugerdefineret backup-vej for at tilføje en kopi af enhver xION-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup. Hvis backupath er indstillet, vil der ske 4 sikkerhedskopier</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation>Angiv en brugerdefineret backup-sti for at tilføje en kopi af en wallet-backup. Hvis det er angivet som dig, genererer hver backup en tidsstempelet fil. Hvis den er angivet som fil, ønsker man at omskrive til den pågældende fil hver backup.</translation>
+    </message>
+    <message>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX kræver mindst 6 bekræftelser. Vent nogle minutter og prøv igen.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -4425,6 +5636,70 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation>Forsøg at gennemtvinge reparation af korrumperet blokkæde</translation>
+    </message>
+    <message>
+        <source>CoinSpend: Accumulator witness does not verify</source>
+        <translation>CoinSpend: Akkumulator vidne bekræfter ikke</translation>
+    </message>
+    <message>
+        <source>Display the stake modifier calculations in the debug.log file.</source>
+        <translation>Vis beregning af stavmodifikator i debug.log-filen.</translation>
+    </message>
+    <message>
+        <source>Display verbose coin stake messages in the debug.log file.</source>
+        <translation>Vis verbose møntspilsmeddelelser i debug.log-filen.</translation>
+    </message>
+    <message>
+        <source>Enable publish hash block in &lt;address&gt;</source>
+        <translation>Aktivér publish hash-blok i &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction in &lt;address&gt;</source>
+        <translation>Aktivér publicering af hash-transaction I &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw block in &lt;address&gt;</source>
+        <translation>Aktivér offentliggør rå blok I &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction in &lt;address&gt;</source>
+        <translation>Aktivér publicere rå transaktion i &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable staking functionality (0-1, default: %u)</source>
+        <translation>Aktivér stakfunktionalitet (0-1, standard: %u)</translation>
+    </message>
+    <message>
+        <source>Error: A fatal internal error occurred, see debug.log for details</source>
+        <translation>Fejl! En fatal intern fejl opstod. Se debug.log for nærmere detaljer</translation>
+    </message>
+    <message>
+        <source>Error: No valid utxo!</source>
+        <translation>Fejl: Ingen gyldig udxo!</translation>
+    </message>
+    <message>
+        <source>Failed to create mint</source>
+        <translation>Kunne ikke oprette mynte</translation>
+    </message>
+    <message>
+        <source>Failed to deserialize</source>
+        <translation>Kunne ikke deserialisere</translation>
+    </message>
+    <message>
+        <source>Failed to find Zerocoins in wallet.dat</source>
+        <translation>Kunne ikke finde Zerocoins i wallet.dat</translation>
+    </message>
+    <message>
+        <source>Failed to select a zerocoin</source>
+        <translation>Kunne ikke vælge en zerocoin</translation>
+    </message>
+    <message>
+        <source>Failed to wipe zerocoinDB</source>
+        <translation>Kunne ikke tørre zerocoinDB</translation>
+    </message>
+    <message>
+        <source>Failed to write coin serial number into wallet</source>
+        <translation>Kunne ikke skrive møntserienummer i tegnebog</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -4475,12 +5750,20 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Indlæser masternode betalingscache...</translation>
     </message>
     <message>
-        <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Indlæser tegnebog... (%3.2f%%)</translation>
+        <source>Loading sporks...</source>
+        <translation>Indlæser sporks ...</translation>
+    </message>
+    <message>
+        <source>Loading wallet... (%3.1f %%)</source>
+        <translation>Indlæser tegnebog... (%3.1f%%)</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
         <translation>Indlæser tegnebog</translation>
+    </message>
+    <message>
+        <source>Location of the auth cookie (default: data dir)</source>
+        <translation>Placering af auth cookie (standard: data dir)</translation>
     </message>
     <message>
         <source>Lock is already in place.</source>
@@ -4489,6 +5772,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Lås masternoder fra masternode konfiguratinsfilen (default: %u)</translation>
+    </message>
+    <message>
+        <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
+        <translation>Opslag (): Ugyldig-proxy adresse eller værtsnavn: '%s'</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -4515,12 +5802,20 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Maksimal størrelse på per-connection send buffer, &lt;n&gt; *1000 bytes (default: %u)</translation>
     </message>
     <message>
+        <source>Mint did not make it into blockchain</source>
+        <translation>Mint gjorde det ikke til blockchain</translation>
+    </message>
+    <message>
         <source>Missing input transaction information.</source>
         <translation>Manglende transaktionsinformationsinput</translation>
     </message>
     <message>
         <source>Mixing in progress...</source>
         <translation>Usynliggørelse i gang</translation>
+    </message>
+    <message>
+        <source>Need address because change is not exact</source>
+        <translation>Har brug for adresse, fordi ændring ikke er nøjagtig</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
@@ -4567,6 +5862,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Antal automatiske sikkerhedskopier af tegnebogen (default: 10)</translation>
     </message>
     <message>
+        <source>Number of custom location backups to retain (default: %d)</source>
+        <translation>Antal brugerdefinerede positionsbackups til at beholde (standard: %d)</translation>
+    </message>
+    <message>
         <source>Obfuscation is idle.</source>
         <translation>Tilsløringssystem ledigt</translation>
     </message>
@@ -4595,20 +5894,24 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Kodeord for JSON-RPC forbindelser</translation>
     </message>
     <message>
+        <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
+        <translation>isValid (): Ugyldig-proxy adresse eller værtsnavn: '%s'</translation>
+    </message>
+    <message>
+        <source>Preparing for resync...</source>
+        <translation>Forberedelse til genoptagelse ...</translation>
+    </message>
+    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Forbered debug output med tidsstempel (default %u)</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>RPC SSL optioner: (se "the bitcoin Wiki" for opsætningsinstruktioner - på engelsk)</translation>
+        <source>Print version and exit</source>
+        <translation>Udskriftsversion og exit</translation>
     </message>
     <message>
         <source>RPC server options:</source>
         <translation>RPC server optioner:</translation>
-    </message>
-    <message>
-        <source>RPC support for HTTP persistent connections (default: %d)</source>
-        <translation>RPC understøttelse for HTTP stående forbindelser (default: %d)</translation>
     </message>
     <message>
         <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
@@ -4627,6 +5930,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Modtag og vis P2P netværksalarmer (default: %u)</translation>
     </message>
     <message>
+        <source>Reindex the accumulator database</source>
+        <translation>Reindex akkumulatiedatabasen</translation>
+    </message>
+    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>Videresend og minér databærer transaktioner (default: %u)</translation>
     </message>
@@ -4643,6 +5950,14 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Genskanner...</translation>
     </message>
     <message>
+        <source>ResetMintZerocoin finished: </source>
+        <translation>ResetSpentZerocoin færdig:</translation>
+    </message>
+    <message>
+        <source>ResetSpentZerocoin finished: </source>
+        <translation>ResetSpentZerocoin færdig:</translation>
+    </message>
+    <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
         <translation>Kør en tråd periodevist for at rense tegnebogen ud (default %u)</translation>
     </message>
@@ -4653,14 +5968,6 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Send transaktioner som nugebyrstransaktioner hvis muligt (default: %u)</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: %s)</source>
-        <translation>Servercertfikatfil (default %s)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: %s)</source>
-        <translation>Server private nøgle (default: %s)</translation>
     </message>
     <message>
         <source>Session not complete!</source>
@@ -4689,6 +5996,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Set minimum block size in bytes (default: %u)</source>
         <translation>Angiv minimums blokstørrelse i bytes (default: %u)</translation>
+    </message>
+    <message>
+        <source>Set the Maximum reorg depth (default: %u)</source>
+        <translation>Indstil højeste dybde dybde (standard: %u)</translation>
     </message>
     <message>
         <source>Set the masternode private key</source>
@@ -4751,8 +6062,16 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Angiv Deres offentlige adresse</translation>
     </message>
     <message>
+        <source>Spend Valid</source>
+        <translation>Tilbring gyldig</translation>
+    </message>
+    <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation>Brug ubekræftede returpenge når der sendes transaktioner (default: %u)</translation>
+    </message>
+    <message>
+        <source>Staking options:</source>
+        <translation>Staking muligheder:</translation>
     </message>
     <message>
         <source>Stop running after importing blocks from disk (default: %u)</source>
@@ -4769,10 +6088,6 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Afsendt til masternode, venter i kø %s</translation>
-    </message>
-    <message>
-        <source>SwiftTX options:</source>
-        <translation>SwiftTX optioner:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4803,6 +6118,26 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Synkroniserer sporks...</translation>
     </message>
     <message>
+        <source>Syncing xION wallet...</source>
+        <translation>Syncing xION wallet ..</translation>
+    </message>
+    <message>
+        <source>The coin spend has been used</source>
+        <translation>Møntudgifterne er blevet brugt</translation>
+    </message>
+    <message>
+        <source>The new spend coin transaction did not verify</source>
+        <translation>Den nye udgiftsmønttransaktion bekræftede ikke</translation>
+    </message>
+    <message>
+        <source>The selected mint coin is an invalid coin</source>
+        <translation>Den valgte mintmønter er en ugyldig mønt</translation>
+    </message>
+    <message>
+        <source>The transaction did not verify</source>
+        <translation>Transaktionen bekræftede ikke</translation>
+    </message>
+    <message>
         <source>This help message</source>
         <translation>Denne hjælpemeddelelse</translation>
     </message>
@@ -4821,6 +6156,26 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Terskel for frakoblíng af peers der udfører upassende handlinger (default: %u)</translation>
+    </message>
+    <message>
+        <source>Too many spends needed</source>
+        <translation>Alt for mange tilbringer nødvendig</translation>
+    </message>
+    <message>
+        <source>Tor control port password (default: empty)</source>
+        <translation>Tor-kontrolportadgangskode (standard: tom)</translation>
+    </message>
+    <message>
+        <source>Tor control port to use if onion listening enabled (default: %s)</source>
+        <translation>Tor-kontrolport, der skal bruges, hvis du lytter til løg (standard: %s)</translation>
+    </message>
+    <message>
+        <source>Transaction Created</source>
+        <translation>Transaktion oprettet</translation>
+    </message>
+    <message>
+        <source>Transaction Mint Started</source>
+        <translation>Transaktionsmynte startet</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -4855,12 +6210,28 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Afsender sluttransaktionen.</translation>
     </message>
     <message>
+        <source>Try to spend with a higher security level to include more coins</source>
+        <translation>Prøv at bruge med et højere sikkerhedsniveau til at inkludere flere mønter</translation>
+    </message>
+    <message>
+        <source>Trying to spend an already spent serial #, try again.</source>
+        <translation>Forsøger at bruge en allerede brugt serie #, prøv igen.</translation>
+    </message>
+    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Det er ikke muligt at forbide til %s på denne computer (bind returnerede fejl %s)</translation>
     </message>
     <message>
+        <source>Unable to find transaction containing mint</source>
+        <translation>Kunne ikke finde transaktioner indeholdende mynte</translation>
+    </message>
+    <message>
         <source>Unable to sign spork message, wrong key?</source>
         <translation>Det var ikke muligt at signere spork meddelelsen. Er De sikker på De anvender den rigtige nøgle?</translation>
+    </message>
+    <message>
+        <source>Unable to start HTTP server. See debug log for details.</source>
+        <translation>Kan ikke starte HTTP-serveren. Se fejlfindingsloggen for detaljer.</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
@@ -4875,10 +6246,6 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Opdater tegnebogen til det nyeste format</translation>
     </message>
     <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Brug OpenSSL (https) til JSON-RPC forbindelser</translation>
-    </message>
-    <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
         <translation>Anvend UPnP til at kortlægge den lyttende port (default: %u)</translation>
     </message>
@@ -4887,12 +6254,20 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Anvend UPnP for at kortlægge lytteporten (default: 1 når der lyttes)</translation>
     </message>
     <message>
+        <source>Use a custom max chain reorganization depth (default: %u)</source>
+        <translation>Brug en brugerdefineret maks kædeomlægningsdybde (standard: %u)</translation>
+    </message>
+    <message>
         <source>Use the test network</source>
         <translation>Anvend testnetværket</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Brugernavn til JSON-RPC forbindelser</translation>
+    </message>
+    <message>
+        <source>Value is below the smallest available denomination (= 1) of xION</source>
+        <translation>Værdien er under den mindste tilgængelige værdi (= 1) for xION</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -4907,6 +6282,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Verificerer  tegnebog</translation>
     </message>
     <message>
+        <source>Version 1 xION require a security level of 100 to successfully spend.</source>
+        <translation>Version 1 xION kræver et sikkerhedsniveau på 100 til succes.</translation>
+    </message>
+    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Tegnbogen %s befinder sig udenfor datamappen %s</translation>
     </message>
@@ -4916,7 +6295,7 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Ion Core to complete</source>
-        <translation>Tegnebogen måtte genskrives. Genstart Ion Core for at gøre færdig</translation>
+        <translation>Tegnebogen måtte genskrives. Genstart ION core for at gøre færdig</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -4947,6 +6326,10 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
         <translation>Prøver igen</translation>
     </message>
     <message>
+        <source>You don't have enough Zerocoins in your wallet</source>
+        <translation>Du har ikke nok Zerocoins i din tegnebog</translation>
+    </message>
+    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Databasen skal genopbygges ved hjælp af -reindex for at ændre -txindex</translation>
     </message>
@@ -4961,6 +6344,14 @@ For eksempel: alertnotify=Echo %% | mail - s "ION ALARM!" e-mail@administrator.d
     <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Skifter alle transaktioner i tegnebogen.</translation>
+    </message>
+    <message>
+        <source>ZeroMQ notification options:</source>
+        <translation>ZeroMQ notifikationsindstillinger:</translation>
+    </message>
+    <message>
+        <source>Zerocoin options:</source>
+        <translation>Zerocoin muligheder:</translation>
     </message>
     <message>
         <source>on startup</source>

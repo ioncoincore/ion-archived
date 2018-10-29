@@ -446,7 +446,7 @@
      </property>
      <property name="icon">
       <iconset resource="../ion.qrc">
-       <normaloff>:/icons/ion</normaloff>:/icons/ion</iconset>
+       <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -1755,7 +1755,7 @@
      </property>
      <property name="icon">
       <iconset resource="../ion">
-       <normaloff>:/icons/ion</normaloff>:/icons/ion</iconset>
+       <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
     <widget class="QWidget" name="layoutWidget3">
@@ -2928,7 +2928,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Bittrex Ion Deposit Address:</string>
+      <string>Bittrex ION Deposit Address:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="GenDepositBTN">
@@ -2941,11 +2941,11 @@
       </rect>
      </property>
      <property name="text">
-      <string>Generate Ion Deposit Address</string>
+      <string>Generate ION Deposit Address</string>
      </property>
      <property name="icon">
       <iconset resource="../ion.qrc">
-       <normaloff>:/icons/ion</normaloff>:/icons/ion</iconset>
+       <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="DepositAddressLabel">
@@ -3155,7 +3155,7 @@
        <string notr="true">border: 1px solid #61696c;margin-left:4px;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnConvertION">
+     <widget class="QPushButton" name="btnConvertIon">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -3254,7 +3254,7 @@
      </property>
      <property name="icon">
       <iconset resource="../ion.qrc">
-       <normaloff>:/icons/ion</normaloff>:/icons/ion</iconset>
+       <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">

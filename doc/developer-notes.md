@@ -105,6 +105,13 @@ Development tips and tricks
 Run configure with the --enable-debug option, then make. Or run configure with
 CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
 
+**debugging with VSCode**
+
+For VSCode user we supply debugger config wihtin the repository. By pressing **CTRL+SHIFT+D** (_or debug icon on left_)
+
+**Note¹**: you have to compile first normally (_not using depends folder_)
+**Note²**: _If you use default configs, it automaticly uses ../datadir folder as default folder_
+
 **debug.log**
 
 If the code is behaving strangely, take a look in the debug.log file in the data directory;

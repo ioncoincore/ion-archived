@@ -129,11 +129,5 @@ qa/pull-tester/test.*/*
 CMakeLists.txt
 cmake-build-debug
 
-# patches
-contrib/patches/
-
-# text editors
+#Vscode
 .vscode/
-
-# snap files
-ion_master_source.tar.bz2

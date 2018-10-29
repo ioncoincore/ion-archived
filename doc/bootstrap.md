@@ -30,7 +30,7 @@ Exit the Bitcoin client software if you have it running. Be sure not to have an 
 **For Windows users:**
 Open explorer, and type into the address bar:
 
-	%APPDATA%\ioncoin
+	%APPDATA%\Bitcoin
     
 This will open up the data folder. It should look like the image below. Copy over the bootstrap.dat from your download folder to this directory.
 ![Fig4](img/bootstrap4.png)
@@ -38,7 +38,7 @@ This will open up the data folder. It should look like the image below. Copy ove
 **For OSX users:**
 Open Finder by pressing Press [shift] + [cmd] + [g] and enter:
 
-	~/Library/Application Support/ioncoin/
+	~/Library/Application Support/Bitcoin/
     
 **For Linux users:**
 The directory is hidden in your User folder. Go to:

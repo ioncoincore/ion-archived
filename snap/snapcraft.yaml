@@ -29,7 +29,7 @@ apps:
 
 parts:
   ion:
-    source: https://bitbucket.org/ioncoin/ion
+    source: https://github.com/cevap/ion
     source-type: git
     source-tag: v3.1.01
     plugin: autotools

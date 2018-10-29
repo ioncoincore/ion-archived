@@ -35,7 +35,7 @@ generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/ion/ioncoin.conf
+Once you have a password in hand, set rpcpassword= in /etc/ioncoin/ioncoin.conf
 
 For an example configuration file that describes the configuration settings,
 see contrib/debian/examples/ioncoin.conf.
@@ -46,7 +46,7 @@ see contrib/debian/examples/ioncoin.conf.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              /usr/bin/iond
-Configuration file:  /etc/ion/ioncoin.conf
+Configuration file:  /etc/ioncoin/ioncoin.conf
 Data directory:      /var/lib/iond
 PID file:            /var/run/iond/iond.pid (OpenRC and Upstart)
                      /var/lib/iond/iond.pid (systemd)
@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy iond.init to /etc/init.d/iond. Test by running "service iond start".
 
 Using this script, you can adjust the path and flags to the iond program by
-setting the iond and FLAGS environment variables in the file
+setting the IOND and FLAGS environment variables in the file
 /etc/sysconfig/iond. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
