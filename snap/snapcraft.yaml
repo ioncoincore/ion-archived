@@ -31,7 +31,7 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: v3.0.4
+    source-tag: 3.0.4
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
