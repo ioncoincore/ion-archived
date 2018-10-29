@@ -22,7 +22,7 @@ apps:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7]
     aliases: [ion-qt]
-    desktop: ion.desktop.desktop
+    desktop: ion.desktop
   cli:
     command: ion-cli
     aliases: [ion-cli]
