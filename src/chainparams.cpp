@@ -60,7 +60,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (  550001,  uint256("aa063547717c4e9f1f1593a580143491896cde85a0b369442d629cd364a1b78d") ) // Zerocoin Start (v8)    1521903907   1464462)
         (  550142,  uint256("4a9e4ee53bc441e0aadf788b5daa9b8d01a3a6debed01b5c599d6f7e22f4f7d0") ) //                        1521912217   1464746
         (  552317,  uint256("654cf4e6d0e9d8249075c674a54859849b2648cfe35ea71e25bd6394f24331b2") ) // Last block             1522095098   1469475
-        (  853104,  uint256("9623e2c68f6eab9f91ac9ca4b65a2049a05f223f970ca2d3cf8280ad1ead5efc") );// v3.1.0                 1540360964   2232434
+        (  853104,  uint256("9623e2c68f6eab9f91ac9ca4b65a2049a05f223f970ca2d3cf8280ad1ead5efc") ) // v3.1.0                 1540360964   2232434
         (  860817,  uint256("b78531efc5d878f8afc5aa9fd349d0181e8cc213853251aad63839d59781a716") );// v3.1.1                 1540827763   2251929
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
