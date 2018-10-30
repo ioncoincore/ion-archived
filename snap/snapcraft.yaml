@@ -1,5 +1,4 @@
 name: ioncoin
-architectures: [amd64, i386, armhf]
 version: v3.1.01
 summary:   peer-to-peer network based digital currency
 description: |
