@@ -1,4 +1,5 @@
 name: ioncoin
+architectures: [amd64, i386, armhf]
 version: v3.1.01
 summary:   peer-to-peer network based digital currency
 description: |
@@ -17,7 +18,6 @@ apps:
     plugs: [network, network-bind]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
-    aliases: [iond]
   qt:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7]
@@ -25,7 +25,6 @@ apps:
     desktop: ion.desktop
   cli:
     command: ion-cli
-    aliases: [ion-cli]
 
 parts:
   ion:
@@ -66,6 +65,12 @@ parts:
       - protobuf-compiler
       # Optional.
       - libqrencode-dev
+      # Snap specific
+      - libatk-adaptor
+      - libgail-common
+      - libcanberra-gtk-dev
+      - libcanberra-gtk3-dev
+      - xserver-xorg-dev
     stage-packages: [ca-certificates]
     after:
       - berkeleydb
