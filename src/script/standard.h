@@ -82,9 +82,12 @@ public:
  *  * CNoDestination: no destination set
  *  * CKeyID: TX_PUBKEYHASH destination
  *  * CScriptID: TX_SCRIPTHASH destination
- *  A CTxDestination is the internal data type encoded in a CBitcoinAddress
+ *  A CTxDestination is the internal data type encoded in an ION address
  */
 typedef boost::variant<CNoDestination, CKeyID, CScriptID> CTxDestination;
+
+/** Check whether a CTxDestination is a CNoDestination. */
+bool IsValidDestination(const CTxDestination& dest);
 
 const char* GetTxnOutputType(txnouttype t);
 
