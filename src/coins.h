@@ -9,6 +9,8 @@
 #define BITCOIN_COINS_H
 
 #include "compressor.h"
+#include "core_memusage.h"
+#include "memusage.h"
 #include "script/standard.h"
 #include "serialize.h"
 #include "uint256.h"
