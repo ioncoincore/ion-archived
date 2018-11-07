@@ -195,7 +195,7 @@ set<int> setDirtyFileInfo;
 namespace
 {
 struct CBlockReject {
-    unsigned char chRejectCode;
+    unsigned int chRejectCode;
     string strRejectReason;
     uint256 hashBlock;
 };
