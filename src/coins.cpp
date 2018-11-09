@@ -141,6 +141,12 @@ const CCoins* CCoinsViewCache::AccessCoins(const uint256& txid) const
     }
 }
 
+const Coin CCoinsViewCache::AccessCoin(const COutPoint &outpoint) const
+{
+    const CCoins* coins = AccessCoins(outpoint.hash);
+    return Coin(*coins, outpoint.n);
+}
+
 bool CCoinsViewCache::HaveCoins(const uint256& txid) const
 {
     CCoinsMap::const_iterator it = FetchCoins(txid);
