@@ -1427,10 +1427,9 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
     CAmount nOnlyDenominatedBalance;
     CAmount nBalanceNeedsDenominated;
 
-    // should not be less than fees in OBFUSCATION_COLLATERAL + few (lets say 5) smallest denoms
-    CAmount nLowestDenom = OBFUSCATION_COLLATERAL + obfuScationDenominations[obfuScationDenominations.size() - 1] * 5;
+    CAmount nLowestDenom = obfuScationDenominations[obfuScationDenominations.size() - 1];
 
-    // if there are no OBF collateral inputs yet
+    // if there are no confirmed OBF collateral inputs yet
     if (!pwalletMain->HasCollateralInputs())
         // should have some additional amount for them
         nLowestDenom += OBFUSCATION_COLLATERAL * 4;
@@ -1440,15 +1439,19 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
     // if balanceNeedsAnonymized is more than pool max, take the pool max
     if (nBalanceNeedsAnonymized > OBFUSCATION_POOL_MAX) nBalanceNeedsAnonymized = OBFUSCATION_POOL_MAX;
 
-    // if balanceNeedsAnonymized is more than non-anonymized, take non-anonymized
+    // try to overshoot target OBF balance up to nLowestDenom
+    nBalanceNeedsAnonymized += nLowestDenom;
     CAmount nAnonymizableBalance = pwalletMain->GetAnonymizableBalance();
-    if (nBalanceNeedsAnonymized > nAnonymizableBalance) nBalanceNeedsAnonymized = nAnonymizableBalance;
 
-    if (nBalanceNeedsAnonymized < nLowestDenom) {
+    // anonymizable balance is way too small
+    if (nAnonymizableBalance < nLowestDenom) {
         LogPrintf("DoAutomaticDenominating : No funds detected in need of denominating \n");
         strAutoDenomResult = _("No funds detected in need of denominating.");
         return false;
     }
+
+    // not enough funds to anonymze amount we want, try the max we can
+    if (nBalanceNeedsAnonymized > nAnonymizableBalance) nBalanceNeedsAnonymized = nAnonymizableBalance;
 
     LogPrint("obfuscation", "DoAutomaticDenominating : nLowestDenom=%d, nBalanceNeedsAnonymized=%d\n", nLowestDenom, nBalanceNeedsAnonymized);
 
@@ -1502,7 +1505,7 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
             return false;
         }
 
-        //check our collateral nad create new if needed
+        //check our collateral and create new if needed
         std::string strReason;
         CValidationState state;
         if (txCollateral == CMutableTransaction()) {
@@ -1791,7 +1794,7 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
         int nOutputs = 0;
 
         // add each output up to 10 times until it can't be added again
-        while (nValueLeft - v >= OBFUSCATION_COLLATERAL && nOutputs <= 10) {
+        while (nValueLeft - v >= 0 && nOutputs <= 10) {
             CScript scriptDenom;
             CPubKey vchPubKey;
             //use a unique change address

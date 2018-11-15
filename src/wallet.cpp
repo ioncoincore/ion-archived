@@ -1098,7 +1098,11 @@ CAmount CWalletTx::GetAnonymizableCredit(bool fUseCache) const
         const CTxIn vin = CTxIn(hashTx, i);
 
         if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-        if (fMasterNode && vout[i].nValue == MASTERNODE_COLLATERAL_AMOUNT * COIN) continue; // do not count MN-like outputs
+        // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == MASTERNODE_COLLATERAL_AMOUNT * COIN) continue;
+        // do not count outputs that are 10 times smaller then the smallest denomination
+        // otherwise they will just lead to higher fee / lower priority
+        if(vout[i].nValue <= obfuScationDenominations[obfuScationDenominations.size() - 1]/10) continue;
 
         const int rounds = pwallet->GetInputObfuscationRounds(vin);
         if (rounds >= -2 && rounds < nZeromintPercentage) {
@@ -1162,7 +1166,11 @@ CAmount CWalletTx::GetUnlockedCredit() const
         const CTxOut& txout = vout[i];
 
         if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-        if (fMasterNode && vout[i].nValue == MASTERNODE_COLLATERAL_AMOUNT * COIN) continue; // do not count MN-like outputs
+        // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == MASTERNODE_COLLATERAL_AMOUNT * COIN) continue;
+        // do not count outputs that are 10 times smaller then the smallest denomination
+        // otherwise they will just lead to higher fee / lower priority
+        if(vout[i].nValue <= obfuScationDenominations[obfuScationDenominations.size() - 1]/10) continue;
 
         nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         if (!MoneyRange(nCredit))
