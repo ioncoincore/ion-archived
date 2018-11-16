@@ -14,7 +14,7 @@ For now this new repository is empty and we will move our content in following d
   - Project where you can look up the progress of this action: [Move from CEVAP branch](https://github.com/orgs/ioncoincore/projects/1)
   - Download [ioncoincore latest release](https://github.com/ioncoincore/ion/releases)
 
-### Client: Sagittarius
+### Client: Helium
 
 ![](assets/images/Helium.jpg)
 
