@@ -417,12 +417,12 @@ void CObfuscationPool::SetNull()
 
 bool CObfuscationPool::SetCollateralAddress(std::string strAddress)
 {
-    CBitcoinAddress address;
-    if (!address.SetString(strAddress)) {
+    CTxDestination dest = DecodeDestination(strAddress);
+    if (dest.which() == 0) {
         LogPrintf("CObfuscationPool::SetCollateralAddress - Invalid Obfuscation collateral address\n");
         return false;
     }
-    collateralPubKey = GetScriptForDestination(address.Get());
+    collateralPubKey = GetScriptForDestination(dest);
     return true;
 }
 

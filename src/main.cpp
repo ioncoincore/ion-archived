@@ -2250,9 +2250,6 @@ bool CScriptCheck::operator()()
     return true;
 }
 
-CBitcoinAddress addressExp1("DQZzqnSR6PXxagep1byLiRg9ZurCZ5KieQ");
-CBitcoinAddress addressExp2("DTQYdnNqKuEHXyNeeYhPQGGGdqHbXYwjpj");
-
 map<COutPoint, COutPoint> mapInvalidOutPoints;
 map<CBigNum, CAmount> mapInvalidSerials;
 void AddInvalidSpendsToMap(const CBlock& block)

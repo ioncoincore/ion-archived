@@ -18,7 +18,6 @@ class CTxIn;
 class CObfuscationPool;
 class CObfuScationSigner;
 class CMasterNodeVote;
-class CBitcoinAddress;
 class CObfuscationQueue;
 class CObfuscationBroadcastTx;
 class CActiveMasternode;

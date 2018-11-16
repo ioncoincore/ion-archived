@@ -60,13 +60,12 @@ static std::string ScriptToString(const CScript& Script, bool Long = false, bool
     if (Script.empty())
         return "unknown";
 
-    CTxDestination Dest;
-    CBitcoinAddress Address;
-    if (ExtractDestination(Script, Dest) && Address.Set(Dest)) {
+    CTxDestination dest;
+    if (ExtractDestination(Script, dest)) {
         if (Highlight)
-            return "<span class=\"addr\">" + Address.ToString() + "</span>";
+            return "<span class=\"addr\">" + EncodeDestination(dest) + "</span>";
         else
-            return makeHRef(Address.ToString());
+            return makeHRef(EncodeDestination(dest));
     } else
         return Long ? "<pre>" + FormatScript(Script) + "</pre>" : _("Non-standard script");
 }
@@ -378,7 +377,7 @@ std::string TxToString(uint256 BlockHash, const CTransaction& tx)
     return Content;
 }
 
-std::string AddressToString(const CBitcoinAddress& Address)
+std::string AddressToString(const CTxDestination& dest)
 {
     std::string TxLabels[] =
         {
@@ -426,7 +425,7 @@ std::string AddressToString(const CBitcoinAddress& Address)
     TxContent += "</table>";
 
     std::string Content;
-    Content += "<h1>" + _("Transactions to/from") + "&nbsp;<span>" + Address.ToString() + "</span></h1>";
+    Content += "<h1>" + _("Transactions to/from") + "&nbsp;<span>" + EncodeDestination(dest) + "</span></h1>";
     Content += TxContent;
     return Content;
 }
@@ -518,10 +517,9 @@ bool BlockExplorer::switchTo(const QString& query)
     }
 
     // If the query is not an integer, nor a block hash, nor a transaction hash, assume an address
-    CBitcoinAddress Address;
-    Address.SetString(query.toUtf8().constData());
-    if (Address.IsValid()) {
-        std::string Content = AddressToString(Address);
+    if (IsValidDestinationString(query.toUtf8().constData())) {
+        CTxDestination dest = DecodeDestination(query.toUtf8().constData());
+        std::string Content = EncodeDestination(dest);
         if (Content.empty())
             return false;
         setContent(Content);

@@ -70,7 +70,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             // ION stake reward
             sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
             sub.type = TransactionRecord::StakeMint;
-            sub.address = CBitcoinAddress(address).ToString();
+            sub.address = EncodeDestination(address);
             sub.credit = nNet;
         } else {
             //Masternode reward
@@ -80,7 +80,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 isminetype mine = wallet->IsMine(wtx.vout[nIndexMN]);
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
                 sub.type = TransactionRecord::MNReward;
-                sub.address = CBitcoinAddress(destMN).ToString();
+                sub.address = EncodeDestination(destMN);
                 sub.credit = wtx.vout[nIndexMN].nValue;
             }
         }
@@ -113,7 +113,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             string strAddress = "";
             CTxDestination address;
             if (ExtractDestination(txout.scriptPubKey, address))
-                strAddress = CBitcoinAddress(address).ToString();
+                strAddress = EncodeDestination(address);
 
             // a zerocoinspend that was sent to an address held by this wallet
             isminetype mine = wallet->IsMine(txout);
@@ -224,7 +224,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 CTxDestination address;
                 if (ExtractDestination(wtx.vout[0].scriptPubKey, address)) {
                     // Sent to ION Address
-                    sub.address = CBitcoinAddress(address).ToString();
+                    sub.address = EncodeDestination(address);
                 } else {
                     // Sent to IP, or other non-address transaction like OP_EVAL
                     sub.address = mapValue["to"];

@@ -103,7 +103,7 @@ void MultiSendDialog::on_addButton_clicked()
 {
     bool fValidConversion = false;
     std::string strAddress = ui->multiSendAddressEdit->text().toStdString();
-    if (!CBitcoinAddress(strAddress).IsValid()) {
+    if (!IsValidDestinationString(strAddress)) {
         ui->message->setProperty("status", "error");
         ui->message->style()->polish(ui->message);
         ui->message->setText(tr("The entered address: %1 is invalid.\nPlease check the address and try again.").arg(ui->multiSendAddressEdit->text()));
@@ -145,12 +145,12 @@ void MultiSendDialog::on_addButton_clicked()
 
     if (model && model->getAddressTableModel()) {
         // update the address book with the label given or no label if none was given.
-        CBitcoinAddress address(strAddress);
+        CTxDestination dest = DecodeDestination(strAddress);
         std::string userInputLabel = ui->labelAddressLabelEdit->text().toStdString();
         if (!userInputLabel.empty())
-            model->updateAddressBookLabels(address.Get(), userInputLabel, "send");
+            model->updateAddressBookLabels(dest, userInputLabel, "send");
         else
-            model->updateAddressBookLabels(address.Get(), "(no label)", "send");
+            model->updateAddressBookLabels(dest, "(no label)", "send");
     }
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -196,7 +196,7 @@ void MultiSendDialog::on_activateButton_clicked()
         strRet = tr("Unable to activate MultiSend, check MultiSend vector");
     else if (!(ui->multiSendStakeCheckBox->isChecked() || ui->multiSendMasternodeCheckBox->isChecked())) {
         strRet = tr("Need to select to send on stake and/or masternode rewards");
-    } else if (CBitcoinAddress(pwalletMain->vMultiSend[0].first).IsValid()) {
+    } else if (IsValidDestinationString(pwalletMain->vMultiSend[0].first)) {
         pwalletMain->fMultiSendStake = ui->multiSendStakeCheckBox->isChecked();
         pwalletMain->fMultiSendMasternodeReward = ui->multiSendMasternodeCheckBox->isChecked();
 

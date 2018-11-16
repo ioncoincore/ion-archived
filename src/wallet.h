@@ -111,16 +111,6 @@ enum ZerocoinSpendStatus {
     XION_SPEND_V1_SEC_LEVEL                         // Spend is V1 and security level is not set to 100
 };
 
-struct CompactTallyItem {
-    CBitcoinAddress address;
-    CAmount nAmount;
-    std::vector<CTxIn> vecTxIn;
-    CompactTallyItem()
-    {
-        nAmount = 0;
-    }
-};
-
 /** A key pool entry */
 class CKeyPool
 {
@@ -386,7 +376,7 @@ public:
     }
 
     void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed = true, const CCoinControl* coinControl = NULL, bool fIncludeZeroValue = false, AvailableCoinsType nCoinType = ALL_COINS, bool fUseIX = false, int nWatchonlyConfig = 1) const;
-    std::map<CBitcoinAddress, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
+    std::map<CTxDestination, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
     bool SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int nConfTheirs, std::vector<COutput> vCoins, std::set<std::pair<const CWalletTx*, unsigned int> >& setCoinsRet, CAmount& nValueRet) const;
 
     /// Get 1000DASH output and keys which can be used for the Masternode
@@ -541,7 +531,7 @@ public:
 
     bool IsDenominatedAmount(CAmount nInputAmount) const;
 
-    bool IsUsed(const CBitcoinAddress address) const;
+    bool IsUsed(const CTxDestination dest) const;
 
     isminetype IsMine(const CTxIn& txin) const;
     CAmount GetDebit(const CTxIn& txin, const isminefilter& filter) const;

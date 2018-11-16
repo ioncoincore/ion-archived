@@ -501,17 +501,16 @@ bool CWallet::GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubK
     txinRet = CTxIn(out.tx->GetHash(), out.i);
     pubScript = out.tx->vout[out.i].scriptPubKey; // the inputs PubKey
 
-    CTxDestination address1;
-    ExtractDestination(pubScript, address1);
-    CBitcoinAddress address2(address1);
+    CTxDestination dest;
+    ExtractDestination(pubScript, dest);
 
-    CKeyID keyID;
-    if (!address2.GetKeyID(keyID)) {
+    const CKeyID *keyID = boost::get<CKeyID>(&dest);
+    if (!keyID) {
         LogPrintf("CWallet::GetVinAndKeysFromOutput -- Address does not refer to a key\n");
         return false;
     }
 
-    if (!GetKey(keyID, keyRet)) {
+    if (!GetKey(*keyID, keyRet)) {
         LogPrintf("CWallet::GetVinAndKeysFromOutput -- Private key for address is not known\n");
         return false;
     }
@@ -762,10 +761,10 @@ isminetype CWallet::IsMine(const CTxIn& txin) const
     return ISMINE_NO;
 }
 
-bool CWallet::IsUsed(const CBitcoinAddress address) const
+bool CWallet::IsUsed(const CTxDestination dest) const
 {
     LOCK(cs_wallet);
-    CScript scriptPubKey = GetScriptForDestination(address.Get());
+    CScript scriptPubKey = GetScriptForDestination(dest);
     if (!::IsMine(*this, scriptPubKey)) {
         return false;
     }
@@ -2014,12 +2013,12 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
     }
 }
 
-map<CBitcoinAddress, vector<COutput> > CWallet::AvailableCoinsByAddress(bool fConfirmed, CAmount maxCoinValue)
+map<CTxDestination, vector<COutput> > CWallet::AvailableCoinsByAddress(bool fConfirmed, CAmount maxCoinValue)
 {
     vector<COutput> vCoins;
     AvailableCoins(vCoins, fConfirmed);
 
-    map<CBitcoinAddress, vector<COutput> > mapCoins;
+    map<CTxDestination, vector<COutput> > mapCoins;
     BOOST_FOREACH (COutput out, vCoins) {
         if (maxCoinValue > 0 && out.tx->vout[out.i].nValue > maxCoinValue)
             continue;
@@ -2028,7 +2027,7 @@ map<CBitcoinAddress, vector<COutput> > CWallet::AvailableCoinsByAddress(bool fCo
         if (!ExtractDestination(out.tx->vout[out.i].scriptPubKey, address))
             continue;
 
-        mapCoins[CBitcoinAddress(address)].push_back(out);
+        mapCoins[address].push_back(out);
     }
 
     return mapCoins;
@@ -4096,10 +4095,10 @@ void CWallet::AutoCombineDust()
         return;
     }
 
-    map<CBitcoinAddress, vector<COutput> > mapCoinsByAddress = AvailableCoinsByAddress(true, nAutoCombineThreshold * COIN);
+    map<CTxDestination, vector<COutput> > mapCoinsByAddress = AvailableCoinsByAddress(true, nAutoCombineThreshold * COIN);
 
     //coins are sectioned by address. This combination code only wants to combine inputs that belong to the same address
-    for (map<CBitcoinAddress, vector<COutput> >::iterator it = mapCoinsByAddress.begin(); it != mapCoinsByAddress.end(); it++) {
+    for (map<CTxDestination, vector<COutput> >::iterator it = mapCoinsByAddress.begin(); it != mapCoinsByAddress.end(); it++) {
         vector<COutput> vCoins, vRewardCoins;
         bool maxSize = false;
         vCoins = it->second;
@@ -4144,7 +4143,7 @@ void CWallet::AutoCombineDust()
             continue;
 
         vector<pair<CScript, CAmount> > vecSend;
-        CScript scriptPubKey = GetScriptForDestination(it->first.Get());
+        CScript scriptPubKey = GetScriptForDestination(it->first);
         vecSend.push_back(make_pair(scriptPubKey, nTotalRewardsValue));
 
         //Send change to same address
@@ -4223,7 +4222,7 @@ bool CWallet::MultiSend()
         //Disabled Addresses won't send MultiSend transactions
         if (vDisabledAddresses.size() > 0) {
             for (unsigned int i = 0; i < vDisabledAddresses.size(); i++) {
-                if (vDisabledAddresses[i] == CBitcoinAddress(destMyAddress).ToString()) {
+                if (vDisabledAddresses[i] == EncodeDestination(destMyAddress)) {
                     LogPrintf("Multisend: disabled address preventing multisend\n");
                     return false;
                 }
@@ -4247,9 +4246,9 @@ bool CWallet::MultiSend()
         for (unsigned int i = 0; i < vMultiSend.size(); i++) {
             // MultiSend vector is a pair of 1)Address as a std::string 2) Percent of stake to send as an int
             nAmount = ((out.tx->GetCredit(filter) - out.tx->GetDebit(filter)) * vMultiSend[i].second) / 100;
-            CBitcoinAddress strAddSend(vMultiSend[i].first);
+            CTxDestination strAddSend = DecodeDestination(vMultiSend[i].first);
             CScript scriptPubKey;
-            scriptPubKey = GetScriptForDestination(strAddSend.Get());
+            scriptPubKey = GetScriptForDestination(strAddSend);
             vecSend.push_back(make_pair(scriptPubKey, nAmount));
         }
 
