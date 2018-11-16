@@ -16,7 +16,7 @@ For now this new repository is empty and we will move our content in following d
 
 ### Client: Sagittarius
 
-![](assets/images/Sagittarius.jpg)
+![](assets/images/Helium.jpg)
 
 ## Introduction
 
