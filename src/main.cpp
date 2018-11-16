@@ -2030,9 +2030,22 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             ret = blockValue * .50;
         } else if (nHeight >= GetZerocoinStartHeight()) {
             ret = blockValue * .50;
-            // staking reward is 6 xION on zerocoin staking
-            if (isXIONStake)
-                ret = 5.5 * COIN;
+            // staking reward xION on zerocoin staking
+            if (isXIONStake) {
+                if (nHeight > 900000 && nHeight <= 1013538) {    // 568622+1440=570062   1012098+1440=1013538
+                    ret = (blockValue - 1.5) * .50;                      // (11,5-1,5)*0,5=5
+                } else if (nHeight > 1013538 && nHeight <= 1457014) {    // 1012098+1440=1013538   1455574+1440=1457014
+                    ret = (blockValue - 1.75) * .50;                     // (5,75-1,75)*0,5=2
+                } else if (nHeight > 1457014 && nHeight <= 3677390) {    // 1455574+1440=1457014   3675950+1440=3677390
+                    ret = 0.85 * COIN;                                   // (1.85-0,075)*0,5=2
+                } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::TESTNET) {
+                    ret = blockValue;
+                } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::REGTEST) {
+                    ret = (blockValue - 1) * .50;
+                } else {
+                    ret = 0 ;
+                }
+            }
         }
     }
 
