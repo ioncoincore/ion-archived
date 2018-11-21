@@ -9,6 +9,7 @@
 
 #include "addresstablemodel.h"
 #include "guiconstants.h"
+#include "guiutil.h"
 #include "recentrequeststablemodel.h"
 #include "transactiontablemodel.h"
 
@@ -262,8 +263,9 @@ void WalletModel::updateAddressBookLabels(const CTxDestination& dest, const stri
 WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransaction& transaction, const CCoinControl* coinControl)
 {
     CAmount total = 0;
+    bool fSubtractFeeFromAmount = false;
     QList<SendCoinsRecipient> recipients = transaction.getRecipients();
-    std::vector<std::pair<CScript, CAmount> > vecSend;
+    std::vector<CRecipient> vecSend;
 
     if (recipients.empty()) {
         return OK;
@@ -278,6 +280,9 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
 
     // Pre-check input data for validity
     foreach (const SendCoinsRecipient& rcp, recipients) {
+        if (rcp.fSubtractFeeFromAmount)
+            fSubtractFeeFromAmount = true;
+
         if (rcp.paymentRequest.IsInitialized()) { // PaymentRequest...
             CAmount subtotal = 0;
             const payments::PaymentDetails& details = rcp.paymentRequest.getDetails();
@@ -287,7 +292,9 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
                 subtotal += out.amount();
                 const unsigned char* scriptStr = (const unsigned char*)out.script().data();
                 CScript scriptPubKey(scriptStr, scriptStr + out.script().size());
-                vecSend.push_back(std::pair<CScript, CAmount>(scriptPubKey, out.amount()));
+                CAmount nAmount = out.amount();
+                CRecipient recipient = {scriptPubKey, nAmount, rcp.fSubtractFeeFromAmount};
+                vecSend.push_back(recipient);
             }
             if (subtotal <= 0) {
                 return InvalidAmount;
@@ -304,7 +311,8 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             ++nAddresses;
 
             CScript scriptPubKey = GetScriptForDestination(DecodeDestination(rcp.address.toStdString()));
-            vecSend.push_back(std::pair<CScript, CAmount>(scriptPubKey, rcp.amount));
+            CRecipient recipient = {scriptPubKey, rcp.amount, rcp.fSubtractFeeFromAmount};
+            vecSend.push_back(recipient);
 
             total += rcp.amount;
         }
@@ -323,7 +331,9 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         LOCK2(cs_main, wallet->cs_wallet);
 
         transaction.newPossibleKeyChange(wallet);
+
         CAmount nFeeRequired = 0;
+        int nChangePosRet = -1;
         std::string strFailReason;
 
         CWalletTx* newTx = transaction.getTransaction();
@@ -336,8 +346,10 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             return TransactionCreationFailed;
         }
 
-        bool fCreated = wallet->CreateTransaction(vecSend, *newTx, *keyChange, nFeeRequired, strFailReason, coinControl, recipients[0].inputType, recipients[0].useSwiftTX);
+        bool fCreated = wallet->CreateTransaction(vecSend, *newTx, *keyChange, nFeeRequired, nChangePosRet, strFailReason, coinControl, recipients[0].inputType, recipients[0].useSwiftTX);
         transaction.setTransactionFee(nFeeRequired);
+        if (fSubtractFeeFromAmount && fCreated)
+            transaction.reassignAmounts(nChangePosRet);
 
         if (recipients[0].useSwiftTX && newTx->GetValueOut() > GetSporkValue(SPORK_3_SWIFTTX_MAX_VALUE) * COIN) {
             emit message(tr("Send Coins"), tr("SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ION.").arg(GetSporkValue(SPORK_3_SWIFTTX_MAX_VALUE)),
@@ -346,7 +358,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         }
 
         if (!fCreated) {
-            if ((total + nFeeRequired) > nBalance) {
+            if (!fSubtractFeeFromAmount && (total + nFeeRequired) > nBalance) {
                 return SendCoinsReturn(AmountWithFeeExceedsBalance);
             }
             emit message(tr("Send Coins"), QString::fromStdString(strFailReason),

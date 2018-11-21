@@ -325,7 +325,7 @@ UniValue getaddressesbyaccount(const UniValue& params, bool fHelp)
     return ret;
 }
 
-void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew, bool fUseIX = false)
+void SendMoney(const CTxDestination& address, CAmount nValue, bool fSubtractFeeFromAmount, CWalletTx& wtxNew, bool fUseIX = false)
 {
     // Check amount
     if (nValue <= 0)
@@ -347,10 +347,13 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
     // Create and send the transaction
     CReserveKey reservekey(pwalletMain);
     CAmount nFeeRequired;
-    if (!pwalletMain->CreateTransaction(scriptPubKey, nValue, wtxNew, reservekey, nFeeRequired, strError, NULL, ALL_COINS, fUseIX, (CAmount)0)) {
-        if (nValue + nFeeRequired > pwalletMain->GetBalance())
+    vector<CRecipient> vecSend;
+    int nChangePosRet = -1;
+    CRecipient recipient = {scriptPubKey, nValue, fSubtractFeeFromAmount};
+    vecSend.push_back(recipient);
+    if (!pwalletMain->CreateTransaction(vecSend, wtxNew, reservekey, nFeeRequired, nChangePosRet, strError, NULL, ALL_COINS, fUseIX, (CAmount)0)) {
+        if (!fSubtractFeeFromAmount && nValue + nFeeRequired > pwalletMain->GetBalance())
             strError = strprintf("Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!", FormatMoney(nFeeRequired));
-        LogPrintf("SendMoney() : %s\n", strError);
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
     }
     if (!pwalletMain->CommitTransaction(wtxNew, reservekey, (!fUseIX ? "tx" : "ix")))
@@ -359,9 +362,9 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
 
 UniValue sendtoaddress(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() < 2 || params.size() > 4)
+    if (fHelp || params.size() < 2 || params.size() > 5)
         throw runtime_error(
-            "sendtoaddress \"ionaddress\" amount ( \"comment\" \"comment-to\" )\n"
+            "sendtoaddress \"ionaddress\" amount ( \"comment\" \"comment-to\" subtractfeefromamount )\n"
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -373,6 +376,7 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
             "                             to which you're sending the transaction. This is not part of the \n"
             "                             transaction, just kept in your wallet.\n"
+            "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
 
             "\nResult:\n"
             "\"transactionid\"  (string) The transaction id.\n"
@@ -380,6 +384,7 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("sendtoaddress", "\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\" 0.1") +
             HelpExampleCli("sendtoaddress", "\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\" 0.1 \"donation\" \"seans outpost\"") +
+            HelpExampleCli("sendtoaddress", "\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\" 0.1 \"\" \"\" true") +
             HelpExampleRpc("sendtoaddress", "\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\", 0.1, \"donation\", \"seans outpost\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
@@ -399,9 +404,13 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["to"] = params[3].get_str();
 
+    bool fSubtractFeeFromAmount = false;
+    if (params.size() > 4)
+        fSubtractFeeFromAmount = params[4].get_bool();
+
     EnsureWalletIsUnlocked();
 
-    SendMoney(dest, nAmount, wtx);
+    SendMoney(dest, nAmount, fSubtractFeeFromAmount, wtx);
 
     return wtx.GetHash().GetHex();
 }
@@ -450,7 +459,7 @@ UniValue sendtoaddressix(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    SendMoney(dest, nAmount, wtx, true);
+    SendMoney(dest, nAmount, false, wtx, true);
 
     return wtx.GetHash().GetHex();
 }
@@ -916,7 +925,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     if (nAmount > nBalance)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
 
-    SendMoney(dest, nAmount, wtx);
+    SendMoney(dest, nAmount, false, wtx);
 
     return wtx.GetHash().GetHex();
 }
@@ -924,9 +933,9 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
 
 UniValue sendmany(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() < 2 || params.size() > 4)
+    if (fHelp || params.size() < 2 || params.size() > 5)
         throw runtime_error(
-            "sendmany \"fromaccount\" {\"address\":amount,...} ( minconf \"comment\" )\n"
+            "sendmany \"fromaccount\" {\"address\":amount,...} ( minconf \"comment\" {\"address\":true,...} )\n"
             "\nSend multiple times. Amounts are double-precision floating point numbers." +
             HelpRequiringPassphrase() + "\n"
 
@@ -939,6 +948,15 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
+            "5. subtractfeefromamount   (string, optional) A json array with addresses.\n"
+            "                           The fee will be equally deducted from the amount of each selected address.\n"
+            "                           Those recipients will receive less bitcoins than you enter in their "
+            "corresponding amount field.\n"
+            "                           If no addresses are specified here, the sender pays the fee.\n"
+            "    [\n"
+            "      \"address\"            (string) Subtract fee from this address\n"
+            "      ,...\n"
+            "    ]\n"
 
             "\nResult:\n"
             "\"transactionid\"          (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
@@ -949,6 +967,9 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             HelpExampleCli("sendmany", "\"tabby\" \"{\\\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\\\":0.01,\\\"iq1qeW9EcY6Rj4LWSkYAfbEUH3X7xLQhAe\\\":0.02}\"") +
             "\nSend two amounts to two different addresses setting the confirmation and comment:\n" +
             HelpExampleCli("sendmany", "\"tabby\" \"{\\\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\\\":0.01,\\\"iq1qeW9EcY6Rj4LWSkYAfbEUH3X7xLQhAe\\\":0.02}\" 6 \"testing\"") +
+            "\nSend two amounts to two different addresses, subtract fee from amount:\n" +
+            HelpExampleCli("sendmany", "\"\" \"{\\\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\\\":0.01,\\\"iq1qeW9EcY6Rj4LWSkYAfbEUH3X7xLQhAe\\\":0.02}\" "
+                "1 \"\" \"[\\\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\\\",\\\"iq1qeW9EcY6Rj4LWSkYAfbEUH3X7xLQhAe\\\"]\"") +
             "\nAs a json rpc call\n" +
             HelpExampleRpc("sendmany", "\"tabby\", \"{\\\"iVpPG131hKv1t6iSnbu9HRrhTC7oM2UEaj\\\":0.01,\\\"iq1qeW9EcY6Rj4LWSkYAfbEUH3X7xLQhAe\\\":0.02}\", 6, \"testing\""));
 
@@ -965,8 +986,12 @@ UniValue sendmany(const UniValue& params, bool fHelp)
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["comment"] = params[3].get_str();
 
+    UniValue subtractFeeFromAmount(UniValue::VARR);
+    if (params.size() > 4)
+        subtractFeeFromAmount = params[4].get_array();
+
     std::set<CTxDestination> destinations;
-    vector<pair<CScript, CAmount> > vecSend;
+    std::vector<CRecipient> vecSend;
 
     CAmount totalAmount = 0;
     vector<string> keys = sendTo.getKeys();
@@ -985,7 +1010,16 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         CAmount nAmount = AmountFromValue(sendTo[name_]);
         totalAmount += nAmount;
 
-        vecSend.push_back(make_pair(scriptPubKey, nAmount));
+        bool fSubtractFeeFromAmount = false;
+        for (unsigned int idx = 0; idx < subtractFeeFromAmount.size(); idx++)
+        {
+            const UniValue &addr = subtractFeeFromAmount[idx];
+            if (addr.get_str() == name_)
+                fSubtractFeeFromAmount = true;
+        }
+
+        CRecipient recipient = {scriptPubKey, nAmount, fSubtractFeeFromAmount};
+        vecSend.push_back(recipient);
     }
 
     EnsureWalletIsUnlocked();
@@ -998,8 +1032,9 @@ UniValue sendmany(const UniValue& params, bool fHelp)
     // Send
     CReserveKey keyChange(pwalletMain);
     CAmount nFeeRequired = 0;
+    int nChangePosRet = -1;
     string strFailReason;
-    bool fCreated = pwalletMain->CreateTransaction(vecSend, wtx, keyChange, nFeeRequired, strFailReason);
+    bool fCreated = pwalletMain->CreateTransaction(vecSend, wtx, keyChange, nFeeRequired, nChangePosRet, strFailReason);
     if (!fCreated)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, strFailReason);
     if (!pwalletMain->CommitTransaction(wtx, keyChange))

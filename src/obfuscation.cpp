@@ -1685,13 +1685,15 @@ bool CObfuscationPool::SendRandomPaymentToSelf()
     CWalletTx wtx;
     CAmount nFeeRet = 0;
     std::string strFail = "";
-    vector<pair<CScript, CAmount> > vecSend;
+    std::vector<CRecipient> vecSend;
+    int nChangePosRet = -1;
 
     // ****** Add fees ************ /
-    vecSend.push_back(make_pair(scriptChange, nPayment));
+    CRecipient recipient = {scriptChange, nPayment, false};
+    vecSend.push_back(recipient);
 
     CCoinControl* coinControl = NULL;
-    bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekey, nFeeRet, strFail, coinControl, ONLY_DENOMINATED);
+    bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekey, nFeeRet, nChangePosRet, strFail, coinControl, ONLY_DENOMINATED);
     if (!success) {
         LogPrintf("SendRandomPaymentToSelf: Error - %s\n", strFail);
         return false;
@@ -1710,7 +1712,8 @@ bool CObfuscationPool::MakeCollateralAmounts()
     CWalletTx wtx;
     CAmount nFeeRet = 0;
     std::string strFail = "";
-    vector<pair<CScript, CAmount> > vecSend;
+    std::vector<CRecipient> vecSend;
+    int nChangePosRet = -1;
     CCoinControl coinControl;
     coinControl.fAllowOtherInputs = false;
     coinControl.fAllowWatchOnly = false;
@@ -1724,18 +1727,19 @@ bool CObfuscationPool::MakeCollateralAmounts()
     assert(reservekeyCollateral.GetReservedKey(vchPubKey)); // should never fail, as we just unlocked
     scriptCollateral = GetScriptForDestination(vchPubKey.GetID());
 
-    vecSend.push_back(make_pair(scriptCollateral, OBFUSCATION_COLLATERAL * 4));
+    CRecipient recipient = {scriptCollateral, OBFUSCATION_COLLATERAL * 4, false};
+    vecSend.push_back(recipient);
 
     // try to use non-denominated and not mn-like funds
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-        nFeeRet, strFail, &coinControl, ONLY_NONDENOMINATED_NOT20000IFMN);
+        nFeeRet, nChangePosRet, strFail, &coinControl, ONLY_NONDENOMINATED_NOT20000IFMN);
     if (!success) {
         // if we failed (most likeky not enough funds), try to use all coins instead -
         // MN-like funds should not be touched in any case and we can't mix denominated without collaterals anyway
         CCoinControl* coinControlNull = NULL;
         LogPrintf("MakeCollateralAmounts: ONLY_NONDENOMINATED_NOT20000IFMN Error - %s\n", strFail);
         success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-            nFeeRet, strFail, coinControlNull, ONLY_NOT20000IFMN);
+            nFeeRet, nChangePosRet, strFail, coinControlNull, ONLY_NOT20000IFMN);
         if (!success) {
             LogPrintf("MakeCollateralAmounts: ONLY_NOT20000IFMN Error - %s\n", strFail);
             reservekeyCollateral.ReturnKey();
@@ -1764,7 +1768,8 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
     CWalletTx wtx;
     CAmount nFeeRet = 0;
     std::string strFail = "";
-    vector<pair<CScript, CAmount> > vecSend;
+    std::vector<CRecipient> vecSend;
+    int nChangePosRet = -1;
     CAmount nValueLeft = nTotalValue;
 
     // make our collateral address
@@ -1781,7 +1786,8 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
 
     // ****** Add collateral outputs ************ /
     if (!pwalletMain->HasCollateralInputs()) {
-        vecSend.push_back(make_pair(scriptCollateral, OBFUSCATION_COLLATERAL * 4));
+        CRecipient recipient = {scriptCollateral, OBFUSCATION_COLLATERAL * 4, false};
+        vecSend.push_back(recipient);
         nValueLeft -= OBFUSCATION_COLLATERAL * 4;
     }
 
@@ -1799,7 +1805,8 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
             // TODO: do not keep reservekeyDenom here
             reservekeyDenom.KeepKey();
 
-            vecSend.push_back(make_pair(scriptDenom, v));
+            CRecipient recipient = {scriptDenom, v, false};
+            vecSend.push_back(recipient);
 
             //increment outputs and subtract denomination amount
             nOutputs++;
@@ -1815,7 +1822,7 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
 
     CCoinControl* coinControl = NULL;
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-        nFeeRet, strFail, coinControl, ONLY_NONDENOMINATED_NOT20000IFMN);
+        nFeeRet, nChangePosRet, strFail, coinControl, ONLY_NONDENOMINATED_NOT20000IFMN);
     if (!success) {
         LogPrintf("CreateDenominated: Error - %s\n", strFail);
         // TODO: return reservekeyDenom here
