@@ -7,7 +7,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "amount.h"
-#include "base58.h"
+#include "dstencode.h"
 #include "chainparams.h"
 #include "core_io.h"
 #include "init.h"

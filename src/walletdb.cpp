@@ -8,7 +8,7 @@
 
 #include "walletdb.h"
 
-#include "base58.h"
+#include "dstencode.h"
 #include "protocol.h"
 #include "serialize.h"
 #include "sync.h"

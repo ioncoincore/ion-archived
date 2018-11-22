@@ -5,6 +5,7 @@
 
 #include "bip38.h"
 #include "base58.h"
+#include "dstencode.h"
 #include "hash.h"
 #include "pubkey.h"
 #include "util.h"

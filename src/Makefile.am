@@ -353,6 +353,8 @@ libbitcoin_common_a_SOURCES = \
   chainparams.cpp \
   coins.cpp \
   compressor.cpp \
+  dstencode.cpp \
+  ionaddrenc.cpp \
   primitives/block.cpp \
   primitives/deterministicmint.cpp \
   primitives/transaction.cpp \

@@ -7,7 +7,7 @@
 #ifndef MASTERNODE_BUDGET_H
 #define MASTERNODE_BUDGET_H
 
-#include "base58.h"
+#include "dstencode.h"
 #include "init.h"
 #include "key.h"
 #include "main.h"

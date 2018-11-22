@@ -7,7 +7,7 @@
 #include "rpc/server.h"
 #include "rpc/client.h"
 
-#include "base58.h"
+#include "dstencode.h"
 #include "wallet.h"
 
 #include <boost/algorithm/string.hpp>

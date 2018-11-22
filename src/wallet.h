@@ -10,7 +10,6 @@
 #define BITCOIN_WALLET_H
 
 #include "amount.h"
-#include "base58.h"
 #include "crypter.h"
 #include "kernel.h"
 #include "key.h"

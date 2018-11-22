@@ -8,7 +8,7 @@
 
 #include <QMainWindow>
 
-#include "base58.h"
+#include "dstencode.h"
 #include "uint256.h"
 #undef loop
 

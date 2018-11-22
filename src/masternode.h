@@ -7,7 +7,7 @@
 #ifndef MASTERNODE_H
 #define MASTERNODE_H
 
-#include "base58.h"
+#include "dstencode.h"
 #include "key.h"
 #include "main.h"
 #include "net.h"

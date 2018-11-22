@@ -117,7 +117,7 @@ IONAddrContent DecodeIONAddrContent(const std::string &addr, const CChainParams 
 {
     std::string prefix;
     std::vector<uint8_t> payload;
-    std::tie(prefix, payload) = bech32::Decode(addr, params.Bech32HRP());
+    std::tie(prefix, payload) = bech32::Decode(addr);
 
     if (prefix != params.Bech32HRP())
     {
