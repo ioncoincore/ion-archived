@@ -147,9 +147,10 @@ public:
 typedef CBitcoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CBitcoinExtKey;
 typedef CBitcoinExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CBitcoinExtPubKey;
 
-std::string EncodeDestination(const CTxDestination& dest);
-CTxDestination DecodeDestination(const std::string& str);
-bool IsValidDestinationString(const std::string& str);
-bool IsValidDestinationString(const std::string& str, const CChainParams& params);
+/// Encode an old-style bitcoin address
+std::string EncodeLegacyAddr(const CTxDestination &dest, const CChainParams &);
+
+/// Decode an old-style bitcoin address
+CTxDestination DecodeLegacyAddr(const std::string &str, const CChainParams &);
 
 #endif // BITCOIN_BASE58_H
