@@ -176,7 +176,7 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     proposalList = new ProposalList(this);
     vbox_2->addWidget(proposalList);
 
-    vbox_2->addStretch();
+    vbox_2->setStretch(1, 1);
 
     proposalListPage->setLayout(vbox_2);
     addWidget(proposalListPage);
