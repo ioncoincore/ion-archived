@@ -164,14 +164,14 @@ ProposalList::ProposalList(QWidget *parent) :
     QAction *voteYesAction = new QAction(tr("Vote yes"), this);
     QAction *voteAbstainAction = new QAction(tr("Vote abstain"), this);
     QAction *voteNoAction = new QAction(tr("Vote no"), this);
-    QAction *openUrlAction = new QAction(tr("Visit proposal website"), this);
+    QAction *copyUrlAction = new QAction(tr("Copy proposal URL"), this);
 
     contextMenu = new QMenu(this);
     contextMenu->addAction(voteYesAction);
     contextMenu->addAction(voteAbstainAction);
     contextMenu->addAction(voteNoAction);
     contextMenu->addSeparator();
-    contextMenu->addAction(openUrlAction);
+    contextMenu->addAction(copyUrlAction);
 
     connect(voteYesButton, SIGNAL(clicked()), this, SLOT(voteYes()));
     connect(voteAbstainButton, SIGNAL(clicked()), this, SLOT(voteAbstain()));
@@ -186,14 +186,13 @@ ProposalList::ProposalList(QWidget *parent) :
     connect(amountWidget, SIGNAL(textChanged(QString)), this, SLOT(changedAmount(QString)));
     connect(percentageWidget, SIGNAL(textChanged(QString)), this, SLOT(changedPercentage(QString)));
 
-    connect(view, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(openProposalUrl()));
     connect(view, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextualMenu(QPoint)));
 
     connect(voteYesAction, SIGNAL(triggered()), this, SLOT(voteYes()));
     connect(voteNoAction, SIGNAL(triggered()), this, SLOT(voteNo()));
     connect(voteAbstainAction, SIGNAL(triggered()), this, SLOT(voteAbstain()));
 
-    connect(openUrlAction, SIGNAL(triggered()), this, SLOT(openProposalUrl()));
+    connect(copyUrlAction, SIGNAL(triggered()), this, SLOT(copyProposalUrl()));
 
     proposalProxyModel = new ProposalFilterProxy(this);
     proposalProxyModel->setSourceModel(proposalTableModel);
@@ -208,7 +207,7 @@ ProposalList::ProposalList(QWidget *parent) :
     proposalList->setAlternatingRowColors(true);
     proposalList->setSelectionBehavior(QAbstractItemView::SelectRows);
     proposalList->setSortingEnabled(true);
-    proposalList->sortByColumn(ProposalTableModel::StartDate, Qt::DescendingOrder);
+    proposalList->sortByColumn(ProposalTableModel::YesVotes, Qt::DescendingOrder);
     proposalList->verticalHeader()->hide();
 
     proposalList->setColumnWidth(ProposalTableModel::Proposal, PROPOSAL_COLUMN_WIDTH);
@@ -417,14 +416,15 @@ void ProposalList::vote_click_handler(const std::string voteString)
     refreshProposals(true);
 }
 
-void ProposalList::openProposalUrl()
+void ProposalList::copyProposalUrl()
 {
     if(!proposalList || !proposalList->selectionModel())
         return;
 
-    QModelIndexList selection = proposalList->selectionModel()->selectedRows(0);
-    if(!selection.isEmpty())
-         QDesktopServices::openUrl(selection.at(0).data(ProposalTableModel::ProposalUrlRole).toString());
+    GUIUtil::copyEntryData(proposalList, 0, ProposalTableModel::ProposalUrlRole);
+    QMessageBox Msgbox;
+    Msgbox.setText(tr("The proposal URL has been copied to the clipboard. You can use it to visit the proposal website.\nHowever, be very careful when doing so. Some websites can try to extract your wallet information in the background or to lure you into a scam. Prefer using different devices to hold funds and to visit proposals URLs."));
+    Msgbox.exec();
 }
 
 void ProposalList::resizeEvent(QResizeEvent* event)

@@ -96,7 +96,7 @@ private Q_SLOTS:
     void voteYes();
     void voteNo();
     void voteAbstain();
-    void openProposalUrl();
+    void copyProposalUrl();
     void invalidateAlignedLayout();
 
 Q_SIGNALS:
