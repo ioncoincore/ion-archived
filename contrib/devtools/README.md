@@ -8,6 +8,20 @@ check-doc.py
 Check if all command line args are documented. The return value indicates the
 number of undocumented args.
 
+gen-manpages.sh
+===============
+
+A small script to automatically create manpages in ../../doc/man by running the release binaries with the -help option.
+This requires help2man which can be found at: https://www.gnu.org/software/help2man/
+
+With in-tree builds this tool can be run from any directory within the
+repostitory. To use this tool with out-of-tree builds set `BUILDDIR`. For
+example:
+
+```bash
+BUILDDIR=$PWD/build contrib/devtools/gen-manpages.sh
+```
+
 github-merge.py
 ===============
 
@@ -36,9 +50,9 @@ couldn't mess with the sources.
 
 Setup
 ---------
-Configuring the github-merge tool for the ION repository is done in the following way:
+Configuring the github-merge tool for the ion repository is done in the following way:
 
-    git config githubmerge.repository ION-Project/ION
+    git config githubmerge.repository cevap/ion
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid (if you want to GPG sign)
 
@@ -109,3 +123,41 @@ It will do the following automatically:
 - add missing translations to the build system (TODO)
 
 See doc/translation-process.md for more information.
+
+png2icns
+========
+
+Run this script in a folder where your PNG's which you require for icns are.
+
+_Importan Info_: _**Only** convert the **icons that match sizes icns supports**: (16x16, 32x32, 128x128, 256x256, 512x512 and 1024x1024 pixels)_
+
+
+```
+png2icns ion.icns ion_16x16x32.png ion_128x128x32.png ion_256x256x32.png ion_48x48x32.png ion_512x512x32.png
+Using icns type 'is32', mask 's8mk' for 'ion_16x16x32.png'
+Using icns type 'it32', mask 't8mk' for 'ion_128x128x32.png'
+Using icns type 'ic08' (ARGB) for 'ion_256x256x32.png'
+Using icns type 'ih32', mask 'h8mk' for 'ion_48x48x32.png'
+Using icns type 'ic09' (ARGB) for 'ion_512x512x32.png'
+Saved icns file to ion.icns
+```
+
+icns2png
+========
+
+Run this script in a folder where you temporarly placed your icns file. It will extract all files.
+
+
+```
+icns2png -x ion.icns
+----------------------------------------------------
+Reading icns family from ion.icns...
+ Extracting icons from ion.icns...
+  Saved 'is32' element to ion_16x16x32.png.
+  Saved 'il32' element to ion_32x32x32.png.
+  Saved 'ih32' element to ion_48x48x32.png.
+  Saved 'it32' element to ion_128x128x32.png.
+  Saved 'ic08' element to ion_256x256x32.png.
+  Saved 'ic09' element to ion_512x512x32.png.
+Extracted 6 images from ion.icns.
+```

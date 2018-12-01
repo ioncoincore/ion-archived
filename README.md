@@ -40,12 +40,8 @@ There were several considerations for selecting the current code base.
    ![Blockexplorer](assets/images/integrated-blockexplorer.png)
 
  - New Algorithm
- - Zerocoin
+ - Zerocoin v2
  - BIP38/BIP38 Tool
- - Masternode core part (requires new configs for all current users)
- - Better transactions overview
- - New wallet design and layout
- - New tools and scripts
  - New artworks
  - For more, reade release notes directly on our [repository](https://github.com/cevap/ion).
 ### Stop ongoing attack
@@ -120,4 +116,3 @@ More information at [ionomy.com](https://www.ionomy.com) Visit our ANN thread at
 <tr><td>1457016-3677391</td><td>50% (0.925 ION)</td><td>50% (0.925 ION)</td><td>4,107,695.6 ION</td></tr>
 <tr><td>3677392-50981391</td><td>50% (0.1 ION)</td><td>50% (0.1 ION)</td><td>9,460,800 ION</td></tr>
 </table>
-
