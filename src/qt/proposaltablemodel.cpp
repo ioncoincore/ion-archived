@@ -39,7 +39,7 @@ static int column_alignments[] = {
 
 ProposalTableModel::ProposalTableModel(QObject *parent) : QAbstractTableModel(parent)
 {
-    columns << tr("Proposal") << tr("Amount") << tr("Start Date") << tr("End Date") << tr("Yes") << tr("No") << tr("Abstain") << tr("Percentage");
+    columns << tr("Proposal") << tr("Amount") << tr("Start Block") << tr("End Block") << tr("Yes") << tr("No") << tr("Abstain") << tr("Percentage");
 
     networkManager = new QNetworkAccessManager(this);
 
