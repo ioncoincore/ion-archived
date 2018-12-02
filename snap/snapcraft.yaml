@@ -1,5 +1,5 @@
 name: ioncoin
-version: latest
+version: v3.1.00
 summary:   peer-to-peer network based digital currency
 description: |
   Ion is a free open source peer-to-peer electronic cash system that
@@ -8,7 +8,7 @@ description: |
   transact directly with each other, with the help of a P2P network to
   check for double-spending.
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
