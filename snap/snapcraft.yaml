@@ -20,13 +20,14 @@ apps:
   qt:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7]
-    aliases: [ion-qt]
     desktop: ion.desktop
   cli:
     command: ion-cli
     plugs: [network, network-bind]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
+  tx:
+    command: ion-tx
 
 parts:
   ion:
