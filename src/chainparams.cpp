@@ -168,7 +168,7 @@ public:
         nBlockLastGoodCheckpoint = 550137;          //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 550137;          //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN;            //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 900000;                  //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 909000;                  //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nEnforceNewSporkKey = 1546214401;           //!> Sporks signed after Thursday, GMT: Monday, 31. December 2018 00:00:01 must use the new spork key
         nRejectOldSporkKey = 1546732801;            //!> Reject old spork key after Wednesday, GMT: Sunday, 6. January 2019 00:00:01
 
