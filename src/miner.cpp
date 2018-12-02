@@ -121,7 +121,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     else
         pblock->nVersion = 7;
 
-    pblock->nVersion = 5;   // Supports CLTV activation
+    pblock->nVersion = 9;   // Supports CLTV activation
 
     // Create coinbase tx
     CMutableTransaction txNew;
