@@ -5,14 +5,12 @@ Ion Core integration/staging repository
 
 ### Important information
 
-Majority of ion contributors decided to move on from CEVAP's branch to a new one which is believed to fit better to marketing and maybe some other purposes. There will be no further CEVAP releases for ion, project is moved to new community runned repository: https://github.com/ioncoincore/ . Version [v3.0.4](https://github.com/cevap/ion/releases/tag/3.0.4) is the last one which is hosted/published on CEVAP. New repository will be updated in following days and next version will be published only there: 
+**This repository is no longer official release repository** for several reasons. There was internal contributor voting on this matter and this is the decision we all have taken for ability to improve future of ion.
 
-  https://github.com/ioncoincore/ion/releases
-  
-For now this new repository is empty and we will move our content in following days. 
+CEVAP remains as ŕepository from which SNAP builds (Ubuntu Software Center) are delivered and this is the reason why CEVAP will keep contributing and updating the code. All official releases will be available on ioncoincore as binary releases and on CEVAP over SNAP builds. In future we will rename ioncoin.* to ioncoinCE and reserve ioncoin as official name for official branch https://github.com/ioncoincore/ion.git
 
-  - Project where you can look up the progress of this action: [Move from CEVAP branch](https://github.com/orgs/ioncoincore/projects/1)
-  - Download [ioncoincore latest release](https://github.com/ioncoincore/ion/releases)
+ - **Official releases**: https://github.com/ioncoincore/
+ - **Development**/__non public__: https://bitbucket.org/ioncoin/ion.git 
 
 ### Client: Helium
 
@@ -20,42 +18,7 @@ For now this new repository is empty and we will move our content in following d
 
 ## Introduction
 
-We released version 3.0.3 as the first stable version of the major upgrade to v3. This release includes a large range of new features, stability improvements and updates, including many contributions from various developers, testers and authors. We thank everybody who contributed and helped to get this release in live status.
-
-### Goals reached
-
-There were several considerations for selecting the current code base.
-
-  - Stop ongoing attacks
-  - **Long term goal has been reached**: our source code has been updated to be more closely in line with bitcoin's code base.
-  - Improved stability of the core
-  - Enhanced interface of the wallet
-  - More regular (and secure) difficulaty algorithm (Dark Gravitiy Wave)
-  - Good tooling support
- 
-## Notable changes
-
- - Integrated blockexplorer
-
-   ![Blockexplorer](assets/images/integrated-blockexplorer.png)
-
- - New Algorithm
- - Zerocoin v2
- - BIP38/BIP38 Tool
- - New artworks
- - For more, reade release notes directly on our [repository](https://github.com/cevap/ion).
-### Stop ongoing attack
-
-There were several issues which enabled several methods of attack. The current release deals with the attack properly.
-
-### Long term goals
-We reached several goals. Instead of pursuing these goals using the old code base, we adopted a new one.
-
- - Bring it to higher bitcoin source base
- - Improve wallet performance
- - New design
- - Integrated blockexplorer
- - Increased anonimity (Zerocoin)
+We released version based on ION 3.1.0 which is refactored old wallet based on new source with several fixes from bitcoin as well as all commits from our main source PIVX (up to commit [4b1be145](https://github.com/PIVX-Project/PIVX/commit/4b1be14505ded427378f267d9c31a3a0f72bda75)). Please check release notes for more info.
 
 ### Our sources: 
 We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's specific features into the PivX codebase.
@@ -63,8 +26,8 @@ We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's
 By doing so, we connect to an enthusiastic and active community - leaving behind old Ion code that inherits from less actively developed and maintaned code. Our main sources are now derived from:
 
   1. [PIVX](https://github.com/PIVX-Project/PIVX)
-  1. [DASH](https://github.com/dashpay/dash)
-  1. [Bitcoin](https://github.com/bitcoin/bitcoin)
+  2. [DASH](https://github.com/dashpay/dash)
+  3. [Bitcoin](https://github.com/bitcoin/bitcoin)
 
 
 More information at [ionomy.com](https://www.ionomy.com) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.7200)
