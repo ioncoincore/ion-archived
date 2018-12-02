@@ -1939,9 +1939,9 @@ Vær tålmodig efter at du har klikket på import.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/ion-project/ion-project-translations</source>
+https://www.transifex.com/cevap/ioncoin</source>
         <translation>Det valgte sprog mangler, eller oversættelsen er mangelfuld. Hjælp ved at bidrage med oversættelser her:
-https://www.transifex.com/ion-project/ion-project-translations</translation>
+https://www.transifex.com/cevap/ioncoin</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

@@ -1930,9 +1930,9 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/ion-project/ion-project-translations</source>
+https://www.transifex.com/cevap/ioncoin</source>
         <translation>Sprache fehlt oder ist unvollständig? Helfe mit und trage zur Übersetzung bei unter:
-https://www.transifex.com/ion-project/ion-project-translations</translation>
+https://www.transifex.com/cevap/ioncoin</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
