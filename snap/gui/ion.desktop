@@ -2,7 +2,7 @@
 
 [Desktop Entry]
 Type=Application
-Version=3.0.0
+Version=3.1.99-master
 Encoding=UTF-8
 Name=Ion Qt
 Icon=${SNAP}/ion128.png
@@ -10,6 +10,5 @@ MimeType=x-scheme-handler/ion;
 Exec=ion %u
 Terminal=false
 Categories=Office;Finance;Cryptocurrency;
-Comment=🗺️Ion Digital Currency QT 👯👯 👛 (by 🐼CEVAP🐼) CE source code (Community Edition)
+Comment=Ion Digital Currency QT (by CEVAP) CE source code (Community Edition)
 Keywords=internet;ion;main;qt;crypto;currency;snap;snapcraft;
-Name[de_DE]=ion.desktop.desktop
