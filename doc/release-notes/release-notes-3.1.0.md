@@ -122,7 +122,7 @@ The overview tab has been simplified greatly to display only balances that are a
 ### Wallet Options
 
 There have been a number of changes to the tasks that you are able to perform from the wallet options. Users will now have the ability to do the following: 
--	Enable and disable the auto xION minting feature. This is enabled by default and the enablezeromint=0 setting in the ion.conf file will overwrite the GUI option.
+-	Enable and disable the auto xION minting feature. This is enabled by default and the enablezeromint=0 setting in the ioncoin.conf file will overwrite the GUI option.
 -	The percentage of autominted xION can now be set from 1 to 100, changed from 10 – 100.
 -	The stake split threshold can now be set VIA the wallet options. This setting is an advanced feature for those wishing to remain staking regular ION.
 -	“Unlock for staking and anonymization only” is now selected by default when unlocking the wallet from the User Interface
@@ -138,7 +138,7 @@ Backup to external devices / locations
 
 ### Summary
 
- The ION wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the ion.conf file, found in the ION data directory.
+ The ION wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the ioncoin.conf file, found in the ION data directory.
 - backuppath = <directory / full path>
 - xionbackuppath = <directory / full path>
 - custombackupthreshold = <backup limit>
