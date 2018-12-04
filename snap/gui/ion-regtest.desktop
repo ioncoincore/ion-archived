@@ -2,7 +2,7 @@
 
 [Desktop Entry]
 Type=Application
-Version=3.1.01-rc2
+Version=3.1.99-master
 Encoding=UTF-8
 Name=Ion Qt (Regtest)
 Icon=${SNAP}/ion128-regtest.png

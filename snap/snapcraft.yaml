@@ -1,5 +1,5 @@
 name: ioncoin
-version: 3.1.00-rc2
+version: 3.1.99-master
 summary:   peer-to-peer network based digital currency
 description: |
   Ion is a free open source peer-to-peer electronic cash system that
@@ -33,7 +33,7 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: v3.1.0-rc2
+    source-tag: master
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
