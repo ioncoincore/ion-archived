@@ -2,8 +2,25 @@ Ion Core integration/staging repository
 =====================================
 
 [![Build Status](https://travis-ci.org/cevap/ion.svg?branch=master)](https://travis-ci.org/cevap/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion) [![GitHub issues](https://img.shields.io/github/issues/cevap/ion.svg)](https://github.com/cevap/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/cevap/ion.svg)](https://github.com/cevap/ion/network) [![GitHub stars](https://img.shields.io/github/stars/cevap/ion.svg)](https://github.com/cevap/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/cevap/ion.svg)](https://github.com/cevap/ion) [![Twitter](https://img.shields.io/twitter/url/https/github.com/cevap/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion)
+[![Latest Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
 
-### Important information
+
+- [Downloads](#downloads)
+- [Important information](#important-information)
+  - [Client: Helium](#client-helium)
+- [Introduction](#introduction)
+  - [Our sources:](#our-sources)
+  - [Coin Specs](#coin-specs)
+  - [Reward Distribution](#reward-distribution)
+    - [Genesis block](#genesis-block)
+  - [PoW Rewards Breakdown](#pow-rewards-breakdown)
+  - [PoS/PoW Rewards Breakdown](#pospow-rewards-breakdown)
+  - [PoS Rewards Breakdown](#pos-rewards-breakdown)
+
+## Downloads
+[![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx-unsigned.dmg.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5osx-unsigned.dmg)[![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx64.tar.gz.svg)](https://github.com/cevap/ion/releases/download/3.0.5/ion-3.0.5-osx64.tar.gz) [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32-setup-unsigned.exe)[![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64-setup-unsigned.exe)[![Download ion binaries for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32.zip.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32.zip) [![Download ion binaries for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64.exe) [![Download ion for Linux 32-bit (i686)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz)[![Download ion for Linux 64-bit (x86_x64)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz)[![Download ion for ARM Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz)[![Download ion for aarch64 Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz) [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/cevap/ion/3.0.5/SHA256SUMS.asc.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/SHA256SUMS.asc)
+
+## Important information
 
 **This repository is no longer official release repository** for several reasons. There was internal contributor voting on this matter and this is the decision we all have taken for ability to improve future of ion.
 
@@ -33,49 +50,45 @@ By doing so, we connect to an enthusiastic and active community - leaving behind
 More information at [ionomy.com](https://www.ionomy.com) Visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.7200)
 
 ### Coin Specs
-<table>
-<tr><td>Algorithm</td><td>Quark</td></tr>
-<tr><td>Retargeting Algorithm</td><td>DGW</td></tr>
-<tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Max Coin Supply</td><td>48,035,935.4 ION</td></tr>
-<tr><td>Premine</td><td>16,400,000 ION*</td></tr>
-</table>
+
+| Coin specifications ||
+ :------------ | :---: |
+Algorithm | Quark |
+Retargeting Algorithm | DGW |
+Difficulty Retargeting | Every Block |
+Max Coin Supply | 48,035,935.4 ION |
+Premine | 16,400,000 ION* |
 
 *16,629,951 Ion Premine was burned in block [1](https://chainz.cryptoid.info/ion/block.dws?000000ed2f68cd6c7935831cc1d473da7c6decdb87e8b5dba0afff0b00002690.htm)
 
 ### Reward Distribution
 
-<table>
-<th colspan=4>Genesis Block</th>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th></tr>
-<tr><td>1</td><td>16,400,000 ION</td><td>Initial Pre-mine</td></tr>
-</table>
+#### Genesis block
+Block Height | Reward Amount | Notes |
+ ----------: | ------------: | :---: |
+1 | 16,400,000 ION | Initial Pre-mine |
 
 ### PoW Rewards Breakdown
 
-<table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Total</th>
-<tr><td>2-454</td><td>50% (11.5 ION)</td><td>50% (11.5 ION)</td><td>10,419 ION</td></tr>
-</table>
+Block Height | Masternodes | Miner | Total |
+ ----------: | ----------: | ----: | ----: |
+2-454 | 50% (11.5 ION) | 50% (11.5 ION) | 10,419 ION |
 
 ### PoS/PoW Rewards Breakdown
 
-<table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
-<tr><td>455-1000</td><td>50% (11.5 ION)</td><td>50% (11.5 ION)</td><td>12,558 ION</td></tr>
-</table>
+Block Height | Masternodes | Miner | Budget |
+ ----------: | ----------: | ----: | -----: |
+455-1000 | 50% (11.5 ION) | 50% (11.5 ION)| 12,558 ION |
 
 ### PoS Rewards Breakdown
 
-<table>
-<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
-<tr><td>1001-125147</td><td>50% (11.5 ION)</td><td>50% (11.5 ION)</td><td>2,855,381 ION</td></tr>
-<tr><td>125148-550001</td><td>50% (8.5 ION)</td><td>50% (8.5 ION)</td><td>7,222,518 ION</td></tr>
-<tr><td>550002-551441</td><td>50% (0.01 ION)</td><td>50% (0.01 ION)</td><td>28.8 ION</td></tr>
-<tr><td>551442-570063</td><td>50% (8.5 ION)</td><td>50% (8.5 ION)</td><td>316,574 ION</td></tr>
-<tr><td>570064-1013539</td><td>50% (5.75 ION)</td><td>50% (5.75 ION)</td><td>5,099,974 ION</td></tr>
-<tr><td>1013540-1457015</td><td>50% (2.875 ION)</td><td>50% (2.875 ION)</td><td>2,549,987 ION</td></tr>
-<tr><td>1457016-3677391</td><td>50% (0.925 ION)</td><td>50% (0.925 ION)</td><td>4,107,695.6 ION</td></tr>
-<tr><td>3677392-50981391</td><td>50% (0.1 ION)</td><td>50% (0.1 ION)</td><td>9,460,800 ION</td></tr>
-</table>
+Block Height | Masternodes | Miner | Budget |
+ ----------: | ----------: | ----: | -----: |
+1001-125147 | 50% (11.5 ION) | 50% (11.5 ION) | 2,855,381 ION |
+125148-550001 | 50% (8.5 ION) | 50% (8.5 ION) | 7,222,518 ION |
+550002-551441 | 50% (0.01 ION) | 50% (0.01 ION) | 28.8 ION |
+551442-570063 | 50% (8.5 ION) | 50% (8.5 ION) | 316,574 ION |
+570064-1013539 | 50% (5.75 ION) | 50% (5.75 ION) | 5,099,974 ION |
+1013540-1457015 | 50% (2.875 ION) | 50% (2.875 ION) | 2,549,987 ION |
+1457016-3677391 | 50% (0.925 ION) | 50% (0.925 ION) | 4,107,695.6 ION |
+3677392-50981391 | 50% (0.1 ION) | 50% (0.1 ION) | 9,460,800 ION |
