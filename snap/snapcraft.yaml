@@ -20,7 +20,7 @@ apps:
   qt:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7, desktop, desktop-legacy, wayland, x11, browser-support, cups-control, home, mpris, opengl, password-manager-service, pulseaudio, removable-media, screen-inhibit-control]
-    desktop: ion.desktop
+    desktop: [ion.desktop, ion-testnet.desktop, ion-regtest.desktop, ion-unittest.desktop]
   cli:
     command: ion-cli
     plugs: [network, network-bind]
@@ -33,7 +33,7 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: master
+    source-tag: v3.1.0-rc2
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
