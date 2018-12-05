@@ -51,8 +51,8 @@ def build():
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
 
-    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz'])
-    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://ioncore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
+    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz'])
+    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch'])
     subprocess.check_call(['make', '-C', '../ion/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
