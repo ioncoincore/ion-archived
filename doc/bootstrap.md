@@ -1,5 +1,12 @@
 ### Bootstrap the Blockchain Synchronization
 
+- [Bootstrap the Blockchain Synchronization](#bootstrap-the-blockchain-synchronization)
+- [Requirements](#requirements)
+- [Download the blockchain via BitTorrent](#download-the-blockchain-via-bittorrent)
+- [Importing the blockchain](#importing-the-blockchain)
+- [Importing the blockchain](#importing-the-blockchain-1)
+- [Is this safe?](#is-this-safe)
+
 Normally the Bitcoin client will download the transaction and network information, called the blockchain, from the network by syncing with the other clients. This process can take quite some time as the [Bitcoin blockchain](https://blockchain.info/charts/blocks-size) is growing bigger and bigger for each day. Luckily there is a safe and fast way to speed up this process. We'll show you how to bootstrap your blockchain to bring your client up to speed in just a few simple steps.
 
 ### Requirements
