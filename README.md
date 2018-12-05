@@ -1,13 +1,18 @@
 Ion Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/cevap/ion.svg?branch=master)](https://travis-ci.org/cevap/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion) [![GitHub issues](https://img.shields.io/github/issues/cevap/ion.svg)](https://github.com/cevap/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/cevap/ion.svg)](https://github.com/cevap/ion/network) [![GitHub stars](https://img.shields.io/github/stars/cevap/ion.svg)](https://github.com/cevap/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/cevap/ion.svg)](https://github.com/cevap/ion) [![Twitter](https://img.shields.io/twitter/url/https/github.com/cevap/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion)
-[![Latest Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
+[![Build Status](https://travis-ci.org/cevap/ion.svg?branch=master)](https://travis-ci.org/cevap/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion) [![GitHub issues](https://img.shields.io/github/issues/cevap/ion.svg)](https://github.com/cevap/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/cevap/ion.svg)](https://github.com/cevap/ion/network) [![GitHub stars](https://img.shields.io/github/stars/cevap/ion.svg)](https://github.com/cevap/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/cevap/ion.svg)](https://github.com/cevap/ion)
 
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/cevap/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
 
+Table of Contents
+-----------------
 - [Downloads](#downloads)
 - [Important information](#important-information)
   - [Client: Helium](#client-helium)
+    - [Ion Core FAQ/Help](#ion-core-faqhelp)
+    - [Build and install](#build-and-install)
+    - [Additional external ressources](#additional-external-ressources)
 - [Introduction](#introduction)
   - [Our sources:](#our-sources)
   - [Coin Specs](#coin-specs)
@@ -18,24 +23,58 @@ Ion Core integration/staging repository
   - [PoS Rewards Breakdown](#pos-rewards-breakdown)
 
 ## Downloads
-[![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx-unsigned.dmg.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5osx-unsigned.dmg)[![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx64.tar.gz.svg)](https://github.com/cevap/ion/releases/download/3.0.5/ion-3.0.5-osx64.tar.gz) [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32-setup-unsigned.exe)[![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64-setup-unsigned.exe)[![Download ion binaries for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32.zip.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32.zip) [![Download ion binaries for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64.exe) [![Download ion for Linux 32-bit (i686)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz)[![Download ion for Linux 64-bit (x86_x64)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz)[![Download ion for ARM Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz)[![Download ion for aarch64 Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz) [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/cevap/ion/3.0.5/SHA256SUMS.asc.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/SHA256SUMS.asc)
+| OS | 32-Bit | 64-Bit |
+ :---: | ---: | ---: |
+MacOS/OSX | [![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx-unsigned.dmg.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5osx-unsigned.dmg) | [![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5osx64.tar.gz.svg)](https://github.com/cevap/ion/releases/download/3.0.5/ion-3.0.5-osx64.tar.gz) |
+Windows XP/Vista/7/10 |  [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32-setup-unsigned.exe) | [![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64-setup-unsigned.exe) |
+| | [![Download ion binaries for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win32.zip.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win32.zip) | [![Download ion binaries for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/latest/ion-3.0.5win64.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5win64.exe) |
+Linux | [![Download ion for Linux 32-bit (i686)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5i686-pc-linux-gnu.tar.gz) | [![Download ion for Linux 64-bit (x86_x64)](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5x86_64-linux-gnu.tar.gz)
+|| [![Download ion for ARM Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5arm-linux-gnueabihf.tar.gz) | [![Download ion for aarch64 Linux](https://img.shields.io/github/downloads/cevap/ion/3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/ion-3.0.5aarch64-linux-gnu.tar.gz)
+
+
+Download checksums: [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/cevap/ion/3.0.5/SHA256SUMS.asc.svg)](https://github.com/cevap/ion/releases/download/v3.0.5/SHA256SUMS.asc)
 
 ## Important information
 
 **This repository is no longer official release repository** for several reasons. There was internal contributor voting on this matter and this is the decision we all have taken for ability to improve future of ion.
 
-CEVAP remains as ŕepository from which SNAP builds (Ubuntu Software Center) are delivered and this is the reason why CEVAP will keep contributing and updating the code. All official releases will be available on ioncoincore as binary releases and on CEVAP over SNAP builds. In future we will rename ioncoin.* to ioncoinCE and reserve ioncoin as official name for official branch https://github.com/ioncoincore/ion.git
+[CEVAP](https://github.com/cevap/) remains as ŕepository from which SNAP builds (Ubuntu Software Center) are delivered and this is the reason why CEVAP will keep contributing and updating the code. All official releases will be available on ioncoincore as binary releases and on CEVAP over SNAP builds. In future we will rename ioncoin.* to ioncoinCE and reserve ioncoin as official name for official branch https://github.com/ioncoincore/ion.git
 
  - **Official releases**: https://github.com/ioncoincore/
  - **Development**/__non public__: https://bitbucket.org/ioncoin/ion.git 
 
 ### Client: Helium
-
 ![](assets/images/Helium.jpg)
+
+#### Ion Core FAQ/Help
+- [Documentation](../../tree/master/doc)
+  - [Setup Ion](../../tree/master/doc#setup)
+  - [Running Ion Core](../../tree/master/doc#running)
+    - [Windows](https://github.com/cevap/ion/tree/master/doc#windows)
+    - [Unix](https://github.com/cevap/ion/tree/master/doc#unix)
+    - [OSX](https://github.com/cevap/ion/tree/master/doc#osx)
+- [Ion Core CE Wiki](../../wiki)
+  - [Accounts-Explained](../../wiki/Accounts-Explained)
+  - [API Call list](../../wiki/API-Calls-List)
+  - [API-Reference-JSON-RPC](../../wiki/API-Reference-JSON-RPC)
+  - [Data-Directory](../../wiki/Data-Directory)
+- External ressources
+  - [Ionomy.com](https://ionomy.com)
+    - [Telegram](https://t.me/ionomy)
+    - [Twitter](https://twitter.com/ionomics)
+    - [ionomy github](https://github.com/ionomy)
+    - [reddit](https://www.reddit.com/r/ionomy/)
+    - [facebook](https://facebook.com/ionomy)
+
+#### Build and install
+- [Build and install ion (all OS)](../../tree/master/doc)
+
+#### Additional external ressources
+
 
 ## Introduction
 
-We released version based on ION 3.1.0 which is refactored old wallet based on new source with several fixes from bitcoin as well as all commits from our main source PIVX (up to commit [4b1be145](https://github.com/PIVX-Project/PIVX/commit/4b1be14505ded427378f267d9c31a3a0f72bda75)). Please check release notes for more info.
+We released version based on [Ion core wallet v3.1.0](../../tag/v3.1.0) which is refactored old wallet based on new source with several fixes from bitcoin as well as all commits from our main source PIVX (up to commit [4b1be145](https://github.com/PIVX-Project/PIVX/commit/4b1be14505ded427378f267d9c31a3a0f72bda75)). Please check release notes for more info.
 
 ### Our sources: 
 We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's specific features into the PivX codebase.
