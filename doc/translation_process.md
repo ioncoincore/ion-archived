@@ -1,5 +1,20 @@
-Translations
-============
+# Translations
+
+Table of Contents
+-----------------
+- [Translations](#translations)
+        - [Helping to translate (using Transifex)](#helping-to-translate-using-transifex)
+        - [Writing code with translations](#writing-code-with-translations)
+            - [Example Qt translation](#example-qt-translation)
+        - [Creating a pull-request](#creating-a-pull-request)
+        - [Creating a Transifex account](#creating-a-transifex-account)
+        - [Installing the Transifex client command-line tool](#installing-the-transifex-client-command-line-tool)
+            - [For Linux and Mac](#for-linux-and-mac)
+            - [For Windows](#for-windows)
+        - [Synchronising translations](#synchronising-translations)
+        - [Handling Plurals (in source files)](#handling-plurals-in-source-files)
+        - [Translating a new language](#translating-a-new-language)
+        - [Questions and general assistance](#questions-and-general-assistance)
 
 The Ion Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Ion Core makes use of the Transifex online translation management tool.
 
@@ -24,7 +39,7 @@ make translate
 
 `contrib/ion-qt.pro` takes care of generating `.qm` (binary compiled) files from `.ts` (source files) files. It’s mostly automated, and you shouldn’t need to worry about it.
 
-**Example Qt translation**
+#### Example Qt translation
 ```cpp
 QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
 ```
@@ -48,7 +63,7 @@ You can find the ION translation project at [https://www.transifex.com/cevap/ion
 ### Installing the Transifex client command-line tool
 The client it used to fetch updated translations. If you are having problems, or need more details, see [http://docs.transifex.com/developer/client/setup](http://docs.transifex.com/developer/client/setup)
 
-**For Linux and Mac**
+#### For Linux and Mac
 
 `pip install transifex-client`
 
@@ -64,7 +79,7 @@ token =
 username = USERNAME
 ```
 
-**For Windows**
+#### For Windows
 
 Please see [http://docs.transifex.com/developer/client/setup#windows](http://docs.transifex.com/developer/client/setup#windows) for details on installation.
 

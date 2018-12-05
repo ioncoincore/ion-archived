@@ -1,6 +1,4 @@
-Gitian building
-================
-
+# Gitian building
 *Setup instructions for a gitian build of ION using a Debian VM or physical system.*
 
 Gitian is the deterministic build process that is used to build the ION
@@ -19,20 +17,21 @@ VM image to avoid 'contaminating' the build.
 
 Table of Contents
 ------------------
+- [Gitian building](#gitian-building)
+  - [Preparing the Gitian builder host](#preparing-the-gitian-builder-host)
+  - [Create a new VirtualBox VM](#create-a-new-virtualbox-vm)
+  - [Installing Debian](#installing-debian)
+  - [Connecting to the VM](#connecting-to-the-vm)
+  - [Setting up Debian for gitian building](#setting-up-debian-for-gitian-building)
+  - [Installing gitian](#installing-gitian)
+  - [Setting up gitian images](#setting-up-gitian-images)
+  - [Getting and building the inputs](#getting-and-building-the-inputs)
+  - [Building ION](#building-ion)
+  - [Building an alternative repository](#building-an-alternative-repository)
+  - [Signing externally](#signing-externally)
+  - [Uploading signatures (not yet implemented)](#uploading-signatures-not-yet-implemented)
 
-- [Create a new VirtualBox VM](#create-a-new-virtualbox-vm)
-- [Connecting to the VM](#connecting-to-the-vm)
-- [Setting up Debian for gitian building](#setting-up-debian-for-gitian-building)
-- [Installing gitian](#installing-gitian)
-- [Setting up gitian images](#setting-up-gitian-images)
-- [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building ION](#building-ion)
-- [Building an alternative repository](#building-an-alternative-repository)
-- [Signing externally](#signing-externally)
-- [Uploading signatures](#uploading-signatures)
-
-Preparing the Gitian builder host
----------------------------------
+## Preparing the Gitian builder host
 
 The first step is to prepare the host environment that will be used to perform the Gitian builds.
 This guide explains how to set up the environment, and how to start the builds.
@@ -45,8 +44,8 @@ Any kind of virtualization can be used, for example:
 
 You can also install on actual hardware instead of using virtualization.
 
-Create a new VirtualBox VM
----------------------------
+## Create a new VirtualBox VM
+
 In the VirtualBox GUI click "Create" and choose the following parameters in the wizard:
 
 ![](gitian-building/create_vm_page1.png)
@@ -74,11 +73,11 @@ In the VirtualBox GUI click "Create" and choose the following parameters in the 
 - Disk size: at least 40GB; as low as 20GB *may* be possible, but better to err on the safe side 
 - Push the `Create` button
 
-Get the [Debian 7.8 net installer](http://cdimage.debian.org/cdimage/archive/7.8.0/amd64/iso-cd/debian-7.8.0-amd64-netinst.iso) (a more recent minor version should also work, see also [Debian Network installation](https://www.debian.org/CD/netinst/)).
+Get the [Debian 8.10 net installer](https://cdimage.debian.org/cdimage/archive/8.10.0/amd64/iso-cd/debian-8.10.0-amd64-netinst.iso) (a more recent minor version should also work, see also [Debian Network installation](https://www.debian.org/CD/netinst/)).
 This DVD image can be validated using a SHA256 hashing tool, for example on
 Unixy OSes by entering the following in a terminal:
 
-    echo "b712a141bc60269db217d3b3e456179bd6b181645f90e4aac9c42ed63de492e9  debian-7.4.0-amd64-netinst.iso" | sha256sum -c
+    echo "896cc42998edf65f1db4eba83581941fb2a584f2214976432b841af96b17ccda  debian-8.10.0-amd64-netinst.iso" | sha256sum -c
     # (must return OK)
 
 After creating the VM, we need to configure it. 
@@ -106,8 +105,7 @@ Then start the VM. On the first launch you will be asked for a CD or DVD image. 
 
 ![](gitian-building/select_startup_disk.png)
 
-Installing Debian
-------------------
+## Installing Debian
 
 In this section it will be explained how to install Debian on the newly created VM.
 
@@ -194,8 +192,7 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 - Installation Complete -> *Continue*
 - After installation, the VM will reboot and you will have a working Debian VM. Congratulations!
 
-Connecting to the VM
-----------------------
+## Connecting to the VM
 
 After the VM has booted you can connect to it using SSH, and files can be copied from and to the VM using a SFTP utility.
 Connect to `localhost`, port `22222` (or the port configured when installing the VM).
@@ -217,8 +214,7 @@ Replace `root` with `debian` to log in as user.
 [1] http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 [2] http://winscp.net/eng/index.php
 
-Setting up Debian for gitian building
---------------------------------------
+## Setting up Debian for gitian building
 
 In this section we will be setting up the Debian installation for Gitian building.
 
@@ -248,17 +244,16 @@ echo 'ifconfig br0 10.0.3.2/24 up' >> /etc/rc.local
 echo 'exit 0' >> /etc/rc.local
 # make sure that USE_LXC is always set when logging in as debian,
 # and configure LXC IP addresses
-echo 'export USE_LXC=1' >> /home/debian/.profile
-echo 'export GITIAN_HOST_IP=10.0.3.2' >> /home/debian/.profile
-echo 'export LXC_GUEST_IP=10.0.3.5' >> /home/debian/.profile
+echo 'export USE_LXC=1' >> /home/gitianuser/.profile
+echo 'export GITIAN_HOST_IP=10.0.3.2' >> /home/gitianuser/.profile
+echo 'export LXC_GUEST_IP=10.0.3.5' >> /home/gitianuser/.profile
 reboot
 ```
 
 At the end the VM is rebooted to make sure that the changes take effect. The steps in this
 section need only to be performed once.
 
-Installing gitian
-------------------
+## Installing gitian
 
 Re-login as the user `debian` that was created during installation.
 The rest of the steps in this guide will be performed as that user.
@@ -281,7 +276,7 @@ Clone the git repositories for ion and gitian and then checkout the ion version 
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/ion-crypto/ion.git
+git clone https://github.com/cevap/ion.git
 cd ion
 git checkout v${VERSION}
 cd ..
@@ -290,8 +285,7 @@ cd ..
 **Note**: if you've installed Gitian before May 16, 2015, please update to the latest version, see https://github.com/devrandom/gitian-builder/issues/86
 
 
-Setting up gitian images
--------------------------
+## Setting up gitian images
 
 Gitian needs virtual images of the operating system to build in.
 Currently this is Ubuntu Precise for x86_64.
@@ -303,7 +297,7 @@ Execute the following as user `debian`:
 
 ```bash
 cd gitian-builder
-bin/make-base-vm --lxc --arch amd64 --suite precise
+bin/make-base-vm --lxc --arch amd64 --suite trusty
 ```
 
 There will be a lot of warnings printed during build of the images. These can be ignored.
@@ -318,16 +312,14 @@ There will be a lot of warnings printed during build of the images. These can be
 /sbin/mkfs.ext4 -F $OUT-lxc # (some Gitian environents do NOT find mkfs.ext4. Some do...)
 ```
 
-Getting and building the inputs
---------------------------------
+## Getting and building the inputs
 
 Follow the instructions in [doc/release-process.md](release-process.md) in the ion repository
 under 'Fetch and build inputs' to install sources which require manual intervention. Also follow
 the next step: 'Seed the Gitian sources cache', which will fetch all necessary source files allowing
 for gitian to work offline.
 
-Building ION
-----------------
+## Building ION
 
 To build ION (for Linux, OSX and Windows) just follow the steps under 'perform
 gitian builds' in [doc/release-process.md](release-process.md) in the ion repository.
@@ -350,7 +342,7 @@ Output from `gbuild` will look something like
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/ion-crypto/ion
+    From https://github.com/cevap/ion
     ... (new tags, new branch etc)
     --- Building for precise x86_64 ---
     Stopping target if it is up
@@ -368,8 +360,7 @@ Output from `gbuild` will look something like
     Running build script (log in var/build.log)
 ```
 
-Building an alternative repository
------------------------------------
+## Building an alternative repository
 
 If you want to do a test build of a pull on GitHub it can be useful to point
 the gitian builder at an alternative repository, using the same descriptors
@@ -384,8 +375,7 @@ COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
 ./bin/gbuild --commit ion=${COMMIT} --url ion=${URL} ../ion/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
-Signing externally
--------------------
+## Signing externally
 
 If you want to do the PGP signing on another device that's also possible; just define `SIGNER` as mentioned
 and follow the steps in the build process as normal.
@@ -404,8 +394,7 @@ in `gitian.sigs` to your signing machine and do
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
 gitian build.
 
-Uploading signatures (not yet implemented)
----------------------
+## Uploading signatures (not yet implemented)
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
 [ion/gitian.sigs](https://github.com/ion-crypto/gitian.sigs/) repository, or if that's not possible to create a pull

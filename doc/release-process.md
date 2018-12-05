@@ -1,21 +1,34 @@
-Release Process
-====================
+# Release Process
+
+Table of Contents
+-----------------
+- [Release Process](#release-process)
+        - [First time / New builders](#first-time--new-builders)
+        - [ION maintainers/release engineers, suggestion for writing release notes](#ion-maintainersrelease-engineers-suggestion-for-writing-release-notes)
+        - [Setup and perform Gitian builds](#setup-and-perform-gitian-builds)
+        - [Fetch and create inputs: (first time, or when dependency versions change)](#fetch-and-create-inputs-first-time-or-when-dependency-versions-change)
+        - [Optional: Seed the Gitian sources cache and offline git repositories](#optional-seed-the-gitian-sources-cache-and-offline-git-repositories)
+        - [Build and sign Ion Core for Linux, Windows, and OS X:](#build-and-sign-ion-core-for-linux-windows-and-os-x)
+        - [Verify other gitian builders signatures to your own. (Optional)](#verify-other-gitian-builders-signatures-to-your-own-optional)
+        - [Next steps:](#next-steps)
+        - [After 3 or more people have gitian-built and their results match:](#after-3-or-more-people-have-gitian-built-and-their-results-match)
+
 
 Before every release candidate:
 
-* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/cevap/ion/blob/master/doc/translation_process.md#synchronising-translations).
+- Update translations (ask for more info on discord or support) see [translation_process.md](https://github.com/cevap/ion/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
-* Update version in `configure.ac` (don't forget to set `CLIENT_VERSION_IS_RELEASE` to `true`)
-* Write release notes (see below)
+- Update version in `configure.ac` (don't forget to set `CLIENT_VERSION_IS_RELEASE` to `true`)
+- Write release notes (see below)
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bitcoin/bitcoin/pull/7415) for an example.
-* Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
-* Update `src/chainparams.cpp` with statistics about the transaction count and rate.
-* Update version of `contrib/gitian-descriptors/*.yml`: usually one'd want to do this on master after branching off the release - but be sure to at least do it before a new major release
+- Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bitcoin/bitcoin/pull/7415) for an example.
+- Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
+- Update `src/chainparams.cpp` with statistics about the transaction count and rate.
+- Update version of `contrib/gitian-descriptors/*.yml`: usually one'd want to do this on master after branching off the release - but be sure to at least do it before a new major release
 
 ### First time / New builders
 
@@ -33,7 +46,7 @@ Check out the source code in the following directory hierarchy.
 
 Write release notes. git shortlog helps a lot, for example:
 
-    git shortlog --no-merges v(current version, e.g. 0.7.2)..v(new version, e.g. 0.8.0)
+    git shortlog --no-merges v(current version, e.g. 3.0.5)..v(new version, e.g. 3.1.0)
 
 
 Generate list of authors:
@@ -42,7 +55,7 @@ Generate list of authors:
 
 Tag version (or release candidate) in git
 
-    git tag -s v(new version, e.g. 0.8.0)
+    git tag -s v(new version, e.g. 3.1.0)
 
 ### Setup and perform Gitian builds
 
@@ -74,7 +87,7 @@ Ensure gitian-builder is up-to-date:
     pushd ./gitian-builder
     mkdir -p inputs
     wget -P inputs https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch
-    wget -P inputs https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz
+    wget -P inputs https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz && mv inputs/v1.7.1.tar.gz inputs/osslsigncode-1.7.1.tar.gz
     wget -P inputs https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz
     popd
 
