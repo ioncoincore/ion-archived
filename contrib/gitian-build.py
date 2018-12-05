@@ -53,7 +53,7 @@ def build():
 
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz'])
     subprocess.check_call(['wget', '-O', 'inputs/osslsigncode-1.7.1.tar.gz', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch'])
-    subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz'])
+    subprocess.check_call(['wget', '-O', 'inputs/MacOSX10.11.sdk.tar.gz', '-N', '-P', 'inputs', 'https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz'])
     subprocess.check_call(['make', '-C', '../ion/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
