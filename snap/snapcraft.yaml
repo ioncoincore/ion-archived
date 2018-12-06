@@ -8,7 +8,7 @@ description: |
   transact directly with each other, with the help of a P2P network to
   check for double-spending.
 
-grade: stable
+grade: devel
 confinement: strict
 
 apps:
