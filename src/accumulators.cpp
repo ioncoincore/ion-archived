@@ -414,7 +414,7 @@ bool GetAccumulatorValue(int& nHeight, const libzerocoin::CoinDenomination denom
     return true;
 }
 
-bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator, AccumulatorWitness& witness, int nSecurityLevel, int& nMintsAdded, string& strError, CBlockIndex* pindexCheckpoint)
+bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator, AccumulatorWitness& witness, int nSecurityLevel, int& nMintsAdded, string& strError, bool isV1Coin, CBlockIndex* pindexCheckpoint)
 {
     LogPrint("zero", "%s: generating\n", __func__);
     int nLockAttempts = 0;
@@ -487,11 +487,17 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
 
             bnAccValue = 0;
             uint256 nCheckpointSpend = chainActive[pindex->nHeight + 10]->nAccumulatorCheckpoint;
-            if (!GetAccumulatorValueFromDB(nCheckpointSpend, coin.getDenomination(), bnAccValue) || bnAccValue == 0)
-                return error("%s : failed to find checksum in database for accumulator", __func__);
+            if (!isV1Coin){
+                if (!GetAccumulatorValueFromDB(nCheckpointSpend, coin.getDenomination(), bnAccValue) || bnAccValue == 0)
+                    return error("%s : failed to find checksum in database for accumulator", __func__);
 
-            accumulator.setValue(bnAccValue);
+                accumulator.setValue(bnAccValue);
+            }
             break;
+        }
+
+        if (isV1Coin){
+            AddBlockMintsToAccumulator(coin, nHeightMintAdded, pindex, &accumulator, false);
         }
 
         nMintsAdded += AddBlockMintsToAccumulator(coin, nHeightMintAdded, pindex, &witnessAccumulator, true);
@@ -581,7 +587,7 @@ bool CalculateAccumulatorCheckpointWithoutDB(int nHeight, uint256& nCheckpoint, 
             return false;
 
         //make sure this block is eligible for accumulation
-        if (pindex->nHeight < Params().Zerocoin_StartHeight()) {        
+        if (pindex->nHeight < Params().Zerocoin_StartHeight()) {       
             pindex = chainActive[pindex->nHeight + 1];
             continue;
         }
