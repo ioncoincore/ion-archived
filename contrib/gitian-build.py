@@ -60,6 +60,8 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
         subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
 
     if args.windows:
