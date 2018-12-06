@@ -53,15 +53,12 @@ def build():
 
     subprocess.check_call(['wget', '-O', 'inputs/osslsigncode-1.7.1.tar.gz', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz'])
     subprocess.check_call(['wget', '-O', 'inputs/osslsigncode-Backports-to-1.7.1.patch', '-N', '-P', 'inputs', 'https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch'])
-    subprocess.check_call(['wget', '-O', 'inputs/MacOSX10.11.sdk.tar.gz', '-N', '-P', 'inputs', 'https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz'])
     subprocess.check_call(['make', '-C', '../ion/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
         subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
 
     if args.windows:
