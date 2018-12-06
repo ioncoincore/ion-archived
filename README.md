@@ -8,6 +8,7 @@ Ion Core integration/staging repository
 
 Table of Contents
 -----------------
+
 - [Important information](#important-information)
     - [Client: Helium](#client-helium)
         - [Ion Core FAQ/Help](#ion-core-faqhelp)
@@ -80,6 +81,7 @@ We released version based on [Ion core wallet v3.1.0](../../tag/v3.1.0) which is
 - _Requirements: [snapd](https://docs.snapcraft.io/core/install)_
 
 ##### Method 2. Install/Get over Snap Store (_preffered method_)
+
 [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion)
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ioncoin)
@@ -138,6 +140,7 @@ Please use **only stable release** for production/commercial purpose.
 - [Build and install ion (all OS)](../../tree/master/doc)
 
 - Downloads
+
     | OS | 32-Bit | 64-Bit |
     :---: | ---: | ---: |
     MacOS/OSX | [![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.0-rc2/ion-3.1.0-osx-unsigned.dmg.svg)](https://github.com/cevap/ion/releases/download/v3.1.0-rc2/ion-3.1.0-osx-unsigned.dmg) | [![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.0-rc2/ion-3.1.0-osx64.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.0-rc2/ion-3.1.0-osx64.tar.gz) |
@@ -153,7 +156,8 @@ Please use **only stable release** for production/commercial purpose.
 - [Build, compile and install documenattion](../../tree/master/doc#building)
 
 
-### Our sources: 
+### Our sources:
+
 We forked from [PIVX](https://github.com/PIVX-Project/PIVX) and integrated ION's specific features into the PivX codebase.
 
 By doing so, we connect to an enthusiastic and active community - leaving behind old Ion code that inherits from less actively developed and maintaned code. Our main sources are now derived from:
@@ -180,6 +184,7 @@ Premine | 16,400,000 ION* |
 ### Reward Distribution
 
 #### Genesis block
+
 Block Height | Reward Amount | Notes |
  ----------: | ------------: | :---: |
 1 | 16,400,000 ION | Initial Pre-mine |
