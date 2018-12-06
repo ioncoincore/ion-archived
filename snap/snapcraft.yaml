@@ -38,7 +38,7 @@ parts:
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
     # Also, it would be better if we could split the wallet from the blockchain
-    override-build: git apply $SNAPCRAFT_STAGE/default_data_dir.patch
+    prepare: git apply $SNAPCRAFT_STAGE/default_data_dir.patch
     build-packages:
       - g++
       - autoconf
@@ -87,9 +87,11 @@ parts:
   berkeleydb:
     source: http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
     plugin: nil
-    override-build: |
+    build: |
       cd build_unix
       ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$SNAPCRAFT_PART_INSTALL
+    install: |
+      cd build_unix
       make install
     prime:
       - -*
