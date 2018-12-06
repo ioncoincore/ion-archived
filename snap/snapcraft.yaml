@@ -79,8 +79,6 @@ parts:
     override-build: |
       cd build_unix
       ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$SNAPCRAFT_PART_INSTALL
-    install: |
-      cd build_unix
       make install
     prime:
       - -*
