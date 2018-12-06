@@ -185,8 +185,8 @@ Premine | 16,400,000 ION* |
 
 #### Genesis block
 
-Block Height | Reward Amount | Notes |
- ----------: | ------------: | :---: |
+| Block Height | Reward Amount | Notes |
+ ------------: | ------------: | :---: |
 1 | 16,400,000 ION | Initial Pre-mine |
 
 ### PoW Rewards Breakdown
