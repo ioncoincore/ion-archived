@@ -43,7 +43,7 @@ Table of Contents
 
 ### Client: Helium
 
-![](assets/images/Helium.jpg)
+![](wiki/assets/images/Helium.jpg)
 
 #### Ion Core FAQ/Help
 - [Documentation](../../tree/master/doc)
@@ -118,7 +118,7 @@ Please use **only stable release** for production/commercial purpose.
 
     | [Ubuntu](https://docs.snapcraft.io/core/install-ubuntu) | [Debian](https://docs.snapcraft.io/core/install-debian) | [Linux Mint](https://docs.snapcraft.io/core/install-linux-mint) | [Raspbian](https://docs.snapcraft.io/core/install-raspbian) | [Arch Linux](https://docs.snapcraft.io/core/install-arch-linux) | [Fedora](https://docs.snapcraft.io/core/install-fedora) |
     :-----: |  :-----: |  :-----: |  :-----: |  :-----: |  :-----: |
-    [![Install SNAP on Ubuntu](assets/images/ubuntu_128x128.png)](https://docs.snapcraft.io/core/install-debian) | ![Install SNAP on Debian](assets/images/debian_128x128.png) | [![Install SNAP on Linux Mint](assets/images/mint_128x128.png)](https://docs.snapcraft.io/core/install-linux-mint) | [![Install SNAP on Raspbian](assets/images/raspbian_128x128.png)](https://docs.snapcraft.io/core/install-raspbian) | [![Install SNAP on ArchLinux](assets/images/archlinux_128x128.png)](https://docs.snapcraft.io/core/install-arch-linux) | [![Install SNAP on Fedora](assets/images/fedora_128x128.png)](https://docs.snapcraft.io/core/install-fedora) |
+    [![Install SNAP on Ubuntu](wiki/assets/images/ubuntu_128x128.png)](https://docs.snapcraft.io/core/install-debian) | ![Install SNAP on Debian](wiki/assets/images/debian_128x128.png) | [![Install SNAP on Linux Mint](wiki/assets/images/mint_128x128.png)](https://docs.snapcraft.io/core/install-linux-mint) | [![Install SNAP on Raspbian](wiki/assets/images/raspbian_128x128.png)](https://docs.snapcraft.io/core/install-raspbian) | [![Install SNAP on ArchLinux](wiki/assets/images/archlinux_128x128.png)](https://docs.snapcraft.io/core/install-arch-linux) | [![Install SNAP on Fedora](wiki/assets/images/fedora_128x128.png)](https://docs.snapcraft.io/core/install-fedora) |
 
   - additional Linux distributions installation guides ([see all supported distributions](https://docs.snapcraft.io/core/install))
     - [Deepin](https://docs.snapcraft.io/t/installing-snap-on-deepin/6791)
