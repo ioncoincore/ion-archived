@@ -2,11 +2,35 @@ name: ioncoin
 version: v3.1.99-master
 summary:   peer-to-peer network based digital currency
 description: |
-  Ion is a free open source peer-to-peer electronic cash system that
-  is completely decentralized, without the need for a central server or
-  trusted parties.  Users hold the crypto keys to their own money and
-  transact directly with each other, with the help of a P2P network to
-  check for double-spending.
+  ION is an MIT licensed,
+  open source, blockchain-based cryptocurrency with 
+  ultra fast transactions, low fees, high network decentralization, and
+  Zero Knowledge cryptography proofs for industry-leading
+  transaction anonymity. 
+  
+  Wiki: 
+    Ionomy wiki:   https://github.com/ionomy/ion/wiki
+    IonomyCE wiki: https://github.com/cevap/ion/wiki
+  
+  Technical documentaion:
+    https://techdoc.ioncore.xyz/
+  
+  Whitepaper:
+    https://ionomy.com/en/whitepaper
+  Technical whitepaper:
+    https://github.com/ionomy/ion/wiki/ION-Technical-Whitepaper
+  
+  Get source code:
+    Github:    https://github.com/ioncoincore/ion.git
+  
+  Chat with Support:
+    Discord    https://discord.gg/vuZn7gC
+  
+  Contact on social networks and forums
+    Instagram: https://t.me/ionomy
+    Twitter:   https://twitter.com/ionomics
+    Reddit:    https://www.reddit.com/r/ionomy/
+    Facebook:  https://facebook.com/ionomy
 
 grade: devel
 confinement: strict
