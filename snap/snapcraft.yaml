@@ -1,5 +1,5 @@
 name: ioncoin
-version: v3.1.99-master
+version: v3.1.0-rc5
 summary:   peer-to-peer network based digital currency
 description: |
   ION is an MIT licensed,
@@ -8,31 +8,27 @@ description: |
   Zero Knowledge cryptography proofs for industry-leading
   transaction anonymity. 
   
-  Wiki: 
-    Ionomy wiki:   https://github.com/ionomy/ion/wiki
-    IonomyCE wiki: https://github.com/cevap/ion/wiki
+  Wiki (Ionomy):   https://github.com/ionomy/ion/wiki
+  Wiki (IonomyCE): https://github.com/cevap/ion/wiki
   
-  Technical documentaion:
-    https://techdoc.ioncore.xyz/
+  Technical documentaion: https://techdoc.ioncore.xyz
   
-  Whitepaper:
-    https://ionomy.com/en/whitepaper
-  Technical whitepaper:
+  Whitepaper: https://ionomy.com/en/whitepaper
+  
+  Technical whitepaper: 
     https://github.com/ionomy/ion/wiki/ION-Technical-Whitepaper
   
-  Get source code:
-    Github:    https://github.com/ioncoincore/ion.git
+  Get source code from Github: https://github.com/ioncoincore/ion.git
   
-  Chat with Support:
-    Discord    https://discord.gg/vuZn7gC
+  Chat with Support on Discord: https://discord.gg/vuZn7gC
   
-  Contact on social networks and forums
+  Contact us on social networks and forums
     Instagram: https://t.me/ionomy
     Twitter:   https://twitter.com/ionomics
     Reddit:    https://www.reddit.com/r/ionomy/
     Facebook:  https://facebook.com/ionomy
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
@@ -57,7 +53,7 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: master
+    source-tag: v3.1.0-rc5
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
