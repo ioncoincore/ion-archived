@@ -31,7 +31,10 @@ def setup():
     if not os.path.isdir('ion'):
         subprocess.check_call(['git', 'clone', 'https://github.com/cevap/ion.git'])
     os.chdir('gitian-builder')
-    make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
+    if args.is_bionic:
+    	make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
+    if args.is_trusty:
+     	make_image_prog = ['bin/make-base-vm', '--suite', 'trusty', '--arch', 'amd64']
     if args.docker:
         make_image_prog += ['--docker']
     elif not args.kvm:
@@ -59,12 +62,6 @@ def build():
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
-
-    if args.aarch:
-        print('\nCompiling ' + args.version + ' Linux aarch64')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
         subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
 
     if args.windows:
@@ -168,9 +165,9 @@ def main():
     args.linux = 'l' in args.os
     args.windows = 'w' in args.os
     args.macos = 'm' in args.os
-    args.aarch = 'a' in args.os
 
     args.is_bionic = b'bionic' in subprocess.check_output(['lsb_release', '-cs'])
+    args.is_trusty = b'trusty' in subprocess.check_output(['lsb_release', '-cs'])
 
     if args.buildsign:
         args.build=True
