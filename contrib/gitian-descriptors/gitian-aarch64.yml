@@ -2,19 +2,19 @@
 name: "ion-aarch64-3.1"
 enable_cache: true
 suites:
-- "xenial"
+- "bionic"
 architectures:
 - "amd64"
 packages:
 - "curl"
 - "g++-aarch64-linux-gnu"
-- "g++-4.9-aarch64-linux-gnu"
-- "gcc-4.9-aarch64-linux-gnu"
+- "g++-7-aarch64-linux-gnu"
+- "gcc-7-aarch64-linux-gnu"
 - "binutils-aarch64-linux-gnu"
-- "g++-4.9-multilib"
-- "gcc-4.9-multilib"
+- "g++-7-multilib"
+- "gcc-7-multilib"
 - "binutils-gold"
-- "git-core"
+- "git"
 - "pkg-config"
 - "autoconf"
 - "libtool"
