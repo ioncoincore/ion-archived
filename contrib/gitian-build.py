@@ -23,7 +23,7 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/cevap/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/gitianuser/gitian.sigs.git'])
     if not os.path.isdir('ion-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/cevap/ion-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
