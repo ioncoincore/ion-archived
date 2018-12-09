@@ -23,13 +23,13 @@ With the client installed we'll proceed to download the blockchain torrent file.
 	
  or go to [Jeff Garzik's topic](https://bitcointalk.org/index.php?topic=145386.0) for a signed magnet link. Alternatively you can use the [.torrent file](http://sourceforge.net/projects/bitcoin/files/Bitcoin/blockchain/bootstrap.dat.torrent/download) found on SourceForge.
      
-![Fig1](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/screenshots1.png)
+![Fig1](https://raw.githubusercontent.com/wiki/cevap/ion/assets/screenshots/bootstrap1.png)
 
 The download page should look like this, with a countdown to the download. If it does not work click the direct download link.
 
 The torrent client installed will recognize the download of the torrent file. Save the bootstrap.dat file to the folder you use for downloads. The image below shows the torrent download in qBittorrent, with current speed and ETA highlighted.
 
-![Fig2](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/screenshots2.png)
+![Fig2](https://raw.githubusercontent.com/wiki/cevap/ion/assets/screenshots/bootstrap2.png)
 
 ### Importing the blockchain
 Exit the Bitcoin client software if you have it running. Be sure not to have an actively used wallet in use. We are going to copy the download of the blockchain to the Bitcoin client data directory. You should run the client software at least once so it can generate the data directory. Copy the downloaded bootstrap.dat file into the Bitcoin data folder.
@@ -40,7 +40,7 @@ Open explorer, and type into the address bar:
 	%APPDATA%\Bitcoin
     
 This will open up the data folder. It should look like the image below. Copy over the bootstrap.dat from your download folder to this directory.
-![Fig4](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/screenshots4.png)
+![Fig4](https://raw.githubusercontent.com/wiki/cevap/ion/assets/screenshots/bootstrap4.png)
 
 **For OSX users:**
 Open Finder by pressing Press [shift] + [cmd] + [g] and enter:
@@ -54,7 +54,7 @@ The directory is hidden in your User folder. Go to:
     
 ### Importing the blockchain
 Now start the Bitcoin client software. It should show "Importing blocks from disk" like the image below. 
-![Fig5](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/screenshots5.png)
+![Fig5](https://raw.githubusercontent.com/wiki/cevap/ion/assets/screenshots/bootstrap5.png)
 
 Wait until the import finishes. The client will download the last days not covered by the import. Congratulations you have successfully imported the blockchain!
 
