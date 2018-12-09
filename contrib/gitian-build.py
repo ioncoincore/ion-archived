@@ -61,6 +61,12 @@ def build():
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
 
+    if args.aarch:
+        print('\nCompiling ' + args.version + ' Linux aarch64')
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../ion/contrib/gitian-descriptors/gitian-aarch64.yml'])
+        subprocess.check_call('mv build/out/ion-*.tar.gz build/out/src/ion-*.tar.gz ../ion-binaries/'+args.version, shell=True)
+
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ion='+args.commit, '--url', 'ion='+args.url, '../ion/contrib/gitian-descriptors/gitian-win.yml'])
@@ -124,7 +130,9 @@ def verify():
     print('\nVerifying v'+args.version+' Windows\n')
     subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../ion/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../ion/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'aarch64-linux', '../ion/contrib/gitian-descriptors/gitian-osx.yml'])
+    print('\nVerifying v'+args.version+' Linux\n')
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
     subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../ion/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
@@ -160,6 +168,7 @@ def main():
     args.linux = 'l' in args.os
     args.windows = 'w' in args.os
     args.macos = 'm' in args.os
+    args.aarch = 'a' in args.os
 
     args.is_bionic = b'bionic' in subprocess.check_output(['lsb_release', '-cs'])
 
