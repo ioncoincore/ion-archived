@@ -1,5 +1,5 @@
 name: ioncoin
-version: v3.1.0-rc6
+version: v3.1.99-master
 summary:   peer-to-peer network based digital currency
 description: |
   ION is an MIT licensed,
@@ -53,7 +53,7 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: v3.1.0-rc6
+    source-tag: master
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
     # updated, but there's no way to define a default data dir in bitcoin-qt.
