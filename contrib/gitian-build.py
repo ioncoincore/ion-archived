@@ -31,12 +31,7 @@ def setup():
     if not os.path.isdir('ion'):
         subprocess.check_call(['git', 'clone', 'https://github.com/cevap/ion.git'])
     os.chdir('gitian-builder')
-    if args.is_bionic:
-    	make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
-    if args.is_trusty:
-     	make_image_prog = ['bin/make-base-vm', '--suite', 'trusty', '--arch', 'amd64']
-    if args.docker:
-        make_image_prog += ['--docker']
+   	make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     elif not args.kvm:
         make_image_prog += ['--lxc']
     subprocess.check_call(make_image_prog)
@@ -167,7 +162,6 @@ def main():
     args.macos = 'm' in args.os
 
     args.is_bionic = b'bionic' in subprocess.check_output(['lsb_release', '-cs'])
-    args.is_trusty = b'trusty' in subprocess.check_output(['lsb_release', '-cs'])
 
     if args.buildsign:
         args.build=True
