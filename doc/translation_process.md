@@ -3,18 +3,19 @@
 Table of Contents
 -----------------
 - [Translations](#translations)
-        - [Helping to translate (using Transifex)](#helping-to-translate-using-transifex)
-        - [Writing code with translations](#writing-code-with-translations)
-            - [Example Qt translation](#example-qt-translation)
-        - [Creating a pull-request](#creating-a-pull-request)
-        - [Creating a Transifex account](#creating-a-transifex-account)
-        - [Installing the Transifex client command-line tool](#installing-the-transifex-client-command-line-tool)
-            - [For Linux and Mac](#for-linux-and-mac)
-            - [For Windows](#for-windows)
-        - [Synchronising translations](#synchronising-translations)
-        - [Handling Plurals (in source files)](#handling-plurals-in-source-files)
-        - [Translating a new language](#translating-a-new-language)
-        - [Questions and general assistance](#questions-and-general-assistance)
+  - [Table of Contents](#table-of-contents)
+    - [Helping to translate (using Transifex)](#helping-to-translate-using-transifex)
+    - [Writing code with translations](#writing-code-with-translations)
+      - [Example Qt translation](#example-qt-translation)
+    - [Creating a pull-request](#creating-a-pull-request)
+    - [Creating a Transifex account](#creating-a-transifex-account)
+    - [Installing the Transifex client command-line tool](#installing-the-transifex-client-command-line-tool)
+      - [For Linux and Mac](#for-linux-and-mac)
+      - [For Windows](#for-windows)
+    - [Synchronising translations](#synchronising-translations)
+    - [Handling Plurals (in source files)](#handling-plurals-in-source-files)
+    - [Translating a new language](#translating-a-new-language)
+    - [Questions and general assistance](#questions-and-general-assistance)
 
 The Ion Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Ion Core makes use of the Transifex online translation management tool.
 
@@ -121,6 +122,6 @@ To create a new language template, you will need to edit the languages manifest 
 **Note:** that the language translation file **must end in `.qm`** (the compiled extension), and not `.ts`.
 
 ### Questions and general assistance
-The Ion Core translation maintainers include *Fuzzbawls and s3v3nh4cks*. You can find them, and others, in the [ION Discord](https://discord.ioncore.xyz).
+You can find translation maintainers, and others, in the [ION Discord](https://discord.gg/vuZn7gC).
 
 Announcements will be posted during application pre-releases to notify translators to check for updates.
