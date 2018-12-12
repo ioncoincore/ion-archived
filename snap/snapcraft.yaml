@@ -34,27 +34,16 @@ confinement: strict
 apps:
   daemon:
     command: iond
-    plugs: [network, network-bind, unity7, desktop, desktop-legacy, wayland, x11]
-    desktop: |
-      iond.desktop
-      iondtestnet.desktop
-      iondregtest.desktop
+    plugs: [network, network-bind]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
   qt:
     command: desktop-launch ion-qt
     plugs: [network, network-bind, unity7, desktop, desktop-legacy, wayland, x11]
-    desktop: |
-      ion-qt.desktop
-      iontestnet-qt.desktop
-      ionregtest-qt.desktop
+    desktop: ion.desktop
   cli:
     command: ion-cli
-    plugs: [network, network-bind, unity7, desktop, desktop-legacy, wayland, x11]
-    desktop: |
-      ion-cli.desktop
-      iontestnet-cli.desktop
-      ionregtest-cli.desktop
+    plugs: [network, network-bind]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
   tx:
