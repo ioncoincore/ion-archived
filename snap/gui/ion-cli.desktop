@@ -4,11 +4,11 @@
 Type=Application
 Version=3.1.99
 Encoding=UTF-8
-Name=Ion Qt
-Icon=${SNAP}/ion128.png
-MimeType=x-scheme-handler/ion;
-Exec=ion %u
-Terminal=false
+Name=Ion CLI
+Icon=${SNAP}/ion-cli.ico
+MimeType=x-scheme-handler/ion-cli;
+Exec=ion-cli %u
+Terminal=true
 Categories=Office;Finance;Cryptocurrency;
-Comment=Ion Digital Currency QT (by CEVAP) CE source code (Community Edition)
+Comment=Ion Digital Currency CLI (by CEVAP) CE source code (Community Edition)
 Keywords=internet;ion;main;qt;crypto;currency;snap;snapcraft;

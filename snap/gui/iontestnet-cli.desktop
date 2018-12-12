@@ -1,0 +1,14 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.ht$
+
+[Desktop Entry]
+Type=Application
+Version=3.1.99
+Encoding=UTF-8
+Name=Ion CLI Testnet
+Icon=${SNAP}/iontestnetcli-cli.ico
+MimeType=x-scheme-handler/iontestnet-cli;
+Exec=iontestnet-cli --testnet %u
+Terminal=true
+Categories=Office;Finance;Cryptocurrency;
+Comment=Ion Digital Currency CLI (by CEVAP) CE source code (Community Edition)
+Keywords=internet;ion;testnet;cli;crypto;currency;snap;snapcraft;
