@@ -72,6 +72,7 @@ parts:
     prepare: git apply $SNAPCRAFT_STAGE/default_data_dir.patch
     build-packages:
       - curl
+      - wget
       - g++
       - gcc
       - autoconf
