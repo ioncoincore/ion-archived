@@ -23,9 +23,9 @@ def setup():
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/gitianuser/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/gitianuser/gitian.sigs-ion.git', 'gitian.sigs'])
     if not os.path.isdir('ion-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/cevap/ion-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/gitianuser/ion-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('ion'):
@@ -80,9 +80,13 @@ def build():
     if args.commit_files:
         print('\nCommitting '+args.version+' Unsigned Sigs\n')
         os.chdir('gitian.sigs')
-        subprocess.check_call(['git', 'add', args.version+'-linux/'+args.signer])
-        subprocess.check_call(['git', 'add', args.version+'-win-unsigned/'+args.signer])
-        subprocess.check_call(['git', 'add', args.version+'-osx-unsigned/'+args.signer])
+        subprocess.check_call(['git', 'config', 'user.signingkey', args.signer])
+        if args.linux:
+            subprocess.check_call(['git', 'add', args.version+'-linux/'+args.signer])
+        if args.windows:
+            subprocess.check_call(['git', 'add', args.version+'-win-unsigned/'+args.signer])
+        if args.macos:
+            subprocess.check_call(['git', 'add', args.version+'-osx-unsigned/'+args.signer])
         subprocess.check_call(['git', 'commit', '-m', 'Add '+args.version+' unsigned sigs for '+args.signer])
         os.chdir(workdir)
 
@@ -110,27 +114,38 @@ def sign():
     if args.commit_files:
         print('\nCommitting '+args.version+' Signed Sigs\n')
         os.chdir('gitian.sigs')
-        subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
-        subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
-        subprocess.check_call(['git', 'commit', '-a', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
+
+        if args.windows:
+            subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
+        if args.macos:
+            subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
+
+        subprocess.check_call(['git', 'commit', '-S', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
         os.chdir(workdir)
 
 def verify():
     global args, workdir
     os.chdir('gitian-builder')
 
-    print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
-    print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../ion/contrib/gitian-descriptors/gitian-win.yml'])
-    print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'aarch64-linux', '../ion/contrib/gitian-descriptors/gitian-osx.yml'])
-    print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
-    print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../ion/contrib/gitian-descriptors/gitian-win-signer.yml'])
-    print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../ion/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    if args.linux:
+        print('\nVerifying v'+args.version+' Linux\n')
+        subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
+        print('\nVerifying v'+args.version+' Linux\n')
+        subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../ion/contrib/gitian-descriptors/gitian-linux.yml'])
+
+    if args.windows:
+        print('\nVerifying v'+args.version+' Windows\n')
+        subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../ion/contrib/gitian-descriptors/gitian-win.yml'])
+        if args.sign:
+            print('\nVerifying v'+args.version+' Signed Windows\n')
+            subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../ion/contrib/gitian-descriptors/gitian-win-signer.yml'])
+
+    if args.macos:
+        print('\nVerifying v'+args.version+' MacOS\n')
+        subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../ion/contrib/gitian-descriptors/gitian-osx.yml'])
+        if args.sign:
+            print('\nVerifying v'+args.version+' Signed MacOS\n')
+            subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../ion/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 
@@ -187,7 +202,7 @@ def main():
     # Disable for MacOS if no SDK found
     if args.macos and not os.path.isfile('gitian-builder/inputs/MacOSX10.11.sdk.tar.gz'):
     	subprocess.check_call(['wget', '-O', 'gitian-builder/inputs/MacOSX10.11.sdk.tar.gz', '-N', '-P', 'inputs', 'https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz'])
-    	if args.macos and not os.path.isfile('gitian-builder/inputs/MacOSX10.11.sdk.tar.gz'):
+    	if args.macos and not os.path.isfile('gitian-builder/inputs/MacOSX10.11.sdk.tar.gt'):
         	print('Cannot build for MacOS, SDK does not exist. Will build for other OSes')
         	args.macos = False
 
