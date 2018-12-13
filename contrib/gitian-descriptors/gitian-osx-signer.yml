@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/cevap/ion-detached-sigs.git"
+- "url": "https://github.com/gitianuser/ion-detached-sigs.git"
   "dir": "signature"
 files:
 - "ion-osx-unsigned.tar.gz"

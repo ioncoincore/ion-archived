@@ -38,7 +38,7 @@ Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
     git clone https://github.com/gitianuser/gitian.sigs.git
-    git clone https://github.com/cevap/ion-detached-sigs.git
+    git clone https://github.com/gitianuser/ion-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/cevap/ion.git
 
@@ -88,7 +88,7 @@ Ensure gitian-builder is up-to-date:
     mkdir -p inputs
     wget -P inputs https://github.com/cevap/osslsigncode/releases/download/v1.7.1/osslsigncode-Backports-to-1.7.1.patch
     wget -P inputs https://github.com/cevap/osslsigncode/archive/v1.7.1.tar.gz && mv inputs/v1.7.1.tar.gz inputs/osslsigncode-1.7.1.tar.gz
-    wget -P inputs https://github.com/cevap/MacOSX-SDKs/releases/download/MacOSX10.11.sdk-trusty/MacOSX10.11.sdk.tar.gz
+    wget -P inputs https://github.com/gitianuser/MacOSX-SDKs/releases/download/MacOSX10.11.sdk/MacOSX10.11.sdk.tar.xz
     popd
 
 Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, and copy it into the inputs directory.
@@ -204,7 +204,7 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [ion-detached-sigs](https://github.com/cevap/ion-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [ion-detached-sigs](https://github.com/gitianuser/ion-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
