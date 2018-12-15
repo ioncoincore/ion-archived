@@ -5,6 +5,7 @@ todo.txt
 reset-files.bash
 
 *.tar.gz
+*.tar.xz
 
 *.exe
 src/ion
