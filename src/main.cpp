@@ -1811,10 +1811,10 @@ int64_t GetBlockValue(int nHeight)
         return 17 * COIN;
     } else if (nHeight > 570062 && nHeight <= 1013538) {    // 568622+1440=570062   1012098+1440=1013538
         return 11.5 * COIN;
-    } else if (nHeight > 1013538 && nHeight <= 1457014) {    // 1012098+1440=1013538   1455574+1440=1457014
+    } else if (nHeight > 1013538 && nHeight <= 4167138) {    // phase 4-9
         return 5.75 * COIN;
-    } else if (nHeight > 1457014 && nHeight <= 3677390) {    // 1455574+1440=1457014   3675950+1440=3677390
-        return 1.85 * COIN;
+    } else if (nHeight > 4167138 && nHeight <= 4692738) {    // phase 10
+        return 1.9 * COIN;
     } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::TESTNET) {
         return 0.925 * COIN;
     } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::REGTEST) {
@@ -2067,11 +2067,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             // staking reward xION on zerocoin staking
             if (isXIONStake) {
                 if (nHeight > 900000 && nHeight <= 1013538) {    // 568622+1440=570062   1012098+1440=1013538
-                    ret = (blockValue - 1.5) * .50;                      // (11,5-1,5)*0,5=5
-                } else if (nHeight > 1013538 && nHeight <= 1457014) {    // 1012098+1440=1013538   1455574+1440=1457014
-                    ret = (blockValue - 1.75) * .50;                     // (5,75-1,75)*0,5=2
-                } else if (nHeight > 1457014 && nHeight <= 3677390) {    // 1455574+1440=1457014   3675950+1440=3677390
-                    ret = 0.85 * COIN;                                   // (1.85-0,075)*0,5=2
+                    ret = (blockValue - 1.5) * .50;                      // (11.5-1.5)*0.5=5
+                } else if (nHeight > 1013538 && nHeight <= 4167138) {    //
+                    ret = (blockValue - 1.75) * .50;                     // (5.75-1.75)*0.5=2
+                } else if (nHeight > 4167138 && nHeight <= 4692738) {    //
+                    ret = 0.90 * COIN;                                   // (1.90-0.9)*0.5=0.5=>1
                 } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::TESTNET) {
                     ret = blockValue;
                 } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::REGTEST) {

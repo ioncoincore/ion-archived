@@ -930,10 +930,10 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
         return 17 * COIN;
     } else if (nHeight > 570062 && nHeight <= 1013538) {    // 568622+1440=570062   1012098+1440=1013538
         return 11.5 * COIN;
-    } else if (nHeight > 1013538 && nHeight <= 1457014) {    // 1012098+1440=1013538   1455574+1440=1457014
+    } else if (nHeight > 1013538 && nHeight <= 4167138) {    // phase 4-9
         return 5.75 * COIN;
-    } else if (nHeight > 1457014 && nHeight <= 3677390) {    // 1455574+1440=1457014   3675950+1440=3677390
-        return 1.85 * COIN;
+    } else if (nHeight > 4167138 && nHeight <= 4692738) {    // phase 10
+        return 1.9 * COIN;
     } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::TESTNET) {
         return 0.925 * COIN;
     } else if (nHeight > 3677390 && Params().NetworkID() == CBaseChainParams::REGTEST) {
