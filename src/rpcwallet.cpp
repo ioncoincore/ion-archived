@@ -2305,7 +2305,7 @@ UniValue getstakesplitthreshold(const UniValue& params, bool fHelp)
 
 UniValue autocombinerewards(const UniValue& params, bool fHelp)
 {
-    bool fEnable = false;
+    bool fEnable;
     if (params.size() >= 1)
         fEnable = params[0].get_bool();
 
