@@ -92,12 +92,11 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 	(  331100,      uint256("ffa0eaa61e9b2291dd497338235d071b0e9eb71d4fda723ce778f52b38e349fe") ) // Testnet Fork June 2018
 	(  443601,      uint256("c5e9467f24b1d149a9716776be2fdc806af2db54d11330df33bb931f8ebf6254") ) // Testnet Fork June 2018
 	(  472999,      uint256("5d55f229074b930f4dd42a0f4e0e2f1d855dcd1d87cb86553ea21c797825482c") ) // Testnet Fork June 2018
-	(  600000,      uint256("455927dbe2d398ed8bf6263d1b315956de6026fe3bdb2e4441d9aa108dd20ae2") ) // Testnet Fork June 2018
-	(  608820,      uint256("ce21974d1202fa9a7865fc20861fafcf1e4f4a4dc29656d4f6a49483ecb0f4ed") ); // Testnet Fork June 2018
+	(  473000,      uint256("237bc8d1e7cb02af8cd3e6affe1fa134c1a29a4852f3fa177ebcd50014463152") ); // Testnet Fork December 2018; timestamp=1545338100  txcount=947151
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1540032455,
-    1219039,
+    1545338100,
+    947151,
     2000};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -300,7 +299,7 @@ public:
         nBlockLastGoodCheckpoint = 10000000; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 10000000; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 612180; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 474100; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1546214401; //!> Sporks signed after Thursday, GMT: Monday, 31. December 2018 00:00:01 must use the new spork key
         nRejectOldSporkKey = 1546732801; //!> Reject old spork key after Wednesday, GMT: Sunday, 6. January 2019 00:00:01
 
