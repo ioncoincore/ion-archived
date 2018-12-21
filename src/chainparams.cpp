@@ -171,7 +171,7 @@ public:
         nInvalidAmountFiltered = 0*COIN;            //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 966630;                  //!> The block that zerocoin v2 becomes active - roughly Tuesday, Janury 8, 2019 10:24:00 AM GMT
         nEnforceNewSporkKey = 1546214401;           //!> Sporks signed after Thursday, GMT: Monday, 31. December 2018 00:00:01 must use the new spork key
-        nRejectOldSporkKey = 1546732801;            //!> Reject old spork key after Wednesday, GMT: Sunday, 6. January 2019 00:00:01
+        nRejectOldSporkKey = 1547121601;            //!> Reject old spork key after GMT: Sunday, January 6, 2019 12:00:01 AM
 
         nMidasStartHeight = 176500;                 // MIDAS startheight, first big attack
         nMidasStartTime = 1497541280;               // Time when MIDAS started and old algorithm stopped
@@ -300,8 +300,8 @@ public:
         nBlockEnforceInvalidUTXO = 10000000; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 474100; //!> The block that zerocoin v2 becomes active
-        nEnforceNewSporkKey = 1546214401; //!> Sporks signed after Thursday, GMT: Monday, 31. December 2018 00:00:01 must use the new spork key
-        nRejectOldSporkKey = 1546732801; //!> Reject old spork key after Wednesday, GMT: Sunday, 6. January 2019 00:00:01
+        nEnforceNewSporkKey = 1545361200; //!> Sporks signed after 12/21/2018 @ 3:00am (UTC) must use the new spork key
+        nRejectOldSporkKey = 1545620400; //!> Reject old spork key after 12/24/2018 @ 3:00am (UTC)
 
         nMidasStartHeight = 75000;
         nMidasStartTime = 1497209344;
