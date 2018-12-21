@@ -1,5 +1,5 @@
 name: ioncoin
-version: 3.1.99
+version: 3.0.4
 summary:   peer-to-peer network based digital currency
 description: |
   ION is an MIT licensed,
@@ -28,7 +28,7 @@ description: |
     Reddit:    https://www.reddit.com/r/ionomy/
     Facebook:  https://facebook.com/ionomy
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
@@ -53,10 +53,10 @@ parts:
   ion:
     source: https://github.com/cevap/ion
     source-type: git
-    source-tag: master
+    source-tag: v3.0.4
     plugin: autotools
     # We don't want to copy the full blockchain every time that the snap is   
-    # updated, but there's no way to define a default data dir in bitcoin-qt.
+    # updated, but there's no way to define a default data dir in ion-qt.
     # Also, it would be better if we could split the wallet from the blockchain
     prepare: git apply $SNAPCRAFT_STAGE/default_data_dir.patch
     build-packages:
