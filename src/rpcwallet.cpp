@@ -2812,7 +2812,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     int64_t nTime = GetTimeMillis();
     if(GetAdjustedTime() > GetSporkValue(SPORK_9_ZEROCOIN_MAINTENANCE_MODE))
         throw JSONRPCError(RPC_WALLET_ERROR, "xION is currently disabled due to maintenance.");
-    
+
     throw JSONRPCError(RPC_WALLET_ERROR, "Minting xION is currently disabled.");
 
     EnsureWalletIsUnlocked(true);
