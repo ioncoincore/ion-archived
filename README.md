@@ -24,6 +24,7 @@ Table of Contents
       - [Install latest beta release from terminal](#install-latest-beta-release-from-terminal)
       - [Install latest edge release from terminal](#install-latest-edge-release-from-terminal)
       - [Upgrade to latest version from terminal](#upgrade-to-latest-version-from-terminal)
+      - [OS's supported by snap](#oss-supported-by-snap)
     - [Method 4. Download and install latest release](#method-4-download-and-install-latest-release)
       - [Latest stable Release](#latest-stable-release)
       - [Candidate Release v3.1.00-rc7.2](#candidate-release-v3100-rc72)
@@ -124,9 +125,11 @@ Please use **only stable release** for production/commercial purpose.
 
     sudo snapcraft refresh
 
+#### OS's supported by snap
+
 - [Ion snap builds supports variety of Operating systems](https://snapcraft.io/)
 
-    | [Ubuntu](https://docs.snapcraft.io/core/install-ubuntu) | [Debian](https://docs.snapcraft.io/core/install-debian) | [Linux Mint](https://docs.snapcraft.io/core/install-linux-mint) | [Raspbian](https://docs.snapcraft.io/core/install-raspbian) | [Arch Linux](https://docs.snapcraft.io/core/install-arch-linux) | [Fedora](https://docs.snapcraft.io/core/install-fedora) |
+    | | | | | |
     :-----: |  :-----: |  :-----: |  :-----: |  :-----: |  :-----: |
     [![Install SNAP on Ubuntu](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/ubuntu_128x128.png)](https://docs.snapcraft.io/core/install-debian) | ![Install SNAP on Debian](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/debian_128x128.png) | [![Install SNAP on Linux Mint](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/mint_128x128.png)](https://docs.snapcraft.io/core/install-linux-mint) | [![Install SNAP on Raspbian](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/raspbian_128x128.png)](https://docs.snapcraft.io/core/install-raspbian) | [![Install SNAP on ArchLinux](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/archlinux_128x128.png)](https://docs.snapcraft.io/core/install-arch-linux) | [![Install SNAP on Fedora](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/fedora_128x128.png)](https://docs.snapcraft.io/core/install-fedora) |
     [![SNAP on OpenWrt](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/openwrit_128x128.png)](https://docs.snapcraft.io/installing-snapd/) | ![SNAP on yocto](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/yocto_128x128.png) | [![SNAP on openembedded](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/openembed_128x128.png)](https://docs.snapcraft.io/installing-snapd/) | [![Install SNAP on OpenSUSE](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/suse_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-opensuse/8375) | [![Install SNAP on manjaro linux](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/manjaro_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-manjaro-linux/6807) | [![Install SNAP on Solus](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/solus_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-solus/6803) |
