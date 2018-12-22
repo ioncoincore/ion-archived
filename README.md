@@ -25,7 +25,7 @@ Table of Contents
       - [Install latest edge release from terminal](#install-latest-edge-release-from-terminal)
       - [Upgrade to latest version from terminal](#upgrade-to-latest-version-from-terminal)
       - [OS's supported by snap](#oss-supported-by-snap)
-    - [Method 4. Download and install latest release](#method-4-download-and-install-latest-release)
+    - [Method 3. Download and install latest release](#method-3-download-and-install-latest-release)
       - [Latest stable Release](#latest-stable-release)
       - [Candidate Release v3.1.00-rc7.2](#candidate-release-v3100-rc72)
         - [MacOS/OSX downloads](#macososx-downloads)
@@ -34,7 +34,7 @@ Table of Contents
         - [Linux downloads](#linux-downloads)
         - [Linux ARM/aarch64 downloads](#linux-armaarch64-downloads)
         - [Download checksums](#download-checksums)
-    - [Method 3. Build, compile and install from source](#method-3-build-compile-and-install-from-source)
+    - [Method 4. Build, compile and install from source](#method-4-build-compile-and-install-from-source)
   - [Our sources:](#our-sources)
   - [Coin Specs](#coin-specs)
   - [Reward Distribution](#reward-distribution)
@@ -143,7 +143,7 @@ Please use **only stable release** for production/commercial purpose.
 - Snap builds in Windows 10
   - [How to install Ubuntu/OpenSuse from Microsoft Store](https://fossbytes.com/install-ubuntu-opensuse-windows-store-windows-10/)
 
-### Method 4. Download and install latest release
+### Method 3. Download and install latest release
 
 #### Latest stable Release
 - [![Latest stable Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
@@ -177,7 +177,7 @@ Please use **only stable release** for production/commercial purpose.
 
 - [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/SHA256SUMS.asc.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/SHA256SUMS.asc)
 
-### Method 3. Build, compile and install from source
+### Method 4. Build, compile and install from source
 
 - [Build, compile and install documenattion](../../tree/master/doc#building)
 
