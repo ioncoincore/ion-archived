@@ -408,3 +408,60 @@ int TransactionRecord::getOutputIndex() const
 {
     return idx;
 }
+
+std::string TransactionRecord::GetTransactionRecordType() const
+{
+    return GetTransactionRecordType(type);
+}
+std::string TransactionRecord::GetTransactionRecordType(Type type) const
+{
+    switch (type)
+    {
+    case Other: return "Other";
+    case Generated: return "Generated";
+    case StakeMint: return "StakeMint";
+    case StakeXION: return "StakeXION";
+    case SendToAddress: return "SendToAddress";
+    case SendToOther: return "SendToOther";
+    case RecvWithAddress: return "RecvWithAddress";
+    case MNReward: return "MNReward";
+    case RecvFromOther: return "RecvFromOther";
+    case SendToSelf: return "SendToSelf";
+    case ZerocoinMint: return "ZerocoinMint";
+    case ZerocoinSpend: return "ZerocoinSpend";
+    case RecvFromZerocoinSpend: return "RecvFromZerocoinSpend";
+    case ZerocoinSpend_Change_xIon: return "ZerocoinSpend_Change_xIon";
+    case ZerocoinSpend_FromMe: return "ZerocoinSpend_FromMe";
+    case RecvWithObfuscation: return "RecvWithObfuscation";
+    case ObfuscationDenominate: return "ObfuscationDenominate";
+    case ObfuscationCollateralPayment: return "ObfuscationCollateralPayment";
+    case ObfuscationMakeCollaterals: return "ObfuscationMakeCollaterals";
+    case ObfuscationCreateDenominations: return "ObfuscationCreateDenominations";
+    case Obfuscated: return "Obfuscated";
+    }
+    return NULL;
+}
+
+std::string TransactionRecord::GetTransactionStatus() const
+{
+    return GetTransactionStatus(status.status);
+}
+std::string TransactionRecord::GetTransactionStatus(TransactionStatus::Status status) const
+{
+    switch (status)
+    {
+    case TransactionStatus::Confirmed: return "Confirmed";           /**< Have 6 or more confirmations (normal tx) or fully mature (mined tx) **/
+    /// Normal (sent/received) transactions
+    case TransactionStatus::OpenUntilDate: return "OpenUntilDate";   /**< Transaction not yet final, waiting for date */
+    case TransactionStatus::OpenUntilBlock: return "OpenUntilBlock"; /**< Transaction not yet final, waiting for block */
+    case TransactionStatus::Offline: return "Offline";               /**< Not sent to any other nodes **/
+    case TransactionStatus::Unconfirmed: return "Unconfirmed";       /**< Not yet mined into a block **/
+    case TransactionStatus::Confirming: return "Confirmed";          /**< Confirmed, but waiting for the recommended number of confirmations **/
+    case TransactionStatus::Conflicted: return "Conflicted";         /**< Conflicts with other transaction or mempool **/
+    /// Generated (mined) transactions
+    case TransactionStatus::Immature: return "Immature";             /**< Mined but waiting for maturity */
+    case TransactionStatus::MaturesWarning: return "MaturesWarning"; /**< Transaction will likely not mature because no nodes have confirmed */
+    case TransactionStatus::NotAccepted: return "NotAccepted";       /**< Mined but not accepted */
+    }
+    return NULL;
+}
