@@ -1539,27 +1539,30 @@ void ListTransactionRecords(const CWalletTx& wtx, const string& strAccount, int 
 {
     std::vector<TransactionRecord> vRecs = TransactionRecord::decomposeTransaction(pwalletMain, wtx);
     for(auto&& vRec: vRecs) {
-        UniValue entry(UniValue::VOBJ);
-        entry.push_back(Pair("type", vRec.GetTransactionRecordType()));
-        entry.push_back(Pair("transactionid", vRec.getTxID()));
-        entry.push_back(Pair("outputindex", vRec.getOutputIndex()));
-        entry.push_back(Pair("time", vRec.time));
-        entry.push_back(Pair("debit", vRec.debit));
-        entry.push_back(Pair("credit", vRec.credit));
-        entry.push_back(Pair("involvesWatchAddress", vRec.involvesWatchAddress));
+        if (!vRec.involvesWatchAddress || filter & ISMINE_WATCH_ONLY)
+        {
+            UniValue entry(UniValue::VOBJ);
+            entry.push_back(Pair("type", vRec.GetTransactionRecordType()));
+            entry.push_back(Pair("transactionid", vRec.getTxID()));
+            entry.push_back(Pair("outputindex", vRec.getOutputIndex()));
+            entry.push_back(Pair("time", vRec.time));
+            entry.push_back(Pair("debit", vRec.debit));
+            entry.push_back(Pair("credit", vRec.credit));
+            entry.push_back(Pair("involvesWatchAddress", vRec.involvesWatchAddress));
 
-        if (fLong) {
-            if (vRec.statusUpdateNeeded()) vRec.updateStatus(wtx);
+            if (fLong) {
+                if (vRec.statusUpdateNeeded()) vRec.updateStatus(wtx);
 
-            entry.push_back(Pair("depth", vRec.status.depth));
-            entry.push_back(Pair("status", vRec.GetTransactionStatus()));
-            entry.push_back(Pair("countsForBalance", vRec.status.countsForBalance));
-            entry.push_back(Pair("matures_in", vRec.status.matures_in));
-            entry.push_back(Pair("open_for", vRec.status.open_for));
-            entry.push_back(Pair("cur_num_blocks", vRec.status.cur_num_blocks));
-            entry.push_back(Pair("cur_num_ix_locks", vRec.status.cur_num_ix_locks));
+                entry.push_back(Pair("depth", vRec.status.depth));
+                entry.push_back(Pair("status", vRec.GetTransactionStatus()));
+                entry.push_back(Pair("countsForBalance", vRec.status.countsForBalance));
+                entry.push_back(Pair("matures_in", vRec.status.matures_in));
+                entry.push_back(Pair("open_for", vRec.status.open_for));
+                entry.push_back(Pair("cur_num_blocks", vRec.status.cur_num_blocks));
+                entry.push_back(Pair("cur_num_ix_locks", vRec.status.cur_num_ix_locks));
+            }
+            ret.push_back(entry);
         }
-        ret.push_back(entry);
     }
 }
 
@@ -1568,13 +1571,13 @@ UniValue listtransactionrecords(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 4)
         throw runtime_error(
             "listtransactionrecords ( \"account\" count from includeWatchonly)\n"
-            "\nReturns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.\n"
+            "\nReturns up to 'count' most recent transaction records skipping the first 'from' transactions for account 'account'.\n"
 
             "\nArguments:\n"
             "1. \"account\"    (string, optional) The account name. If not included, it will list all transactions for all accounts.\n"
             "                                     If \"\" is set, it will list transactions for the default account.\n"
-            "2. count          (numeric, optional, default=10) The number of transactions to return\n"
-            "3. from           (numeric, optional, default=0) The number of transactions to skip\n"
+            "2. count          (numeric, optional, default=10) The number of transaction records to return\n"
+            "3. from           (numeric, optional, default=0) The number of transaction records to skip\n"
             "4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
 
             "\nExamples:\n"
@@ -1617,9 +1620,6 @@ UniValue listtransactionrecords(const UniValue& params, bool fHelp)
         CWalletTx* const pwtx = (*it).second.first;
         if (pwtx != 0)
             ListTransactionRecords(*pwtx, strAccount, 0, true, ret, filter);
-        CAccountingEntry* const pacentry = (*it).second.second;
-        if (pacentry != 0)
-            AcentryToJSON(*pacentry, strAccount, ret);
 
         if ((int)ret.size() >= (nCount + nFrom)) break;
     }
@@ -1801,6 +1801,70 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
 
         if (depth == -1 || tx.GetDepthInMainChain(false) < depth)
             ListTransactions(tx, "*", 0, true, transactions, filter);
+    }
+
+    CBlockIndex* pblockLast = chainActive[chainActive.Height() + 1 - target_confirms];
+    uint256 lastblock = pblockLast ? pblockLast->GetBlockHash() : 0;
+
+    UniValue ret(UniValue::VOBJ);
+    ret.push_back(Pair("transactions", transactions));
+    ret.push_back(Pair("lastblock", lastblock.GetHex()));
+
+    return ret;
+}
+
+UniValue listrecordssinceblock(const UniValue& params, bool fHelp)
+{
+    if (fHelp)
+        throw runtime_error(
+            "listrecordssinceblock ( \"blockhash\" target-confirmations includeWatchonly)\n"
+            "\nGet all transaction records in blocks since block [blockhash], or all transaction records if omitted\n"
+
+            "\nArguments:\n"
+            "1. \"blockhash\"   (string, optional) The block hash to list transaction records since\n"
+            "2. target-confirmations:    (numeric, optional) The confirmations required, must be 1 or more\n"
+            "3. includeWatchonly:        (bool, optional, default=false) Include transaction records belonging to watchonly addresses (see 'importaddress')"
+
+            "\nExamples:\n" +
+            HelpExampleCli("listrecordssinceblock", "") +
+            HelpExampleCli("listrecordssinceblock", "\"000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad\" 6") +
+            HelpExampleRpc("listrecordssinceblock", "\"000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad\", 6"));
+
+    LOCK2(cs_main, pwalletMain->cs_wallet);
+
+    CBlockIndex* pindex = NULL;
+    int target_confirms = 1;
+    isminefilter filter = ISMINE_SPENDABLE;
+
+    if (params.size() > 0) {
+        uint256 blockId = 0;
+
+        blockId.SetHex(params[0].get_str());
+        BlockMap::iterator it = mapBlockIndex.find(blockId);
+        if (it != mapBlockIndex.end())
+            pindex = it->second;
+    }
+
+    if (params.size() > 1) {
+        target_confirms = params[1].get_int();
+
+        if (target_confirms < 1)
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter");
+    }
+
+    if (params.size() > 2)
+        if (params[2].get_bool())
+            filter = filter | ISMINE_WATCH_ONLY;
+
+    int depth = pindex ? (1 + chainActive.Height() - pindex->nHeight) : -1;
+
+    UniValue transactions(UniValue::VARR);
+
+    for (map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); it++) {
+        CWalletTx tx = (*it).second;
+
+        if (depth == -1 || tx.GetDepthInMainChain(false) < depth)
+            ListTransactionRecords(tx, "*", 0, true, transactions, filter);
     }
 
     CBlockIndex* pblockLast = chainActive[chainActive.Height() + 1 - target_confirms];

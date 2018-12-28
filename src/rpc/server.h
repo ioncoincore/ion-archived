@@ -237,6 +237,7 @@ extern UniValue listtransactionrecords(const UniValue& params, bool fHelp);
 extern UniValue listaddressgroupings(const UniValue& params, bool fHelp);
 extern UniValue listaccounts(const UniValue& params, bool fHelp);
 extern UniValue listsinceblock(const UniValue& params, bool fHelp);
+extern UniValue listrecordssinceblock(const UniValue& params, bool fHelp);
 extern UniValue gettransaction(const UniValue& params, bool fHelp);
 extern UniValue backupwallet(const UniValue& params, bool fHelp);
 extern UniValue keypoolrefill(const UniValue& params, bool fHelp);
