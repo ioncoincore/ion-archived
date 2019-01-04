@@ -1,6 +1,4 @@
-Compiling/running unit tests
-------------------------------------
-
+## Compiling/running unit tests
 Unit tests will be automatically compiled if dependencies were met in configure
 and tests weren't explicitly disabled.
 

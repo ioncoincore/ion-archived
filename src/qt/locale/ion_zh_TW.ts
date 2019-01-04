@@ -62,12 +62,12 @@
         <translation>接收的位址</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這是你用來付款的 Ion 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
+        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這是你用來付款的 ION 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>這是你用來接收款項的 Ion 位址, 建議你每次付款都使用新的位址.</translation>
+        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>這是你用來接收款項的 ION 位址, 建議你每次付款都使用新的位址.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>ION will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your IONs from being stolen by malware infecting your computer.</source>
-        <translation>ION 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 Ion 幣被可疑軟體或病毒偷走的風險.</translation>
+        <translation>ION 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 ION 幣被可疑軟體或病毒偷走的風險.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -217,6 +217,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -227,16 +230,8 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
-        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>輸入你想 BIP 38 加密的 Ion 位址, 輸入密碼在中間欄, 按下加密按鈕來產生加密私鑰.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>位址:</translation>
-    </message>
-    <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>對訊息簽名的 Ion 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -267,16 +262,8 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>使用簽章來證明你是該  Ion 位址的擁有者,</translation>
-    </message>
-    <message>
         <source>Encrypt &amp;Key</source>
         <translation>加密 &amp;鑰匙</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>重設所有已簽章訊息</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -287,20 +274,8 @@
         <translation>&amp;BIP 38 解密</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>此訊息之 Ion 位址已簽章於</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>驗證訊息以確保該  Ion 位址已被簽章</translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>解密 &amp;鑰匙</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>重設所有驗證訊息的欄位</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -586,8 +561,8 @@
         <translation>Ion Core</translation>
     </message>
     <message>
-        <source>Send coins to a Ion address</source>
-        <translation>送出錢幣到 Ion 地址</translation>
+        <source>Send coins to a ION address</source>
+        <translation>送出錢幣到 ION 地址</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
@@ -611,15 +586,15 @@
     </message>
     <message>
         <source>Modify configuration options for ION</source>
-        <translation>修改 Ion 設定</translation>
+        <translation>修改 ION 設定</translation>
     </message>
     <message>
-        <source>Sign messages with your Ion addresses to prove you own them</source>
-        <translation>使用你的 Ion 位址對訊息簽章, 來證明你是擁有者</translation>
+        <source>Sign messages with your ION addresses to prove you own them</source>
+        <translation>使用你的 ION 位址對訊息簽章, 來證明你是擁有者</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
-        <translation>驗證訊息簽章與 Ion 位址吻合</translation>
+        <source>Verify messages to ensure they were signed with specified ION addresses</source>
+        <translation>驗證訊息簽章與 ION 位址吻合</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -662,8 +637,8 @@
         <translation>區塊鏈瀏覽視窗</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
-        <translation>顯示 Ion Core 幫助訊息以取得 Ion 命令列表選項</translation>
+        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <translation>顯示 Ion Core 幫助訊息以取得 ION 命令列表選項</translation>
     </message>
     <message>
         <source>Ion Core client</source>
@@ -724,6 +699,13 @@
         <source>Address:</source>
         <translation>位址:</translation>
     </message>
+    <message>
+        <source>(no label)</source>
+        <translation>(沒有標記)</translation>
+    </message>
+    </context>
+<context>
+    <name>MultisigDialog</name>
     </context>
 <context>
     <name>ObfuscationConfig</name>
@@ -760,6 +742,10 @@
     <message>
         <source>Alt+P</source>
         <translation>Alt+P</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>文字標籤</translation>
     </message>
     </context>
 <context>
@@ -836,8 +822,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>對訊息簽名的 Ion 位址</translation>
+        <source>The ION address to sign the message with</source>
+        <translation>對訊息簽名的 ION 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -860,16 +846,16 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>使用簽章來證明你是該  Ion 位址的擁有者,</translation>
+        <source>Sign the message to prove you own this ION address</source>
+        <translation>使用簽章來證明你是該  ION 位址的擁有者,</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>此訊息之 Ion 位址已簽章於</translation>
+        <source>The ION address the message was signed with</source>
+        <translation>此訊息之 ION 位址已簽章於</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>驗證訊息以確保該  Ion 位址已被簽章</translation>
+        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <translation>驗證訊息以確保該  ION 位址已被簽章</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -971,7 +957,7 @@
     </message>
     </context>
 <context>
-    <name>XIONControlDialog</name>
+    <name>XIonControlDialog</name>
     </context>
 <context>
     <name>ion-core</name>

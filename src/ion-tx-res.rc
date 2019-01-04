@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Ionomy"
-            VALUE "FileDescription",    "ion-tx (CLI Ion transaction editor utility)"
+            VALUE "CompanyName",        "ION"
+            VALUE "FileDescription",    "ion-tx (CLI ION transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "ion-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

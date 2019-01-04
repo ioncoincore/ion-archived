@@ -1,19 +1,32 @@
-UNIX BUILD NOTES
-====================
-Some notes on how to build Ion in Unix.
+# UNIX BUILD NOTES
+Some notes on how to build ION in Unix.
 
-Note
----------------------
+Table of Contents
+------------------
+- [UNIX BUILD NOTES](#unix-build-notes)
+    - [Note](#note)
+    - [To Build](#to-build)
+    - [Dependencies](#dependencies)
+    - [System requirements](#system-requirements)
+    - [Dependency Build Instructions: Ubuntu & Debian](#dependency-build-instructions-ubuntu--debian)
+        - [Build requirements](#build-requirements)
+    - [Dependencies for the GUI: Ubuntu & Debian](#dependencies-for-the-gui-ubuntu--debian)
+    - [Notes](#notes)
+    - [miniupnpc](#miniupnpc)
+    - [Berkeley DB](#berkeley-db)
+    - [Boost](#boost)
+    - [Security](#security)
+
+## Note
 Always use absolute paths to configure and compile ion and the dependencies,
-for example, when specifying the the path of the dependency:
+for example, when specifying the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 
 Here BDB_PREFIX must absolute path - it is defined using $(pwd) which ensures
 the usage of the absolute path.
 
-To Build
----------------------
+## To Build
 
 ```bash
 ./autogen.sh
@@ -24,8 +37,7 @@ make install # optional
 
 This will build ion-qt as well if the dependencies are met.
 
-Dependencies
----------------------
+## Dependencies
 
 These dependencies are required:
 
@@ -48,18 +60,17 @@ Optional dependencies:
 
 For the versions used in the release, see [release-process.md](release-process.md) under *Fetch and build inputs*.
 
-System requirements
---------------------
+## System requirements
 
 C++ compilers are memory-hungry. It is recommended to have at least 1 GB of
 memory available when compiling Ion Core. With 512MB of memory or less
 compilation will take much longer due to swap thrashing.
 
-Dependency Build Instructions: Ubuntu & Debian
-----------------------------------------------
-Build requirements:
+## Dependency Build Instructions: Ubuntu & Debian
 
-	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev libevent-dev
+### Build requirements
+
+	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev libevent-dev automake
 
 For Ubuntu 12.04 and later or Debian 7 and later libboost-all-dev has to be installed:
 
@@ -82,8 +93,7 @@ Optional:
 
 	sudo apt-get install libminiupnpc-dev (see --with-miniupnpc and --enable-upnp-default)
 
-Dependencies for the GUI: Ubuntu & Debian
------------------------------------------
+## Dependencies for the GUI: Ubuntu & Debian
 
 If you want to build Ion-Qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
@@ -101,14 +111,12 @@ libqrencode (optional) can be installed with:
 Once these are installed, they will be found by configure and a ion-qt executable will be
 built by default.
 
-Notes
------
+## Notes
 The release is built with GCC and then "strip iond" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
-miniupnpc
----------
+## miniupnpc
 
 [miniupnpc](http://miniupnp.free.fr/) may be used for UPnP port mapping.  It can be downloaded from [here](
 http://miniupnp.tuxfamily.org/files/).  UPnP support is compiled in and
@@ -127,38 +135,21 @@ To build:
 	make install
 
 
-Berkeley DB
------------
-It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
+## Berkeley DB
 
-```bash
-ION_ROOT=$(pwd)
+It is recommended to use Berkeley DB 4.8. If you have to build it yourself,
+you can use [the installation script included in contrib/](/contrib/install_db4.sh)
+like so:
 
-# Pick some path to install BDB to, here we create a directory within the ion directory
-BDB_PREFIX="${ION_ROOT}/db4"
-mkdir -p $BDB_PREFIX
-
-# Fetch the source and verify that it is not tampered with
-wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
-echo '12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef  db-4.8.30.NC.tar.gz' | sha256sum -c
-# -> db-4.8.30.NC.tar.gz: OK
-tar -xzvf db-4.8.30.NC.tar.gz
-
-# Build the library and install to our prefix
-cd db-4.8.30.NC/build_unix/
-#  Note: Do a static build so that it can be embedded into the exectuable, instead of having to find a .so at runtime
-../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
-make install
-
-# Configure Ion Core to use our own-built instance of BDB
-cd $ION_ROOT
-./configure (other args...) LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
+```shell
+./contrib/install_db4.sh `pwd`
 ```
 
-**Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
+from the root of the repository.
 
-Boost
------
+**Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-unix.md#disable-wallet-mode)).
+
+## Boost
 If you need to build Boost yourself:
 
 	sudo su
@@ -166,9 +157,8 @@ If you need to build Boost yourself:
 	./bjam install
 
 
-Security
---------
-To help make your Ion installation more secure by making certain attacks impossible to
+## Security
+To help make your ION installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
@@ -180,7 +170,7 @@ Hardening Flags:
 
 Hardening enables the following features:
 
-* Position Independent Executable
+- Position Independent Executable
     Build position independent code to take advantage of Address Space Layout Randomization
     offered by some kernels. An attacker who is able to cause execution of code at an arbitrary
     memory location is thwarted if he doesn't know where anything useful is located.
@@ -198,7 +188,7 @@ Hardening enables the following features:
      TYPE
     ET_DYN
 
-* Non-executable Stack
+- Non-executable Stack
     If the stack is executable then trivial stack based buffer overflow exploits are possible if
     vulnerable buffers are found. By default, ion should be built with a non-executable stack
     but if one of the libraries it uses asks for an executable stack or someone makes a mistake

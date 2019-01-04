@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -74,6 +74,10 @@ void OptionsModel::Init()
         settings.setValue("fHideZeroBalances", true);
     fHideZeroBalances = settings.value("fHideZeroBalances").toBool();
 
+    if (!settings.contains("fHideOrphans"))
+        settings.setValue("fHideOrphans", false);
+    fHideOrphans = settings.value("fHideOrphans").toBool();
+
     if (!settings.contains("fCoinControlFeatures"))
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
@@ -90,10 +94,10 @@ void OptionsModel::Init()
         settings.setValue("nPreferredDenom", 0);
     nPreferredDenom = settings.value("nPreferredDenom", "0").toLongLong();
 
-    if (!settings.contains("nAnonymizeIONAmount"))
-        settings.setValue("nAnonymizeIONAmount", 1000);
+    if (!settings.contains("nAnonymizeIonAmount"))
+        settings.setValue("nAnonymizeIonAmount", 1000);
 
-    nAnonymizeIONAmount = settings.value("nAnonymizeIONAmount").toLongLong();
+    nAnonymizeIonAmount = settings.value("nAnonymizeIonAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -167,8 +171,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeIONAmount"))
-        SoftSetArg("-anonymizeionamount", settings.value("nAnonymizeIONAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeIonAmount"))
+        SoftSetArg("-anonymizeionamount", settings.value("nAnonymizeIonAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -253,14 +257,16 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nThreadsScriptVerif");
         case HideZeroBalances:
             return settings.value("fHideZeroBalances");
+        case HideOrphans:
+            return settings.value("fHideOrphans");
         case ZeromintEnable:
             return QVariant(fEnableZeromint);
         case ZeromintPercentage:
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeIONAmount:
-            return QVariant(nAnonymizeIONAmount);
+        case AnonymizeIonAmount:
+            return QVariant(nAnonymizeIonAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -388,11 +394,15 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("fHideZeroBalances", fHideZeroBalances);
             emit hideZeroBalancesChanged(fHideZeroBalances);
             break;
-
-        case AnonymizeIONAmount:
-            nAnonymizeIONAmount = value.toInt();
-            settings.setValue("nAnonymizeIONAmount", nAnonymizeIONAmount);
-            emit anonymizeIONAmountChanged(nAnonymizeIONAmount);
+        case HideOrphans:
+            fHideOrphans = value.toBool();
+            settings.setValue("fHideOrphans", fHideOrphans);
+            emit hideOrphansChanged(fHideOrphans);
+            break;
+        case AnonymizeIonAmount:
+            nAnonymizeIonAmount = value.toInt();
+            settings.setValue("nAnonymizeIonAmount", nAnonymizeIonAmount);
+            emit anonymizeIonAmountChanged(nAnonymizeIonAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

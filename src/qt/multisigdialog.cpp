@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,17 +24,20 @@
 #include "qvalidatedlineedit.h"
 #include "bitcoinamountfield.h"
 
-#include <QtCore/QVariant>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QToolButton>
-#include <QtWidgets/QSpinBox>
+#include <QVariant>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QToolButton>
+#include <QSpinBox>
 #include <QClipboard>
 #include <QDebug>
+#include <QArgument>
+#include <QtGlobal>
+#include <QString>
 
 
-MultisigDialog::MultisigDialog(QWidget* parent) : QDialog(parent),
+MultisigDialog::MultisigDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                   ui(new Ui::MultisigDialog),
                                                   model(0)
 {
@@ -261,7 +264,7 @@ bool MultisigDialog::addMultisig(int m, vector<string> keys){
 
         ui->addMultisigStatus->setStyleSheet("QLabel { color: black; }");
         ui->addMultisigStatus->setText("Multisignature address " +
-                                       QString::fromStdString(CBitcoinAddress(innerID).ToString()) +
+                                       QString::fromStdString(EncodeDestination(innerID)) +
                                        " has been added to the wallet.\nSend the redeem below for other owners to import:\n" +
                                        QString::fromStdString(redeem.ToString()));
     }catch(const runtime_error& e) {
@@ -318,7 +321,7 @@ void MultisigDialog::on_createButton_clicked()
             QWidget* dest = qobject_cast<QWidget*>(ui->destinationsList->itemAt(i)->widget());
             QValidatedLineEdit* addr = dest->findChild<QValidatedLineEdit*>("destinationAddress");
             BitcoinAmountField* amt = dest->findChild<BitcoinAmountField*>("destinationAmount");
-            CBitcoinAddress address;
+            CTxDestination address;
 
             bool validDest = true;
 
@@ -326,7 +329,7 @@ void MultisigDialog::on_createButton_clicked()
                 addr->setValid(false);
                 validDest = false;
             }else{
-                address = CBitcoinAddress(addr->text().toStdString());
+                address = DecodeDestination(addr->text().toStdString());
             }
 
             if(!amt->validate()){
@@ -339,7 +342,7 @@ void MultisigDialog::on_createButton_clicked()
                 continue;
             }
 
-            CScript scriptPubKey = GetScriptForDestination(address.Get());
+            CScript scriptPubKey = GetScriptForDestination(address);
             CTxOut out(amt->value(), scriptPubKey);
             vUserOut.push_back(out);
         }
@@ -414,7 +417,7 @@ bool MultisigDialog::createMultisigTransaction(vector<CTxIn> vUserIn, vector<CTx
         }
 
         if(totalIn < totalOut){
-            throw runtime_error("Not enough Ion provided as input to complete transaction (including fee).");
+            throw runtime_error("Not enough ION provided as input to complete transaction (including fee).");
         }
 
         //calculate change amount
@@ -479,7 +482,7 @@ bool MultisigDialog::createMultisigTransaction(vector<CTxIn> vUserIn, vector<CTx
             tx.vout.at(changeIndex).nValue -= fee;
             feeStringRet = strprintf("%d",((double)fee)/COIN).c_str();
         }else{
-            throw runtime_error("Not enough Ion provided to cover fee");
+            throw runtime_error("Not enough ION provided to cover fee");
         }
 
         //clear junk from script sigs
@@ -778,16 +781,16 @@ bool MultisigDialog::createRedeemScript(int m, vector<string> vKeys, CScript& re
         for(vector<string>::iterator it = vKeys.begin(); it != vKeys.end(); ++it) {
             string keyString = *it;
 #ifdef ENABLE_WALLET
-            // Case 1: Ion address and we have full public key:
-            CBitcoinAddress address(keyString);
-            if (pwalletMain && address.IsValid()) {
-                CKeyID keyID;
-                if (!address.GetKeyID(keyID)) {
+            // Case 1: ION address and we have full public key:
+            if (pwalletMain && IsValidDestinationString(keyString)) {
+                CTxDestination address = DecodeDestination(keyString);
+                const CKeyID *keyID = boost::get<CKeyID>(&address);
+                if (!keyID) {
                     throw runtime_error(
                         strprintf("%s does not refer to a key", keyString));
                 }
                 CPubKey vchPubKey;
-                if (!pwalletMain->GetPubKey(keyID, vchPubKey))
+                if (!pwalletMain->GetPubKey(*keyID, vchPubKey))
                     throw runtime_error(
                         strprintf("no full public key for address %s", keyString));
                 if (!vchPubKey.IsFullyValid()){

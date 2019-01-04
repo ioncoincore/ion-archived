@@ -62,11 +62,11 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这是用于发送ION的地址。在发送ION之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这是用于接收ION的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
@@ -134,10 +134,6 @@
     <message>
         <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
         <translation>用于在操作系统帐户遭到破坏时禁用琐碎的sendmoney。没有真正的安全性。</translation>
-    </message>
-    <message>
-        <source>For anonymization and staking only</source>
-        <translation>仅用于匿名化和加密</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -229,6 +225,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -239,16 +238,8 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
-        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>输入您要使用BIP 38加密的ION地址。在中间框中输入密码。按加密计算加密私钥。</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>地址：</translation>
-    </message>
-    <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>该ION地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +270,8 @@
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>签署消息以证明您拥有此ION地址</translation>
-    </message>
-    <message>
         <source>Encrypt &amp;Key</source>
         <translation>加密&amp;秘钥</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>重置所有签名信息</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -303,20 +286,8 @@
         <translation>输入BIP 38加密私钥。 在中间框中输入密码。 单击解密密钥计算私钥。 密钥解密后，单击“导入地址”将将该私钥添加到钱包中。</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>由ION地址签名的消息</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>解密&amp;秘钥</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>重置所有验证消息</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -403,7 +374,7 @@
     </message>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;概述</translation>
+        <translation>&amp;O概述</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
@@ -411,15 +382,15 @@
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>&amp;发送</translation>
+        <translation>&amp;S发送</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>&amp;接收</translation>
+        <translation>&amp;R接收</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;交易</translation>
+        <translation>&amp;T交易</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -443,11 +414,11 @@
     </message>
     <message>
         <source>&amp;Options...</source>
-        <translation>&amp;选项</translation>
+        <translation>&amp;Q选项</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
-        <translation>&amp;显示/隐藏</translation>
+        <translation>&amp;S显示/隐藏</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
@@ -455,7 +426,7 @@
     </message>
     <message>
         <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;加密钱包...</translation>
+        <translation>&amp;E加密钱包...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
@@ -463,7 +434,7 @@
     </message>
     <message>
         <source>&amp;Backup Wallet...</source>
-        <translation>&amp;备份钱包...</translation>
+        <translation>&amp;B备份钱包...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -471,7 +442,7 @@
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
-        <translation>&amp;修改密码</translation>
+        <translation>&amp;C修改密码</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -479,7 +450,7 @@
     </message>
     <message>
         <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;解锁钱包...</translation>
+        <translation>&amp;U解锁钱包...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -487,11 +458,11 @@
     </message>
     <message>
         <source>&amp;Lock Wallet</source>
-        <translation>&amp;锁定钱包</translation>
+        <translation>&amp;L锁定钱包</translation>
     </message>
     <message>
         <source>Sign &amp;message...</source>
-        <translation>签名&amp;消息</translation>
+        <translation>S签名&amp;消息</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
@@ -499,7 +470,7 @@
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;信息</translation>
+        <translation>&amp;I信息</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
@@ -507,7 +478,7 @@
     </message>
     <message>
         <source>&amp;Debug console</source>
-        <translation>&amp;调试控制台</translation>
+        <translation>&amp;D调试控制台</translation>
     </message>
     <message>
         <source>Open debugging console</source>
@@ -515,7 +486,7 @@
     </message>
     <message>
         <source>&amp;Network Monitor</source>
-        <translation>&amp;网络监视器</translation>
+        <translation>&amp;N网络监视器</translation>
     </message>
     <message>
         <source>Show network monitor</source>
@@ -523,7 +494,7 @@
     </message>
     <message>
         <source>&amp;Peers list</source>
-        <translation>&amp;并列列表</translation>
+        <translation>&amp;P并列列表</translation>
     </message>
     <message>
         <source>Show peers info</source>
@@ -531,7 +502,7 @@
     </message>
     <message>
         <source>Wallet &amp;Repair</source>
-        <translation>钱包&amp;修复</translation>
+        <translation>W钱包&amp;修复</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -551,7 +522,7 @@
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>&amp;发送地址...</translation>
+        <translation>&amp;S发送地址...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -559,7 +530,7 @@
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
-        <translation>&amp;接收地址</translation>
+        <translation>&amp;R接收地址</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -567,11 +538,11 @@
     </message>
     <message>
         <source>Open &amp;URI...</source>
-        <translation>打开&amp;URI</translation>
+        <translation>O打开&amp;URI</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
-        <translation>&amp;命令行选项</translation>
+        <translation>&amp;C命令行选项</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -579,19 +550,19 @@
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;文件</translation>
+        <translation>&amp;F文件</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;设置</translation>
+        <translation>&amp;S设置</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;工具</translation>
+        <translation>&amp;T工具</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;帮助</translation>
+        <translation>&amp;H帮助</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -599,10 +570,10 @@
     </message>
     <message>
         <source>Ion Core</source>
-        <translation>ION 核心</translation>
+        <translation>Ion Core</translation>
     </message>
     <message>
-        <source>Send coins to a Ion address</source>
+        <source>Send coins to a ION address</source>
         <translation>发送数字货币到ION地址</translation>
     </message>
     <message>
@@ -610,8 +581,12 @@
         <translation>请求支付（生成二维码和ion：URIs）</translation>
     </message>
     <message>
+        <source>&amp;Privacy</source>
+        <translation>&amp;P隐私</translation>
+    </message>
+    <message>
         <source>&amp;Masternodes</source>
-        <translation>&amp;主节点</translation>
+        <translation>&amp;M主节点</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
@@ -619,22 +594,22 @@
     </message>
     <message>
         <source>&amp;About Ion Core</source>
-        <translation>&amp;关于ION核心</translation>
+        <translation>&amp;A关于Ion Core</translation>
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>显示ION核心的相关信息</translation>
+        <translation>显示ION  Core的相关信息</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
         <translation>修改ION的配置选项</translation>
     </message>
     <message>
-        <source>Sign messages with your Ion addresses to prove you own them</source>
+        <source>Sign messages with your ION addresses to prove you own them</source>
         <translation>使用您的ION地址验证消息，以证明您拥有他们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
+        <source>Verify messages to ensure they were signed with specified ION addresses</source>
         <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
     </message>
     <message>
@@ -647,7 +622,7 @@
     </message>
     <message>
         <source>&amp;MultiSend</source>
-        <translation>&amp;多重发送</translation>
+        <translation>&amp;M多重发送</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
@@ -671,19 +646,19 @@
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
-        <translation>&amp;区块浏览器</translation>
+        <translation>&amp;B区块浏览器</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>区块浏览窗口</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
-        <translation>显示Ion Core帮助信息以获取可能的ION命令行选项的列表</translation>
+        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <translation>显示Ion Core帮助信息并获取ION命令行选项列表</translation>
     </message>
     <message>
         <source>Ion Core client</source>
-        <translation>ION核心客户端</translation>
+        <translation>Ion Core 客户端</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -704,10 +679,6 @@
     <message>
         <source>Up to date</source>
         <translation>最新</translation>
-    </message>
-    <message>
-        <source>%1 behind</source>
-        <translation>%1 落后</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -734,6 +705,18 @@
         <translation>信息</translation>
     </message>
     <message>
+        <source>Sent transaction</source>
+        <translation>发送交易</translation>
+    </message>
+    <message>
+        <source>Incoming transaction</source>
+        <translation>接收交易</translation>
+    </message>
+    <message>
+        <source>Sent MultiSend transaction</source>
+        <translation>发送MultiSend交易</translation>
+    </message>
+    <message>
         <source>Date: %1
 Amount: %2
 Type: %3
@@ -744,6 +727,14 @@ Address: %4
 类型：%3
 地址：%4
 </translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>激活</translation>
+    </message>
+    <message>
+        <source>Not Active</source>
+        <translation>未激活</translation>
     </message>
     </context>
 <context>
@@ -813,14 +804,30 @@ Address: %4
     <name>HelpMessageDialog</name>
     <message>
         <source>Ion Core</source>
-        <translation>ION 核心</translation>
+        <translation>Ion Core</translation>
+    </message>
+    <message>
+        <source>About Ion Core</source>
+        <translation>关于Ion Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
+        <source>Welcome to Ion Core.</source>
+        <translation>欢迎使用 Ion Core</translation>
+    </message>
+    <message>
+        <source>As this is the first time the program is launched, you can choose where Ion Core will store its data.</source>
+        <translation>由于这是该程序第一次启动，您可以选择存储Ion Core 数据的位置。</translation>
+    </message>
+    <message>
+        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Ion Core将下载并存储ION区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
+    </message>
+    <message>
         <source>Ion Core</source>
-        <translation>ION 核心</translation>
+        <translation>Ion Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -840,6 +847,10 @@ Address: %4
     <message>
         <source>Address</source>
         <translation>地址</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>激活</translation>
     </message>
     <message>
         <source>S&amp;tart alias</source>
@@ -868,6 +879,17 @@ Address: %4
         <source>Address:</source>
         <translation>地址：</translation>
     </message>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>输入此地址的标签，将其添加到您的地址列表中</translation>
+    </message>
+    <message>
+        <source>(no label)</source>
+        <translation>未设置标签</translation>
+    </message>
+    </context>
+<context>
+    <name>MultisigDialog</name>
     </context>
 <context>
     <name>ObfuscationConfig</name>
@@ -898,7 +920,7 @@ Address: %4
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the Ion client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the ION client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动打开路由器上的ION钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
@@ -906,7 +928,7 @@ Address: %4
         <translation>&amp;使用SOCKS5代理（默认代理）</translation>
     </message>
     <message>
-        <source>&amp;Start Ion on system login</source>
+        <source>&amp;Start ION on system login</source>
         <translation>&amp;开机启动ION</translation>
     </message>
     <message>
@@ -983,7 +1005,7 @@ Address: %4
     </message>
     <message>
         <source>Active command-line options that override above options:</source>
-        <translation>上述选项的主动命令行选项：</translation>
+        <translation>激活上述选项的命令行选项：</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
@@ -1029,7 +1051,7 @@ Address: %4
         <source>The supplied proxy address is invalid.</source>
         <translation>提供的代理地址无效。</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -1045,12 +1067,8 @@ Address: %4
         <translation>您目前的支出余额</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
         <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与ION网络同步，但此过程尚未完成。</translation>
-    </message>
-    <message>
-        <source>Your current total balance</source>
-        <translation>您当前的总余额</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1066,7 +1084,7 @@ Address: %4
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ion network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ION network after a connection is established, but this process has not completed yet.</source>
         <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与ION网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
@@ -1116,7 +1134,7 @@ Address: %4
     <name>RPCConsole</name>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;信息</translation>
+        <translation>&amp;I信息</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -1154,11 +1172,11 @@ Address: %4
         <translation>&amp;消息：</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ion network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ION network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过ION网络发送。</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Ion network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ION network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过ION网络发送。</translation>
     </message>
     <message>
@@ -1294,7 +1312,7 @@ Address: %4
         <translation>消息:</translation>
     </message>
     <message>
-        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ion network.</source>
+        <source>A message that was attached to the ION: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ION network.</source>
         <translation>附加到ION：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过ION网络发送。</translation>
     </message>
     <message>
@@ -1320,7 +1338,7 @@ Address: %4
         <translation>您可以使用地址签名消息，以证明您拥有他们。 小心不要签名任何您不了解的，因为网络钓鱼攻击可能会试图欺骗您，以让您签名。 只能签署您熟悉并且了解和同意的。</translation>
     </message>
     <message>
-        <source>The Ion address to sign the message with</source>
+        <source>The ION address to sign the message with</source>
         <translation>该ION地址签名的消息</translation>
     </message>
     <message>
@@ -1348,15 +1366,15 @@ Address: %4
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
+        <source>Sign the message to prove you own this ION address</source>
         <translation>签署消息以证明您拥有此ION地址</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
+        <source>The ION address the message was signed with</source>
         <translation>由ION地址签名的消息</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
+        <source>Verify the message to ensure it was signed with the specified ION address</source>
         <translation>验证消息确保它已使用指定的ION地址进行签名</translation>
     </message>
     <message>
@@ -1436,7 +1454,7 @@ Address: %4
     <name>SplashScreen</name>
     <message>
         <source>Ion Core</source>
-        <translation>ION 核心</translation>
+        <translation>Ion Core</translation>
     </message>
     </context>
 <context>
@@ -1515,7 +1533,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>XIONControlDialog</name>
+    <name>XIonControlDialog</name>
     </context>
 <context>
     <name>ion-core</name>

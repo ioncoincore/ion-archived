@@ -17,7 +17,7 @@
    id="svg8"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ion_testnet-daemon.svg"
-   inkscape:export-filename="/home/tor/go/src/github.com/3re/ion-pos3-pivx/snap/gui/iond128testnet.png"
+   inkscape:export-filename="/home/tor/go/src/github.com/ioncoincore/ion/snap/gui/iond128testnet.png"
    inkscape:export-xdpi="8.7870264"
    inkscape:export-ydpi="8.7870264">
   <title
@@ -79,7 +79,7 @@
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title>Ion Coin core daemon testnet vector graphic</dc:title>
         <cc:license
-           rdf:resource="https://raw.githubusercontent.com/cevap/ion/master/COPYING" />
+           rdf:resource="https://raw.githubusercontent.com/ioncoincore/ion/master/COPYING" />
         <dc:date>GMT: Monday, March 19, 2018 9:54:40 PM</dc:date>
         <dc:creator>
           <cc:Agent>
@@ -88,7 +88,7 @@
         </dc:creator>
         <dc:rights>
           <cc:Agent>
-            <dc:title>https://raw.githubusercontent.com/cevap/ion/master/COPYING</dc:title>
+            <dc:title>https://raw.githubusercontent.com/ioncoincore/ion/master/COPYING</dc:title>
           </cc:Agent>
         </dc:rights>
         <dc:identifier>IonMainDaemon</dc:identifier>
@@ -97,8 +97,8 @@
             <dc:title>CEVAP</dc:title>
           </cc:Agent>
         </dc:publisher>
-        <dc:source>https://raw.githubusercontent.com/cevap/ion/master/src/qt/res/src/ion.svg</dc:source>
-        <dc:relation>https://raw.githubusercontent.com/cevap/ion/master/src/qt/res/src/ion.svg</dc:relation>
+        <dc:source>https://raw.githubusercontent.com/ioncoincore/ion/master/src/qt/res/src/ion.svg</dc:source>
+        <dc:relation>https://raw.githubusercontent.com/ioncoincore/ion/master/src/qt/res/src/ion.svg</dc:relation>
         <dc:language>English</dc:language>
         <dc:subject>
           <rdf:Bag>

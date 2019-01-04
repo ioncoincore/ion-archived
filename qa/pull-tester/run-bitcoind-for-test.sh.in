@@ -1,11 +1,9 @@
 #!/bin/bash
 # Copyright (c) 2013-2014 The Bitcoin Core developers
-# Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
-DATADIR="@abs_top_builddir@/.ioncoin"
+DATADIR="@abs_top_builddir@/.ion"
 rm -rf "$DATADIR"
 mkdir -p "$DATADIR"/regtest
 touch "$DATADIR/regtest/debug.log"
