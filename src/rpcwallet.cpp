@@ -785,6 +785,48 @@ UniValue getbalance(const UniValue& params, bool fHelp)
     return ValueFromAmount(nBalance);
 }
 
+UniValue getextendedbalance(const UniValue& params, bool fHelp)
+{
+    if (fHelp || (params.size() > 0))
+        throw runtime_error(
+            "getextendedbalance\n"
+            "\nGet extended balance information.\n"
+            "\nResult:\n"
+            "{\n"
+            "  \"blocks\": \"xxx\", (string) The current block height\n"
+            "  \"balance\": \"xxx\", (string) The total ION balance\n"
+            "  \"balance_locked\": \"xxx\", (string) The locked ION balance\n"
+            "  \"balance_unlocked\": \"xxx\", (string) The unlocked ION balance\n"
+            "  \"balance_unconfirmed\": \"xxx\", (string) The unconfirmed ION balance\n"
+            "  \"balance_immature\": \"xxx\", (string) The immature ION balance\n"
+            "  \"zerocoin_balance\": \"xxx\", (string) The total xION balance\n"
+            "  \"zerocoin_balance_mature\": \"xxx\", (string) The mature xION balance\n"
+            "  \"zerocoin_balance_immature\": \"xxx\", (string) The immature xION balance\n"
+            "  \"watchonly_balance\": \"xxx\", (string) The total watch-only ION balance\n"
+            "  \"watchonly_balance_unconfirmed\": \"xxx\", (string) The unconfirmed watch-only ION balance\n"
+            "  \"watchonly_balance_immature\": \"xxx\", (string) The immature watch-only ION balance\n"
+            "  \"watchonly_balance_locked\": \"xxx\", (string) The locked watch-only ION balance\n"
+            "}\n"
+            "\nExamples:\n" +
+            HelpExampleCli("getextendedbalance", "") + HelpExampleRpc("getextendedbalance", ""));
+    LOCK2(cs_main, pwalletMain->cs_wallet);
+    UniValue obj(UniValue::VOBJ);
+    obj.push_back(Pair("blocks", (int)chainActive.Height()));
+    obj.push_back(Pair("balance", ValueFromAmount(pwalletMain->GetBalance())));
+    obj.push_back(Pair("balance_locked", ValueFromAmount(pwalletMain->GetLockedCoins())));
+    obj.push_back(Pair("balance_unlocked", ValueFromAmount(pwalletMain->GetUnlockedCoins())));
+    obj.push_back(Pair("balance_unconfirmed", ValueFromAmount(pwalletMain->GetUnconfirmedBalance())));
+    obj.push_back(Pair("balance_immature", ValueFromAmount(pwalletMain->GetImmatureBalance())));
+    obj.push_back(Pair("zerocoin_balance", ValueFromAmount(pwalletMain->GetZerocoinBalance(false))));
+    obj.push_back(Pair("zerocoin_balance_mature", ValueFromAmount(pwalletMain->GetZerocoinBalance(true))));
+    obj.push_back(Pair("zerocoin_balance_immature", ValueFromAmount(pwalletMain->GetImmatureZerocoinBalance())));
+    obj.push_back(Pair("watchonly_balance", ValueFromAmount(pwalletMain->GetWatchOnlyBalance())));
+    obj.push_back(Pair("watchonly_balance_unconfirmed", ValueFromAmount(pwalletMain->GetUnconfirmedWatchOnlyBalance())));
+    obj.push_back(Pair("watchonly_balance_immature", ValueFromAmount(pwalletMain->GetImmatureWatchOnlyBalance())));
+    obj.push_back(Pair("watchonly_balance_locked", ValueFromAmount(pwalletMain->GetLockedWatchOnlyBalance())));
+    return obj;
+}
+
 UniValue getunconfirmedbalance(const UniValue &params, bool fHelp)
 {
     if (fHelp || params.size() > 0)
