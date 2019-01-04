@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2018 The Bitcoin Core developers
+# Copyright (c) 2016-2019 The Bitcoin Core developers
 # Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
+# Copyright (c) 2018-2019 The Ion developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -92,13 +92,11 @@ EXPECTED_HOLDER_NAMES = [
     "Bitcoin Core Developers\n",
     "the Bitcoin Core developers\n",
     "The Bitcoin developers\n",
-    "cevap\n",
-    "Ion Tor\n",
-    "The Ion Core developers\n",
-    "The Ion Core developers \n",
-    "Ion Core Developers\n",
-    "the Ion Core developers\n",
-    "The Ion developers\n",
+    "The Pivx Core developers\n",
+    "The Pivx Core developers \n",
+    "Pivx Core Developers\n",
+    "the Pivx Core developers\n",
+    "The Pivx developers\n",
     "The PIVX Core developers\n",
     "The PIVX Core developers \n",
     "PIVX Core Developers\n",
@@ -109,6 +107,23 @@ EXPECTED_HOLDER_NAMES = [
     "Pivx Core Developers\n",
     "the Pivx Core developers\n",
     "The Pivx developers\n",
+    "cevap\n",
+    "Ion Tor\n",
+    "The Ion Core developers\n",
+    "The Ion Core developers \n",
+    "Ion Core Developers\n",
+    "the Ion Core developers\n",
+    "The Ion developers\n",
+    "The ION Core developers\n",
+    "The ION Core developers \n",
+    "ION Core Developers\n",
+    "the ION Core developers\n",
+    "The ION developers\n",
+    "The Ion Core developers\n",
+    "The Ion Core developers \n",
+    "Ion Core Developers\n",
+    "the Ion Core developers\n",
+    "The Ion developers\n",
     "The LevelDB Authors\. All rights reserved\.\n",
     "BitPay Inc\.\n",
     "BitPay, Inc\.\n",

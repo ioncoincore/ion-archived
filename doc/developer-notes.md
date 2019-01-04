@@ -1,5 +1,28 @@
-Developer Notes
-===============
+# Developer Notes
+
+Table of Contents
+------------------
+- [Developer Notes](#developer-notes)
+    - [Doxygen comments](#doxygen-comments)
+    - [Development tips and tricks](#development-tips-and-tricks)
+        - [compiling for debugging](#compiling-for-debugging)
+        - [debugging with VSCode](#debugging-with-vscode)
+        - [debug.log](#debuglog)
+        - [testnet mode](#testnet-mode)
+        - [DEBUG_LOCKORDER](#debuglockorder)
+    - [Locking/mutex usage notes](#lockingmutex-usage-notes)
+    - [Threads](#threads)
+    - [Ignoring IDE/editor files](#ignoring-ideeditor-files)
+- [Development guidelines](#development-guidelines)
+    - [General Ion Core](#general-ion-core)
+    - [Wallet](#wallet)
+    - [General C++](#general-c)
+    - [C++ data structures](#c-data-structures)
+    - [Strings and formatting](#strings-and-formatting)
+    - [Threads and synchronization](#threads-and-synchronization)
+    - [Source code organization](#source-code-organization)
+    - [GUI](#gui)
+    - [Git and github tips](#git-and-github-tips)
 
 Various coding styles have been used during the history of the codebase,
 and the result is not very consistent. However, we're now trying to converge to
@@ -38,8 +61,7 @@ class Class
 }
 ```
 
-Doxygen comments
------------------
+## Doxygen comments
 
 To facilitate the generation of documentation, use doxygen-compatible comment blocks for functions, methods and fields.
 
@@ -97,15 +119,21 @@ Not OK (used plenty in the current source, but not picked up):
 A full list of comment syntaxes picked up by doxygen can be found at http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html,
 but if possible use one of the above styles.
 
-Development tips and tricks
----------------------------
+## Development tips and tricks
 
-**compiling for debugging**
+### compiling for debugging
 
 Run configure with the --enable-debug option, then make. Or run configure with
 CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
 
-**debug.log**
+### debugging with VSCode
+
+For VSCode user we supply debugger config wihtin the repository. By pressing **CTRL+SHIFT+D** (_or debug icon on left_)
+
+**Note¹**: you have to compile first normally (_not using depends folder_)
+**Note²**: _If you use default configs, it automaticly uses ../datadir folder as default folder_
+
+### debug.log
 
 If the code is behaving strangely, take a look in the debug.log file in the data directory;
 error and debugging messages are written there.
@@ -116,20 +144,19 @@ on all categories (and give you a very large debug.log file).
 The Qt code routes qDebug() output to debug.log under category "qt": run with -debug=qt
 to see it.
 
-**testnet mode**
+### testnet mode
 
 Run with the -testnet option to run with "play IONs (tION)" on the test network, if you
 are testing multi-machine code that needs to operate across the internet.
 
-**DEBUG_LOCKORDER**
+### DEBUG_LOCKORDER
 
 Ion Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.
 
-Locking/mutex usage notes
--------------------------
+## Locking/mutex usage notes
 
 The code is multi-threaded, and uses mutexes and the
 LOCK/TRY_LOCK macros to protect data structures.
@@ -145,39 +172,24 @@ between the various components is a goal, with any necessary locking
 done by the components (e.g. see the self-contained CKeyStore class
 and its cs_KeyStore lock for example).
 
-Threads
--------
+## Threads
 
 - ThreadScriptCheck : Verifies block scripts.
-
 - ThreadImport : Loads blocks from blk*.dat files or bootstrap.dat.
-
 - StartNode : Starts other threads.
-
 - ThreadDNSAddressSeed : Loads addresses of peers from the DNS.
-
 - ThreadMapPort : Universal plug-and-play startup/shutdown
-
 - ThreadSocketHandler : Sends/Receives data from peers on port 8333.
-
 - ThreadOpenAddedConnections : Opens network connections to added nodes.
-
 - ThreadOpenConnections : Initiates new connections to peers.
-
 - ThreadMessageHandler : Higher-level message handling (sending and receiving).
-
 - DumpAddresses : Dumps IP addresses of nodes to peers.dat.
-
 - ThreadFlushWalletDB : Close the wallet.dat file if it hasn't been used in 500ms.
-
 - ThreadRPCServer : Remote procedure call handler, listens on port 8332 for connections and services them.
-
 - BitcoinMiner : Generates bitcoins (if wallet is enabled).
-
 - Shutdown : Does an orderly shutdown of everything.
 
-Ignoring IDE/editor files
---------------------------
+## Ignoring IDE/editor files
 
 In closed-source environments in which everyone uses the same IDE it is common
 to add temporary files it produces to the project-wide `.gitignore` file.
@@ -208,14 +220,13 @@ If a set of tools is used by the build system or scripts the repository (for
 example, lcov) it is perfectly acceptable to add its files to `.gitignore`
 and commit them.
 
-Development guidelines
-============================
+# Development guidelines
+
 
 A few non-style-related recommendations for developers, as well as points to
 pay attention to for reviewers of Ion Core code.
 
-General Ion Core
-----------------------
+## General Ion Core
 
 - New features should be exposed on RPC first, then can be made available in the GUI
 
@@ -231,8 +242,7 @@ General Ion Core
   - *Explanation*: If the test suite is to be updated for a change, this has to
     be done first
 
-Wallet
--------
+## Wallet
 
 - Make sure that no crashes happen with run-time option `-disablewallet`.
 
@@ -245,8 +255,7 @@ Wallet
 
   - *Rationale*: Otherwise compilation of the disable-wallet build will fail in environments without BerkeleyDB
 
-General C++
--------------
+## General C++
 
 - Assertions should not have side-effects
 
@@ -265,8 +274,7 @@ General C++
 
   - *Rationale*: This avoids memory and resource leaks, and ensures exception safety
 
-C++ data structures
---------------------
+## C++ data structures
 
 - Never use the `std::map []` syntax when reading from a map, but instead use `.find()`
 
@@ -304,8 +312,7 @@ C++ data structures
   - *Rationale*: Easier to understand what is happening, thus easier to spot mistakes, even for those
   that are not language lawyers
 
-Strings and formatting
-------------------------
+## Strings and formatting
 
 - Be careful of `LogPrint` versus `LogPrintf`. `LogPrint` takes a `category` argument, `LogPrintf` does not.
 
@@ -326,8 +333,7 @@ Strings and formatting
 
   - *Rationale*: Ion Core uses tinyformat, which is type safe. Leave them out to avoid confusion
 
-Threads and synchronization
-----------------------------
+## Threads and synchronization
 
 - Build and run tests with `-DDEBUG_LOCKORDER` to verify that no potential
   deadlocks are introduced.
@@ -354,8 +360,7 @@ TRY_LOCK(cs_vNodes, lockNodes);
 }
 ```
 
-Source code organization
---------------------------
+## Source code organization
 
 - Implementation code should go into the `.cpp` file and not the `.h`, unless necessary due to template usage or
   when performance due to inlining is critical
@@ -367,8 +372,7 @@ Source code organization
 
   - *Rationale*: Avoids symbol conflicts
 
-GUI
------
+## GUI
 
 - Do not display or manipulate dialogs in model code (classes `*Model`)
 
@@ -376,8 +380,7 @@ GUI
     should not interact with the user. That's where View classes come in. The converse also
     holds: try to not directly access core data structures from Views.
 
-Git and github tips
----------------------
+## Git and github tips
 
 - For resolving merge/rebase conflicts, it can be useful to enable diff3 style using
   `git config merge.conflictstyle diff3`. Instead of
@@ -418,7 +421,7 @@ Git and github tips
 
         [remote "upstream-pull"]
                 fetch = +refs/pull/*:refs/remotes/upstream-pull/*
-                url = git@github.com:cevap/ion.git
+                url = git@github.com:ioncoincore/ion.git
 
   This will add an `upstream-pull` remote to your git repository, which can be fetched using `git fetch --all`
   or `git fetch upstream-pull`. Afterwards, you can use `upstream-pull/NUMBER/head` in arguments to `git show`,

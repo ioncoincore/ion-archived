@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +8,7 @@
 #include "clientversion.h"
 #include "coins.h"
 #include "core_io.h"
+#include "dstencode.h"
 #include "keystore.h"
 #include "primitives/block.h" // for MAX_BLOCK_SIZE
 #include "primitives/transaction.h"
@@ -223,12 +224,12 @@ static void MutateTxAddOutAddr(CMutableTransaction& tx, const string& strInput)
 
     // extract and validate ADDRESS
     string strAddr = strInput.substr(pos + 1, string::npos);
-    CBitcoinAddress addr(strAddr);
-    if (!addr.IsValid())
+    CTxDestination destination = DecodeDestination(strAddr);
+    if (!IsValidDestination(destination)) {
         throw runtime_error("invalid TX output address");
 
-    // build standard output script via GetScriptForDestination()
-    CScript scriptPubKey = GetScriptForDestination(addr.Get());
+    }
+    CScript scriptPubKey = GetScriptForDestination(destination);
 
     // construct TxOut, append to transaction output list
     CTxOut txout(value, scriptPubKey);
@@ -448,8 +449,22 @@ static void MutateTxSign(CMutableTransaction& tx, const string& flagStr)
     tx = mergedTx;
 }
 
+class Secp256k1Init
+{
+    ECCVerifyHandle globalVerifyHandle;
+
+public:
+    Secp256k1Init() {
+        ECC_Start();
+    }
+    ~Secp256k1Init() {
+        ECC_Stop();
+    }
+};
+
 static void MutateTx(CMutableTransaction& tx, const string& command, const string& commandVal)
 {
+    boost::scoped_ptr<Secp256k1Init> ecc;
     if (command == "nversion")
         MutateTxVersion(tx, commandVal);
     else if (command == "locktime")
@@ -467,8 +482,10 @@ static void MutateTx(CMutableTransaction& tx, const string& command, const strin
     else if (command == "outscript")
         MutateTxAddOutScript(tx, commandVal);
 
-    else if (command == "sign")
+    else if (command == "sign"){
+        if (!ecc) { ecc.reset(new Secp256k1Init()); }
         MutateTxSign(tx, commandVal);
+    }
 
     else if (command == "load")
         RegisterLoad(commandVal);

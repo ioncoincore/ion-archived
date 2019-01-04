@@ -5,6 +5,7 @@ todo.txt
 reset-files.bash
 
 *.tar.gz
+*.tar.xz
 
 *.exe
 src/ion
@@ -86,6 +87,7 @@ src/qt/test/moc*.cpp
 Makefile
 ion-qt
 ION-Qt.app
+background.tiff*
 
 # Unit-tests
 Makefile.test
@@ -113,6 +115,8 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
+test/config.ini
+test/cache/*
 qa/pull-tester/run-bitcoind-for-test.sh
 qa/pull-tester/tests-config.sh
 qa/pull-tester/cache/*
@@ -124,16 +128,24 @@ qa/pull-tester/test.*/*
 .project
 /doc/doxygen/
 /nbproject/
-
+libbitcoinconsensus.pc
 .idea
 CMakeLists.txt
 cmake-build-debug
 
-# patches
-contrib/patches/
+# exclude 5.hfs file created by the script
+*.hfs
+*.dmg
+MacOSX10.11.sdk/
 
-# text editors
+#Vscode
 .vscode/
 
-# snap files
-ion_master_source.tar.bz2
+#SNAP
+parts/
+prime/
+snap/.snapcraft/
+stage/
+
+# datadir
+datadir/

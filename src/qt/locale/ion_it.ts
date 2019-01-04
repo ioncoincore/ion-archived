@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Copia l'indirizzo selexionato negli appunti</translation>
+        <translation>Copia l'indirizzo selezionato negli appunti</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Elimina l'indirizzo selexionato dalla lista</translation>
+        <translation>Elimina l'indirizzo selezionato dalla lista</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -43,31 +43,31 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Selexiona l'indirizzo a cui inviare valuta</translation>
+        <translation>Seleziona l'indirizzo a cui inviare valuta</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Selexiona l'indirizzo a cui ricevere valuta</translation>
+        <translation>Seleziona l'indirizzo a cui ricevere valuta</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
-        <translation>&amp;Selexiona</translation>
+        <translation>&amp;Seleziona</translation>
     </message>
     <message>
         <source>Sending addresses</source>
-        <translation>Indirizzi di destinaxione</translation>
+        <translation>Indirizzi di destinazione</translation>
     </message>
     <message>
         <source>Receiving addresses</source>
-        <translation>Indirizzi di ricexione</translation>
+        <translation>Indirizzi di ricezione</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono gli indirizzi Ion per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricexione prima di inviare valuta.</translation>
+        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono gli indirizzi ION per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono gli indirizzi Ion per la ricexione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transaxione.</translation>
+        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono gli indirizzi ION per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -91,7 +91,7 @@
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Esportaxione fallita</translation>
+        <translation>Esportazione fallita</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
@@ -136,8 +136,8 @@
         <translation>Serve per impedire invii accidentali nel caso in cui l'utenza del sistema operativo sia stata compromessa. Non garantisce alcuna reale sicurezza.</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>Esclusivamente per anonimizzaxione e staking</translation>
+        <source>For anonymization, automint, and staking only</source>
+        <translation>Solo per anonimizzazione, conio automatico e stake</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -149,7 +149,7 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Questa operaxione richiede la parola d'ordine per sbloccare il portafoglio.</translation>
+        <translation>Questa operazione richiede la parola d'ordine per sbloccare il portafoglio.</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Questa operaxione richiede la parola d'ordine per decrittografare il portafoglio.</translation>
+        <translation>Questa operazione richiede la parola d'ordine per decrittografare il portafoglio.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>ION will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your IONs from being stolen by malware infecting your computer.</source>
-        <translation>ION verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi Ion dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <translation>ION verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi ION dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ION&lt;/b&gt;!</source>
-        <translation>Attenxione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI ION&lt;7b&gt;!</translation>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI ION&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -213,11 +213,11 @@
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>La frase immessa per la decifraxione del portafoglio era errata.</translation>
+        <translation>La frase immessa per la decifrazione del portafoglio era errata.</translation>
     </message>
     <message>
         <source>Wallet decryption failed</source>
-        <translation>Decriptaxione portafoglio fallita</translation>
+        <translation>Decriptazione portafoglio fallita</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
@@ -225,7 +225,18 @@
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>Attenxione: il tasto Caps Lock è attivato!</translation>
+        <translation>Attenzione: il tasto Caps Lock è attivato!</translation>
+    </message>
+</context>
+<context>
+    <name>BanTableModel</name>
+    <message>
+        <source>IP/Netmask</source>
+        <translation>IP/Netmask</translation>
+    </message>
+    <message>
+        <source>Banned Until</source>
+        <translation>Bloccato fino a</translation>
     </message>
 </context>
 <context>
@@ -239,16 +250,16 @@
         <translation>&amp;BIP 38 Criptato</translation>
     </message>
     <message>
-        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Inserisci un indirizzo Ion che desideri crittografare utilizzando BIP 38. Inserisci una passphrase nella casella centrale. Premi Cripta per calcolare la chiave privata crittografata.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Indirizzo:</translation>
     </message>
     <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>L'indirizzo Ion per firmare il messaggio con</translation>
+        <source>Enter a ION Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Inserire un indirizzo ION da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
+    </message>
+    <message>
+        <source>The ION address to encrypt</source>
+        <translation>Indirizzo ION da crittografare</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +290,24 @@
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo ION</translation>
+        <source>Encrypt the private key for this ION address</source>
+        <translation>Crittografa la chiave privata per questo indirizzo ION</translation>
+    </message>
+    <message>
+        <source>Reset all fields</source>
+        <translation>Reimposta tutti i campi</translation>
+    </message>
+    <message>
+        <source>The encrypted private key</source>
+        <translation>La chiave privata crittografata</translation>
+    </message>
+    <message>
+        <source>Decrypt the entered key using the passphrase</source>
+        <translation>Decrittografa la chiave inserita utilizzando la password</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
         <translation>Cripta &amp;Key</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Reimposta tutti i campi del messaggio segno</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -303,20 +322,8 @@
         <translation>Immettere la chiave privata codificata BIP 38. Inserire la passphrase nella casella centrale. Fare clic su Decripta Chiave per calcolare la chiave privata. Dopo che la chiave viene decrittata, cliccando su "Importa indirizzo" verrà aggiunta questa chiave privata al portafoglio.</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>L'indirizzo Ion con cui è stato firmato il messaggio</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Ion specificato </translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>Decripta &amp;Key</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Ripristinare tutti i campi del messaggio verificati</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -360,7 +367,7 @@
     </message>
     <message>
         <source>Failed to decrypt.</source>
-        <translation>Decriptaxione fallita.</translation>
+        <translation>Decriptazione fallita.</translation>
     </message>
     <message>
         <source>Please check the key and passphrase and try again.</source>
@@ -376,7 +383,7 @@
     </message>
     <message>
         <source>Please wait while key is imported</source>
-        <translation>Per favore attendere l'importaxione della chiave</translation>
+        <translation>Per favore attendere l'importazione della chiave</translation>
     </message>
     <message>
         <source>Key Already Held By Wallet</source>
@@ -419,11 +426,15 @@
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;Transaxioni</translation>
+        <translation>&amp;Transazioni</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Espora la cronologia delle transaxioni</translation>
+        <translation>Espora la cronologia delle transazioni</translation>
+    </message>
+    <message>
+        <source>Privacy Actions for xION</source>
+        <translation>Operazioni di privacy per xION</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -431,19 +442,19 @@
     </message>
     <message>
         <source>Quit application</source>
-        <translation>Chiude l'applicaxione</translation>
+        <translation>Chiude l'applicazione</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Informaxioni su &amp;Qt</translation>
+        <translation>Informazioni su &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Visualizza informaxioni su Qt</translation>
+        <translation>Visualizza informazioni su Qt</translation>
     </message>
     <message>
         <source>&amp;Options...</source>
-        <translation>&amp;Opxioni...</translation>
+        <translation>&amp;Opzioni...</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -467,7 +478,7 @@
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Fa una copia di sicurezza del tuo portafoglio in un'altra posixione</translation>
+        <translation>Fa una copia di sicurezza del tuo portafoglio in un'altra posizione</translation>
     </message>
     <message>
         <source>&amp;Change Passphrase...</source>
@@ -499,11 +510,11 @@
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;Informaxioni</translation>
+        <translation>&amp;Informazioni</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
-        <translation>Visualizza informaxioni di diagnostica</translation>
+        <translation>Visualizza informazioni di diagnostica</translation>
     </message>
     <message>
         <source>&amp;Debug console</source>
@@ -527,7 +538,7 @@
     </message>
     <message>
         <source>Show peers info</source>
-        <translation>Mostra le informaxioni sui peer</translation>
+        <translation>Mostra le informazioni sui peer</translation>
     </message>
     <message>
         <source>Wallet &amp;Repair</source>
@@ -535,11 +546,11 @@
     </message>
     <message>
         <source>Show wallet repair options</source>
-        <translation>Mostra opxioni di riparaxione del portafoglio</translation>
+        <translation>Mostra opzioni di riparazione del portafoglio</translation>
     </message>
     <message>
         <source>Open configuration file</source>
-        <translation>Apri il file di configuraxione</translation>
+        <translation>Apri il file di configurazione</translation>
     </message>
     <message>
         <source>Show Automatic &amp;Backups</source>
@@ -559,23 +570,67 @@
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Indirizzi di Destinaxione</translation>
+        <translation>&amp;Indirizzi di Destinazione</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>Mostra l'elenco degli indirizzi e delle etichette di ricexione utilizzati</translation>
+        <translation>Mostra l'elenco degli indirizzi e delle etichette di ricezione utilizzati</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature creation...</source>
+        <translation>Creazione &amp;Firma multipla...</translation>
+    </message>
+    <message>
+        <source>Create a new multisignature address and add it to this wallet</source>
+        <translation>Aggiunta di un nuovo indirizzo a firma multipla a questo wallet</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature spending...</source>
+        <translation>Pagamento a firma &amp;Multipla...</translation>
+    </message>
+    <message>
+        <source>Spend from a multisignature address</source>
+        <translation>Paga da un indirizzo a firma multipla</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature signing...</source>
+        <translation>Firma digitale &amp;Multipla...</translation>
+    </message>
+    <message>
+        <source>Sign with a multisignature address</source>
+        <translation>Firma digitale con un indirizzo a firma multipla</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
         <translation>Apri URL</translation>
     </message>
     <message>
+        <source>&amp;Command-line options</source>
+        <translation>Opzioni riga di &amp;Comando</translation>
+    </message>
+    <message numerus="yes">
+        <source>Processed %n blocks of transaction history.</source>
+        <translation><numerusform>Elaborato 1 blocco dalla cronologia delle transazioni</numerusform><numerusform>Elaborati %n blocchi dalla cronologia delle transazioni.</numerusform></translation>
+    </message>
+    <message>
         <source>Synchronizing additional data: %p%</source>
-        <translation>Sincronizzaxione dati addixionali: %p%</translation>
+        <translation>Sincronizzazione dati addizionali: %p%</translation>
+    </message>
+    <message>
+        <source>%1 behind. Scanning block %2</source>
+        <translation>%1 arretrati. Scansione blocco %2</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>Il wallet è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt; sbloccato&lt;/b&gt; solo per anonimizzazione e staking</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Impostaxioni</translation>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
@@ -594,12 +649,16 @@
         <translation>Ion Core</translation>
     </message>
     <message>
-        <source>Send coins to a Ion address</source>
-        <translation>Invia monete all' indirizzo ION</translation>
+        <source>Send coins to a ION address</source>
+        <translation>Invia valuta all'indirizzo ION</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
         <translation>Richiedi pagamenti (genera codici QR e ion: URIs)</translation>
+    </message>
+    <message>
+        <source>&amp;Privacy</source>
+        <translation>&amp;pRIVACY</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -611,55 +670,87 @@
     </message>
     <message>
         <source>&amp;About Ion Core</source>
-        <translation>&amp;Informaxioni Ion Core</translation>
+        <translation>&amp;Informazioni Ion Core</translation>
     </message>
     <message>
         <source>Show information about Ion Core</source>
-        <translation>Visualizza informaxioni su Ion Core</translation>
+        <translation>Visualizza informazioni su Ion Core</translation>
     </message>
     <message>
         <source>Modify configuration options for ION</source>
-        <translation>Modifica le opxioni di configuraxione per ION</translation>
+        <translation>Modifica le opzioni di configurazione per ION</translation>
     </message>
     <message>
-        <source>Sign messages with your Ion addresses to prove you own them</source>
-        <translation>Firma i messaggi con i tuoi indirizzi Ion per dimostrare di essere il proprietario </translation>
+        <source>Sign messages with your ION addresses to prove you own them</source>
+        <translation>Firma i messaggi con i tuoi indirizzi ION per dimostrare di essere il proprietario </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
-        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi Ion specifici</translation>
+        <source>Verify messages to ensure they were signed with specified ION addresses</source>
+        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi ION specifici</translation>
+    </message>
+    <message>
+        <source>&amp;BIP38 tool</source>
+        <translation>Strumenti &amp;BIP38</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Crittografa e decrittografa le chiavi private usando una passphrase</translation>
     </message>
     <message>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
+    </message>
+    <message>
         <source>MultiSend Settings</source>
-        <translation>Impostaxioni MultiSend</translation>
+        <translation>Impostazioni MultiSend</translation>
+    </message>
+    <message>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Apri file di &amp;Configurazione wallet</translation>
+    </message>
+    <message>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Apri file di configurazione &amp;Masternodo</translation>
+    </message>
+    <message>
+        <source>Open Masternode configuration file</source>
+        <translation>Apri file di configurazione del Masternodo</translation>
     </message>
     <message>
         <source>Open a ION: URI or payment request</source>
         <translation>Apri un ION: URI o richiesta di pagamento</translation>
     </message>
     <message>
+        <source>&amp;Blockchain explorer</source>
+        <translation>Esplora &amp;Blockchain</translation>
+    </message>
+    <message>
         <source>Block explorer window</source>
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
-        <translation>Mostra il messaggio di aiuto Ion Core per ottenere un elenco con le possibili opxioni di riga di comando ION</translation>
+        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <translation>Mostra il messaggio di aiuto Ion Core per ottenere un elenco con le possibili opzioni di riga di comando ION</translation>
+    </message>
+    <message>
+        <source>Ion Core client</source>
+        <translation>Ion Core</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n active connection(s) to ION network</source>
+        <translation><numerusform>%n connessione attiva alla rete IONIX</numerusform><numerusform>%n connessioni attive alla rete IONIX</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
-        <translation>Sincronizzaxione con la rete ...</translation>
+        <translation>Sincronizzazione con la rete ...</translation>
     </message>
     <message>
         <source>Importing blocks from disk...</source>
-        <translation>Importaxione di blocchi dal disco ...</translation>
+        <translation>Importazione di blocchi dal disco ...</translation>
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
-        <translation>Reindicizzaxione blocchi su disco ...</translation>
+        <translation>Reindicizzazione blocchi su disco ...</translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -669,13 +760,33 @@
         <source>Up to date</source>
         <translation>Aggiornato</translation>
     </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n ora</numerusform><numerusform>%n ore</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n giorno</numerusform><numerusform>%n giorni</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n settimana</numerusform><numerusform>%n settimane</numerusform></translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 e %2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n anno</numerusform><numerusform>%n anni</numerusform></translation>
+    </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
         <translation>L'ultimo blocco ricevuto è stato generato %1 fa.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Le transaxioni successive non saranno visibili per ora.</translation>
+        <translation>Le transazioni successive non saranno visibili per ora.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -687,19 +798,19 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informaxioni</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>Transaxioni Inviate</translation>
+        <translation>Transazioni Inviate</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>Transaxione in entrata</translation>
+        <translation>Transazione in entrata</translation>
     </message>
     <message>
         <source>Sent MultiSend transaction</source>
-        <translation>Transaxioni MultiSend inviate</translation>
+        <translation>Transazioni MultiSend inviate</translation>
     </message>
     <message>
         <source>Date: %1
@@ -734,10 +845,22 @@ MultiSend: %1</translation>
 MultiSend: %1</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;sbloccato&lt;/b&gt; per l'anonimizzaxione e il solo stacking</translation>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>Conio automatico è attivo e impostato su</translation>
     </message>
-    </context>
+    <message>
+        <source>AutoMint is disabled</source>
+        <translation>Conio automatico disabilitato</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
+        <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;sbloccato&lt;/b&gt; </translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
+        <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;bloccato&lt;/b&gt;</translation>
+    </message>
+</context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -745,26 +868,50 @@ MultiSend: %1</translation>
         <translation>Esplora catena dei blocchi</translation>
     </message>
     <message>
+        <source>Back</source>
+        <translation>Indietro</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Avanti</translation>
+    </message>
+    <message>
         <source>Address / Block / Transaction</source>
-        <translation>Indirizzo / Blocco / Transaxione</translation>
+        <translation>Indirizzo / Blocco / Transazione</translation>
     </message>
     <message>
         <source>Search</source>
         <translation>Cerca</translation>
     </message>
     <message>
+        <source>TextLabel</source>
+        <translation>Etichetta</translation>
+    </message>
+    <message>
         <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (ioncoin.conf).</source>
-        <translation>Non tutte le transaxioni verranno visualizzate. Per vedere tutte le transaxioni è necessario aggiungere txindex=1 nel file di configuraxione (ioncoin.conf)</translation>
+        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (ioncoin.conf)</translation>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
-    </context>
+    <message>
+        <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
+        <translation>Totale: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Sconosciuti: %5)</translation>
+    </message>
+    <message>
+        <source>Network Alert</source>
+        <translation>Avviso di rete</translation>
+    </message>
+</context>
 <context>
     <name>CoinControlDialog</name>
     <message>
         <source>Quantity:</source>
         <translation>Quantità:</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Byte:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -776,11 +923,31 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
+    </message>
+    <message>
+        <source>Coin Selection</source>
+        <translation>Selezione moneta</translation>
+    </message>
+    <message>
+        <source>Dust:</source>
+        <translation>Polvere:</translation>
+    </message>
+    <message>
+        <source>After Fee:</source>
+        <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
         <translation>Differenza:</translation>
+    </message>
+    <message>
+        <source>(un)select all</source>
+        <translation>(de)seleziona tutto</translation>
+    </message>
+    <message>
+        <source>toggle lock state</source>
+        <translation>Attiva/disattiva stato bloccato</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -789,6 +956,10 @@ MultiSend: %1</translation>
     <message>
         <source>List mode</source>
         <translation>Modalità lista</translation>
+    </message>
+    <message>
+        <source>(1 locked)</source>
+        <translation>(1 bloccato)</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -801,6 +972,10 @@ MultiSend: %1</translation>
     <message>
         <source>Received with address</source>
         <translation>Ricevute con indirizzo</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Date</source>
@@ -832,11 +1007,91 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Copia ID transaxione</translation>
+        <translation>Copia ID transazione</translation>
+    </message>
+    <message>
+        <source>Lock unspent</source>
+        <translation>Blocca non spesi</translation>
+    </message>
+    <message>
+        <source>Unlock unspent</source>
+        <translation>Sblocca non spesi</translation>
+    </message>
+    <message>
+        <source>Copy quantity</source>
+        <translation>Copia importo</translation>
+    </message>
+    <message>
+        <source>Copy fee</source>
+        <translation>Copia commissione</translation>
+    </message>
+    <message>
+        <source>Copy after fee</source>
+        <translation>Copia importo al netto della commissione</translation>
+    </message>
+    <message>
+        <source>Copy bytes</source>
+        <translation>Copia byte</translation>
+    </message>
+    <message>
+        <source>Copy priority</source>
+        <translation>Copia priorità</translation>
+    </message>
+    <message>
+        <source>Copy dust</source>
+        <translation>Copia polvere</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Copia resto</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
-        <translation>Prego selexionare "Modalità lista" per utilizzare questa funxione</translation>
+        <translation>Prego selezionare "Modalità lista" per utilizzare questa funzione</translation>
+    </message>
+    <message>
+        <source>highest</source>
+        <translation>massima</translation>
+    </message>
+    <message>
+        <source>higher</source>
+        <translation>molto alta</translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation>alta</translation>
+    </message>
+    <message>
+        <source>medium-high</source>
+        <translation>medio-alta</translation>
+    </message>
+    <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
+        <source>low-medium</source>
+        <translation>medio-bassa</translation>
+    </message>
+    <message>
+        <source>low</source>
+        <translation>basso</translation>
+    </message>
+    <message>
+        <source>lower</source>
+        <translation>bassa</translation>
+    </message>
+    <message>
+        <source>lowest</source>
+        <translation>minima</translation>
+    </message>
+    <message>
+        <source>(%1 locked)</source>
+        <translation>(%1 bloccati)</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nessuno</translation>
     </message>
     <message>
         <source>yes</source>
@@ -848,13 +1103,45 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
-        <translation>Questa etichetta diventerà rossa se la transaxione supera i 1000 bytes</translation>
+        <translation>Questa etichetta diventerà rossa se la transazione supera i 1000 bytes</translation>
+    </message>
+    <message>
+        <source>This means a fee of at least %1 per kB is required.</source>
+        <translation>Vuol dire che è richiesta una commissione minima di %1 per kB.</translation>
+    </message>
+    <message>
+        <source>Can vary +/- 1 byte per input.</source>
+        <translation>Può variare di +/- 1 byte per input.</translation>
+    </message>
+    <message>
+        <source>Transactions with higher priority are more likely to get included into a block.</source>
+        <translation>Transazioni con priorità maggiore verranno aggiunte con maggiore probabilità in un blocco.</translation>
+    </message>
+    <message>
+        <source>This label turns red, if the priority is smaller than "medium".</source>
+        <translation>Questa etichetta diventa rossa se la priorità è inferiore a "media".</translation>
+    </message>
+    <message>
+        <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
+        <translation>Questa etichetta diventa rossa se uno dei destinatari riceve un importo inferiore a %1.</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 uion per input.</source>
+        <translation>Può variare di +/- %1 uION per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
         <translation>(nessuna etichetta)</translation>
     </message>
-    </context>
+    <message>
+        <source>change from %1 (%2)</source>
+        <translation>resto da %1 (%2)</translation>
+    </message>
+    <message>
+        <source>(change)</source>
+        <translation>(resto)</translation>
+    </message>
+</context>
 <context>
     <name>EditAddressDialog</name>
     <message>
@@ -870,17 +1157,61 @@ MultiSend: %1</translation>
         <translation>&amp;Indirizzo</translation>
     </message>
     <message>
+        <source>New receiving address</source>
+        <translation>Nuovo indirizzo di ricezione</translation>
+    </message>
+    <message>
+        <source>New sending address</source>
+        <translation>Nuovo indirizzo di invio</translation>
+    </message>
+    <message>
+        <source>Edit receiving address</source>
+        <translation>Modifica indirizzo di ricezione</translation>
+    </message>
+    <message>
+        <source>Edit sending address</source>
+        <translation>Modifica indirizzo di invio</translation>
+    </message>
+    <message>
+        <source>The entered address "%1" is not a valid ION address.</source>
+        <translation>L'indirizzo inserito "%1" non è un indirizzo ION valido.</translation>
+    </message>
+    <message>
+        <source>The entered address "%1" is already in the address book.</source>
+        <translation>L'indirizzo inserito "%1" è già presente in rubrica.</translation>
+    </message>
+    <message>
         <source>Could not unlock wallet.</source>
         <translation>Impossibile sbloccare il portafoglio</translation>
     </message>
-    </context>
+    <message>
+        <source>New key generation failed.</source>
+        <translation>Generazione nuovo codice fallita.</translation>
+    </message>
+</context>
 <context>
     <name>FreespaceChecker</name>
+    <message>
+        <source>A new data directory will be created.</source>
+        <translation>Verrà creata una nuova cartella dati.</translation>
+    </message>
     <message>
         <source>name</source>
         <translation>nome</translation>
     </message>
-    </context>
+    <message>
+        <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
+        <translation>Cartella esistente. Aggiunti %1 se intendi creare una nuova cartella qui.</translation>
+    </message>
+    <message>
+        <source>Path already exists, and is not a directory.</source>
+        <translation>Percorso già esistente, e non è una cartella.</translation>
+    </message>
+    <message>
+        <source>Cannot create data directory here.</source>
+        <translation>Impossibile creare la cartella dati qui.</translation>
+    </message>
+</context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -896,8 +1227,12 @@ MultiSend: %1</translation>
         <translation>(%1-bit)</translation>
     </message>
     <message>
+        <source>About Ion Core</source>
+        <translation>Informazioni su Ion Core</translation>
+    </message>
+    <message>
         <source>Command-line options</source>
-        <translation>Opxioni linea di comando</translation>
+        <translation>Opzioni linea di comando</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -905,9 +1240,33 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>command-line options</source>
-        <translation>opxioni linea di comando</translation>
+        <translation>opzioni linea di comando</translation>
     </message>
-    </context>
+    <message>
+        <source>UI Options:</source>
+        <translation>Opzioni interfaccia:</translation>
+    </message>
+    <message>
+        <source>Choose data directory on startup (default: %u)</source>
+        <translation>Seleziona cartella dati all'avvio (predefinita: %u)</translation>
+    </message>
+    <message>
+        <source>Show splash screen on startup (default: %u)</source>
+        <translation>Mostra schermata di benvenuto all'avvio (predefinita: %u)</translation>
+    </message>
+    <message>
+        <source>Set language, for example "de_DE" (default: system locale)</source>
+        <translation>Imposta lingua, per esempio "it_IT" (predefinito: lingua di sistema)</translation>
+    </message>
+    <message>
+        <source>Start minimized</source>
+        <translation>Avvio ridotto a icona</translation>
+    </message>
+    <message>
+        <source>Set SSL root certificates for payment request (default: -system-)</source>
+        <translation>Imposta certificati SSL root per richiesta di pagamento (predefinito: -system-)</translation>
+    </message>
+</context>
 <context>
     <name>Intro</name>
     <message>
@@ -915,60 +1274,680 @@ MultiSend: %1</translation>
         <translation>Benvenuto</translation>
     </message>
     <message>
+        <source>Welcome to Ion Core.</source>
+        <translation>Benvenuto in IONIX Core.</translation>
+    </message>
+    <message>
+        <source>As this is the first time the program is launched, you can choose where Ion Core will store its data.</source>
+        <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove Ion Core salverà i propri dati.</translation>
+    </message>
+    <message>
+        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Ion Core scaricherà e salverà una copia della blockchain ION. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
+    </message>
+    <message>
+        <source>Use the default data directory</source>
+        <translation>Utilizza la cartella dati predefinita</translation>
+    </message>
+    <message>
+        <source>Use a custom data directory:</source>
+        <translation>Utilizza una cartella dati personalizzata:</translation>
+    </message>
+    <message>
         <source>Ion Core</source>
         <translation>Ion Core</translation>
+    </message>
+    <message>
+        <source>Error: Specified data directory "%1" cannot be created.</source>
+        <translation>Errore: la cartella dati specificata "%1" non può essere creata.</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
-    </context>
+    <message>
+        <source>%1 GB of free space available</source>
+        <translation>%1 GB di spazio disponibile</translation>
+    </message>
+    <message>
+        <source>(of %1 GB needed)</source>
+        <translation>(di %1 GB necessari)</translation>
+    </message>
+</context>
 <context>
     <name>MasternodeList</name>
     <message>
-        <source>My Masternodes</source>
-        <translation>I miei Masternodes</translation>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>MASTERNODES</source>
+        <translation>MASTERNODI</translation>
+    </message>
+    <message>
+        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
+        <translation>Nota: Lo stato dei tuoi masternodi nel portafoglio locale potrebbe essere leggermente incorretto. &lt;br /&gt;Attendi sempre che il portafoglio sincronizzi le informazioni addizionali e poi verifica con un altro nodo&lt;br /&gt;se il tuo nodo dovrebbe essere avviato ma continui a vedere "MANCANTE" nel campo "Stato".</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Indirizzo</translation>
     </message>
     <message>
+        <source>Protocol</source>
+        <translation>Protocollo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
         <source>Active</source>
         <translation>Attivo </translation>
     </message>
-    </context>
+    <message>
+        <source>Last Seen (UTC)</source>
+        <translation>Ultima rilevazione (UTC)</translation>
+    </message>
+    <message>
+        <source>Pubkey</source>
+        <translation>Chiave pubblica</translation>
+    </message>
+    <message>
+        <source>S&amp;tart alias</source>
+        <translation>A&amp;vvia alias</translation>
+    </message>
+    <message>
+        <source>Start &amp;all</source>
+        <translation>Avvia &amp;tutti</translation>
+    </message>
+    <message>
+        <source>Start &amp;MISSING</source>
+        <translation>Avvia &amp;MANCANTI</translation>
+    </message>
+    <message>
+        <source>&amp;Update status</source>
+        <translation>&amp;Aggiorna stato</translation>
+    </message>
+    <message>
+        <source>Status will be updated automatically in (sec):</source>
+        <translation>Lo stato verrà aggiornato automaticamente in (sec):</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Start alias</source>
+        <translation>Avvia alias</translation>
+    </message>
+    <message>
+        <source>Confirm masternode start</source>
+        <translation>Conferma avvio masternodo</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start masternode %1?</source>
+        <translation>Confermi di voler avviare il masternodo %1?</translation>
+    </message>
+    <message>
+        <source>Confirm all masternodes start</source>
+        <translation>Conferma l'avvio di tutti i masternodi</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start ALL masternodes?</source>
+        <translation>Confermi l'avvio di TUTTI i masternodi?</translation>
+    </message>
+    <message>
+        <source>Command is not available right now</source>
+        <translation>Comando attualmente non disponibile</translation>
+    </message>
+    <message>
+        <source>You can't use this command until masternode list is synced</source>
+        <translation>Non è possibile usare questo comando finché la lista dei masternodi non è aggiornata</translation>
+    </message>
+    <message>
+        <source>Confirm missing masternodes start</source>
+        <translation>Conferma l'avvia dei masternodi mancanti</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start MISSING masternodes?</source>
+        <translation>Confermi di voler avviare masternodi MANCANTI?</translation>
+    </message>
+</context>
 <context>
     <name>MultiSendDialog</name>
+    <message>
+        <source>MultiSend</source>
+        <translation>MultiSend</translation>
+    </message>
+    <message>
+        <source>Enter whole numbers 1 - 100</source>
+        <translation>Inserire numeri interi 1 - 100</translation>
+    </message>
+    <message>
+        <source>Enter % to Give (1-100)</source>
+        <translation>Inserisci % da inviare (1-100)</translation>
+    </message>
+    <message>
+        <source>Enter Address to Send to</source>
+        <translation>Inserire indirizzo destinatario</translation>
+    </message>
+    <message>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ION addresses after it matures.
+To Add: enter percentage to give and ION address to add to the MultiSend vector.
+To Delete: Enter address to delete and press delete.
+MultiSend will not be activated unless you have clicked Activate</source>
+        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi ION fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
+Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo ION da aggiungere al vettore MultiSend.
+Per Eliminare: Inserisci l'indirizzo da eliminare e premi elimina.
+MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
+    </message>
+    <message>
+        <source>Add to MultiSend Vector</source>
+        <translation>Aggiungi a Vettore MultiSend</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Aggiungi</translation>
+    </message>
+    <message>
+        <source>Deactivate MultiSend</source>
+        <translation>Disattiva MultiSend</translation>
+    </message>
+    <message>
+        <source>Deactivate</source>
+        <translation>Disattiva</translation>
+    </message>
+    <message>
+        <source>Choose an address from the address book</source>
+        <translation>Scegli un indirizzo dalla rubrica</translation>
+    </message>
     <message>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
     <message>
+        <source>Percentage of stake to send</source>
+        <translation>Percentuale dello stake da inviare</translation>
+    </message>
+    <message>
+        <source>Percentage:</source>
+        <translation>Percentuale:</translation>
+    </message>
+    <message>
+        <source>Address to send portion of stake to</source>
+        <translation>Indirizzo a cui inviare la percentuale dello stake</translation>
+    </message>
+    <message>
         <source>Address:</source>
         <translation>Indirizzo:</translation>
     </message>
-    </context>
+    <message>
+        <source>Label:</source>
+        <translation>Etichetta:</translation>
+    </message>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Inserisci un'etichetta per questo indirizzo da aggiungere alla tua rubrica</translation>
+    </message>
+    <message>
+        <source>Delete Address From MultiSend Vector</source>
+        <translation>Elimina indirizzo dal vettore MultiSend</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <source>Activate MultiSend</source>
+        <translation>Attiva MultiSend</translation>
+    </message>
+    <message>
+        <source>Activate</source>
+        <translation>Attiva</translation>
+    </message>
+    <message>
+        <source>View MultiSend Vector</source>
+        <translation>Visualizza vettore MultiSend</translation>
+    </message>
+    <message>
+        <source>View MultiSend</source>
+        <translation>Visualizza MultiSend</translation>
+    </message>
+    <message>
+        <source>Send For Stakes</source>
+        <translation>Invia per stake</translation>
+    </message>
+    <message>
+        <source>Send For Masternode Rewards</source>
+        <translation>Invio per le Ricompense Masternodo</translation>
+    </message>
+    <message>
+        <source>(no label)</source>
+        <translation>(nessuna etichetta)</translation>
+    </message>
+    <message>
+        <source>The entered address:
+</source>
+        <translation>L'indirizzo immesso:</translation>
+    </message>
+    <message>
+        <source> is invalid.
+Please check the address and try again.</source>
+        <translation>è invalido.
+Per favore controlla l'indirizzo e riprova nuovamente.</translation>
+    </message>
+    <message>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward
+</source>
+        <translation>L'ammontare totale del tuo vettore MultiSend è superiore al 100% della tua ricompensa per lo stake
+</translation>
+    </message>
+    <message>
+        <source>Please Enter 1 - 100 for percent.</source>
+        <translation>Per favore inserisci 1 - 100 come percentuale.</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.
+</source>
+        <translation>MultiSend è stato salvato con successo in memoria, ma il salvataggio delle proprietà nel database non è andato a buon fine.
+</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector
+</source>
+        <translation>Vettore InvioMultiplo
+</translation>
+    </message>
+    <message>
+        <source>Removed </source>
+        <translation>Eliminato</translation>
+    </message>
+    <message>
+        <source>Could not locate address
+</source>
+        <translation>Impossibile trovare l'indirizzo
+</translation>
+    </message>
+</context>
+<context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Multisignature Address Interactions</source>
+        <translation>Interazioni indirizzo multifirma</translation>
+    </message>
+    <message>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Crea indirizzo a firme &amp;Multiple</translation>
+    </message>
+    <message>
+        <source>How many people must sign to verify a transaction</source>
+        <translation>Quante persone devono firmare per verificare una transazione</translation>
+    </message>
+    <message>
+        <source>Address Label:</source>
+        <translation>Etichetta indirizzo:</translation>
+    </message>
+    <message>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Aggiungi indirizzo / codice</translation>
+    </message>
+    <message>
+        <source>Create a new multisig address</source>
+        <translation>Crea un nuovo indirizzo multifirma</translation>
+    </message>
+    <message>
+        <source>C&amp;reate</source>
+        <translation>C&amp;rea</translation>
+    </message>
+    <message>
+        <source>Status:</source>
+        <translation>Stato:</translation>
+    </message>
+    <message>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Crea Tx multifirma</translation>
+    </message>
+    <message>
+        <source>Inputs:</source>
+        <translation>Input:</translation>
+    </message>
+    <message>
+        <source>Coin Control</source>
+        <translation>Controllo Monete</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Quantità Selezionata:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Totale:</translation>
+    </message>
+    <message>
+        <source>Address / Amount:</source>
+        <translation>Indirizzo / Quantità:</translation>
+    </message>
+    <message>
+        <source>Cr&amp;eate</source>
+        <translation>Cr&amp;ea</translation>
+    </message>
+    <message>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Firma Tx a firma multipla</translation>
+    </message>
+    <message>
+        <source>Transaction Hex:</source>
+        <translation>Hex Transazione:</translation>
+    </message>
+    <message>
+        <source>S&amp;ign</source>
+        <translation>F&amp;irma</translation>
+    </message>
+    <message>
+        <source>Add Private &amp;Key</source>
+        <translation>Aggiungi &amp;Chiave Privata</translation>
+    </message>
+    <message>
+        <source>Amount: </source>
+        <translation>Quantità:</translation>
+    </message>
+    <message>
+        <source>Maximum (15)</source>
+        <translation>Massimo (15)</translation>
+    </message>
+</context>
 <context>
     <name>ObfuscationConfig</name>
+    <message>
+        <source>Configure Obfuscation</source>
+        <translation>Configura Offuscamento</translation>
+    </message>
+    <message>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ION</source>
+        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 ION</translation>
+    </message>
+    <message>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ION</source>
+        <translation>Usa 8 masternodi diversi per mixare fino a 10000 ION</translation>
+    </message>
+    <message>
+        <source>Use 16 separate masternodes</source>
+        <translation>Usa 16 masternodi diversi</translation>
+    </message>
+    <message>
+        <source>Obfuscation Configuration</source>
+        <translation>Configurazione Offuscamento</translation>
+    </message>
     </context>
 <context>
     <name>OpenURIDialog</name>
+    <message>
+        <source>Open URI</source>
+        <translation>Apri URI</translation>
+    </message>
+    <message>
+        <source>URI:</source>
+        <translation>URI:</translation>
+    </message>
     </context>
 <context>
     <name>OptionsDialog</name>
+    <message>
+        <source>Options</source>
+        <translation>Opzioni</translation>
+    </message>
+    <message>
+        <source>MB</source>
+        <translation>MB</translation>
+    </message>
+    <message>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Mappa la porta utilizzando &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Enable automatic minting of ION units to xION</source>
+        <translation>Attiva il conio automatico di unità ION in xION</translation>
+    </message>
+    <message>
+        <source>Enable xION Automint</source>
+        <translation>Attiva Conio automatico xION</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming ION which get automatically converted to xION via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di ION in entrata che viene automaticamente convertita in xION attraverso il protocollo Zerocoin (min: 10%)</translation>
+    </message>
+    <message>
+        <source>Percentage of autominted xION</source>
+        <translation>Percentuale di xION Percentuale di xION da coniare automaticamente</translation>
+    </message>
+    <message>
+        <source>Preferred Automint xION Denomination</source>
+        <translation>Denominazione preferita conio automatico xION</translation>
+    </message>
+    <message>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
+    </message>
+    <message>
+        <source>&amp;Port:</source>
+        <translation>&amp;Porta:</translation>
+    </message>
+    <message>
+        <source>&amp;Window</source>
+        <translation>&amp;Finestra</translation>
+    </message>
+    <message>
+        <source>Decimal digits</source>
+        <translation>Cifre decimali</translation>
+    </message>
+    <message>
+        <source>Hide empty balances</source>
+        <translation>Nascondi bilanci vuoti</translation>
+    </message>
+    <message>
+        <source>&amp;Reset Options</source>
+        <translation>Opzioni &amp;Reset</translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancella</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>predefinito</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nessuno</translation>
+    </message>
     </context>
 <context>
     <name>OverviewPage</name>
-    </context>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Available:</source>
+        <translation>Disponibile:</translation>
+    </message>
+    <message>
+        <source>Your current spendable balance</source>
+        <translation>Il tuo saldo spendibile corrente</translation>
+    </message>
+    <message>
+        <source>Total Balance, including all unavailable coins.</source>
+        <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
+    </message>
+    <message>
+        <source>ION Balance</source>
+        <translation>Bilancio ION</translation>
+    </message>
+    <message>
+        <source>Immature:</source>
+        <translation>Non maturi:</translation>
+    </message>
+    <message>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Saldo corrente bloccato in indirizzi sola-lettura.</translation>
+    </message>
+    <message>
+        <source>Your current ION balance, unconfirmed and immature transactions included</source>
+        <translation>Il tuo saldo ION corrente, incluse le transazioni non confermate e non mature</translation>
+    </message>
+    <message>
+        <source>xION Balance</source>
+        <translation>Bilancio xION</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These xION are spendable.</source>
+        <translation>Maturi: più di 20 conferme e più di 1 conio della stessa denominazione dopo il conio.
+Questi xION sono spendibili.</translation>
+    </message>
+    <message>
+        <source>OVERVIEW</source>
+        <translation>PANORAMICA</translation>
+    </message>
+    <message>
+        <source>Combined Balance (including unconfirmed and immature coins)</source>
+        <translation>Saldo complessivo (incluse monete non confermate e non mature)</translation>
+    </message>
+    <message>
+        <source>Combined Balance</source>
+        <translation>Saldo complessivo</translation>
+    </message>
+    <message>
+        <source>Total:</source>
+        <translation>Totale:</translation>
+    </message>
+    <message>
+        <source>Current total balance in watch-only addresses</source>
+        <translation>Saldo corrente totale in indirizzi sola-lettura</translation>
+    </message>
+    <message>
+        <source>Your current balance in watch-only addresses</source>
+        <translation>Il tuo saldo corrente in indirizzi sola-lettura</translation>
+    </message>
+    <message>
+        <source>Spendable:</source>
+        <translation>Spendibili:</translation>
+    </message>
+    <message>
+        <source>Locked ION or Masternode collaterals. These are excluded from xION minting.</source>
+        <translation>ION bloccati o collaterali Masternodo. Questi sono esclusi dal conio di xION.</translation>
+    </message>
+    <message>
+        <source>Locked:</source>
+        <translation>Bloccati:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed:</source>
+        <translation>Non confermati:</translation>
+    </message>
+    <message>
+        <source>Your current xION balance, unconfirmed and immature xION included.</source>
+        <translation>Il tuo saldo xION corrente, inclusi xION non confermati e non maturi</translation>
+    </message>
+    <message>
+        <source>Recent transactions</source>
+        <translation>Transazioni recenti</translation>
+    </message>
+    <message>
+        <source>Current percentage of xION.
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+</source>
+        <translation>Percentuale corrente di xION.
+Se il conio automatico è attivato questa percentuale si stabilizzerà all'incirca sulla percentuale stabilita per il conio automatico (percentuale prestabilita = 10%).
+</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>AutoMint è attivo e impostato su</translation>
+    </message>
+    <message>
+        <source>To disable AutoMint add 'enablezeromint=0' in ioncoin.conf.</source>
+        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in ioncoin.conf.</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently disabled.
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in ioncoin.conf</source>
+        <translation>Conio automatico è correntemente disattivato.
+Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in ioncoin.conf</translation>
+    </message>
+</context>
 <context>
     <name>PaymentServer</name>
+    <message>
+        <source>Invalid payment address %1</source>
+        <translation>Indirizzo di pagamento %1 invalido</translation>
+    </message>
+    <message>
+        <source>Payment request rejected</source>
+        <translation>Richiesta di pagamento rifiutata</translation>
+    </message>
+    <message>
+        <source>Payment request has expired.</source>
+        <translation>La richiesta di pagamento è scaduta.</translation>
+    </message>
+    <message>
+        <source>Requested payment amount of %1 is too small (considered dust).</source>
+        <translation>L'ammontare della richiesta di pagamento di %1 è troppo basso (considerato polvere).</translation>
+    </message>
+    <message>
+        <source>Refund from %1</source>
+        <translation>Risarcimento da %1</translation>
+    </message>
     </context>
 <context>
     <name>PeerTableModel</name>
+    <message>
+        <source>Version</source>
+        <translation>Versione</translation>
+    </message>
     </context>
 <context>
     <name>PrivacyDialog</name>
+    <message>
+        <source>Zerocoin Actions:</source>
+        <translation>Azioni Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Mint Zerocoin</source>
+        <translation>Conia Zerocoin</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>xION</source>
+        <translation>xION</translation>
+    </message>
+    <message>
+        <source>0.000 000 00 ION</source>
+        <translation>0.000 000 00 ION</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Reset</translation>
+    </message>
+    <message>
+        <source>Coin Control...</source>
+        <translation>Controllo Monete...</translation>
+    </message>
     <message>
         <source>Quantity:</source>
         <translation>Quantità:</translation>
@@ -976,6 +1955,53 @@ MultiSend: %1</translation>
     <message>
         <source>Amount:</source>
         <translation>Totale:</translation>
+    </message>
+    <message>
+        <source>PRIVACY</source>
+        <translation>PRIVACY</translation>
+    </message>
+    <message>
+        <source>Enter an amount of Ion to convert to xION</source>
+        <translation>Immetti un importo di ION da convertire in xION</translation>
+    </message>
+    <message>
+        <source>xION Control</source>
+        <translation>Controllo xION</translation>
+    </message>
+    <message>
+        <source>xION Selected:</source>
+        <translation>xION selezionati:</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Quantità Selezionata:</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin</source>
+        <translation>Spendi Zerocoin</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) xION for spending</source>
+        <translation>xION disponibili disponibili per essere spesi (maturi e spendibili)</translation>
+    </message>
+    <message>
+        <source>Available Balance:</source>
+        <translation>Bilancio Disponibile:</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) xION for spending
+
+xION are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>xION disponibili disponibili per essere spesi (maturi e spendibili)
+Gli xION sono maturi quando hanno più di 20 conferme E più di 2 conii della stessa denominazione dopo che sono stati coniati</translation>
+    </message>
+    <message>
+        <source>0 xION</source>
+        <translation>0 xION</translation>
+    </message>
+    <message>
+        <source>Pay &amp;To:</source>
+        <translation>Paga &amp;A:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -994,26 +2020,223 @@ MultiSend: %1</translation>
         <translation>Alt+P</translation>
     </message>
     <message>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
+    </message>
+    <message>
+        <source>Convert Change to Zerocoin (might cost additional fees)</source>
+        <translation>Converti resto in Zerocoin (può costare commissioni aggiuntive)</translation>
+    </message>
+    <message>
+        <source>Minimize Change</source>
+        <translation>Minimizza Resto</translation>
+    </message>
+    <message>
+        <source>Zerocoin Stats:</source>
+        <translation>Statistiche Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Total Balance including unconfirmed and immature xION</source>
+        <translation>Saldo totale inclusi xION non confermati e non maturi</translation>
+    </message>
+    <message>
+        <source>Total Zerocoin  Balance:</source>
+        <translation>Saldo totale Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Show the current status of automatic xION minting.
+
+To change the status (restart required):
+- enable: add 'enablezeromint=1' to ioncoin.conf
+- disable: add 'enablezeromint=0' to ioncoin.conf
+
+To change the percentage (no restart required):
+- menu Settings-&gt;Options-&gt;Percentage of autominted xION
+
+</source>
+        <translation>Mostra lo stato corrente del conio automatico xION.
+Per cambiare lo stato (riavvio necessario):
+- attivato: aggiungi 'enablezeromint=1' a ioncoin.conf
+- disattivato: aggiungi 'enablezeromint=0' a ioncoin.conf
+
+Per cambiare la percentuale (riavvio non necessario):
+- menu Impostazioni-&gt;Opzioni-&gt;Percentuale di xION da coniare automaticamente
+
+</translation>
+    </message>
+    <message>
+        <source>AutoMint Status</source>
+        <translation>Stato Conio automatico</translation>
+    </message>
+    <message>
+        <source>Denom. 1:</source>
+        <translation>Denom. 1:</translation>
+    </message>
+    <message>
+        <source>Denom. 5:</source>
+        <translation>Denom. 5:</translation>
+    </message>
+    <message>
+        <source>Denom. 10:</source>
+        <translation>Denom. 10:</translation>
+    </message>
+    <message>
+        <source>Denom. 50:</source>
+        <translation>Denom. 50:</translation>
+    </message>
+    <message>
+        <source>Denom. 100:</source>
+        <translation>Denom. 100:</translation>
+    </message>
+    <message>
+        <source>Denom. 500:</source>
+        <translation>Denom. 500:</translation>
+    </message>
+    <message>
+        <source>Denom. 1000:</source>
+        <translation>Denom. 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. 5000:</source>
+        <translation>Denom. 5000:</translation>
+    </message>
+    <message>
+        <source>0 x</source>
+        <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5:</source>
+        <translation>Denominazioni con valore 5:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5:</source>
+        <translation>Denom. con valore 5:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 10:</source>
+        <translation>Denominazioni con valore 10:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 10:</source>
+        <translation>Denom. con valore 10:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 50:</source>
+        <translation>Denominazioni con valore 50:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 50:</source>
+        <translation>Denom. con valore 50:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 100:</source>
+        <translation>Denominazioni con valore 100:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 100:</source>
+        <translation>Denom. con valore 100:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 500:</source>
+        <translation>Denominazioni con valore 500:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 500:</source>
+        <translation>Denom. con valore 500:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1000:</source>
+        <translation>Denominazioni con valore 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1000:</source>
+        <translation>Denom. con valore 1000:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5000:</source>
+        <translation>Denominazioni con valore 5000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5000:</source>
+        <translation>Denom. con valore 5000:</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Priorità:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Etichetta</translation>
     </message>
     <message>
         <source>Fee:</source>
         <translation>Tassa:</translation>
     </message>
     <message>
+        <source>Dust:</source>
+        <translation>Polvere:</translation>
+    </message>
+    <message>
         <source>no</source>
         <translation>no</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Byte:</translation>
+    </message>
+    <message>
+        <source>Insufficient funds!</source>
+        <translation>Fondi insufficienti!</translation>
+    </message>
+    <message>
+        <source>Amount After Fee:</source>
+        <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
         <translation>Differenza:</translation>
     </message>
     <message>
+        <source>Copy quantity</source>
+        <translation>Copia importo</translation>
+    </message>
+    <message>
         <source>Copy amount</source>
         <translation>Copia ammontare</translation>
     </message>
-    </context>
+    <message>
+        <source>xION Mint</source>
+        <translation>Conio xION</translation>
+    </message>
+    <message>
+        <source>AutoMint Status:</source>
+        <translation>Stato Conio automatico:</translation>
+    </message>
+    <message>
+        <source>Invalid Send Amount</source>
+        <translation>Importo di invio non valido</translation>
+    </message>
+    <message>
+        <source>Confirm additional Fees</source>
+        <translation>Conferma commissioni aggiuntive</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation>Converma invio monete</translation>
+    </message>
+    <message>
+        <source>Sending successful, return code: </source>
+        <translation>Invio riuscito con successo, codice di conferma:</translation>
+    </message>
+    <message>
+        <source>fee: </source>
+        <translation>commissione</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -1028,11 +2251,27 @@ MultiSend: %1</translation>
     <name>RPCConsole</name>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;Informaxioni</translation>
+        <translation>&amp;Informazioni</translation>
+    </message>
+    <message>
+        <source>Protocol</source>
+        <translation>Protocollo</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versione</translation>
+    </message>
+    <message>
+        <source>Last Send</source>
+        <translation>Ultimo Invio</translation>
     </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
+    <message>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
+    </message>
     <message>
         <source>Copy label</source>
         <translation>Copia etichetta</translation>
@@ -1079,8 +2318,24 @@ MultiSend: %1</translation>
 <context>
     <name>SendCoinsDialog</name>
     <message>
+        <source>Send Coins</source>
+        <translation>Invia Monete</translation>
+    </message>
+    <message>
+        <source>SEND</source>
+        <translation>INVIA</translation>
+    </message>
+    <message>
+        <source>Insufficient funds!</source>
+        <translation>Fondi insufficienti!</translation>
+    </message>
+    <message>
         <source>Quantity:</source>
         <translation>Quantità:</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Byte:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -1095,24 +2350,92 @@ MultiSend: %1</translation>
         <translation>Tassa:</translation>
     </message>
     <message>
+        <source>Dust:</source>
+        <translation>Polvere:</translation>
+    </message>
+    <message>
         <source>no</source>
         <translation>no</translation>
+    </message>
+    <message>
+        <source>After Fee:</source>
+        <translation>Al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
         <translation>Differenza:</translation>
     </message>
     <message>
+        <source>Transaction Fee:</source>
+        <translation>Commissione di transazione:</translation>
+    </message>
+    <message>
+        <source>collapse fee-settings</source>
+        <translation>Nascondi impostazioni commissioni</translation>
+    </message>
+    <message>
+        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
+        <translation>(Commissioni smart non ancora inizializzate. L'inizializzazione richiede in genere un paio di blocchi...)</translation>
+    </message>
+    <message>
+        <source>Send as zero-fee transaction if possible</source>
+        <translation>Invia qualora possibile come transazione a commissione-zero</translation>
+    </message>
+    <message>
+        <source>Confirm the send action</source>
+        <translation>Conferma l'azione di invio</translation>
+    </message>
+    <message>
         <source>Clear &amp;All</source>
         <translation>Cancella &amp;All</translation>
+    </message>
+    <message>
+        <source>Send to multiple recipients at once</source>
+        <translation>Invia contemporaneamente a destinatari multipli</translation>
+    </message>
+    <message>
+        <source>Balance:</source>
+        <translation>Saldo:</translation>
+    </message>
+    <message>
+        <source>Copy quantity</source>
+        <translation>Copia importo</translation>
     </message>
     <message>
         <source>Copy amount</source>
         <translation>Copia ammontare</translation>
     </message>
     <message>
-        <source>anonymous funds</source>
-        <translation>Fondi anonimi</translation>
+        <source>Copy fee</source>
+        <translation>Copia commissioni</translation>
+    </message>
+    <message>
+        <source>Copy after fee</source>
+        <translation>Copia al netto della commissione</translation>
+    </message>
+    <message>
+        <source>Copy bytes</source>
+        <translation>Copia byte</translation>
+    </message>
+    <message>
+        <source>Copy dust</source>
+        <translation>Copia polvere</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Copia resto</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?</source>
+        <translation>Sei sicuro di voler inviare?</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation>Conferma invio monete</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>L'importo eccede il tuo saldo.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1121,6 +2444,10 @@ MultiSend: %1</translation>
 </context>
 <context>
     <name>SendCoinsEntry</name>
+    <message>
+        <source>Pay &amp;To:</source>
+        <translation>Paga &amp;A:</translation>
+    </message>
     <message>
         <source>Choose previously used address</source>
         <translation>Scegli l'indirizzo utilizzato in precedenza</translation>
@@ -1137,15 +2464,27 @@ MultiSend: %1</translation>
         <source>Alt+P</source>
         <translation>Alt+P</translation>
     </message>
-    </context>
+    <message>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
+    </message>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Inserisci un'etichetta per questo indirizzo da aggiungere alla tua rubrica</translation>
+    </message>
+</context>
 <context>
     <name>ShutdownWindow</name>
     </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>L'indirizzo Ion per firmare il messaggio con</translation>
+        <source>The ION address to sign the message with</source>
+        <translation>L'indirizzo ION per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1168,16 +2507,16 @@ MultiSend: %1</translation>
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
+        <source>Sign the message to prove you own this ION address</source>
         <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo ION</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>L'indirizzo Ion con cui è stato firmato il messaggio</translation>
+        <source>The ION address the message was signed with</source>
+        <translation>L'indirizzo ION con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Ion specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo ION specificato </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -1225,6 +2564,10 @@ MultiSend: %1</translation>
 <context>
     <name>TransactionDesc</name>
     <message>
+        <source>Status</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
         <source>Date</source>
         <translation>Data</translation>
     </message>
@@ -1241,6 +2584,10 @@ MultiSend: %1</translation>
     <message>
         <source>Date</source>
         <translation>Data</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Address</source>
@@ -1263,7 +2610,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Copia ID transaxione</translation>
+        <translation>Copia ID transazione</translation>
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
@@ -1278,6 +2625,10 @@ MultiSend: %1</translation>
         <translation>Data</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
         <source>Label</source>
         <translation>Etichetta</translation>
     </message>
@@ -1287,7 +2638,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Esportaxione fallita</translation>
+        <translation>Esportazione fallita</translation>
     </message>
     </context>
 <context>
@@ -1298,6 +2649,10 @@ MultiSend: %1</translation>
     </context>
 <context>
     <name>WalletModel</name>
+    <message>
+        <source>Send Coins</source>
+        <translation>Invia Monete</translation>
+    </message>
     </context>
 <context>
     <name>WalletView</name>
@@ -1311,7 +2666,15 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>XIONControlDialog</name>
+    <name>XIonControlDialog</name>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>xION</source>
+        <translation>xION</translation>
+    </message>
     </context>
 <context>
     <name>ion-core</name>
@@ -1321,7 +2684,11 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informaxioni</translation>
+        <translation>Informazioni</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
+        <translation>Importo invalido per -maxtxfee=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Warning</source>

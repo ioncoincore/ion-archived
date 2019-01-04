@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,7 +29,7 @@
 #include <QSettings>
 #include <QTextDocument>
 
-SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
+SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                     ui(new Ui::SendCoinsDialog),
                                                     clientModel(0),
                                                     model(0),
@@ -60,7 +60,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
     connect(ui->splitBlockCheckBox, SIGNAL(stateChanged(int)), this, SLOT(splitBlockChecked(int)));
     connect(ui->splitBlockLineEdit, SIGNAL(textChanged(const QString&)), this, SLOT(splitBlockLineEditChanged(const QString&)));
 
-    // IONX specific
+    // ION specific
     QSettings settings;
     if (!settings.contains("bUseObfuScation"))
         settings.setValue("bUseObfuScation", false);
@@ -136,7 +136,10 @@ SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
     ui->checkBoxMinimumFee->setChecked(settings.value("fPayOnlyMinFee").toBool());
     ui->checkBoxFreeTx->setChecked(settings.value("fSendFreeTransactions").toBool());
     ui->checkxION->hide();
+
     minimizeFeeSection(settings.value("fFeeSectionMinimized").toBool());
+    // If SwiftX activated hide button 'Choose'. Show otherwise.
+    ui->buttonChooseFee->setVisible(!useSwiftTX);
 }
 
 void SendCoinsDialog::setClientModel(ClientModel* clientModel)
@@ -191,7 +194,7 @@ void SendCoinsDialog::setModel(WalletModel* model)
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
         connect(ui->checkBoxFreeTx, SIGNAL(stateChanged(int)), this, SLOT(updateGlobalFeeVariables()));
         connect(ui->checkBoxFreeTx, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
-        ui->customFee->setSingleStep(CWallet::minTxFee.GetFeePerK());
+        ui->customFee->setSingleStep(CWallet::GetRequiredFee(1000));
         updateFeeSectionControls();
         updateMinFeeLabel();
         updateSmartFeeLabel();
@@ -225,8 +228,8 @@ void SendCoinsDialog::on_sendButton_clicked()
         SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
 
         //UTXO splitter - address should be our own
-        CBitcoinAddress address = entry->getValue().address.toStdString();
-        if (!model->isMine(address) && ui->splitBlockCheckBox->checkState() == Qt::Checked) {
+        const CTxDestination dest = DecodeDestination(entry->getValue().address.toStdString());
+        if (!model->isMine(dest) && ui->splitBlockCheckBox->checkState() == Qt::Checked) {
             CoinControlDialog::coinControl->fSplitBlock = false;
             ui->splitBlockCheckBox->setCheckState(Qt::Unchecked);
             QMessageBox::warning(this, tr("Send Coins"),
@@ -278,7 +281,7 @@ void SendCoinsDialog::on_sendButton_clicked()
 
     // Format confirmation message
     QStringList formatted;
-    foreach (const SendCoinsRecipient& rcp, recipients) {
+    foreach(const SendCoinsRecipient &rcp, recipients) {
         // generate bold amount string
         QString amount = "<b>" + BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), rcp.amount);
         amount.append("</b> ").append(strFunds);
@@ -451,6 +454,7 @@ SendCoinsEntry* SendCoinsDialog::addEntry()
     ui->entries->addWidget(entry);
     connect(entry, SIGNAL(removeEntry(SendCoinsEntry*)), this, SLOT(removeEntry(SendCoinsEntry*)));
     connect(entry, SIGNAL(payAmountChanged()), this, SLOT(coinControlUpdateLabels()));
+    connect(entry, SIGNAL(subtractFeeFromAmountChanged()), this, SLOT(coinControlUpdateLabels()));
 
     updateTabsAndLabels();
 
@@ -580,9 +584,26 @@ void SendCoinsDialog::updateDisplayUnit()
 
 void SendCoinsDialog::updateSwiftTX()
 {
+    bool useSwiftTX = ui->checkSwiftTX->isChecked();
+
     QSettings settings;
-    settings.setValue("bUseSwiftTX", ui->checkSwiftTX->isChecked());
-    CoinControlDialog::coinControl->useSwiftTX = ui->checkSwiftTX->isChecked();
+    settings.setValue("bUseSwiftTX", useSwiftTX);
+    CoinControlDialog::coinControl->useSwiftTX = useSwiftTX;
+
+    // If SwiftX activated
+    if (useSwiftTX) {
+        // minimize the Fee Section (if open)
+        minimizeFeeSection(true);
+        // set the slider to the max
+        ui->sliderSmartFee->setValue(24);
+    }
+
+    // If SwiftX activated hide button 'Choose'. Show otherwise.
+    ui->buttonChooseFee->setVisible(!useSwiftTX);
+
+    // Update labels and controls
+    updateFeeSectionControls();
+    updateSmartFeeLabel();
     coinControlUpdateLabels();
 }
 
@@ -677,12 +698,12 @@ void SendCoinsDialog::on_buttonMinimizeFee_clicked()
 void SendCoinsDialog::setMinimumFee()
 {
     ui->radioCustomPerKilobyte->setChecked(true);
-    ui->customFee->setValue(CWallet::minTxFee.GetFeePerK());
+    ui->customFee->setValue(CWallet::GetRequiredFee(1000));
 }
 
 void SendCoinsDialog::updateFeeSectionControls()
 {
-    ui->sliderSmartFee->setEnabled(ui->radioSmartFee->isChecked());
+    ui->sliderSmartFee->setEnabled(ui->radioSmartFee->isChecked() && !ui->checkSwiftTX->isChecked());
     ui->labelSmartFee->setEnabled(ui->radioSmartFee->isChecked());
     ui->labelSmartFee2->setEnabled(ui->radioSmartFee->isChecked());
     ui->labelSmartFee3->setEnabled(ui->radioSmartFee->isChecked());
@@ -715,7 +736,9 @@ void SendCoinsDialog::updateFeeMinimizedLabel()
     if (!model || !model->getOptionsModel())
         return;
 
-    if (ui->radioSmartFee->isChecked())
+    if (ui->checkSwiftTX->isChecked()) {
+        ui->labelFeeMinimized->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), 1000000));
+    } else if (ui->radioSmartFee->isChecked())
         ui->labelFeeMinimized->setText(ui->labelSmartFee->text());
     else {
         ui->labelFeeMinimized->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), ui->customFee->value()) +
@@ -726,7 +749,7 @@ void SendCoinsDialog::updateFeeMinimizedLabel()
 void SendCoinsDialog::updateMinFeeLabel()
 {
     if (model && model->getOptionsModel())
-        ui->checkBoxMinimumFee->setText(tr("Pay only the minimum fee of %1").arg(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), CWallet::minTxFee.GetFeePerK()) + "/kB"));
+        ui->checkBoxMinimumFee->setText(tr("Pay only the required fee of %1").arg(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), CWallet::GetRequiredFee(1000)) + "/kB"));
 }
 
 void SendCoinsDialog::updateSmartFeeLabel()
@@ -736,9 +759,14 @@ void SendCoinsDialog::updateSmartFeeLabel()
 
     int nBlocksToConfirm = (int)25 - (int)std::max(0, std::min(24, ui->sliderSmartFee->value()));
     CFeeRate feeRate = mempool.estimateFee(nBlocksToConfirm);
-    if (feeRate <= CFeeRate(0)) // not enough data => minfee
+    // if SwiftX checked, display it in the label
+    if (ui->checkSwiftTX->isChecked())
     {
-        ui->labelSmartFee->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), CWallet::minTxFee.GetFeePerK()) + "/kB");
+        ui->labelFeeEstimation->setText(tr("Estimated to get 6 confirmations near instantly with <b>SwiftX</b>!"));
+        ui->labelSmartFee2->hide();
+    } else if (feeRate <= CFeeRate(0)) // not enough data => minfee
+    {
+        ui->labelSmartFee->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), CWallet::GetRequiredFee(1000)) + "/kB");
         ui->labelSmartFee2->show(); // (Smart fee not initialized yet. This usually takes a few blocks...)
         ui->labelFeeEstimation->setText("");
     } else {
@@ -877,20 +905,19 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         CoinControlDialog::coinControl->destChange = CNoDestination();
         ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
 
-        CBitcoinAddress addr = CBitcoinAddress(text.toStdString());
+        const CTxDestination dest = DecodeDestination(text.toStdString());
 
         if (text.isEmpty()) // Nothing entered
         {
             ui->labelCoinControlChangeLabel->setText("");
-        } else if (!addr.IsValid()) // Invalid address
+        } else if (!IsValidDestination(dest)) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid IONX address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid ION address"));
         } else // Valid address
         {
             CPubKey pubkey;
-            CKeyID keyid;
-            addr.GetKeyID(keyid);
-            if (!model->getPubKey(keyid, pubkey)) // Unknown change address
+            const CKeyID* keyID = boost::get<CKeyID>(&dest);
+            if (!keyID) // Unknown change address
             {
                 ui->labelCoinControlChangeLabel->setText(tr("Warning: Unknown change address"));
             } else // Known change address
@@ -904,7 +931,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
                 else
                     ui->labelCoinControlChangeLabel->setText(tr("(no label)"));
 
-                CoinControlDialog::coinControl->destChange = addr.Get();
+                CoinControlDialog::coinControl->destChange = dest;
             }
         }
     }
@@ -918,10 +945,16 @@ void SendCoinsDialog::coinControlUpdateLabels()
 
     // set pay amounts
     CoinControlDialog::payAmounts.clear();
+    CoinControlDialog::fSubtractFeeFromAmount = false;
     for (int i = 0; i < ui->entries->count(); ++i) {
         SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
         if (entry)
-            CoinControlDialog::payAmounts.append(entry->getValue().amount);
+        {
+            SendCoinsRecipient rcp = entry->getValue();
+            CoinControlDialog::payAmounts.append(rcp.amount);
+            if (rcp.fSubtractFeeFromAmount)
+                CoinControlDialog::fSubtractFeeFromAmount = true;
+        }
     }
 
     if (CoinControlDialog::coinControl->HasSelected()) {

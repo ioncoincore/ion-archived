@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The Ion Core developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +10,6 @@
 #define BITCOIN_WALLET_H
 
 #include "amount.h"
-#include "base58.h"
 #include "crypter.h"
 #include "kernel.h"
 #include "key.h"
@@ -24,6 +23,8 @@
 #include "validationinterface.h"
 #include "wallet_ismine.h"
 #include "walletdb.h"
+#include "xionwallet.h"
+#include "xiontracker.h"
 
 #include <algorithm>
 #include <map>
@@ -55,6 +56,8 @@ static const CAmount DEFAULT_TRANSACTION_MAXFEE = 1 * COIN;
 static const CAmount nHighTransactionMaxFeeWarning = 100 * nHighTransactionFeeWarning;
 //! Largest (in bytes) free transaction we're willing to create
 static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 1000;
+//! -custombackupthreshold default
+static const int DEFAULT_CUSTOMBACKUPTHRESHOLD = 1;
 
 // Zerocoin denomination which creates exactly one of each denominations:
 // 6666 = 1*5000 + 1*1000 + 1*500 + 1*100 + 1*50 + 1*10 + 1*5 + 1
@@ -81,7 +84,7 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT20000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT20000IFMN = 4, // ONLY_NONDENOMINATED and not 20000 Ion at the same time
+    ONLY_NONDENOMINATED_NOT20000IFMN = 4, // ONLY_NONDENOMINATED and not 20000 ION at the same time
     ONLY_20000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                          // UTXO's that are valid for staking
 };
@@ -103,17 +106,8 @@ enum ZerocoinSpendStatus {
     XION_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
     XION_BAD_SERIALIZATION = 13,                    // Transaction verification failed
     XION_SPENT_USED_XION = 14,                      // Coin has already been spend
-    XION_TX_TOO_LARGE = 15                          // The transaction is larger than the max tx size
-};
-
-struct CompactTallyItem {
-    CBitcoinAddress address;
-    CAmount nAmount;
-    std::vector<CTxIn> vecTxIn;
-    CompactTallyItem()
-    {
-        nAmount = 0;
-    }
+    XION_TX_TOO_LARGE = 15,                          // The transaction is larger than the max tx size
+    XION_SPEND_V1_SEC_LEVEL                         // Spend is V1 and security level is not set to 100
 };
 
 /** A key pool entry */
@@ -154,6 +148,12 @@ public:
     StringMap destdata;
 };
 
+struct CRecipient
+{
+    CScript scriptPubKey;
+    CAmount nAmount;
+    bool fSubtractFeeFromAmount;
+};
 /**
  * A CWallet is an extension of a keystore, which also maintains a set of transactions and balances,
  * and provides the ability to create new transactions.
@@ -189,7 +189,7 @@ private:
 
 public:
     bool MintableCoins();
-    bool SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int> >& setCoins, CAmount nTargetAmount) const;
+    bool SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInputs, CAmount nTargetAmount);
     bool SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax) const;
     bool SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& vCoinsRet, std::vector<COutput>& vCoinsRet2, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax);
     bool SelectCoinsDarkDenominated(CAmount nTargetValue, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet) const;
@@ -200,16 +200,25 @@ public:
     bool SelectCoinsCollateral(std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet) const;
 
     // Zerocoin additions
-    bool CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransaction& txNew, vector<CZerocoinMint>& vMints, CReserveKey* reservekey, int64_t& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, const bool isZCSpendChange = false);
-    bool CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel, CWalletTx& wtxNew, CReserveKey& reserveKey, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vSelectedMints, vector<CZerocoinMint>& vNewMints, bool fMintChange,  bool fMinimizeChange, CBitcoinAddress* address = NULL);
-    bool MintToTxIn(CZerocoinMint zerocoinSelected, int nSecurityLevel, const uint256& hashTxOut, CTxIn& newTxIn, CZerocoinSpendReceipt& receipt);
-    std::string MintZerocoinFromOutPoint(CAmount nValue, CWalletTx& wtxNew, vector<CZerocoinMint>& vMints, const vector<COutPoint> vOutpts);
-    std::string MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CZerocoinMint>& vMints, const CCoinControl* coinControl = NULL);
-    bool SpendZerocoin(CAmount nValue, int nSecurityLevel, CWalletTx& wtxNew, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vMintsSelected, bool fMintChange, bool fMinimizeChange, CBitcoinAddress* addressTo = NULL);
-    std::string ResetMintZerocoin(bool fExtendedSearch);
+    bool CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransaction& txNew, vector<CDeterministicMint>& vDMints, CReserveKey* reservekey, int64_t& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, const bool isZCSpendChange = false);
+    bool CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel, CWalletTx& wtxNew, CReserveKey& reserveKey, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vSelectedMints, vector<CDeterministicMint>& vNewMints, bool fMintChange,  bool fMinimizeChange, CTxDestination* dest = NULL);
+    bool MintToTxIn(CZerocoinMint zerocoinSelected, int nSecurityLevel, const uint256& hashTxOut, CTxIn& newTxIn, CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint = nullptr);
+    std::string MintZerocoinFromOutPoint(CAmount nValue, CWalletTx& wtxNew, std::vector<CDeterministicMint>& vDMints, const vector<COutPoint> vOutpts);
+    std::string MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CDeterministicMint>& vDMints, const CCoinControl* coinControl = NULL);
+    bool SpendZerocoin(CAmount nValue, int nSecurityLevel, CWalletTx& wtxNew, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vMintsSelected, bool fMintChange, bool fMinimizeChange, CTxDestination* dest = NULL);
+    std::string ResetMintZerocoin();
     std::string ResetSpentZerocoin();
-    void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored);
-    void XIONBackupWallet();
+    void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
+    void XIonBackupWallet();
+    bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
+    bool CreateXIONOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
+    bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
+    bool GetMintFromStakeHash(const uint256& hashStake, CZerocoinMint& mint);
+    bool DatabaseMint(CDeterministicMint& dMint);
+    bool SetMintUnspent(const CBigNum& bnSerial);
+    bool UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint256& txid, const libzerocoin::CoinDenomination& denom);
+    string GetUniqueWalletBackupName(bool fxionAuto) const;
+
 
     /** Zerocin entry changed.
     * @note called with lock cs_wallet held.
@@ -224,10 +233,13 @@ public:
      */
     mutable CCriticalSection cs_wallet;
 
+    CxIONWallet* zwalletMain;
+
     bool fFileBacked;
     bool fWalletUnlockAnonymizeOnly;
     std::string strWalletFile;
     bool fBackupMints;
+    std::unique_ptr<CxIONTracker> xionTracker;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -312,16 +324,24 @@ public:
         return nZeromintPercentage;
     }
 
+    void setZWallet(CxIONWallet* zwallet)
+    {
+        zwalletMain = zwallet;
+        xionTracker = std::unique_ptr<CxIONTracker>(new CxIONTracker(strWalletFile));
+    }
+
+    CxIONWallet* getZWallet() { return zwalletMain; }
+
     bool isZeromintEnabled()
     {
         return fEnableZeromint;
     }
 
-    void setXIONAutoBackups(bool fEnabled)
+    void setXIonAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }
-    
+
     bool isMultiSendEnabled()
     {
         return fMultiSendMasternodeReward || fMultiSendStake;
@@ -361,7 +381,7 @@ public:
     }
 
     void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed = true, const CCoinControl* coinControl = NULL, bool fIncludeZeroValue = false, AvailableCoinsType nCoinType = ALL_COINS, bool fUseIX = false, int nWatchonlyConfig = 1) const;
-    std::map<CBitcoinAddress, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
+    std::map<CTxDestination, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
     bool SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int nConfTheirs, std::vector<COutput> vCoins, std::set<std::pair<const CWalletTx*, unsigned int> >& setCoinsRet, CAmount& nValueRet) const;
 
     /// Get 1000DASH output and keys which can be used for the Masternode
@@ -372,8 +392,8 @@ public:
     bool IsSpent(const uint256& hash, unsigned int n) const;
 
     bool IsLockedCoin(uint256 hash, unsigned int n) const;
-    void LockCoin(COutPoint& output);
-    void UnlockCoin(COutPoint& output);
+    void LockCoin(const COutPoint& output);
+    void UnlockCoin(const COutPoint& output);
     void UnlockAllCoins();
     void ListLockedCoins(std::vector<COutPoint>& vOutpts);
     CAmount GetTotalValue(std::vector<CTxIn> vCoins);
@@ -464,16 +484,19 @@ public:
     CAmount GetUnconfirmedWatchOnlyBalance() const;
     CAmount GetImmatureWatchOnlyBalance() const;
     CAmount GetLockedWatchOnlyBalance() const;
-    bool CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl);
-    bool CreateTransaction(const std::vector<std::pair<CScript, CAmount> >& vecSend,
+    bool FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, int& nChangePosInOut, std::string& strFailReason, bool lockUnspents, const std::set<int>& setSubtractFeeFromOutputs, CCoinControl* coinControl);
+//    bool FundTransaction(CMutableTransaction& tx, CAmount& nFeeRet, int& nChangePosRet, std::string& strFailReason);
+    bool CreateTransaction(const std::vector<CRecipient>& vecSend,
         CWalletTx& wtxNew,
         CReserveKey& reservekey,
         CAmount& nFeeRet,
+        int& nChangePosRet,
         std::string& strFailReason,
         const CCoinControl* coinControl = NULL,
         AvailableCoinsType coin_type = ALL_COINS,
         bool useIX = false,
-        CAmount nFeePay = 0);
+        CAmount nFeePay = 0,
+        bool sign = true);
     bool CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CWalletTx& wtxNew, CReserveKey& reservekey, CAmount& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, AvailableCoinsType coin_type = ALL_COINS, bool useIX = false, CAmount nFeePay = 0);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std::string strCommand = "tx");
     bool AddAccountingEntry(const CAccountingEntry&, CWalletDB & pwalletdb);
@@ -487,8 +510,16 @@ public:
     void AutoZeromint();
 
     static CFeeRate minTxFee;
+    /**
+     * Estimate the minimum fee considering user set parameters
+     * and the required fee
+     */
     static CAmount GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool);
-
+    /**
+     * Return the minimum required fee taking into account the
+     * floating relay fee and user set minimum transaction fee
+     */
+    static CAmount GetRequiredFee(unsigned int nTxBytes);
     bool NewKeyPool();
     bool TopUpKeyPool(unsigned int kpSize = 0);
     void ReserveKeyFromKeyPool(int64_t& nIndex, CKeyPool& keypool);
@@ -503,8 +534,8 @@ public:
 
     std::set<CTxDestination> GetAccountAddresses(std::string strAccount) const;
 
-    bool GetBudgetSystemCollateralTX(CTransaction& tx, uint256 hash, bool useIX);
     bool GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useIX);
+    bool GetBudgetFinalizationCollateralTX(CWalletTx& tx, uint256 hash, bool useIX); // Only used for budget finalization 
 
     // get the Obfuscation chain depth for a given input
     int GetRealInputObfuscationRounds(CTxIn in, int rounds) const;
@@ -516,6 +547,8 @@ public:
 
     bool IsDenominatedAmount(CAmount nInputAmount) const;
 
+    bool IsUsed(const CTxDestination dest) const;
+
     isminetype IsMine(const CTxIn& txin) const;
     CAmount GetDebit(const CTxIn& txin, const isminefilter& filter) const;
     isminetype IsMine(const CTxOut& txout) const
@@ -523,6 +556,7 @@ public:
         return ::IsMine(*this, txout.scriptPubKey);
     }
     bool IsMyZerocoinSpend(const CBigNum& bnSerial) const;
+    bool IsMyMint(const CBigNum& bnValue) const;
     CAmount GetCredit(const CTxOut& txout, const isminefilter& filter) const
     {
         if (!MoneyRange(txout.nValue))
@@ -646,6 +680,9 @@ public:
 
     /** xION reset */
     boost::signals2::signal<void()> NotifyxIONReset;
+
+    /** notify wallet file backed up */
+    boost::signals2::signal<void (const bool& fSuccess, const std::string& filename)> NotifyWalletBacked;
 };
 
 
@@ -956,7 +993,7 @@ public:
     CAmount GetLockedCredit() const;
     CAmount GetDenominatedCredit(bool unconfirmed, bool fUseCache = true) const;
     CAmount GetImmatureWatchOnlyCredit(const bool& fUseCache = true) const;
-    CAmount GetAvailableWatchOnlyCredit(const bool& fUseCache = true) const;        
+    CAmount GetAvailableWatchOnlyCredit(const bool& fUseCache = true) const;
     CAmount GetLockedWatchOnlyCredit() const;
 
     CAmount GetChange() const

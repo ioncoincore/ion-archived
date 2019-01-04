@@ -3,8 +3,6 @@
 # linearize-hashes.py:  List blocks in a linear, no-fork version of the chain.
 #
 # Copyright (c) 2013-2014 The Bitcoin developers
-# Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
@@ -98,7 +96,7 @@ if __name__ == '__main__':
 	if 'host' not in settings:
 		settings['host'] = '127.0.0.1'
 	if 'port' not in settings:
-		settings['port'] = 51473
+		settings['port'] = 12705
 	if 'min_height' not in settings:
 		settings['min_height'] = 0
 	if 'max_height' not in settings:

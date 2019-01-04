@@ -1,5 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,6 +22,10 @@
 typedef std::vector<unsigned char> valtype;
 
 static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 520; // bytes
+
+// Threshold for nLockTime: below this value it is interpreted as block number,
+// otherwise as UNIX timestamp.
+static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
 template <typename T>
 std::vector<unsigned char> ToByteVector(const T& in)
@@ -152,7 +159,9 @@ enum opcodetype
     // expansion
     OP_NOP1 = 0xb0,
     OP_NOP2 = 0xb1,
+    OP_CHECKLOCKTIMEVERIFY = OP_NOP2,
     OP_NOP3 = 0xb2,
+    OP_CHECKSEQUENCEVERIFY = OP_NOP3,
     OP_NOP4 = 0xb3,
     OP_NOP5 = 0xb4,
     OP_NOP6 = 0xb5,
@@ -199,7 +208,10 @@ public:
         m_value = n;
     }
 
-    explicit CScriptNum(const std::vector<unsigned char>& vch, bool fRequireMinimal)
+    static const size_t nDefaultMaxNumSize = 4;
+
+    explicit CScriptNum(const std::vector<unsigned char>& vch, bool fRequireMinimal,
+            const size_t nMaxNumSize = nDefaultMaxNumSize)
     {
         if (vch.size() > nMaxNumSize) {
             throw scriptnum_error("script number overflow");
@@ -246,6 +258,9 @@ public:
 
     inline CScriptNum& operator+=( const CScriptNum& rhs)       { return operator+=(rhs.m_value);  }
     inline CScriptNum& operator-=( const CScriptNum& rhs)       { return operator-=(rhs.m_value);  }
+
+    inline CScriptNum operator&(   const int64_t& rhs)    const { return CScriptNum(m_value & rhs);}
+    inline CScriptNum operator&(   const CScriptNum& rhs) const { return operator&(rhs.m_value);   }
 
     inline CScriptNum operator-()                         const
     {
@@ -321,8 +336,6 @@ public:
 
         return result;
     }
-
-    static const size_t nMaxNumSize = 4;
 
 private:
     static int64_t set_vch(const std::vector<unsigned char>& vch)

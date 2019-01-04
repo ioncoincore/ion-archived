@@ -53,7 +53,7 @@
 #           ============================================================
 #
 #===------------------------------------------------------------------------===#
-# Copyright (c) 2018 The Ion developers
+# Copyright (c) 2018-2019 The Ion developers
 
 r"""
 ClangFormat Diff Reformatter
