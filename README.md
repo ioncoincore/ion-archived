@@ -1,11 +1,10 @@
 Ion Core integration/staging repository
 =======================================
-<<<<<<< HEAD
 
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fioncoincore%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/ioncoincore/ion/latest/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
-[![Build Status](https://travis-ci.org/ioncoincore/ion.svg?branch=master)](https://travis-ci.org/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/ioncoincore%2Fion.svg)](https://badge.fury.io/gh/ioncoincore%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/ioncoincore/ion/latest/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
+[![Build Status](https://travis-ci.org/ioncoincore/ion.svg?branch=master)](https://travis-ci.org/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ion-full)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ioncoin)
 
 Table of Contents
 -----------------
@@ -46,12 +45,10 @@ Table of Contents
 
 ## Important information
 
-**This repository is no longer official release repository** for several reasons. There was internal contributor voting on this matter and this is the decision we all have taken for ability to improve future of ion.
-
-[CEVAP](https://github.com/cevap/) remains as ŕepository from which SNAP builds (Ubuntu Software Center) are delivered and this is the reason why CEVAP will keep contributing and updating the code. All official releases will be available on ioncoincore as binary releases and on CEVAP over SNAP builds. In future we will rename ioncoin.* to ioncoinCE and reserve ioncoin as official name for official branch https://github.com/ioncoincore/ion.git
+**This repository is official release repository**
 
  - **Official releases**: https://github.com/ioncoincore/
- - **Development**/__non public__: https://bitbucket.org/cevap/ion.git 
+ - **Development**/__non public__: https://bitbucket.org/ioncoin/ion.git 
 
 ### Client: Helium
 
@@ -80,7 +77,7 @@ Table of Contents
 ## Documentation
 
 - [Client Documentation](../../tree/master/doc)
-- [Technical documentation (doxygen)](techdocu.ioncoin.org)
+- [Technical documentation (doxygen)](techdocu.ioncore.xyz)
 
 ## Introduction
 
@@ -91,16 +88,12 @@ We released version based on [Ion core wallet v3.1.0](../../tag/v3.1.0) which is
 ### Method 1. Install Ion Core over Ubuntu Software Center (easiest and fastest install and update)
 
 - _Requirements: [snapd](https://docs.snapcraft.io/core/install)_
-=======
-
-[![Build Status](https://travis-ci.com/ioncoincore/ion.svg?branch=master)](https://travis-ci.com/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/ioncoincore%2Fion.svg)](https://badge.fury.io/gh/ioncoincore%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion) [![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fioncoincore%2Fion)
->>>>>>> master
 
 ### Method 2. Install/Get over Snap Store (_preffered method_)
 
 [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ion-full)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ioncoin)
 
 __Requirements: [snapd](https://docs.snapcraft.io/core/install)__
 
@@ -164,21 +157,7 @@ Please use **only stable release** for production/commercial purpose.
 
 ##### Windows XP/Vista/7/10 Installer downloads
 
-<<<<<<< HEAD
 - [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.exe) [![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe)
-=======
- - New Algorithm
- - Zerocoin
- - BIP38/BIP38 Tool
- - Masternode core part (requires new configs for all current users)
- - Better transactions overview
- - New wallet design and layout
- - New tools and scripts
- - New artworks
- - For more, reade release notes directly on our [repository](https://github.com/ioncoincore/ion).
-
-### Stop ongoing attack
->>>>>>> master
 
 ##### Windows XP/Vista/7/10 only binaries downloads
 
