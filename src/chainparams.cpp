@@ -68,11 +68,12 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (  860817,  uint256("b78531efc5d878f8afc5aa9fd349d0181e8cc213853251aad63839d59781a716") ) //                                1540827763   2251929
         (  886654,  uint256("c816d0e907ab44f43ec6bef321ac2c9b4e4a578c9ee4e7946e4a74c3073edf66") ) //                                1542390128   2316854
         (  908698,  uint256("aa44b1eebd7ad5d4bc7b428dcdacd527677fa639557b58666a68dc2fdba3f133") ) // Last active zerocoin v1 block  1543722397   2371470 (zerocoin v1 disabled: 1543722400)
-        (  936756,  uint256("873aa1d52ca79dc77d67f8162a2a60b9c936f50449b58b5464b91e412d351c29") );//                                1543729708   2371718
+        (  936756,  uint256("873aa1d52ca79dc77d67f8162a2a60b9c936f50449b58b5464b91e412d351c29") ) //                                1543729708   2371718
+        (  956579,  uint256("bac382323420c9c8e89024b66a3cab28d6133ca7450eae07de63364f74f087f6") );//                                1543729708   2371718
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1545427538, // * UNIX timestamp of last checkpoint block
-    2442295,    // * total number of transactions between genesis and last checkpoint
+    1546631813, // * UNIX timestamp of last checkpoint block
+    2492172,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000 	// * estimated number of transactions per day after checkp
 };
@@ -169,9 +170,9 @@ public:
         nBlockLastGoodCheckpoint = 550137;          //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 550137;          //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN;            //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 966630;                  //!> The block that zerocoin v2 becomes active - roughly Tuesday, Janury 8, 2019 10:24:00 AM GMT
-        nEnforceNewSporkKey = 1546214401;           //!> Sporks signed after Thursday, GMT: Monday, 31. December 2018 00:00:01 must use the new spork key
-        nRejectOldSporkKey = 1546732801;            //!> Reject old spork key after Wednesday, GMT: Sunday, January 6, 2019 12:00:01 AM
+        nBlockZerocoinV2 = 1012710;                 //!> The block that zerocoin v2 becomes active - roughly GMT: Thursday, February 7, 2019 12:00:01 AM
+        nEnforceNewSporkKey = 1548979201;           //!> Sporks signed after, GMT: Friday, February 1, 2019 12:00:01 AM must use the new spork key
+        nRejectOldSporkKey = 1549497601;            //!> Reject old spork key afters, GMT: Thursday, February 7, 2019 12:00:01 AM
 
         nMidasStartHeight = 176500;                 // MIDAS startheight, first big attack
         nMidasStartTime = 1497541280;               // Time when MIDAS started and old algorithm stopped
