@@ -4,7 +4,7 @@ Ion Core integration/staging repository
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/ioncoincore/ion/latest/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
 [![Build Status](https://travis-ci.org/ioncoincore/ion.svg?branch=master)](https://travis-ci.org/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ioncoin)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ion-full)
 
 Table of Contents
 -----------------
@@ -93,7 +93,7 @@ We released version based on [Ion core wallet v3.1.0](../../tag/v3.1.0) which is
 
 [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ioncoin)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ion-full)
 
 __Requirements: [snapd](https://docs.snapcraft.io/core/install)__
 
@@ -105,19 +105,19 @@ One ion core build for all Linux and IoT
 
 Please use **only stable release** for production/commercial purpose.
 
-    sudo snap install ioncoin
+    sudo snap install ion-full
 
 #### Install latest release candidate from terminal
 
-    sudo snap install --candidate ioncoin
+    sudo snap install --candidate ion-full
 
 #### Install latest beta release from terminal
 
-    sudo snap install --beta ioncoin
+    sudo snap install --beta ion-full
 
 #### Install latest edge release from terminal
 
-    sudo snap install --edge ioncoin
+    sudo snap install --edge ion-full
 
 #### Upgrade to latest version from terminal
 
