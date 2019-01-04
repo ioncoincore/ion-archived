@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Copyright (c) 2014-2019 The Bitcoin Core developers
 # Copyright (c) 2015-2018 The PIVX developers
-# Copyright (c) 2018 The Ion developers
+# Copyright (c) 2018-2019 The Ion developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 '''

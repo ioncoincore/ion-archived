@@ -5268,7 +5268,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
-        <translation>Autorska prava (C) 2015-%i The Ion Core Developers</translation>
+        <translation>Autorska prava (C) 2015-%i The PIVX Core Developers</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2018-%i The Ion Core Developers</source>
+        <translation>Autorska prava (C) 2018-%i The Ion Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

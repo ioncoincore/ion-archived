@@ -5269,6 +5269,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Copyright (C) 2015-%i Разработчики PIVX Core</translation>
     </message>
     <message>
+        <source>Copyright (C) 2018-%i The Ion Core Developers</source>
+        <translation>Copyright (C) 2018-%i Разработчики Ion Core</translation>
+    </message>
+    <message>
         <source>Corrupted block database detected</source>
         <translation>Обнаружена поврежденная база данных блоков</translation>
     </message>

@@ -5270,6 +5270,10 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
     </message>
     <message>
+        <source>Copyright (C) 2018-%i The Ion Core Developers</source>
+        <translation>Copyright (C) 2018-%i The Ion Core Developers</translation>
+    </message>
+    <message>
         <source>Corrupted block database detected</source>
         <translation>Blokdatabasen er beskadiget</translation>
     </message>

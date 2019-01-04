@@ -3793,7 +3793,11 @@ https://www.transifex.com/ioncoincore/ioncoin</translation>
     </message>
     <message>
         <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
-        <translation>Todos os direitos reservados (C) 2015-%i aos Desenvolvedores do Ion Core</translation>
+        <translation>Todos os direitos reservados (C) 2015-%i aos Desenvolvedores do PIVX Core</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2018-%i The Ion Core Developers</source>
+        <translation>Todos os direitos reservados (C) 2018-%i aos Desenvolvedores do Ion Core</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

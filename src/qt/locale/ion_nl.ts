@@ -5270,6 +5270,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Copyright (C) 2015-%i The PIVX Kernontwikkelaars</translation>
     </message>
     <message>
+        <source>Copyright (C) 2018-%i The Ion Core Developers</source>
+        <translation>Copyright (C) 2018-%i The Ion Kernontwikkelaars</translation>
+    </message>
+    <message>
         <source>Corrupted block database detected</source>
         <translation>Corrupte block database gedetecteerd</translation>
     </message>
