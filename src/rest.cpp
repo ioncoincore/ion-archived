@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin Core developers
+// Copyright (c) 2009-2019 The Bitcoin Core developers
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018 The Ion developers
 // Distributed under the MIT software license, see the accompanying

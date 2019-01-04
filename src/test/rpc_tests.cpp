@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2013 The Bitcoin Core developers
+// Copyright (c) 2012-2019 The Bitcoin Core developers
 // Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2018 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
