@@ -1,4 +1,4 @@
-name: ioncoin
+name: ion-full
 version: 3.1.99
 summary:   gaming related peer-to-peer network based digital currency
 description: |
@@ -6,7 +6,8 @@ description: |
   open source, blockchain-based cryptocurrency with 
   ultra fast transactions, low fees, high network decentralization, and
   Zero Knowledge cryptography proofs for industry-leading
-  transaction anonymity. 
+  transaction anonymity. This package include QT, daemon, cli and tx
+  binaries.
   
   Wiki (Ionomy):   https://github.com/ioncoincore/ion/wiki
   Wiki (IonomyCE): https://github.com/ioncoincore/ion/wiki
