@@ -1711,9 +1711,9 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/ioncoin</source>
+https://www.transifex.com/ioncoincore/ioncoin</source>
         <translation>Ĉu mankas lingvon aŭ nekompleta tradukado? Helpu la  tradukcio ĉi tie:
-https://www.transifex.com/cevap/ioncoin</translation>
+https://www.transifex.com/ioncoincore/ioncoin</translation>
     </message>
     <message>
         <source>Connect to the ION network through a SOCKS5 proxy.</source>

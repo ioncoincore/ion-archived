@@ -8,8 +8,8 @@ description: |
   Zero Knowledge cryptography proofs for industry-leading
   transaction anonymity. 
   
-  Wiki (Ionomy):   https://github.com/ionomy/ion/wiki
-  Wiki (IonomyCE): https://github.com/cevap/ion/wiki
+  Wiki (Ionomy):   https://github.com/ioncoincore/ion/wiki
+  Wiki (IonomyCE): https://github.com/ioncoincore/ion/wiki
   
   Technical documentaion: https://techdoc.ioncore.xyz
   
@@ -51,7 +51,7 @@ apps:
 
 parts:
   ion:
-    source: https://github.com/cevap/ion
+    source: https://github.com/ioncoincore/ion
     source-type: git
     source-tag: master
     plugin: autotools

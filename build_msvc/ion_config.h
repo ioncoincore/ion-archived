@@ -340,7 +340,7 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/cevap/ion/issues"
+#define PACKAGE_BUGREPORT "https://github.com/ioncoincore/ion/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "Ion Core"

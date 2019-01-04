@@ -16,7 +16,7 @@ Table of Contents
 
 Before every release candidate:
 
-- Update translations (ask for more info on discord or support) see [translation_process.md](https://github.com/cevap/ion/blob/master/doc/translation_process.md#synchronising-translations).
+- Update translations (ask for more info on discord or support) see [translation_process.md](https://github.com/ioncoincore/ion/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/gitianuser/gitian.sigs.git
     git clone https://github.com/gitianuser/ion-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/cevap/ion.git
+    git clone https://github.com/ioncoincore/ion.git
 
 ### ION maintainers/release engineers, suggestion for writing release notes
 
@@ -280,6 +280,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/cevap/ion/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/ioncoincore/ion/releases/new) with a link to the archived release notes.
 
   - Celebrate

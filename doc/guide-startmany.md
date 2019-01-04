@@ -69,7 +69,7 @@ The wallet will re-scan and you will see your available balance increase by the 
 
 1. Open the QT Wallet.
 2. Click the Receive tab. 
-   ![](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/sources/receive-3.1.0.png)
+   ![](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/sources/receive-3.1.0.png)
 3. Fill in the form to request a payment.
     * Label: `mn01`
     * Amount (optional): `20000`
@@ -79,8 +79,8 @@ The wallet will re-scan and you will see your available balance increase by the 
 
 Create a new wallet address for each MasterNode.
 
-![](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/sources/request-payment-mn1.png)
-![](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/sources/request-payment-mn1-paymentinfo.png)
+![](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/sources/request-payment-mn1.png)
+![](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/sources/request-payment-mn1-paymentinfo.png)
 
 Close your QT Wallet.
 

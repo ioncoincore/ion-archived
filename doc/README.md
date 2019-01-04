@@ -39,7 +39,7 @@ Drag Ion-Qt to your applications folder, and then run Ion-Qt.
 
 ### Need Help?
 
-- See the documentation at the [Ion Wiki](https://github.com/cevap/ion/wiki) and [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
+- See the documentation at the [Ion Wiki](https://github.com/ioncoincore/ion/wiki) and [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
 for help and more information.
 - Ask for help on [Discord chat]()
   - [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.0)
@@ -53,7 +53,7 @@ The following are developer notes on how to build ION on your native platform. T
 - [Gitian Building Guide](gitian-building.md)
 
 ## Development
-The Ion repo's [root README](https://github.com/cevap/ion/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Ion repo's [root README](https://github.com/ioncoincore/ion/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

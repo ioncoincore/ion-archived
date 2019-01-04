@@ -1902,9 +1902,9 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/ioncoin</source>
+https://www.transifex.com/ioncoincore/ioncoin</source>
         <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
-https://www.transifex.com/cevap/ioncoin</translation>
+https://www.transifex.com/ioncoincore/ioncoin</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

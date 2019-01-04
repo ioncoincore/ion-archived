@@ -1,10 +1,10 @@
 Ion Core integration/staging repository
 =======================================
 
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/cevap/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcevap%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
-[![Build Status](https://travis-ci.org/cevap/ion.svg?branch=master)](https://travis-ci.org/cevap/ion) [![GitHub version](https://badge.fury.io/gh/cevap%2Fion.svg)](https://badge.fury.io/gh/cevap%2Fion) [![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion) [![GitHub issues](https://img.shields.io/github/issues/cevap/ion.svg)](https://github.com/cevap/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/cevap/ion.svg)](https://github.com/cevap/ion/network) [![GitHub stars](https://img.shields.io/github/stars/cevap/ion.svg)](https://github.com/cevap/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/cevap/ion.svg)](https://github.com/cevap/ion)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/ioncoincore/ion.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fioncoincore%2Fion) [![Chat on Discord](https://img.shields.io/discord/308323056592486420.svg?logo=discord)](https://discord.gg/vuZn7gC) [![Latest Release](https://img.shields.io/github/downloads/ioncoincore/ion/latest/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
+[![Build Status](https://travis-ci.org/ioncoincore/ion.svg?branch=master)](https://travis-ci.org/ioncoincore/ion) [![GitHub version](https://badge.fury.io/gh/ioncoincore%2Fion.svg)](https://badge.fury.io/gh/ioncoincore%2Fion) [![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion) [![GitHub issues](https://img.shields.io/github/issues/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/issues) [![GitHub forks](https://img.shields.io/github/forks/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/network) [![GitHub stars](https://img.shields.io/github/stars/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion/stargazers) [![GitHub license](https://img.shields.io/github/license/ioncoincore/ion.svg)](https://github.com/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ioncoin)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/ion-full)
 
 Table of Contents
 -----------------
@@ -50,19 +50,19 @@ Table of Contents
 [CEVAP](https://github.com/cevap/) remains as ŕepository from which SNAP builds (Ubuntu Software Center) are delivered and this is the reason why CEVAP will keep contributing and updating the code. All official releases will be available on ioncoincore as binary releases and on CEVAP over SNAP builds. In future we will rename ioncoin.* to ioncoinCE and reserve ioncoin as official name for official branch https://github.com/ioncoincore/ion.git
 
  - **Official releases**: https://github.com/ioncoincore/
- - **Development**/__non public__: https://bitbucket.org/ioncoin/ion.git 
+ - **Development**/__non public__: https://bitbucket.org/cevap/ion.git 
 
 ### Client: Helium
 
-![](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/Helium.jpg)
+![](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/Helium.jpg)
 
 ## Ion Core FAQ/Help
 - [Documentation](../../tree/master/doc)
   - [Setup Ion](../../tree/master/doc#setup)
   - [Running Ion Core](../../tree/master/doc#running)
-    - [Windows](https://github.com/cevap/ion/tree/master/doc#windows)
-    - [Unix](https://github.com/cevap/ion/tree/master/doc#unix)
-    - [OSX](https://github.com/cevap/ion/tree/master/doc#osx)
+    - [Windows](https://github.com/ioncoincore/ion/tree/master/doc#windows)
+    - [Unix](https://github.com/ioncoincore/ion/tree/master/doc#unix)
+    - [OSX](https://github.com/ioncoincore/ion/tree/master/doc#osx)
 - [Ion Core CE Wiki](../../wiki)
   - [Accounts-Explained](../../wiki/Accounts-Explained)
   - [API Call list](../../wiki/API-Calls-List)
@@ -93,9 +93,9 @@ We released version based on [Ion core wallet v3.1.0](../../tag/v3.1.0) which is
 
 ### Method 2. Install/Get over Snap Store (_preffered method_)
 
-[![Snap Status](https://build.snapcraft.io/badge/cevap/ion.svg)](https://build.snapcraft.io/user/cevap/ion)
+[![Snap Status](https://build.snapcraft.io/badge/ioncoincore/ion.svg)](https://build.snapcraft.io/user/ioncoincore/ion)
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ioncoin)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/ion-full)
 
 __Requirements: [snapd](https://docs.snapcraft.io/core/install)__
 
@@ -129,7 +129,7 @@ Please use **only stable release** for production/commercial purpose.
 
 - [Ion snap builds supports variety of Operating systems](https://snapcraft.io/)
 
-  - [![Install SNAP on Ubuntu](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/ubuntu_128x128.png)](https://docs.snapcraft.io/core/install-debian) ![Install SNAP on Debian](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/debian_128x128.png) [![Install SNAP on Linux Mint](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/mint_128x128.png)](https://docs.snapcraft.io/core/install-linux-mint) [![Install SNAP on Raspbian](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/raspbian_128x128.png)](https://docs.snapcraft.io/core/install-raspbian) [![Install SNAP on ArchLinux](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/archlinux_128x128.png)](https://docs.snapcraft.io/core/install-arch-linux) [![Install SNAP on Fedora](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/fedora_128x128.png)](https://docs.snapcraft.io/core/install-fedora) [![SNAP on OpenWrt](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/openwrit_128x128.png)](https://docs.snapcraft.io/installing-snapd/) ![SNAP on yocto](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/yocto_128x128.png) [![SNAP on openembedded](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/openembed_128x128.png)](https://docs.snapcraft.io/installing-snapd/) [![Install SNAP on OpenSUSE](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/suse_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-opensuse/8375) [![Install SNAP on manjaro linux](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/manjaro_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-manjaro-linux/6807) [![Install SNAP on Solus](https://raw.githubusercontent.com/wiki/cevap/ion/assets/images/solus_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-solus/6803)
+  - [![Install SNAP on Ubuntu](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/ubuntu_128x128.png)](https://docs.snapcraft.io/core/install-debian) ![Install SNAP on Debian](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/debian_128x128.png) [![Install SNAP on Linux Mint](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/mint_128x128.png)](https://docs.snapcraft.io/core/install-linux-mint) [![Install SNAP on Raspbian](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/raspbian_128x128.png)](https://docs.snapcraft.io/core/install-raspbian) [![Install SNAP on ArchLinux](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/archlinux_128x128.png)](https://docs.snapcraft.io/core/install-arch-linux) [![Install SNAP on Fedora](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/fedora_128x128.png)](https://docs.snapcraft.io/core/install-fedora) [![SNAP on OpenWrt](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/openwrit_128x128.png)](https://docs.snapcraft.io/installing-snapd/) ![SNAP on yocto](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/yocto_128x128.png) [![SNAP on openembedded](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/openembed_128x128.png)](https://docs.snapcraft.io/installing-snapd/) [![Install SNAP on OpenSUSE](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/suse_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-opensuse/8375) [![Install SNAP on manjaro linux](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/manjaro_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-manjaro-linux/6807) [![Install SNAP on Solus](https://raw.githubusercontent.com/wiki/ioncoincore/ion/assets/images/solus_128x128.png)](https://docs.snapcraft.io/t/installing-snap-on-solus/6803)
   - additional Linux distributions and installation guides ([see all supported distributions](https://docs.snapcraft.io/core/install))
     - [Deepin](https://docs.snapcraft.io/t/installing-snap-on-deepin/6791)
     - [Elementary OS](https://docs.snapcraft.io/t/installing-snap-on-elementary-os/6768)
@@ -146,36 +146,36 @@ Please use **only stable release** for production/commercial purpose.
 ### Method 3. Download and install latest release
 
 #### Latest stable Release
-- [![Latest stable Release](https://img.shields.io/github/downloads/cevap/ion/latest/total.svg)](https://github.com/cevap/ion/releases/latest)
+- [![Latest stable Release](https://img.shields.io/github/downloads/ioncoincore/ion/latest/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
 
 #### Candidate Release v3.1.00-rc7.2
-- [![Candidate Release v3.1.00-rc7.2](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/total.svg)](https://github.com/cevap/ion/releases/latest)
+- [![Candidate Release v3.1.00-rc7.2](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/total.svg)](https://github.com/ioncoincore/ion/releases/latest)
 
 - [Build and install ion (all OS)](../../tree/master/doc)
 
 ##### MacOS/OSX downloads
 
-- [![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-osx-unsigned.dmg.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-osx-unsigned.dmg) [![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-osx64.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-osx64.tar.gz)
+- [![Download ion Setup for OSX 32-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-osx-unsigned.dmg.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-osx-unsigned.dmg) [![Download ion Setup for OSX 64-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-osx64.tar.gz.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-osx64.tar.gz)
 
 ##### Windows XP/Vista/7/10 Installer downloads
 
-- [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.exe) [![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe)
+- [![Download ion Setup for Windows 32-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win32-setup-unsigned.exe) [![Download ion Setup for Windows 64-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win64-setup-unsigned.exe)
 
 ##### Windows XP/Vista/7/10 only binaries downloads
 
-- [![Download ion binaries for Windows 32-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-win32.zip.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win32.zip) [![Download ion binaries for Windows 64-bit](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-win64.zip.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win64.zip)
+- [![Download ion binaries for Windows 32-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win32.zip.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win32.zip) [![Download ion binaries for Windows 64-bit](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-win64.zip.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-win64.zip)
 
 ##### Linux downloads
 
-- [![Download ion v3.1.00-rc7.2 for Linux 32-bit (i686)](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-i686-pc-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-i686-pc-linux-gnu.tar.gz) [![Download ion v3.1.00-rc7.2 for Linux 64-bit (x86_x64)](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-x86_64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-x86_64-linux-gnu.tar.gz)
+- [![Download ion v3.1.00-rc7.2 for Linux 32-bit (i686)](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-i686-pc-linux-gnu.tar.gz.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-i686-pc-linux-gnu.tar.gz) [![Download ion v3.1.00-rc7.2 for Linux 64-bit (x86_x64)](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-x86_64-linux-gnu.tar.gz.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-x86_64-linux-gnu.tar.gz)
 
 ##### Linux ARM/aarch64 downloads
 
-- [![Download ion v3.1.00-rc7.2 for ARM Linux](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-arm-linux-gnueabihf.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-arm-linux-gnueabihf.tar.gz) [![Download ion v3.1.00-rc7.2 for aarch64 Linux](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/ion-3.1.00-aarch64-linux-gnu.tar.gz.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-aarch64-linux-gnu.tar.gz)
+- [![Download ion v3.1.00-rc7.2 for ARM Linux](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-arm-linux-gnueabihf.tar.gz.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-arm-linux-gnueabihf.tar.gz) [![Download ion v3.1.00-rc7.2 for aarch64 Linux](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/ion-3.1.00-aarch64-linux-gnu.tar.gz.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/ion-3.1.00-aarch64-linux-gnu.tar.gz)
 
 ##### Download checksums
 
-- [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/cevap/ion/v3.1.00-rc7.2/SHA256SUMS.asc.svg)](https://github.com/cevap/ion/releases/download/v3.1.00-rc7.2/SHA256SUMS.asc)
+- [![Download SHA256SUMS.asc](https://img.shields.io/github/downloads/ioncoincore/ion/v3.1.00-rc7.2/SHA256SUMS.asc.svg)](https://github.com/ioncoincore/ion/releases/download/v3.1.00-rc7.2/SHA256SUMS.asc)
 
 ### Method 4. Build, compile and install from source
 

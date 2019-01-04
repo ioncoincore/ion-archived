@@ -1719,9 +1719,9 @@ Please check the address and try again.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/ioncoin</source>
+https://www.transifex.com/ioncoincore/ioncoin</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/ioncoin</translation>
+https://www.transifex.com/ioncoincore/ioncoin</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

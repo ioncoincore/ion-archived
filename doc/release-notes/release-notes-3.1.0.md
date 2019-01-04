@@ -1,8 +1,8 @@
-ION Core version *3.1.0* is now available from:  <https://github.com/cevap/ion/releases>
+ION Core version *3.1.0* is now available from:  <https://github.com/ioncoincore/ion/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/cevap/ion/issues>
+Please report bugs using the issue tracker at github: <https://github.com/ioncoincore/ion/issues>
 
 - [Mandatory Update](#mandatory-update)
 - [How to Upgrade](#how-to-upgrade)
@@ -112,7 +112,7 @@ CSS, artworks and their sources have been updated/renewed
 
 ## Transifex Translations
 
-Updated translations, you can follow the status [on Transifex](https://www.transifex.com/cevap/ioncoin/)
+Updated translations, you can follow the status [on Transifex](https://www.transifex.com/ioncoincore/ioncoin/)
 
 ## xION Updates
 
@@ -467,4 +467,4 @@ Thanks to everyone who directly contributed to this release:
 - PeterL73
 - Anthony Posselli
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/cevap/ioncoin/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/ioncoincore/ioncoin/), the QA team during Testing and the Node hosts supporting our Testnet.

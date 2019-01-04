@@ -2491,7 +2491,7 @@ Please be patient after clicking import.</source>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/cevap/ioncoin</source>
+https://www.transifex.com/ioncoincore/ioncoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

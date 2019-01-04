@@ -1,10 +1,10 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
 
-Ion Core version *version* is now available from:  <https://github.com/cevap/ion/releases>
+Ion Core version *version* is now available from:  <https://github.com/ioncoincore/ion/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/cevap/ion/issues>
+Please report bugs using the issue tracker at github: <https://github.com/ioncoincore/ion/issues>
 
 
 Mandatory Update
