@@ -16,7 +16,7 @@ Table of Contents
     - [License](#license)
 
 ## Setup
-[Ion Core](http://core.ioncore.xyz/) is the original ION client and it builds the backbone of the network. However, it downloads and stores the entire history of ION transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Ion Core](http://core.ioncoin.org/) is the original ION client and it builds the backbone of the network. However, it downloads and stores the entire history of ION transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 ## Running
 
@@ -67,7 +67,7 @@ The Ion repo's [root README](https://github.com/ioncoincore/ion/blob/master/READ
 
 ## Resources
 
-- Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.0) or the [ION](http://forum.ioncore.xyz/) forum.
+- Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1443633.0) or the [ION](http://forum.ioncoin.org/) forum.
 - Join [Ion Discord](https://discord.gg/vuZn7gC).
 
 ## Miscellaneous

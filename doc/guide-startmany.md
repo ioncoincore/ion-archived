@@ -165,7 +165,7 @@ I usually confirm that remote is on the correct block by issuing:
 
 ```iond getinfo```
 
-And compare with the block explorer at http://ioncore.xyz/explorer/ (Chainz)
+And compare with the block explorer at http://ioncoin.org/explorer/ (Chainz)
 
 ### Local
 

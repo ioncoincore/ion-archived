@@ -79,7 +79,7 @@ Table of Contents
 ## Documentation
 
 - [Client Documentation](../../tree/master/doc)
-- [Technical documentation (doxygen)](techdocu.ioncore.xyz)
+- [Technical documentation (doxygen)](techdocu.ioncoin.org)
 
 ## Introduction
 
