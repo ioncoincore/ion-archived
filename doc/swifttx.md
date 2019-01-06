@@ -1,10 +1,20 @@
-##SwiftX Technical Information
+
+
+## SwiftX Technical Information
+
+Table of Contents
+-----------------
+- [SwiftX Technical Information](#swiftx-technical-information)
+    - [ZMQ](#zmq)
+    - [Command line option](#command-line-option)
+    - [RPC](#rpc)
+    - [Examples](#examples)
 
 SwiftX has been integrated into the Core Daemon in two ways:
 * "push" notifications (ZMQ and `-swifttxnotify` cmd-line/config option);
 * RPC commands.
 
-####ZMQ
+### ZMQ
 
 When a "Transaction Lock" occurs the hash of the related transaction is broadcasted through ZMQ using both the `zmqpubrawtxlock` and `zmqpubhashtxlock` channels.
 
@@ -15,7 +25,7 @@ This mechanism has been integrated into Bitcore-Node-ION which allows for notifi
 * WebSocket: [https://github.com/cevap/insight-api-ion#web-socket-api](https://github.com/cevap/insight-api-ion#web-socket-api) 
 * API: [https://github.com/cevap/insight-api-ion#swifttx-transactions](https://github.com/cevap/insight-api-ion#swifttx-transactions) 
 
-####Command line option
+### Command line option
 
 When a wallet SwiftX transaction is successfully locked a shell command provided in this option is executed (`%s` in `<cmd>` is replaced by TxID):
 
@@ -23,7 +33,7 @@ When a wallet SwiftX transaction is successfully locked a shell command provided
 -swifttxnotify=<cmd>
 ```
 
-####RPC
+### RPC
 
 Details pertaining to an observed "Transaction Lock" can also be retrieved through RPC, it’s important however to understand the underlying mechanism.
 
@@ -43,7 +53,7 @@ The key thing to understand is that this value indicates the number of "confirma
 
 There is also a field named `bcconfirmations`. The value in this field represents the total number of `"Blockchain Confirmations"` for a given transaction without taking into account whether it was SwiftX or not.
 
-**Examples**
+### Examples
 * SwiftX transaction just occurred:
     * confirmations: 5
     * bcconfirmations: 0

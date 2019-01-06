@@ -11,9 +11,9 @@ rpcpass = ""
 
 
 if rpcpass == "":
-    access = ServiceProxy("http://127.0.0.1:51473")
+    access = ServiceProxy("http://127.0.0.1:12705")
 else:
-    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:51473")
+    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:12705")
 cmd = sys.argv[1].lower()
 
 if cmd == "backupwallet":
@@ -216,6 +216,18 @@ elif cmd == "listtransactions":
             print access.listtransactions(acct, count, frm)
         except:
             print access.listtransactions()
+    except:
+        print "\n---An error occurred---\n"
+
+elif cmd == "listtransactionrecords":
+    try:
+        acct = raw_input("Account (optional): ")
+        count = raw_input("Number of transactions (optional): ")
+        frm = raw_input("Skip (optional):")
+        try:
+            print access.listtransactionrecords(acct, count, frm)
+        except:
+            print access.listtransactionrecords()
     except:
         print "\n---An error occurred---\n"
 

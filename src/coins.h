@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,6 +9,8 @@
 #define BITCOIN_COINS_H
 
 #include "compressor.h"
+#include "core_memusage.h"
+#include "memusage.h"
 #include "script/standard.h"
 #include "serialize.h"
 #include "uint256.h"
@@ -20,7 +24,7 @@
 
 /** 
 
-    ****Note - for Ion we added fCoinStake to the 2nd bit. Keep in mind when reading the following and adjust as needed.
+    ****Note - for ION we added fCoinStake to the 2nd bit. Keep in mind when reading the following and adjust as needed.
  * Pruned version of CTransaction: only retains metadata and unspent transaction outputs
  *
  * Serialized format:
@@ -285,6 +289,77 @@ public:
     }
 };
 
+/**
+ * A UTXO entry.
+ *
+ * Serialized format:
+ * - VARINT((coinbase ? 1 : 0) | (coinstake ? 2 : 0) | (height << 2))
+ * - the non-spent CTxOut (via CTxOutCompressor)
+ */
+class Coin
+{
+public:
+    //! unspent transaction output
+    CTxOut out;
+
+    //! whether containing transaction was a coinbase
+    unsigned int fCoinBase : 1;
+
+    //! whether containing transaction was a coinstake
+    unsigned int fCoinStake : 1;
+
+    //! at which height this containing transaction was included in the active block chain
+    uint32_t nHeight : 31;
+
+    //! construct a Coin from a CTxOut and height/coinbase information.
+    Coin(CTxOut &&outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn)
+        : out(std::move(outIn)), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn)
+    {
+    }
+    Coin(const CTxOut &outIn, int nHeightIn, bool fCoinBaseIn, bool fCoinStakeIn) : out(outIn), fCoinBase(fCoinBaseIn), fCoinStake(fCoinStakeIn), nHeight(nHeightIn)
+    {
+    }
+    Coin (const CCoins &coinsIn, uint32_t n)
+        : out(coinsIn.vout.at(n)), fCoinBase(coinsIn.fCoinBase), fCoinStake(coinsIn.fCoinStake), nHeight(coinsIn.nHeight)
+    {
+    }
+
+    void Clear()
+    {
+        out.SetNull();
+        fCoinBase = false;
+        fCoinStake = false;
+        nHeight = 0;
+    }
+
+    //! empty constructor
+    Coin() : fCoinBase(false), fCoinStake(false), nHeight(0) {}
+    bool IsCoinBase() const { return fCoinBase; }
+    bool IsCoinStake() const { return fCoinStake; }
+    template <typename Stream>
+    void Serialize(Stream &s) const
+    {
+        assert(!IsSpent());
+        uint32_t code = nHeight * 4 + fCoinStake * 2 + fCoinBase;
+        ::Serialize(s, VARINT(code));
+        ::Serialize(s, CTxOutCompressor(REF(out)));
+    }
+
+    template <typename Stream>
+    void Unserialize(Stream &s)
+    {
+        uint32_t code = 0;
+        ::Unserialize(s, VARINT(code));
+        nHeight = code >> 2;
+        fCoinBase = code & 1;
+        fCoinStake = (code >> 1) & 1;
+        ::Unserialize(s, REF(CTxOutCompressor(out)));
+    }
+
+    bool IsSpent() const { return out.IsNull(); }
+    size_t DynamicMemoryUsage() const { return memusage::DynamicUsage(out.scriptPubKey); }
+};
+
 class CCoinsKeyHasher
 {
 private:
@@ -440,6 +515,15 @@ public:
     const CCoins* AccessCoins(const uint256& txid) const;
 
     /**
+     * Wrapper to provide a single utxo entry.
+     * 
+     * Return a reference to Coin in the cache, or a pruned one if not found. This is
+     * more efficient than GetCoin. Modifications to other cache entries are
+     * allowed while accessing the returned pointer.
+     */
+    const Coin AccessCoin(const COutPoint &output) const;
+
+    /**
      * Return a modifiable reference to a CCoins. If no entry with the given
      * txid exists, a new one is created. Simultaneous modifications are not
      * allowed.
@@ -457,7 +541,7 @@ public:
     unsigned int GetCacheSize() const;
 
     /** 
-     * Amount of ion coming in to a transaction
+     * Amount of ioncoin.orging in to a transaction
      * Note that lightweight clients may not know anything besides the hash of previous transactions,
      * so may not be able to calculate this.
      *

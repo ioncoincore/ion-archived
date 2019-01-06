@@ -1,17 +1,27 @@
-Mac OS X Build Instructions and Notes
-====================================
+# Mac OS X Build Instructions and Notes
 This guide will show you how to build iond (headless client) for OSX.
 
-Notes
------
+Table of Contents
+------------------
+- [Mac OS X Build Instructions and Notes](#mac-os-x-build-instructions-and-notes)
+        - [Notes](#notes)
+        - [Preparation](#preparation)
+        - [Instructions: Homebrew](#instructions-homebrew)
+                        - [Install dependencies using Homebrew](#install-dependencies-using-homebrew)
+                - [Building `iond`](#building-iond)
+        - [Use Qt Creator as IDE](#use-qt-creator-as-ide)
+        - [Creating a release build](#creating-a-release-build)
+        - [Running](#running)
+        - [Other commands:](#other-commands)
 
-* Tested on OS X 10.7 through 10.10 on 64-bit Intel processors only.
+## Notes
 
-* All of the commands should be executed in a Terminal application. The
+- Tested on OS X 10.7 through 10.10 on 64-bit Intel processors only.
+
+- All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
 
-Preparation
------------
+## Preparation
 
 You need to install XCode with all the options checked so that the compiler
 and everything is available in /usr not just /Developer. XCode should be
@@ -33,19 +43,18 @@ dependencies.
 The installation of the actual dependencies is covered in the Instructions
 sections below.
 
-Instructions: Homebrew
-----------------------
+## Instructions: Homebrew
 
 #### Install dependencies using Homebrew
 
-        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
+    brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
 
 ### Building `iond`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/cevap/ion.git
-        cd ION
+       git clone https://github.com/ioncoincore/ion.git
+       cd ION
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).
 
@@ -66,8 +75,7 @@ Instructions: Homebrew
 
         make install
 
-Use Qt Creator as IDE
-------------------------
+## Use Qt Creator as IDE
 You can use Qt Creator as IDE, for debugging and for manipulating forms, etc.
 Download Qt Creator from http://www.qt.io/download/. Download the "community edition" and only install Qt Creator (uncheck the rest during the installation process).
 
@@ -82,8 +90,7 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 9. Select LLDB as debugger (you might need to set the path to your installtion)
 10. Start debugging with Qt Creator
 
-Creating a release build
-------------------------
+## Creating a release build
 You can ignore this section if you are building `iond` for your own use.
 
 iond/ion-cli binaries are not included in the ion-Qt.app bundle.
@@ -100,8 +107,7 @@ All dependencies should be compiled with these flags:
 Once dependencies are compiled, see release-process.md for how the Ion-Qt.app
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
-Running
--------
+## Running
 
 It's now available at `./iond`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
@@ -118,8 +124,7 @@ you can monitor its process by looking at the debug.log file, like this:
 
     tail -f $HOME/Library/Application\ Support/ioncoin/debug.log
 
-Other commands:
--------
+## Other commands:
 
     ./iond -daemon # to start the ion daemon.
     ./ion-cli --help  # for a list of command-line options.
