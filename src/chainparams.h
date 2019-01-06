@@ -18,6 +18,8 @@
 #include "libzerocoin/Params.h"
 #include <vector>
 
+#define MASTERNODE_COLLATERAL_AMOUNT 20000
+
 typedef unsigned char MessageStartChars[MESSAGE_START_SIZE];
 
 struct CDNSSeedData {

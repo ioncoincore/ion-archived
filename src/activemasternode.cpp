@@ -460,7 +460,7 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
     // Filter
     BOOST_FOREACH (const COutput& out, vCoins) {
-        if (out.tx->vout[out.i].nValue == 20000 * COIN) { //exactly
+        if (out.tx->vout[out.i].nValue == MASTERNODE_COLLATERAL_AMOUNT * COIN) { //exactly
             filteredCoins.push_back(out);
         }
     }
