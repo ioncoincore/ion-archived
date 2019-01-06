@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Kopírovat vybranou adresu do mezipaměti</translation>
+        <translation>Kopírovat vybranou adresu do schránky</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -62,12 +62,12 @@
         <translation>Adresy pro přijetí peněz</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto jsou Vaše Ion adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
+        <source>These are your ION addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto jsou Vaše ION adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
     </message>
     <message>
-        <source>These are your Ion addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto jsou Vaše Ion adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
+        <source>These are your ION addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto jsou Vaše ION adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -134,10 +134,6 @@
     <message>
         <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
         <translation>Slouží k neumožnění zaslání jednoduché platby, pokud je učet OS kompromitován. Neposkytuje tak reálné zabezpeční.</translation>
-    </message>
-    <message>
-        <source>For anonymization and staking only</source>
-        <translation>Pouze pro anonymizaci a sázení</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -229,6 +225,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -239,16 +238,8 @@
         <translation>&amp;BIP 38 Šifrovat</translation>
     </message>
     <message>
-        <source>Enter a Ion Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Zadejte Ion adresu, kterou si přejete zašifrovat pomocí BIP38. Frázové heslo zadejte do prostředního boxu. Stiskněte šifrovat pro výpočet šifrovaného privátního klíče.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Adresa:</translation>
-    </message>
-    <message>
-        <source>The Ion address to sign the message with</source>
-        <translation>ION adresa pro podepsání zprávy</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +270,8 @@
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Ion adresu</translation>
-    </message>
-    <message>
         <source>Encrypt &amp;Key</source>
         <translation>Šifrovat &amp;Klíč</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Resetovat všechny položky podepsání zprávy</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -303,20 +286,8 @@
         <translation>Vložte BIP 38 šifrovaný privítní klíc. Frázové heslo vložte do prostředního boxu. Kliknětě na Dešifrovat Klíč pro výpočet privátního klíče. Poté co bude klíč dešifrován, kliknutím na 'Importovat Adresu' přidáte privátní klíč do Vaší peněženky.</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
-        <translation>ION adresa zprávy byla podpsána</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Ion adresou</translation>
-    </message>
-    <message>
         <source>Decrypt &amp;Key</source>
         <translation>Dešifrovat &amp;Klíč</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Resetovat všechny položky pro ověření zprávy</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -424,6 +395,10 @@
     <message>
         <source>Browse transaction history</source>
         <translation>Procházet historii transakcí</translation>
+    </message>
+    <message>
+        <source>Privacy Actions for xION</source>
+        <translation>Řešení soukromí pro xION</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -566,6 +541,30 @@
         <translation>Zobrazit seznam použitých adres  a popisků pro přijetí plateb</translation>
     </message>
     <message>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;Vytvoření multisignatury</translation>
+    </message>
+    <message>
+        <source>Create a new multisignature address and add it to this wallet</source>
+        <translation>Vytvořit novou multisignaturní adresu a přidat ji do této peněženky</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;Multisignaturní výdaje...</translation>
+    </message>
+    <message>
+        <source>Spend from a multisignature address</source>
+        <translation>Uhradit z multisignaturní adresy</translation>
+    </message>
+    <message>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp;Multisignaturní podepisování...</translation>
+    </message>
+    <message>
+        <source>Sign with a multisignature address</source>
+        <translation>Podepsat multisignaturní adresou</translation>
+    </message>
+    <message>
         <source>Open &amp;URI...</source>
         <translation>Otevřít &amp;URI...</translation>
     </message>
@@ -576,6 +575,10 @@
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synchronizuji přídavná data: %p%</translation>
+    </message>
+    <message>
+        <source>%1 behind. Scanning block %2</source>
+        <translation>Zbývá %1 bloků. Skenuji blok %2</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -602,12 +605,16 @@
         <translation>Ion Core</translation>
     </message>
     <message>
-        <source>Send coins to a Ion address</source>
-        <translation>Odeslat platbuna Ion adresu</translation>
+        <source>Send coins to a ION address</source>
+        <translation>Odeslat platbuna ION adresu</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ion: URIs)</source>
         <translation>Vyžádat platbu (generování QK kódu a ion: URIs)</translation>
+    </message>
+    <message>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Soukromí</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -630,12 +637,12 @@
         <translation>Upravit možnosti konfigurace pro ION</translation>
     </message>
     <message>
-        <source>Sign messages with your Ion addresses to prove you own them</source>
-        <translation>Podepsat zprávy Vaší Ion adresou pro prokázaní, že jste jejich vlastníkem</translation>
+        <source>Sign messages with your ION addresses to prove you own them</source>
+        <translation>Podepsat zprávy Vaší ION adresou pro prokázaní, že jste jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ion addresses</source>
-        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými Ion adresami</translation>
+        <source>Verify messages to ensure they were signed with specified ION addresses</source>
+        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými ION adresami</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -678,8 +685,8 @@
         <translation>Okno blokového průzkumníka</translation>
     </message>
     <message>
-        <source>Show the Ion Core help message to get a list with possible Ion command-line options</source>
-        <translation>Zobrazit Ion Core pomocnou zpráv pro získání seznamu možných parametrů Ion pro příkazy do příkazové řádky</translation>
+        <source>Show the Ion Core help message to get a list with possible ION command-line options</source>
+        <translation>Zobrazit Ion Core pomocnou zpráv pro získání seznamu možných parametrů ION pro příkazy do příkazové řádky</translation>
     </message>
     <message>
         <source>Ion Core client</source>
@@ -710,8 +717,8 @@
         <translation>%1 a %2</translation>
     </message>
     <message>
-        <source>%1 behind</source>
-        <translation>%1 za</translation>
+        <source>Catching up...</source>
+        <translation>Doháníme co se dá...</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -782,10 +789,6 @@ MultiSend: %1</translation>
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně je &lt;b&gt;odemčená&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně je &lt;b&gt;odemčená&lt;/b&gt; pouze pro anonimizace a sázení</translation>
-    </message>
-    <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně je &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
@@ -795,6 +798,14 @@ MultiSend: %1</translation>
     <message>
         <source>Blockchain Explorer</source>
         <translation>Blockchainový průzkumník</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zpět</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Dále</translation>
     </message>
     <message>
         <source>Address / Block / Transaction</source>
@@ -815,6 +826,10 @@ MultiSend: %1</translation>
 </context>
 <context>
     <name>ClientModel</name>
+    <message>
+        <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
+        <translation>Celkem: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / neznámé: %5)</translation>
+    </message>
     <message>
         <source>Network Alert</source>
         <translation>Upozornění sítě</translation>
@@ -1066,8 +1081,8 @@ MultiSend: %1</translation>
         <translation>Upravit adresu k odeslání platby</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ion address.</source>
-        <translation>Zadaná adresa "%1" není validní Ion adresa.</translation>
+        <source>The entered address "%1" is not a valid ION address.</source>
+        <translation>Zadaná adresa "%1" není validní ION adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1159,8 +1174,8 @@ MultiSend: %1</translation>
         <translation>Při prvním spuštění programu si můžete vybrat, kam bude Ion Core ukládat svá data.</translation>
     </message>
     <message>
-        <source>Ion Core will download and store a copy of the Ion block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Ion Core stáhne a uloží kopii Ion blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
+        <source>Ion Core will download and store a copy of the ION block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Ion Core stáhne a uloží kopii ION blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1196,10 +1211,6 @@ MultiSend: %1</translation>
     <message>
         <source>Form</source>
         <translation>Od</translation>
-    </message>
-    <message>
-        <source>My Masternodes</source>
-        <translation>Moje Masternody</translation>
     </message>
     <message>
         <source>Alias</source>
@@ -1377,6 +1388,10 @@ MultiSend: %1</translation>
         <translation>Poslat pro odměny masternodů</translation>
     </message>
     <message>
+        <source>(no label)</source>
+        <translation>(bez popisku)</translation>
+    </message>
+    <message>
         <source>The entered address:
 </source>
         <translation>Zadaná adresa:
@@ -1416,6 +1431,21 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     </message>
 </context>
 <context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Status:</source>
+        <translation>Stav:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Hodnota:</translation>
+    </message>
+    </context>
+<context>
     <name>ObfuscationConfig</name>
     <message>
         <source>Configure Obfuscation</source>
@@ -1446,16 +1476,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Použít 16 oddělených masternodů</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</source>
-        <translation>Tato možnost je nejrychleší a bude stát zhruba ~0.025 Ion pro anonymizaci 10000 ION</translation>
+        <source>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</source>
+        <translation>Tato možnost je nejrychleší a bude stát zhruba ~0.025 ION pro anonymizaci 10000 ION</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Toto je nejpomalejší a nejvíce bezpečná volba. Použití maximalní anonymity bude stát</translation>
     </message>
     <message>
-        <source>0.1 Ion per 10000 Ion you anonymize.</source>
-        <translation>0.1 Ion za 10000 Ion anonymizujete.</translation>
+        <source>0.1 ION per 10000 ION you anonymize.</source>
+        <translation>0.1 ION za 10000 ION anonymizujete.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1520,12 +1550,12 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Ion after logging in to the system.</source>
-        <translation>Automaticky spustit Ion po přihlášení do systému</translation>
+        <source>Automatically start ION after logging in to the system.</source>
+        <translation>Automaticky spustit ION po přihlášení do systému</translation>
     </message>
     <message>
-        <source>&amp;Start Ion on system login</source>
-        <translation>&amp;Spusti Ion při přihlášení do systému</translation>
+        <source>&amp;Start ION on system login</source>
+        <translation>&amp;Spusti ION při přihlášení do systému</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
@@ -1611,10 +1641,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Celkem:</translation>
     </message>
     <message>
-        <source>Your current total balance</source>
-        <translation>Vaše aktuální celková balance</translation>
-    </message>
-    <message>
         <source>Spendable:</source>
         <translation>Disponibilní:</translation>
     </message>
@@ -1682,6 +1708,10 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Priority:</source>
         <translation>Priorita:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextPopisku</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -2101,10 +2131,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Přidat &amp;Příjemce</translation>
     </message>
     <message>
-        <source>SwiftTX</source>
-        <translation>SwiftTX</translation>
-    </message>
-    <message>
         <source>Balance:</source>
         <translation>Balance:</translation>
     </message>
@@ -2186,7 +2212,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Ion address to sign the message with</source>
+        <source>The ION address to sign the message with</source>
         <translation>ION adresa pro podepsání zprávy</translation>
     </message>
     <message>
@@ -2214,16 +2240,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ion address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Ion adresu</translation>
+        <source>Sign the message to prove you own this ION address</source>
+        <translation>Podepsat zprávu k prokázání, že vlastníte tuto ION adresu</translation>
     </message>
     <message>
-        <source>The Ion address the message was signed with</source>
+        <source>The ION address the message was signed with</source>
         <translation>ION adresa zprávy byla podpsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ion address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Ion adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ION address</source>
+        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou ION adresou</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2369,7 +2395,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     </message>
     </context>
 <context>
-    <name>XIONControlDialog</name>
+    <name>XIonControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -2384,10 +2410,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Information</source>
         <translation>Informace</translation>
-    </message>
-    <message>
-        <source>SwiftTX options:</source>
-        <translation>SwiftTx možnosti:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>

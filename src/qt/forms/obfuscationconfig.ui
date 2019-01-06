@@ -114,7 +114,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>This option is the quickest and will cost about ~0.025 Ion to anonymize 10000 ION</string>
+    <string>This option is the quickest and will cost about ~0.025 ION to anonymize 10000 ION</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -127,7 +127,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>This option is moderately fast and will cost about 0.05 Ion to anonymize 10000 ION</string>
+    <string>This option is moderately fast and will cost about 0.05 ION to anonymize 10000 ION</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
@@ -153,7 +153,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>0.1 Ion per 10000 Ion you anonymize.</string>
+    <string>0.1 ION per 10000 ION you anonymize.</string>
    </property>
   </widget>
   <widget class="Line" name="line">

@@ -1,5 +1,13 @@
 # Block and Transaction Broadcasting With ZeroMQ
 
+Table of Contents
+-----------------
+- [Block and Transaction Broadcasting With ZeroMQ](#block-and-transaction-broadcasting-with-zeromq)
+    - [Prerequisites](#prerequisites)
+    - [Enabling](#enabling)
+    - [Usage](#usage)
+    - [Remarks](#remarks)
+
 [ZeroMQ](http://zeromq.org/) is a lightweight wrapper around TCP
 connections, inter-process communication, and shared-memory,
 providing various message-oriented semantics such as publish/subscribe,

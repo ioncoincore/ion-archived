@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,7 +25,22 @@
 /** This is needed because the foreach macro can't get over the comma in pair<t1, t2> */
 #define PAIRTYPE(t1, t2) std::pair<t1, t2>
 
-std::string SanitizeString(const std::string& str);
+/** Used by SanitizeString() */
+enum SafeChars
+{
+    SAFE_CHARS_DEFAULT, //!< The full set of allowed chars
+    SAFE_CHARS_UA_COMMENT, //!< BIP-0014 subset
+    SAFE_CHARS_FILENAME, //!< Chars allowed in filenames
+};
+
+/**
+* Remove unsafe chars. Safe chars chosen to allow simple messages/URLs/email
+* addresses, but avoid anything even possibly remotely dangerous like & or >
+* @param[in] str    The string to sanitize
+* @param[in] rule   The set of safe chars to choose (default: least restrictive)
+* @return           A new string without unsafe chars
+*/
+std::string SanitizeString(const std::string& str, int rule = SAFE_CHARS_DEFAULT);
 std::vector<unsigned char> ParseHex(const char* psz);
 std::vector<unsigned char> ParseHex(const std::string& str);
 signed char HexDigit(char c);
@@ -121,6 +138,37 @@ bool TimingResistantEqual(const T& a, const T& b)
     for (size_t i = 0; i < a.size(); i++)
         accumulator |= a[i] ^ b[i % b.size()];
     return accumulator == 0;
+}
+
+/** Parse number as fixed point according to JSON number syntax.
+ * See http://json.org/number.gif
+ * @returns true on success, false on error.
+ * @note The result must be in the range (-10^18,10^18), otherwise an overflow error will trigger.
+ */
+bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out);
+
+/** Convert from one power-of-2 number base to another. */
+template<int frombits, int tobits, bool pad, typename O, typename I>
+bool ConvertBits(O& out, I it, I end) {
+    size_t acc = 0;
+    size_t bits = 0;
+    constexpr size_t maxv = (1 << tobits) - 1;
+    constexpr size_t max_acc = (1 << (frombits + tobits - 1)) - 1;
+    while (it != end) {
+        acc = ((acc << frombits) | *it) & max_acc;
+        bits += frombits;
+        while (bits >= tobits) {
+            bits -= tobits;
+            out.push_back((acc >> bits) & maxv);
+        }
+        ++it;
+    }
+    if (pad) {
+        if (bits) out.push_back((acc << (tobits - bits)) & maxv);
+    } else if (bits >= frombits || ((acc << (tobits - bits)) & maxv)) {
+        return false;
+    }
+    return true;
 }
 
 #endif // BITCOIN_UTILSTRENCODINGS_H

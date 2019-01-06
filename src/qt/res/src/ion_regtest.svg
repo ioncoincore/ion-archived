@@ -15,11 +15,11 @@
    viewBox="0 0 370 370"
    version="1.1"
    id="svg8"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="ion-regtesttest.svg"
-   inkscape:export-filename="/home/tor/go/src/github.com/temp/ion_actuall/share/pixmaps/ion128-regtest.png"
-   inkscape:export-xdpi="8.7870264"
-   inkscape:export-ydpi="8.7870264">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="ion_regtest.svg"
+   inkscape:export-filename="/media/dev/M2SSD/go/github.com/ioncoincore/ion/snap/gui/ion128-regtest.png"
+   inkscape:export-xdpi="7.5"
+   inkscape:export-ydpi="7.5">
   <defs
      id="defs2">
     <filter
@@ -118,15 +118,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="54.728626"
+     inkscape:cx="-733.8428"
      inkscape:cy="434.28571"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="3773"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -136,7 +136,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>

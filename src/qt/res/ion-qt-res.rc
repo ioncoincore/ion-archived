@@ -1,7 +1,5 @@
 IDI_ICON1 ICON DISCARDABLE "icons/ion.ico"
 IDI_ICON2 ICON DISCARDABLE "icons/ion_testnet.ico"
-IDI_ICON2 ICON DISCARDABLE "icons/ion_regtest.ico"
-IDI_ICON2 ICON DISCARDABLE "icons/ion_unittest.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -21,7 +19,7 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Ionomy"
+            VALUE "CompanyName",        "ION"
             VALUE "FileDescription",    "Ion Core (OSS GUI client for ION)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "ion-qt"

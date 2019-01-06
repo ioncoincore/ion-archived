@@ -1,4 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2014-2016 The Dash developers
+// Copyright (c) 2016-2018 The PIVX developers
+// Copyright (c) 2018-2019 The Ion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -77,8 +80,13 @@ public:
         {
             LOCK2(cs_main, wallet->cs_wallet);
             for (std::map<uint256, CWalletTx>::iterator it = wallet->mapWallet.begin(); it != wallet->mapWallet.end(); ++it) {
-                if (TransactionRecord::showTransaction(it->second))
-                    cachedWallet.append(TransactionRecord::decomposeTransaction(wallet, it->second));
+                if (TransactionRecord::showTransaction(it->second)) {
+                    std::vector<TransactionRecord> vRecs = TransactionRecord::decomposeTransaction(wallet, it->second);
+                    QList<TransactionRecord> QLRecs;
+                    QLRecs.reserve(vRecs.size());
+                    std::copy(vRecs.begin(), vRecs.end(), std::back_inserter(QLRecs));
+                    cachedWallet.append(QLRecs);
+                }
             }
         }
     }
@@ -127,8 +135,11 @@ public:
                     break;
                 }
                 // Added -- insert at the right position
-                QList<TransactionRecord> toInsert =
-                    TransactionRecord::decomposeTransaction(wallet, mi->second);
+                std::vector<TransactionRecord> vToInsert = TransactionRecord::decomposeTransaction(wallet, mi->second);
+                QList<TransactionRecord> toInsert;
+                toInsert.reserve(vToInsert.size());
+                std::copy(vToInsert.begin(), vToInsert.end(), std::back_inserter(toInsert));
+
                 if (!toInsert.isEmpty()) /* only if something to insert */
                 {
                     parent->beginInsertRows(QModelIndex(), lowerIndex, lowerIndex + toInsert.size() - 1);
@@ -342,7 +353,9 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("Minted");
+        return tr("ION Stake");
+    case TransactionRecord::StakeXION:
+        return tr("xION Stake");
     case TransactionRecord::Generated:
         return tr("Mined");
     case TransactionRecord::ObfuscationDenominate:
@@ -356,12 +369,12 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted Ion to xION");
+        return tr("Converted ION to xION");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent xION");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received Ion from xION");
-    case TransactionRecord::ZerocoinSpend_Change_xION:
+        return tr("Received ION from xION");
+    case TransactionRecord::ZerocoinSpend_Change_xIon:
         return tr("Minted Change as xION from xION Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
         return tr("Converted xION to ION");
@@ -376,6 +389,7 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord* wtx
     switch (wtx->type) {
     case TransactionRecord::Generated:
     case TransactionRecord::StakeMint:
+    case TransactionRecord::StakeXION:
     case TransactionRecord::MNReward:
         return QIcon(":/icons/tx_mined");
     case TransactionRecord::RecvWithObfuscation:
@@ -418,8 +432,10 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_xION:
-        return tr("xION Accumulator");
+    case TransactionRecord::ZerocoinSpend_Change_xIon:
+        return tr("Anonymous (xION Transaction)");
+    case TransactionRecord::StakeXION:
+        return tr("Anonymous (xION Stake)");
     case TransactionRecord::SendToSelf:
     default:
         return tr("(n/a)") + watchAddress;
@@ -429,8 +445,6 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
 QVariant TransactionTableModel::addressColor(const TransactionRecord* wtx) const
 {
     switch (wtx->type) {
-    case TransactionRecord::SendToSelf:
-        return COLOR_BAREADDRESS;
     // Show addresses without label in a less visible color
     case TransactionRecord::RecvWithAddress:
     case TransactionRecord::SendToAddress:
@@ -440,6 +454,7 @@ QVariant TransactionTableModel::addressColor(const TransactionRecord* wtx) const
         if (label.isEmpty())
             return COLOR_BAREADDRESS;
     }
+    case TransactionRecord::SendToSelf:
     default:
         // To avoid overriding above conditional formats a default text color for this QTableView is not defined in stylesheet,
         // so we must always return a color here
@@ -551,7 +566,7 @@ QVariant TransactionTableModel::data(const QModelIndex& index, int role) const
         case Status:
             return QString::fromStdString(rec->status.sortKey);
         case Date:
-            return rec->time;
+            return qint64(rec->time);
         case Type:
             return formatTxType(rec);
         case Watchonly:
@@ -567,7 +582,15 @@ QVariant TransactionTableModel::data(const QModelIndex& index, int role) const
     case Qt::TextAlignmentRole:
         return column_alignments[index.column()];
     case Qt::ForegroundRole:
-        // Conflicted, most probably orphaned
+        // Minted
+        if (rec->type == TransactionRecord::Generated || rec->type == TransactionRecord::StakeMint ||
+                rec->type == TransactionRecord::StakeXION || rec->type == TransactionRecord::MNReward) {
+            if (rec->status.status == TransactionStatus::Conflicted || rec->status.status == TransactionStatus::NotAccepted)
+                return COLOR_ORPHAN;
+            else
+                return COLOR_STAKE;
+        }
+        // Conflicted tx
         if (rec->status.status == TransactionStatus::Conflicted || rec->status.status == TransactionStatus::NotAccepted) {
             return COLOR_CONFLICTED;
         }
@@ -602,7 +625,7 @@ QVariant TransactionTableModel::data(const QModelIndex& index, int role) const
     case AmountRole:
         return qint64(rec->credit + rec->debit);
     case TxIDRole:
-        return rec->getTxID();
+        return QString::fromStdString(rec->getTxID());
     case TxHashRole:
         return QString::fromStdString(rec->hash.ToString());
     case ConfirmedRole:
